@@ -1,0 +1,68 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.btn {
+  background: none;
+  color: $gray-scale-1;
+  display: flex;
+  align-items: center;
+  gap: $gap-1;
+  padding: $btn-padding;
+  font-weight: $btn-font-weight;
+  border-radius: $border-radius-circle;
+
+  &-S {
+    @include btn-font(map-get($btn-font-size, S));
+  }
+
+  &-M {
+    @include btn-font(map-get($btn-font-size, M));
+  }
+
+  &-L {
+    @include btn-font(map-get($btn-font-size, L));
+  }
+
+  .icon {
+    display: flex;
+  }
+
+  &:hover {
+    background-color: $gray-scale--1;
+    color: $gray-scale-10;
+
+    path {
+      stroke: $gray-scale-10;
+    }
+  }
+
+  &.light {
+    color: $gray-scale-10;
+    border-color: $gray-scale-10;
+    stroke: $gray-scale-10;
+
+    &:hover {
+      background-color: $background-dark;
+      color: $gray-scale--1;
+
+      path {
+        stroke: $gray-scale--1;
+      }
+    }
+  }
+
+  &.border {
+    &-S {
+      @include btn-border(map-get($btn-border-weight, S));
+    }
+
+    &-M {
+      @include btn-border(map-get($btn-border-weight, M));
+    }
+
+    &-L {
+      @include btn-border(map-get($btn-border-weight, L));
+    }
+  }
+}

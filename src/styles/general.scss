@@ -1,0 +1,143 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+body {
+  margin: 0 auto;
+  font-family: $font-body;
+  background-color: $background-dark;
+  max-width: 1920px;
+
+  ::selection {
+    background-color: $background-light;
+    color: $gray-scale-10;
+  }
+
+  button {
+    font-family: $font-title;
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $gray-scale-6;
+    margin: 0 0.8rem 0 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  // Title
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a {
+    width: fit-content;
+  }
+
+  $headings: (
+    h1: (
+      $h1-font-size,
+      $h1-line-height,
+      $h1-font-weight,
+    ),
+    h2: (
+      $h2-font-size,
+      $h2-line-height,
+      $h2-font-weight,
+    ),
+    h3: (
+      $h3-font-size,
+      $h3-line-height,
+      $h3-font-weight,
+    ),
+    h4: (
+      $h4-font-size,
+      $h4-line-height,
+      $h4-font-weight,
+    ),
+    h5: (
+      $h5-font-size,
+      $h5-line-height,
+      $h5-font-weight,
+    ),
+    h6: (
+      $h6-font-size,
+      $h6-line-height,
+      $h6-font-weight,
+    ),
+  );
+
+  @each $tag, $values in $headings {
+    #{$tag} {
+      @include typography(
+        $font-title,
+        nth($values, 1),
+        nth($values, 2),
+        nth($values, 3)
+      );
+    }
+  }
+
+  // Text Styles
+  $text-styles: (
+    "subtitle-L": (
+      $subtitle-l-font-size,
+      $subtitle-l-line-height,
+      $subtitle-l-font-weight,
+    ),
+    "subtitle-M": (
+      $subtitle-m-font-size,
+      $subtitle-m-line-height,
+      $subtitle-m-font-weight,
+    ),
+    "subtitle-S": (
+      $subtitle-s-font-size,
+      $subtitle-s-line-height,
+      $subtitle-s-font-weight,
+    ),
+    "text-paragraph-L": (
+      $paragraph-l-font-size,
+      $paragraph-l-line-height,
+      $paragraph-l-font-weight,
+    ),
+    "text-paragraph-M": (
+      $paragraph-m-font-size,
+      $paragraph-m-line-height,
+      $paragraph-m-font-weight,
+    ),
+    "text-paragraph-S": (
+      $paragraph-s-font-size,
+      $paragraph-s-line-height,
+      $paragraph-s-font-weight,
+    ),
+    "text-placeholder": (
+      $placeholder-font-size,
+      $placeholder-line-height,
+      $placeholder-font-weight,
+    ),
+  );
+  @each $class, $values in $text-styles {
+    .#{$class} {
+      @include typography(
+        $font-body,
+        nth($values, 1),
+        nth($values, 2),
+        nth($values, 3)
+      );
+    }
+  }
+}
