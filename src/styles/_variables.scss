@@ -1,169 +1,100 @@
 // ====================
 // Responsive
 
-$breakpoint-tablet: 1024px;
-$breakpoint-mobile: 767px;
-$breakpoint-desktop: 1025px;
+$BpDesktop: 1025px;
+$BpTablet: 1024px;
+$BpMobile: 767px;
 
 // ====================
 // Background Colors
 
-$background-light: #f5f5f5; // Colore base chiaro
-$background-dark: #0d0d0d; // Colore base scuro
-
-$background-secondary-light: #e4e4e4; // Colore secondario chiaro
-$background-secondary-dark: #2e2e2e; // Colore secondario scuro
+$BgLight: #ffffff;
+$BgDark: #0d0d0d;
 
 // ====================
-// Primary Colors
+// BrandPrimary
 
-$brand-primary-0: #ffffff;
-$brand-primary-0-5: #f4fafb;
-$brand-primary-1: #e9f5f7;
-$brand-primary-1-5: #deeff3;
-$brand-primary-2: #d3eaef;
-$brand-primary-3: #c8e5eb;
-$brand-primary-4: #bde0e7;
-$brand-primary-5: #b2dbe3;
-$brand-primary-6: #a8d5df;
-$brand-primary-7: #9dd0db;
-$brand-primary-8: #92cbd7;
-$brand-primary-8-5: #87c6d3;
-$brand-primary-9: #7cc0cf;
-$brand-primary-9-5: #71bbcb;
-$brand-primary-10: #66b6c7;
+$BrandPrimary-0: #f4fafb;
+$BrandPrimary-1: #e9f5f7;
+$BrandPrimary-1-5: #deeff3;
+$BrandPrimary-2: #d3eaef;
+$BrandPrimary-3: #c8e5eb;
+$BrandPrimary-4: #bde0e7;
+$BrandPrimary-5: #b2dbe3;
+$BrandPrimary-6: #a8d5df;
+$BrandPrimary-7: #9dd0db;
+$BrandPrimary-8: #92cbd7;
+$BrandPrimary-8-5: #87c6d3;
+$BrandPrimary-9: #7cc0cf;
+$BrandPrimary-9-5: #71bbcb;
+$BrandPrimary-10: #66b6c7;
 
-// ====================
-// Gray Scale
+// BrandSecondary
 
-$gray-scale--1: #f5f5f5;
-$gray-scale-0: #e4e4e4;
-$gray-scale-0-5: #d4d4d4;
-$gray-scale-1: #c3c3c3;
-$gray-scale-1-5: #b3b3b3;
-$gray-scale-2: #a2a2a2;
-$gray-scale-3: #929292;
-$gray-scale-4: #818181;
-$gray-scale-5: #707070;
-$gray-scale-6: #606060;
-$gray-scale-7: #4f4f4f;
-$gray-scale-8: #3f3f3f;
-$gray-scale-8-5: #2e2e2e;
-$gray-scale-9: #1e1e1e;
-$gray-scale-10: #0d0d0d;
+$BrandSecondary-0: #e6f6f4;
+$BrandSecondary-1: #ccece9;
+$BrandSecondary-1-5: #b3e3dd;
+$BrandSecondary-2: #99d9d2;
+$BrandSecondary-3: #80d0c7;
+$BrandSecondary-4: #70b6ae;
+$BrandSecondary-5: #609c95;
+$BrandSecondary-6: #50827c;
+$BrandSecondary-7: #406864;
+$BrandSecondary-8: #304e4b;
+$BrandSecondary-9: #203432;
+$BrandSecondary-10: #1a2a28;
 
 // ====================
-// Yellow Scale
+// GrayScale
 
-$yellow-0: #ffffff;
-$yellow-0-5: #fffded;
-$yellow-1: #fffadb;
-$yellow-1-5: #fff8c9;
-$yellow-2: #fff5b7;
-$yellow-3: #fff194;
-$yellow-4: #ffec70;
-$yellow-5: #ffe74c;
-$yellow-6: #d3bf3d;
-$yellow-7: #a7972e;
-$yellow-8: #7b6e1e;
-$yellow-8-5: #655a17;
-$yellow-9: #4f460f;
-$yellow-9-5: #393208;
-$yellow-10: #231e00;
-
-// ====================
-// Red Scale
-
-$red-0: #ffffff;
-$red-0-5: #ffeef0;
-$red-1: #ffdee0;
-$red-1-5: #ffcdd1;
-$red-2: #ffbdc1;
-$red-3: #ff9ba2;
-$red-4: #ff7a83;
-$red-5: #ff5964;
-$red-6: #d64751;
-$red-7: #ac353d;
-$red-8: #83242a;
-$red-8-5: #6e1b20;
-$red-9: #591216;
-$red-9-5: #45090d;
-$red-10: #300003;
+$GrayScale--1: #f5f5f5;
+$GrayScale-0: #e4e4e4;
+$GrayScale-0-5: #d4d4d4;
+$GrayScale-1: #c3c3c3;
+$GrayScale-1-5: #b3b3b3;
+$GrayScale-2: #a2a2a2;
+$GrayScale-3: #929292;
+$GrayScale-4: #818181;
+$GrayScale-5: #707070;
+$GrayScale-6: #606060;
+$GrayScale-7: #4f4f4f;
+$GrayScale-8: #3f3f3f;
+$GrayScale-9: #2e2e2e;
+$GrayScale-10: #1e1e1e;
 
 // ====================
-// Green Scale
-// ====================
+// BgCard
 
-$green-0: #ffffff;
-$green-0-5: #f6fff6;
-$green-1: #edffec;
-$green-1-5: #e3fee3;
-$green-2: #dafed9;
-$green-3: #c8fec7;
-$green-4: #b5fdb4;
-$green-5: #a3fda1;
-$green-6: #83e281;
-$green-7: #64c661;
-$green-8: #44ab42;
-$green-8-5: #349d32;
-$green-9: #258f22;
-$green-9-5: #158212;
-$green-10: #057402;
+$BgCardPurple: #83b4f7;
+$BgCardGreen: #81c995;
+$BgCardYellow: #ffd96a;
+$BgCardRed: #f28b82;
 
 // ====================
-// Shadows
+// BorderRadius
 
-$shadow-s-1: 0px 1px 2px rgba(0, 0, 0, 0.05);
-$shadow-s-2: 0px 2px 4px rgba(0, 0, 0, 0.1);
-$shadow-s-3: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06);
-$shadow-s-4: 0px 6px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.08);
-$shadow-s-5: 0px 8px 16px rgba(0, 0, 0, 0.14), 0px 3px 6px rgba(0, 0, 0, 0.1);
-$shadow-s-6: 0px 12px 20px rgba(0, 0, 0, 0.16), 0px 4px 8px rgba(0, 0, 0, 0.12);
-$shadow-card-s: 0px 16px 24px rgba(0, 0, 0, 0.18),
-  0px 6px 12px rgba(0, 0, 0, 0.14);
-
-// ====================
-// border Radius
-
-$border-radius-1: 0.5rem;
-$border-radius-2: 0.75rem;
-$border-radius-3: 1rem;
-$border-radius-4: 1.25rem;
-$border-radius-5: 1.5rem;
-$border-radius-6: 2rem;
-$border-radius-circle: 60rem;
+$BorderRadius-1: 0.125rem;
+$BorderRadius-2: 0.25rem;
+$BorderRadius-3: 0.5rem;
+$BorderRadius-4: 0.75rem;
+$CircleRadius: 60rem;
 
 // ====================
 // Gap
 
-$gap-1: 0.5rem;
-$gap-2: 0.75rem;
-$gap-3: 1rem;
-$gap-4: 1.25rem;
-$gap-5: 1.5rem;
-$gap-6: 2rem;
-$gap-7: 2.5rem;
-$gap-8: 5rem;
+$Gap-0: 0.75rem; // 12px
+$Gap-1: 1.5rem; // 24px
+$Gap-2: 2.5rem; // 40px
+$Gap-3: 3.75rem; // 60px
+$Gap-4: 5rem; // 80px
+$Gap-5: 7.5rem; // 120px
+$Gap-6: 11.25; // 180px
 
 // ====================
 // Opacity
 
-$opacity-80: 0.8;
-$opacity-50: 0.5;
-$opacity-25: 0.25;
-
-// ====================
-// Line Height
-
-$line-height: 1;
-$line-height-1: 1.2;
-$line-height-2: 1.4;
-
-// ====================
-// Padding
-
-$padding-M: 1.5rem 1.5rem;
-$padding-L: 1.5rem 5rem;
+$Opacity-80: 0.8;
+$Opacity-40: 0.4;
 
 // ====================
 // Buttons
@@ -174,9 +105,9 @@ $btn-font-size: (
 );
 
 $btn-border-weight: (
-  S: 0.06rem solid $gray-scale--1,
-  M: 0.08rem solid $gray-scale--1,
-  L: 0.12rem solid $gray-scale--1,
+  S: 0.06rem solid $GrayScale--1,
+  M: 0.08rem solid $GrayScale--1,
+  L: 0.12rem solid $GrayScale--1,
 );
 
 $btn-padding: 0.8rem 1.6rem;

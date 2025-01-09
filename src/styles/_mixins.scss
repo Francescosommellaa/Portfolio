@@ -5,39 +5,22 @@
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: variables.$breakpoint-mobile) {
+    @media (max-width: variables.$BpMobile) {
       @content;
     }
   } @else if $breakpoint == tablet {
-    @media (min-width: #{ variables.$breakpoint-mobile + 1 }) and (max-width: variables.$breakpoint-tablet) {
+    @media (min-width: #{ variables.$BpMobile + 1 }) and (max-width: variables.$BpTablet) {
       @content;
     }
   } @else if $breakpoint == desktop {
-    @media (min-width: variables.$breakpoint-desktop) {
+    @media (min-width: variables.$BpDesktop) {
       @content;
     }
   }
 }
 
 // ====================
-//Mixin per Stili Tipografici
-
-@mixin typography($font-family, $font-size, $line-height, $text-weight) {
-  font-family: $font-family;
-  font-size: $font-size;
-  line-height: $line-height;
-  font-weight: $text-weight;
-}
-
-// ====================
-//Mixin per Testo in Maiuscolo
-
-@mixin uppercase {
-  text-transform: uppercase;
-}
-
-// ====================
-//Mixin per i bottoni seccondari
+//Mixin per i pulsanti seccondari
 
 @mixin btn-font($btn-font-size) {
   font-size: $btn-font-size;

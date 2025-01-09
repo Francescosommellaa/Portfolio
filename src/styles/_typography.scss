@@ -1,60 +1,359 @@
-// Fonts Family
-$font-title: "Chillax", sans-serif;
-$font-body: "Satoshi", sans-serif;
+//===============
+//variable
 
-// Titles
-$h1-font-size: 4rem;
-$h1-line-height: 120%;
-$h1-font-weight: 600;
+$fontRules: (
+  Title: (
+    HeroTitle: (
+      L: (
+        10.625rem,
+        130%,
+        700,
+      ),
+      M: (
+        6.375rem,
+        80%,
+        700,
+      ),
+      S: (
+        3.25rem,
+        40%,
+        700,
+      ),
+    ),
+    SectionTitle: (
+      L: (
+        6rem,
+        80%,
+        700,
+      ),
+      S: (
+        4.75rem,
+        70%,
+        700,
+      ),
+    ),
+    FooterTitle: (
+      L: (
+        8rem,
+        110%,
+        700,
+      ),
+      M: (
+        6rem,
+        80%,
+        700,
+      ),
+      S: (
+        4.75rem,
+        70%,
+        700,
+      ),
+    ),
+    H1: (
+      L: (
+        8rem,
+        100%,
+        700,
+      ),
+      M: (
+        6rem,
+        90%,
+        700,
+      ),
+      S: (
+        4.5rem,
+        80%,
+        700,
+      ),
+    ),
+    H2: (
+      L: (
+        6rem,
+        100%,
+        300,
+      ),
+      M: (
+        4.5rem,
+        90%,
+        300,
+      ),
+      S: (
+        3.5rem,
+        80%,
+        300,
+      ),
+    ),
+    H3: (
+      L: (
+        4.5rem,
+        100%,
+        300,
+      ),
+      M: (
+        3.5rem,
+        90%,
+        300,
+      ),
+      S: (
+        2.75rem,
+        80%,
+        300,
+      ),
+    ),
+    H4: (
+      L: (
+        3.5rem,
+        100%,
+        500,
+      ),
+      M: (
+        2.75rem,
+        90%,
+        500,
+      ),
+      S: (
+        2.25rem,
+        80%,
+        500,
+      ),
+    ),
+    H5: (
+      L: (
+        2.75rem,
+        100%,
+        500,
+      ),
+      M: (
+        2.25rem,
+        90%,
+        500,
+      ),
+      S: (
+        1.875rem,
+        80%,
+        500,
+      ),
+    ),
+    H6: (
+      L: (
+        2.25rem,
+        100%,
+        500,
+      ),
+      M: (
+        1.875rem,
+        90%,
+        500,
+      ),
+      S: (
+        1.625rem,
+        80%,
+        500,
+      ),
+    ),
+  ),
+  Text: (
+    SubTitle: (
+      L: (
+        1.375rem,
+        auto,
+        500,
+      ),
+      S: (
+        1.125rem,
+        auto,
+        500,
+      ),
+    ),
+    ParagraphBig: (
+      L: (
+        1.125rem,
+        auto,
+        400,
+      ),
+      S: (
+        1rem,
+        auto,
+        400,
+      ),
+    ),
+    ParagraphSmall: (
+      L: (
+        1rem,
+        auto,
+        400,
+      ),
+      S: (
+        0.875rem,
+        auto,
+        400,
+      ),
+    ),
+    Placeholder: (
+      L: (
+        1rem,
+        auto,
+        300,
+      ),
+      S: (
+        0.875rem,
+        auto,
+        300,
+      ),
+    ),
+  ),
+);
 
-$h2-font-size: 3.5rem;
-$h2-line-height: 110%;
-$h2-font-weight: 600;
+//===============
+// Mixin
+@mixin uppercase {
+  $text-transform: uppercase;
+}
 
-$h3-font-size: 2.7rem;
-$h3-line-height: 110%;
-$h3-font-weight: 600;
+@mixin typography($category, $subCategory, $size) {
+  $fontValues: map-get(
+    map-get(map-get($fontRules, $category), $subCategory),
+    $size
+  );
+  font-size: nth($fontValues, 1);
+  line-height: nth($fontValues, 2);
+  font-weight: nth($fontValues, 3);
+}
 
-$h4-font-size: 2.4rem;
-$h4-line-height: 120%;
-$h4-font-weight: 500;
+//===============
+// Class
+.title {
+  font-family: "Clash Display", sans-serif;
+  &--hero-title {
+    &--L {
+      @include typography(Title, HeroTitle, L);
+    }
+    &--M {
+      @include typography(Title, HeroTitle, M);
+    }
+    &--S {
+      @include typography(Title, HeroTitle, S);
+    }
+  }
+  &--section-title {
+    &--L {
+      @include typography(Title, SectionTitle, L);
+    }
+    &--S {
+      @include typography(Title, SectionTitle, S);
+    }
+  }
+  &--footer-title {
+    &--L {
+      @include typography(Title, FooterTitle, L);
+    }
+    &--M {
+      @include typography(Title, FooterTitle, M);
+    }
+    &--S {
+      @include typography(Title, FooterTitle, S);
+    }
+  }
+  &--h1 {
+    &--L {
+      @include typography(Title, H1, L);
+    }
+    &--M {
+      @include typography(Title, H1, M);
+    }
+    &--S {
+      @include typography(Title, H1, S);
+    }
+  }
+  &--h2 {
+    &--L {
+      @include typography(Title, H2, L);
+    }
+    &--M {
+      @include typography(Title, H2, M);
+    }
+    &--S {
+      @include typography(Title, H2, S);
+    }
+  }
+  &--h3 {
+    &--L {
+      @include typography(Title, H3, L);
+    }
+    &--M {
+      @include typography(Title, H3, M);
+    }
+    &--S {
+      @include typography(Title, H3, S);
+    }
+  }
+  &--h4 {
+    &--L {
+      @include typography(Title, H4, L);
+    }
+    &--M {
+      @include typography(Title, H4, M);
+    }
+    &--S {
+      @include typography(Title, H4, S);
+    }
+  }
+  &--h5 {
+    &--L {
+      @include typography(Title, H5, L);
+    }
+    &--M {
+      @include typography(Title, H5, M);
+    }
+    &--S {
+      @include typography(Title, H5, S);
+    }
+  }
+  &--h6 {
+    &--L {
+      @include typography(Title, H6, L);
+    }
+    &--M {
+      @include typography(Title, H6, M);
+    }
+    &--S {
+      @include typography(Title, H6, S);
+    }
+  }
+}
 
-$h5-font-size: 2rem;
-$h5-line-height: 120%;
-$h5-font-weight: 500;
-
-$h6-font-size: 1.8rem;
-$h6-line-height: auto;
-$h6-font-weight: 500;
-
-// Subtitles
-
-$subtitle-s-font-size: 1.2rem;
-$subtitle-s-line-height: auto;
-$subtitle-s-font-weight: 500;
-
-$subtitle-m-font-size: 1.6rem;
-$subtitle-m-line-height: auto;
-$subtitle-m-font-weight: 500;
-
-$subtitle-l-font-size: 2rem;
-$subtitle-l-line-height: auto;
-$subtitle-l-font-weight: 500;
-
-// Text
-$paragraph-s-font-size: 1rem;
-$paragraph-s-line-height: auto;
-$paragraph-s-font-weight: 400;
-
-$paragraph-m-font-size: 1.2rem;
-$paragraph-m-line-height: auto;
-$paragraph-m-font-weight: 400;
-
-$paragraph-l-font-size: 1.4rem;
-$paragraph-l-line-height: auto;
-$paragraph-l-font-weight: 400;
-
-// Placeholder
-$placeholder-font-size: 1.025rem;
-$placeholder-line-height: auto;
-$placeholder-font-weight: 500;
+.text {
+  font-family: "Satoshi", sans-serif;
+  &--subtitle {
+    &--L {
+      @include typography(Text, SubTitle, L);
+    }
+    &--S {
+      @include typography(Text, SubTitle, S);
+    }
+  }
+  &--paragraphBig {
+    &--L {
+      @include typography(Text, ParagraphBig, L);
+    }
+    &--S {
+      @include typography(Text, ParagraphBig, S);
+    }
+  }
+  &--paragraphSmall {
+    &--L {
+      @include typography(Text, ParagraphSmall, L);
+    }
+    &--S {
+      @include typography(Text, ParagraphSmall, S);
+    }
+  }
+  &--placeholder {
+    &--L {
+      @include typography(Text, Placeholder, L);
+    }
+    &--S {
+      @include typography(Text, Placeholder, S);
+    }
+  }
+}
