@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from "react";
 
 // SCSS
-import "./Buttons.scss";
+import "./Button.scss";
 
 interface ButtonProps {
   size: "S" | "M" | "L";
   iconName?: string;
   text?: string;
-  withIcon?: boolean;
   light?: boolean;
   withBorder?: boolean;
   onClick?: () => void;
@@ -18,31 +17,36 @@ const Button: React.FC<ButtonProps> = ({
   text,
   iconName,
   light = false,
-  withIcon = true,
-  withBorder = true,
+  withBorder = false,
   onClick = () => {},
 }) => {
-  const svgRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (withIcon && size && iconName) {
-      const svgPath = new URL(
-        `/src/Assets/Icon/Name=${iconName}, Dimension=${size}.svg`,
-        import.meta.url
-      ).href;
+    if (iconName) {
+      const iconPath = `public/Icon/Name=${iconName}, Dimension=${size}.svg`;
 
-      fetch(svgPath)
-        .then((response) => response.text())
-        .then((svgContent) => {
-          if (svgRef.current) {
-            svgRef.current.innerHTML = svgContent;
+      fetch(iconPath)
+        .then((response) => {
+          if (response.ok) {
+            return response.text();
+          } else {
+            console.error(`Icon not found: ${iconPath}`);
+            return null;
           }
         })
-        .catch((error) =>
-          console.error(`Errore nel caricamento dell'SVG: ${error}`)
-        );
+        .then((svgContent) => {
+          if (svgContent && iconRef.current) {
+            iconRef.current.innerHTML = svgContent;
+          }
+        })
+        .catch((error) => {
+          console.error("Error loading icon:", error);
+        });
+    } else if (iconRef.current) {
+      iconRef.current.innerHTML = "";
     }
-  }, [size, withIcon, iconName]);
+  }, [iconName, size]);
   return (
     <button
       className={`btn btn-${size} ${light ? "light" : ""} ${
@@ -51,8 +55,12 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
     >
       {text}
-      {withIcon && size && iconName && (
-        <div className="icon" ref={svgRef} aria-hidden="true" />
+      {size && iconName && (
+        <div
+          ref={iconRef}
+          className={`icon ${light ? "light" : ""}`}
+          aria-hidden="true"
+        />
       )}
     </button>
   );
