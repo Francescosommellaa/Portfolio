@@ -1,82 +1,77 @@
 @use "../../../styles/general" as *;
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
 
 .footer {
-  padding: $padding-L;
   text-align: left;
-  background-color: $background-light;
+  background-color: $BgLight;
+  padding: $PaddingL;
+  display: flex;
+  flex-direction: column;
+  gap: $Gap-5;
 
   ::selection {
-    background-color: $background-dark;
-    color: $gray-scale--1;
-  }
-
-  .title {
-    justify-content: space-between;
-    align-items: end;
-    margin: 80px 0 40px;
-
-    h1 {
-      color: $gray-scale-10;
-    }
+    background-color: $BgDark;
+    color: $GrayScale--1;
   }
 
   .contact-container {
     display: flex;
-    gap: $gap-5;
-    margin-bottom: 120px;
+    gap: $Gap-2;
   }
 
   .info-container {
     display: flex;
     justify-content: space-between;
     align-items: last baseline;
-    color: $gray-scale--1;
-
-    span {
-      color: $gray-scale-10;
-      @include uppercase;
-    }
-
-    .text-placeholder {
-      @include uppercase;
-    }
 
     .social-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: $Gap-0;
 
-      a:hover {
-        color: $gray-scale-10;
+      .social {
+        display: flex;
+        gap: $Gap-1;
+        @include uppercase;
+
+        a:hover {
+          color: $GrayScale-10;
+        }
       }
     }
   }
 
   @include respond-to(mobile) {
-    padding: $padding-M;
-
-    .info-container {
-      flex-wrap: wrap;
-      gap: $gap-5;
-      align-items: start;
-    }
+    padding: $PaddingS;
 
     .contact-container {
       flex-wrap: wrap;
       align-items: start;
+    }
+
+    .info-container {
+      flex-wrap: wrap;
+      gap: $Gap-2;
+      align-items: start;
+      .social-container {
+        .social {
+          gap: $Gap-0;
+        }
+      }
     }
   }
 
   @include respond-to(tablet) {
-    .info-container {
-      flex-wrap: wrap;
-      gap: $gap-5;
-    }
-
     .contact-container {
       flex-wrap: wrap;
       align-items: start;
+    }
+
+    .info-container {
+      flex-wrap: wrap;
+      gap: $Gap-2;
     }
   }
 }

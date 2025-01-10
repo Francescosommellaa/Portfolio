@@ -10,6 +10,7 @@
 }
 
 body {
+  font-family: $fontBody;
   margin: 0 auto;
   background-color: $BgDark;
   max-width: 1920px;
@@ -44,5 +45,14 @@ body {
   span,
   a {
     width: fit-content;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $fontTitle;
   }
 }

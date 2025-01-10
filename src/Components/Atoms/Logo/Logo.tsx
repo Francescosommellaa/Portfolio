@@ -20,20 +20,14 @@ const Logo: React.FC<LogoProps> = ({ light = false }) => {
   };
 
   return (
-    <div
+    <a
       className={`logo-text ${light ? "light" : ""}`}
       onClick={handleClick}
       aria-label="Scroll to top"
       role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          handleClick();
-        }
-      }}
     >
       © Design by Fra
-    </div>
+    </a>
   );
 };
 export default Logo;

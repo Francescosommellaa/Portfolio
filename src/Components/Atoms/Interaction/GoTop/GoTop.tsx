@@ -32,7 +32,7 @@ const GoTop: React.FC = () => {
   return (
     isVisible && (
       <button className="go-top-button" onClick={handleClick}>
-        <img src="/icon/Name=Arrow-top, Dimension=S.svg" alt="Go to top" />
+        <img src="/Icon/Name=Arrow-top, Dimension=S.svg" alt="Go to top" />
       </button>
     )
   );

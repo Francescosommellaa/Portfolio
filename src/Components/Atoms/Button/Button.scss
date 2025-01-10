@@ -12,12 +12,12 @@
   align-items: center;
   gap: $Gap-0;
   font-weight: $btn-font-weight;
-  border-radius: $BorderRadius-4;
+  border-radius: $BorderRadius-3;
 
   // Gestione delle dimensioni
   @each $size in (S, M, L) {
     &-#{$size} {
-      @include btn-font(map-get($btn-font-size, $size));
+      @include btn-font(map.get($btn-font-size, $size));
       padding: map.get($btn-padding, $size);
     }
   }
@@ -64,7 +64,7 @@
   &.border {
     @each $size in (S, M, L) {
       &-#{$size} {
-        @include btn-border(map-get($btn-border-weight, $size));
+        @include btn-border(map.get($btn-border-weight, $size));
         border-color: $GrayScale-10;
       }
     }

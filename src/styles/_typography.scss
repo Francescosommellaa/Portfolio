@@ -1,5 +1,4 @@
 @use "sass:list";
-@use "sass:map";
 
 //===============
 //variable
@@ -7,203 +6,209 @@ $fontTitle: "Clash Display", sans-serif;
 $fontBody: "Satoshi", sans-serif;
 
 $fontRules: (
-  Title: (
-    HeroTitle: (
+  title: (
+    heroTitle: (
       L: (
         10.625rem,
-        130%,
         700,
+        130%,
       ),
       M: (
         6.375rem,
-        80%,
         700,
+        80%,
       ),
       S: (
         3.25rem,
+        700,
         40%,
-        700,
       ),
     ),
-    SectionTitle: (
+    sectionTitle: (
       L: (
         6rem,
-        80%,
         700,
+        80%,
       ),
       S: (
         4.75rem,
-        70%,
         700,
+        70%,
       ),
     ),
-    FooterTitle: (
+    footerTitle: (
       L: (
         8rem,
-        110%,
         700,
+        100%,
       ),
       M: (
         6rem,
-        80%,
         700,
+        80%,
       ),
       S: (
         4.75rem,
-        70%,
         700,
+        70%,
       ),
     ),
-    H1: (
+    socialLink: (
+      L: (
+        1.5rem,
+        300,
+      ),
+      M: (
+        1rem,
+        300,
+      ),
+      S: (
+        0.75rem,
+        300,
+      ),
+    ),
+    h1: (
       L: (
         8rem,
-        100%,
         700,
+        100%,
       ),
       M: (
         6rem,
-        90%,
         700,
+        90%,
       ),
       S: (
         4.5rem,
-        80%,
         700,
+        80%,
       ),
     ),
-    H2: (
+    h2: (
       L: (
         6rem,
-        100%,
         300,
+        100%,
       ),
       M: (
         4.5rem,
-        90%,
         300,
+        90%,
       ),
       S: (
         3.5rem,
-        80%,
         300,
+        80%,
       ),
     ),
-    H3: (
+    h3: (
       L: (
         4.5rem,
-        100%,
         300,
+        100%,
       ),
       M: (
         3.5rem,
-        90%,
         300,
+        90%,
       ),
       S: (
         2.75rem,
-        80%,
         300,
+        80%,
       ),
     ),
-    H4: (
+    h4: (
       L: (
         3.5rem,
-        100%,
         500,
+        100%,
       ),
       M: (
         2.75rem,
-        90%,
         500,
+        90%,
       ),
       S: (
         2.25rem,
-        80%,
         500,
+        80%,
       ),
     ),
-    H5: (
+    h5: (
       L: (
         2.75rem,
-        100%,
         500,
+        100%,
       ),
       M: (
         2.25rem,
-        90%,
         500,
+        90%,
       ),
       S: (
         1.875rem,
-        80%,
         500,
+        80%,
       ),
     ),
-    H6: (
+    h6: (
       L: (
         2.25rem,
-        100%,
         500,
+        100%,
       ),
       M: (
         1.875rem,
-        90%,
         500,
+        90%,
       ),
       S: (
         1.625rem,
-        80%,
         500,
+        80%,
       ),
     ),
   ),
-  Text: (
-    SubTitle: (
+  text: (
+    subTitle: (
       L: (
         1.375rem,
-        auto,
         500,
       ),
       S: (
         1.125rem,
-        auto,
         500,
       ),
     ),
-    ParagraphBig: (
+    paragraphBig: (
       L: (
         1.125rem,
-        auto,
         400,
       ),
       S: (
         1rem,
-        auto,
         400,
       ),
     ),
-    ParagraphSmall: (
+    paragraphSmall: (
       L: (
         1rem,
-        auto,
         400,
       ),
       S: (
         0.875rem,
-        auto,
         400,
       ),
     ),
-    Placeholder: (
+    placeholder: (
       L: (
         1rem,
-        auto,
-        300,
+        500,
       ),
       S: (
         0.875rem,
-        auto,
-        300,
+        500,
       ),
     ),
   ),
@@ -212,153 +217,21 @@ $fontRules: (
 //===============
 // Mixin
 @mixin uppercase {
-  $text-transform: uppercase;
+  text-transform: uppercase;
 }
 
-@mixin typography($category, $subCategory, $size) {
-  $fontValues: map.get(
-    map.get(map.get($fontRules, $category), $subCategory),
-    $size
-  );
-  font-size: list.nth($fontValues, 1);
-  line-height: list.nth($fontValues, 2);
-  font-weight: list.nth($fontValues, 3);
-}
-
-//===============
-// Class
-.title {
-  font-family: $fontTitle;
-  &-hero-title {
-    &-L {
-      @include typography(Title, HeroTitle, L);
-    }
-    &-M {
-      @include typography(Title, HeroTitle, M);
-    }
-    &-S {
-      @include typography(Title, HeroTitle, S);
-    }
-  }
-  &-section-title {
-    &-L {
-      @include typography(Title, SectionTitle, L);
-    }
-    &-S {
-      @include typography(Title, SectionTitle, S);
-    }
-  }
-  &-footer-title {
-    &-L {
-      @include typography(Title, FooterTitle, L);
-    }
-    &-M {
-      @include typography(Title, FooterTitle, M);
-    }
-    &-S {
-      @include typography(Title, FooterTitle, S);
-    }
-  }
-  &-h1 {
-    &-L {
-      @include typography(Title, H1, L);
-    }
-    &-M {
-      @include typography(Title, H1, M);
-    }
-    &-S {
-      @include typography(Title, H1, S);
-    }
-  }
-  &-h2 {
-    &-L {
-      @include typography(Title, H2, L);
-    }
-    &-M {
-      @include typography(Title, H2, M);
-    }
-    &-S {
-      @include typography(Title, H2, S);
-    }
-  }
-  &-h3 {
-    &-L {
-      @include typography(Title, H3, L);
-    }
-    &-M {
-      @include typography(Title, H3, M);
-    }
-    &-S {
-      @include typography(Title, H3, S);
-    }
-  }
-  &-h4 {
-    &-L {
-      @include typography(Title, H4, L);
-    }
-    &-M {
-      @include typography(Title, H4, M);
-    }
-    &-S {
-      @include typography(Title, H4, S);
-    }
-  }
-  &-h5 {
-    &-L {
-      @include typography(Title, H5, L);
-    }
-    &-M {
-      @include typography(Title, H5, M);
-    }
-    &-S {
-      @include typography(Title, H5, S);
-    }
-  }
-  &-h6 {
-    &-L {
-      @include typography(Title, H6, L);
-    }
-    &-M {
-      @include typography(Title, H6, M);
-    }
-    &-S {
-      @include typography(Title, H6, S);
-    }
-  }
-}
-
-.text {
-  font-family: $fontBody;
-  &-subtitle {
-    &-L {
-      @include typography(Text, SubTitle, L);
-    }
-    &-S {
-      @include typography(Text, SubTitle, S);
-    }
-  }
-  &-paragraphBig {
-    &-L {
-      @include typography(Text, ParagraphBig, L);
-    }
-    &-S {
-      @include typography(Text, ParagraphBig, S);
-    }
-  }
-  &-paragraphSmall {
-    &-L {
-      @include typography(Text, ParagraphSmall, L);
-    }
-    &-S {
-      @include typography(Text, ParagraphSmall, S);
-    }
-  }
-  &-placeholder {
-    &-L {
-      @include typography(Text, Placeholder, L);
-    }
-    &-S {
-      @include typography(Text, Placeholder, S);
+@each $category, $subCategories in $fontRules {
+  @each $subCategory, $sizes in $subCategories {
+    .#{$category}-#{$subCategory} {
+      @each $size, $values in $sizes {
+        &-#{$size} {
+          font-size: list.nth($values, 1);
+          font-weight: list.nth($values, 2);
+          @if list.length($values) >= 3 {
+            line-height: list.nth($values, 3);
+          }
+        }
+      }
     }
   }
 }

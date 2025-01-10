@@ -12,12 +12,12 @@ const SocialLinks: { link: string, name: string }[] = [
         name: "Instagram",
     },
     {
-        link: "https://twitter.com/Designby_fra",
-        name: "X(Twitter)",
-    },
-    {
         link: "https://www.behance.net/designby_fra",
         name: "Behance",
+    },
+    {
+        link: "https://github.com/Francescosommellaa",
+        name: "GitHub",
     },
 
 ]

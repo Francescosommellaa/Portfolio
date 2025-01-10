@@ -21,37 +21,37 @@
     display: flex;
     align-items: center;
     gap: $Gap-2;
-  }
 
-  .nav-links {
-    display: flex;
-    gap: $Gap-3;
-    margin: 0;
-    padding: 0;
+    .nav-links {
+      display: flex;
+      gap: $Gap-3;
+      margin: 0;
+      padding: 0;
 
-    .nav-link {
-      position: relative;
-      color: $GrayScale-4;
+      .nav-link {
+        position: relative;
+        color: $GrayScale-4;
 
-      &:hover {
-        color: $GrayScale--1;
-      }
+        &:hover {
+          color: $GrayScale--1;
+        }
 
-      &.active {
-        color: $GrayScale--1;
-      }
+        &.active {
+          color: $GrayScale--1;
+        }
 
-      &-page.active::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 4px;
-        background-color: $GrayScale--1;
-        border-radius: 50%;
-        transition: all 0.3s ease;
+        &-page.active::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4px;
+          height: 4px;
+          background-color: $GrayScale--1;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+        }
       }
     }
   }
@@ -60,6 +60,16 @@
 
     .nav-links-wrapper {
       display: none;
+    }
+  }
+
+  @include respond-to(tablet) {
+    .nav-links-wrapper {
+      gap: $Gap-1;
+
+      .nav-links {
+        gap: $Gap-0;
+      }
     }
   }
 }
