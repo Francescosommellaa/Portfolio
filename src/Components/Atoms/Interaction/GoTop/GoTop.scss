@@ -6,13 +6,18 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: $gray-scale-8-5;
-  color: #000;
-  border-radius: 50%;
+  background: #ffffff1a;
+  backdrop-filter: blur(24px);
+  color: $GrayScale--1;
+  border-radius: $BorderRadius-4;
   width: 32px;
   height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+
+  &:hover {
+    color: $GrayScale-6;
+  }
 }

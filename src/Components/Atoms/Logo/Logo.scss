@@ -4,29 +4,20 @@
 @use "../../../styles/typography" as *;
 
 .logo-text {
-  color: $gray-scale-2;
-  font-family: $font-title;
+  color: $GrayScale-1;
+  font-family: $fontBody;
   font-weight: 600;
+  font-size: 0.88rem;
 
   &:hover {
-    color: $gray-scale--1;
+    color: $GrayScale--1;
   }
 
-  &-S {
-    font-size: 1.025rem;
-  }
-  &-M {
-    font-size: 1.25rem;
-  }
-  &-L {
-    font-size: 1.5rem;
-  }
-
-  &-light {
-    color: $gray-scale-8;
+  &.light {
+    color: $GrayScale-8;
 
     &:hover {
-      color: $gray-scale-10;
+      color: $GrayScale-10;
     }
   }
 }

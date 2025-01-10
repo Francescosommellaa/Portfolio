@@ -4,12 +4,10 @@ import React from "react";
 import "./Logo.scss";
 
 interface LogoProps {
-  size: "S" | "M" | "L";
   light?: boolean;
-  onClick?: () => void;
 }
 
-const Logo: React.FC<LogoProps> = ({ size, light = false, onClick }) => {
+const Logo: React.FC<LogoProps> = ({ light = false }) => {
   const handleClick = () => {
     const scrollToTop = () => {
       const c = document.documentElement.scrollTop || document.body.scrollTop;
@@ -24,15 +22,6 @@ const Logo: React.FC<LogoProps> = ({ size, light = false, onClick }) => {
     scrollToTop();
   };
 
-  return (
-    <a
-      className={`logo-text logo-text-${
-        light ? "light" : ""
-      } logo-text-${size}`}
-      onClick={handleClick}
-    >
-      © Design by Fra
-    </a>
-  );
+  return <a className={`logo-text ${light ? "light" : ""}`}>© Design by Fra</a>;
 };
 export default Logo;
