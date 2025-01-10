@@ -1,13 +1,18 @@
-const PageNav: { id: number, name: string, url: string }[] = [
+const PageNav: { id: number, name: string, section: string }[] = [
     {
         id: 1,
-        url: "about",
-        name: "About",
+        section: "about",
+        name: "ABOUT",
     },
     {
         id: 2,
-        url: "lavori",
-        name: "Lavori",
+        section: "lavori",
+        name: "LAVORI",
+    },
+    {
+        id: 3,
+        section: "parliamo",
+        name: "PARLIAMO",
     },
 ];
 

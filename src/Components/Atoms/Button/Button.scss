@@ -2,6 +2,7 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
+@use "sass:map";
 
 .btn {
   font-family: $fontTitle;
@@ -17,7 +18,7 @@
   @each $size in (S, M, L) {
     &-#{$size} {
       @include btn-font(map-get($btn-font-size, $size));
-      padding: map-get($btn-padding, $size);
+      padding: map.get($btn-padding, $size);
     }
   }
 

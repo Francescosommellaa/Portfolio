@@ -15,13 +15,25 @@ const Logo: React.FC<LogoProps> = ({ light = false }) => {
         window.requestAnimationFrame(scrollToTop);
         window.scrollTo(0, c - c / 24);
       }
-      if (onClick) {
-        onClick();
-      }
     };
     scrollToTop();
   };
 
-  return <a className={`logo-text ${light ? "light" : ""}`}>© Design by Fra</a>;
+  return (
+    <div
+      className={`logo-text ${light ? "light" : ""}`}
+      onClick={handleClick}
+      aria-label="Scroll to top"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          handleClick();
+        }
+      }}
+    >
+      © Design by Fra
+    </div>
+  );
 };
 export default Logo;

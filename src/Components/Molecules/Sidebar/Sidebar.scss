@@ -13,7 +13,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #0d0d0df1;
-  color: $gray-scale--1;
+  color: $GrayScale--1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,7 +21,6 @@
   visibility: hidden;
   transition: all 0.8s ease-in-out;
   z-index: 900;
-  padding: $padding-M;
 
   &.open {
     transform: translateY(0%);
@@ -41,11 +40,11 @@
     gap: 2rem;
 
     a {
-      color: $gray-scale-4;
+      color: $GrayScale-4;
       transition: color 0.3s ease;
 
       &:hover {
-        color: $gray-scale--1;
+        color: $GrayScale--1;
       }
     }
   }
@@ -56,11 +55,11 @@
     flex-wrap: wrap;
 
     a {
-      color: $gray-scale-4;
+      color: $GrayScale-4;
       transition: color 0.3s ease;
 
       &:hover {
-        color: $gray-scale-1;
+        color: $GrayScale-1;
       }
     }
   }
@@ -74,7 +73,7 @@
   right: 1.5rem;
   background: none;
   border: none;
-  color: $gray-scale--1;
+  color: $GrayScale--1;
   cursor: pointer;
   z-index: 1100;
 }

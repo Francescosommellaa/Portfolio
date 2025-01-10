@@ -6,6 +6,9 @@ import "./Navbar.scss";
 
 // Atoms
 import Logo from "../../Atoms/Logo/Logo";
+import Button from "../../Atoms/Button/Button";
+
+// Molecules
 import Sidebar from "../../Molecules/Sidebar/Sidebar";
 
 // DB
@@ -55,25 +58,25 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <div className="nav-header">
-        <Logo size={"S"} />
+      <Logo />
 
-        <div className="divider" />
-
+      <div className="nav-links-wrapper">
         <ul className="nav-links">
           {PageNav.map((page) => (
             <li key={page.id}>
               <a
-                className={`nav-link ${
-                  activeSection === `${page.url}` ? "active" : ""
+                className={`title text-paragraphSmall-S nav-link ${
+                  activeSection === `${page.section}` ? "active" : ""
                 }`}
-                onClick={() => handleScroll(`${page.url}`)}
+                onClick={() => handleScroll(`${page.section}`)}
               >
                 {page.name}
               </a>
             </li>
           ))}
         </ul>
+
+        <Button text="SCARICA CV" size="S" iconName="Download" />
       </div>
 
       <Sidebar />
