@@ -5,14 +5,15 @@
 
 .navbar {
   position: sticky;
+  width: 100%;
+  height: auto;
   top: 0;
   left: 0;
   margin: 0 auto;
   z-index: 1000;
   padding: $PaddingL;
 
-  background-color: #0d0d0dbb;
-  backdrop-filter: blur(24px);
+  background-color: $BgDark;
   display: flex;
   align-items: center;
   justify-content: space-between;

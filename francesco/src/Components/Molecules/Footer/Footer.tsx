@@ -5,7 +5,6 @@ import "./Footer.scss";
 
 // Atoms
 import Button from "../../Atoms/Button/Button";
-import Logo from "../../Atoms/Logo/Logo";
 
 // DB
 import SocialLinks from "../../DB/Social";
@@ -17,12 +16,9 @@ const Footer: React.FC = () => {
   const Size = useSize();
 
   return (
-    <footer className="footer" aria-label="Footer">
-      {/* Logo */}
-      <Logo light={true} />
-
+    <section>
       {/* Titolo */}
-      <h1 className={`title-footerTitle-${Size}`}>
+      <h1 className={`title-footerTitle-${Size} text`}>
         Lavoriamo <br /> Insieme
       </h1>
 
@@ -72,11 +68,10 @@ const Footer: React.FC = () => {
         </div>
 
         <span className={`text-placeholder-${Size}`}>
-          Ideato, <br /> progettato e <br />
-          Sviluppato da me
+          Tutti i diritti riservati <br /> © Francesco Sommella 2025
         </span>
       </div>
-    </footer>
+    </section>
   );
 };
 

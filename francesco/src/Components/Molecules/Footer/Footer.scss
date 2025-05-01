@@ -3,17 +3,21 @@
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
 
-.footer {
-  text-align: left;
-  background-color: $BgLight;
+section {
   padding: $PaddingL;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: $Gap-5;
+  width: 100%;
 
   ::selection {
     background-color: $BgDark;
     color: $GrayScale--1;
+  }
+
+  .text {
+    color: $GrayScale-10;
   }
 
   .contact-container {
@@ -37,9 +41,13 @@
         @include uppercase;
 
         a:hover {
-          color: $GrayScale-10;
+          color: $GrayScale-8;
         }
       }
+    }
+
+    span {
+      color: $GrayScale-10;
     }
   }
 

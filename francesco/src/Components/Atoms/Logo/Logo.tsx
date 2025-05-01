@@ -9,14 +9,13 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ light = false }) => {
   const handleClick = () => {
-    const scrollToTop = () => {
-      const c = document.documentElement.scrollTop || document.body.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
-        window.scrollTo(0, c - c / 24);
-      }
-    };
-    scrollToTop();
+    const container = document.getElementById("root");
+    if (!container) return;
+
+    container.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -26,7 +25,7 @@ const Logo: React.FC<LogoProps> = ({ light = false }) => {
       aria-label="Scroll to top"
       role="button"
     >
-      © Design by Fra
+      © Francesco Sommella
     </a>
   );
 };

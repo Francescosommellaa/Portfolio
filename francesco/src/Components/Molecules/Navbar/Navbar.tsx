@@ -44,6 +44,7 @@ const Navbar: React.FC = () => {
 
   const handleScroll = (section: string) => {
     const scrollOptions = {
+      containerId: "root",
       smooth: true,
       duration: 500,
       offset: -60,

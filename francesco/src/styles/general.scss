@@ -9,11 +9,27 @@
   cursor: none;
 }
 
+#root {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  height: 100vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 body {
   font-family: $fontBody;
   margin: 0 auto;
   background-color: $BgDark;
   max-width: 1920px;
+  height: 100vh;
+  scrollbar-width: none;
+  overflow: hidden;
 
   ::selection {
     background-color: $BgLight;
@@ -54,5 +70,10 @@ body {
   h5,
   h6 {
     font-family: $fontTitle;
+  }
+
+  .snap {
+    height: 100vh;
+    scroll-snap-align: start;
   }
 }
