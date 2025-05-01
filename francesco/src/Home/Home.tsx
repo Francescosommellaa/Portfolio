@@ -14,6 +14,7 @@ const Home: React.FC = () => {
 
   return (
     <section aria-label="Home Page">
+      <h1>FRANCESCO SOMMELLA</h1>
       <Button size="S" text="SCARICA CV" iconName="Download" />
       <GoTop />
     </section>
