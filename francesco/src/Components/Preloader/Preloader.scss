@@ -1,0 +1,23 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #0e0e0e;
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  z-index: 1000;
+  overflow: hidden;
+
+  &__text {
+    position: absolute;
+    top: 8rem;
+    left: 2rem;
+  }
+
+  &__percent {
+    position: absolute;
+    top: 90vh;
+    right: 2rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+}
