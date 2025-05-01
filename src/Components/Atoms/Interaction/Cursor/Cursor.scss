@@ -1,0 +1,42 @@
+@use "../../../../styles/general" as *;
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.custom-cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: $GrayScale--1;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transition, width, height 0.4s ease, opacity 0.4s ease;
+  mix-blend-mode: difference;
+
+  &.light {
+    background-color: $GrayScale-10;
+  }
+
+  &.hidden {
+    opacity: 0.2;
+    transform: scale(0.5);
+  }
+  &.visible {
+    opacity: 1;
+  }
+
+  &.absorbed {
+    opacity: 0;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+
+  &.input-cursor {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.text-cursor {
+    width: 2px;
+  }
+}

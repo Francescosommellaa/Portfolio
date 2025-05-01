@@ -1,0 +1,91 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d0d0df1;
+  color: $GrayScale--1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(-100%);
+  visibility: hidden;
+  transition: all 0.8s ease-in-out;
+  z-index: 900;
+
+  &.open {
+    transform: translateY(0%);
+    visibility: visible;
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+      color: $GrayScale-4;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $GrayScale--1;
+      }
+    }
+  }
+
+  .sidebar-footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    a {
+      color: $GrayScale-4;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $GrayScale-1;
+      }
+    }
+  }
+}
+
+// Stile del pulsante menu
+.menu-icon,
+.close-icon {
+  position: fixed;
+  top: 0.6rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: $GrayScale--1;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+@include respond-to(tablet) {
+  .sidebar-container {
+    display: none;
+  }
+}
+
+@include respond-to(desktop) {
+  .sidebar-container {
+    display: none;
+  }
+}

@@ -1,0 +1,77 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+
+.footer {
+  text-align: left;
+  background-color: $BgLight;
+  padding: $PaddingL;
+  display: flex;
+  flex-direction: column;
+  gap: $Gap-5;
+
+  ::selection {
+    background-color: $BgDark;
+    color: $GrayScale--1;
+  }
+
+  .contact-container {
+    display: flex;
+    gap: $Gap-2;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+
+    .social-container {
+      display: flex;
+      flex-direction: column;
+      gap: $Gap-0;
+
+      .social {
+        display: flex;
+        gap: $Gap-1;
+        @include uppercase;
+
+        a:hover {
+          color: $GrayScale-10;
+        }
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    padding: $PaddingS;
+
+    .contact-container {
+      flex-wrap: wrap;
+      align-items: start;
+    }
+
+    .info-container {
+      flex-wrap: wrap;
+      gap: $Gap-2;
+      align-items: start;
+      .social-container {
+        .social {
+          gap: $Gap-0;
+        }
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    .contact-container {
+      flex-wrap: wrap;
+      align-items: start;
+    }
+
+    .info-container {
+      flex-wrap: wrap;
+      gap: $Gap-2;
+    }
+  }
+}

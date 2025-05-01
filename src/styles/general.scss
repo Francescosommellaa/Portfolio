@@ -1,0 +1,58 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+body {
+  font-family: $fontBody;
+  margin: 0 auto;
+  background-color: $BgDark;
+  max-width: 1920px;
+
+  ::selection {
+    background-color: $BgLight;
+    color: $GrayScale-10;
+  }
+
+  button {
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $GrayScale-6;
+    margin: 0 0.8rem 0 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  // Title
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a {
+    width: fit-content;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $fontTitle;
+  }
+}

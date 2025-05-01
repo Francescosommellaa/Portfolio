@@ -1,0 +1,31 @@
+@use "variables";
+
+// ====================
+// Mixin per Responsive
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: variables.$BpMobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: #{ variables.$BpMobile + 1 }) and (max-width: variables.$BpTablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: variables.$BpDesktop) {
+      @content;
+    }
+  }
+}
+
+// ====================
+//Mixin per i pulsanti seccondari
+
+@mixin btn-font($btn-font-size) {
+  font-size: $btn-font-size;
+}
+
+@mixin btn-border($btn-border-weight) {
+  border: $btn-border-weight;
+}

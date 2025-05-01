@@ -1,0 +1,75 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 1000;
+  padding: $PaddingL;
+
+  background-color: #0d0d0dbb;
+  backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .nav-links-wrapper {
+    display: flex;
+    align-items: center;
+    gap: $Gap-2;
+
+    .nav-links {
+      display: flex;
+      gap: $Gap-3;
+      margin: 0;
+      padding: 0;
+
+      .nav-link {
+        position: relative;
+        color: $GrayScale-4;
+
+        &:hover {
+          color: $GrayScale--1;
+        }
+
+        &.active {
+          color: $GrayScale--1;
+        }
+
+        &-page.active::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4px;
+          height: 4px;
+          background-color: $GrayScale--1;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+  @include respond-to(mobile) {
+    padding: $PaddingS;
+
+    .nav-links-wrapper {
+      display: none;
+    }
+  }
+
+  @include respond-to(tablet) {
+    .nav-links-wrapper {
+      gap: $Gap-1;
+
+      .nav-links {
+        gap: $Gap-0;
+      }
+    }
+  }
+}

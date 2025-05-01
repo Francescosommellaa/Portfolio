@@ -1,0 +1,72 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+@use "sass:map";
+
+.btn {
+  font-family: $fontTitle;
+  background-color: $GrayScale--1;
+  color: $GrayScale-8;
+  display: flex;
+  align-items: center;
+  gap: $Gap-0;
+  font-weight: $btn-font-weight;
+  border-radius: $BorderRadius-3;
+
+  // Gestione delle dimensioni
+  @each $size in (S, M, L) {
+    &-#{$size} {
+      @include btn-font(map.get($btn-font-size, $size));
+      padding: map.get($btn-padding, $size);
+    }
+  }
+
+  // Stile dell'icona
+  .icon {
+    display: flex;
+    path {
+      stroke: $GrayScale-9;
+    }
+  }
+
+  // Hover stato generale
+  &:hover {
+    background-color: $GrayScale-10;
+    color: $GrayScale-1;
+
+    path {
+      stroke: $GrayScale-1;
+    }
+  }
+
+  // Stile light
+  &.light {
+    color: $GrayScale-10;
+    border-color: $GrayScale-10;
+    stroke: $GrayScale-10;
+    border-radius: $CircleRadius;
+
+    path {
+      stroke: $GrayScale-10;
+    }
+
+    &:hover {
+      background-color: $BgDark;
+      color: $GrayScale--1;
+
+      path {
+        stroke: $GrayScale--1;
+      }
+    }
+  }
+
+  &.border {
+    @each $size in (S, M, L) {
+      &-#{$size} {
+        @include btn-border(map.get($btn-border-weight, $size));
+        border-color: $GrayScale-10;
+      }
+    }
+  }
+}
