@@ -5,14 +5,48 @@ import "./Hero.scss";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
+import InlineIcon from "../../../Hooks/InlineIcon";
+
+//DB
+import { heroContent } from "../../DB/Hero";
 
 const Hero: React.FC = () => {
   const Size = useSize();
 
   return (
-    <>
-      <h1 className={`title-h1-${Size} text`}>Hero</h1>
-    </>
+    <section className="hero-section snap">
+      <div className="hero-header">
+        <p
+          className={`text-subTitle-${Size}`}
+          dangerouslySetInnerHTML={{ __html: heroContent.role }}
+        />
+        <h1 className={`title-heroTitle-${Size}`}>
+          <span className="name-first">{heroContent.name.first}</span>
+          <span className="name-last">{heroContent.name.last}</span>
+        </h1>
+        {/* Immagini sovrapposte */}
+        {heroContent.images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`hero-img-${index}`}
+            className={`hero-image-${Size} img-${index} ${
+              Size === "S" && index > 2 ? "hide-on-mobile" : ""
+            }`}
+          />
+        ))}
+      </div>
+
+      <div className={`hero-icons`}>
+        {heroContent.icons.map((icon, idx) => (
+          <InlineIcon key={idx} name={icon} size={`${Size}`} />
+        ))}
+      </div>
+
+      <div className="hero-scroll">
+        <InlineIcon name="scroll" size="S" />
+      </div>
+    </section>
   );
 };
 

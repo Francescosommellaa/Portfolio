@@ -2,3 +2,113 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
+
+$heroImageSize: (
+  L: 80px,
+  M: 60px,
+  S: 40px,
+);
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-color: $BgDark;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .hero-header {
+    position: relative;
+    z-index: 1;
+
+    .text-subTitle-L,
+    .text-subTitle-M,
+    .text-subTitle-S {
+      color: $GrayScale-2;
+      margin-bottom: 0.2rem;
+    }
+
+    .title-heroTitle-L,
+    .title-heroTitle-M,
+    .title-heroTitle-S {
+      font-size: clamp(2rem, 12vw, 15rem);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @each $size, $value in $heroImageSize {
+      .hero-image-#{$size} {
+        width: $value;
+        height: auto;
+        position: absolute;
+        border-radius: $BorderRadius-3;
+        object-fit: cover;
+        z-index: 2;
+      }
+    }
+
+    // Nascondi immagini extra su mobile
+    .hide-on-mobile {
+      display: none;
+    }
+
+    // Posizioni immagini fisse
+    .img-0 {
+      top: 60%;
+      left: 10%;
+    }
+    .img-1 {
+      top: 25%;
+      right: 20%;
+    }
+    .img-2 {
+      bottom: 8%;
+      left: 35%;
+    }
+    .img-3 {
+      bottom: 10%;
+      right: 5%;
+    }
+    .img-4 {
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .hero-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-to(mobile) {
+      gap: $Gap-2;
+    }
+
+    @include respond-to(tablet) {
+      gap: $Gap-3;
+    }
+
+    @include respond-to(desktop) {
+      gap: $Gap-5;
+    }
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    img {
+      width: 1.5rem;
+      height: auto;
+    }
+  }
+}

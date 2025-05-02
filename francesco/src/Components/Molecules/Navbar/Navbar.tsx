@@ -18,26 +18,35 @@ const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
+    const rootElement = document.getElementById("root");
+
     const handleScroll = () => {
+      if (!rootElement) return;
+
       const sections = document.querySelectorAll("section");
       let currentSection = "";
+
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 70) {
+        const sectionHeight = section.clientHeight;
+        const scrollTop = rootElement.scrollTop;
+
+        if (scrollTop >= sectionTop - sectionHeight / 2) {
           currentSection = section.getAttribute("id") || "";
         }
       });
+
       setActiveSection(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    rootElement?.addEventListener("scroll", handleScroll);
 
     Events.scrollEvent.register("end", (to: string) => {
       setActiveSection(to);
     });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      rootElement?.removeEventListener("scroll", handleScroll);
       Events.scrollEvent.remove("end");
     };
   }, []);

@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// Vercel
+import { Analytics } from "@vercel/analytics/react";
+
 // Atoms
 import Cursor from "./Components/Atoms/Interaction/Cursor/Cursor";
 
@@ -24,6 +27,7 @@ function App() {
   }, []);
   return (
     <>
+      <Analytics />
       <Cursor />
       {showPreloader ? <Preloader /> : <Home />}
     </>

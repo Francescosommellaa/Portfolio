@@ -37,7 +37,7 @@ const Cursor: React.FC = () => {
     const addEventListeners = () => {
       const interactiveElements = document.querySelectorAll("a, button");
       const inputElements = document.querySelectorAll("input, textarea");
-      const textElements = document.querySelectorAll("p,span, h5, h6");
+      const textElements = document.querySelectorAll("p, h5, h6");
 
       interactiveElements.forEach((element) => {
         element.addEventListener("mouseenter", handleLinkHover);
