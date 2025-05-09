@@ -2,3 +2,72 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
+
+.faq-section {
+  padding: 2rem;
+  background-color: $BgDark;
+  color: $GrayScale--1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+
+  .title-h2-S,
+  .title-h2-M,
+  .title-h2-L {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    align-self: start;
+  }
+
+  .faq-list {
+    width: 100%;
+    .faq-item {
+      border-bottom: 1px solid $GrayScale-8;
+      margin-bottom: 0.5rem;
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        width: 100%;
+        padding: 2rem 0;
+        background: none;
+        border: none;
+        color: $GrayScale--1;
+        text-align: left;
+        transition: background-color 0.2s ease;
+
+        &:hover .faq-icon {
+          transform: rotate(180deg);
+        }
+
+        .faq-icon {
+          transition: transform 0.3s ease;
+        }
+
+        &.active .faq-icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      .faq-answer {
+        overflow: hidden;
+        padding: 0 2rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        &.open {
+          opacity: 1;
+        }
+
+        p {
+          margin: 1rem 0;
+          line-height: 1.1;
+          color: $GrayScale-4;
+        }
+      }
+    }
+  }
+}

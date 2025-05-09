@@ -3,6 +3,9 @@ import React from "react";
 // SCSS
 import "./Home.scss";
 
+//interaction
+import ScrollNavigator from "../Components/Atoms/Interaction/Scroll/ScrollNavigator";
+
 // Molecules
 import Navbar from "../Components/Molecules/Navbar/Navbar";
 import Hero from "../Components/Molecules/Hero/Hero";
@@ -14,6 +17,7 @@ import Footer from "../Components/Molecules/Footer/Footer";
 const Home: React.FC = () => {
   return (
     <>
+      <ScrollNavigator />
       <Navbar />
 
       <section id="hero" className="snap">
