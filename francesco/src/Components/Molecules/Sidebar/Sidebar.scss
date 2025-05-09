@@ -6,76 +6,103 @@
   overflow: hidden;
   height: 100vh;
 }
-.sidebar {
+
+.sidebar-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
   height: 100vh;
-  background-color: #0d0d0df1;
-  color: $GrayScale--1;
+  z-index: 900;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: translateY(-100%);
-  visibility: hidden;
-  transition: all 0.8s ease-in-out;
-  z-index: 900;
-
-  &.open {
-    transform: translateY(0%);
-    visibility: visible;
-  }
+  align-items: center;
+  background-color: $BgDark;
 
   .sidebar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: $BgDark;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1.5rem;
+    z-index: 1100;
+
+    .menu-icon {
+      background: none;
+      cursor: pointer;
+      z-index: 1100;
+
+      .menu-icon-svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 
-  .sidebar-nav {
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    background-color: #0d0d0df1;
+    color: $GrayScale--1;
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-
-    a {
-      color: $GrayScale-4;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: $GrayScale--1;
-      }
-    }
-  }
-
-  .sidebar-footer {
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
 
-    a {
-      color: $GrayScale-4;
-      transition: color 0.3s ease;
+    &.open {
+      transform: translateY(0);
+      visibility: visible;
+    }
 
-      &:hover {
-        color: $GrayScale-1;
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      a {
+        color: $GrayScale--1;
+        font-size: 1.5rem;
+        text-align: center;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $GrayScale-1;
+        }
+      }
+    }
+
+    .sidebar-footer {
+      position: absolute;
+      background: none;
+      bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      a {
+        color: $GrayScale-4;
+        font-size: 1rem;
+        text-align: center;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $GrayScale-1;
+        }
       }
     }
   }
-}
-
-// Stile del pulsante menu
-.menu-icon,
-.close-icon {
-  position: fixed;
-  top: 0.6rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  color: $GrayScale--1;
-  cursor: pointer;
-  z-index: 1100;
 }
 
 @include respond-to(tablet) {

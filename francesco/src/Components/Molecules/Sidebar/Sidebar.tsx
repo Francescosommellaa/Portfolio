@@ -11,8 +11,8 @@ import Logo from "../../Atoms/Logo/Logo";
 import SocialLinks from "../../DB/Social";
 import PageNav from "../../DB/PageNav";
 
-const menuIcon = "public/Icon/Name=Menu, Dimension=M.svg";
-const closeIcon = "/Icon/Name=Close, Dimension=M.svg";
+// Hooks
+import InlineIcon from "../../../Hooks/InlineIcon";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +32,7 @@ const Sidebar: React.FC = () => {
 
   const handleScroll = (section: string) => {
     const scrollOptions = {
+      containerId: "root",
       smooth: true,
       duration: 500,
       offset: -60,
@@ -47,23 +48,24 @@ const Sidebar: React.FC = () => {
 
   return (
     <nav className="sidebar-container" aria-label="Sidebar">
-      {/* Icona del menu */}
-      <button className="menu-icon" onClick={toggleSidebar}>
-        <img src={!isOpen ? menuIcon : closeIcon} alt="Menu Icon" />
-      </button>
+      {/* Icona del menu e logo sempre visibili */}
+      <div className="sidebar-header">
+        <Logo />
+        <button className="menu-icon" onClick={toggleSidebar}>
+          <InlineIcon
+            name={!isOpen ? "Menu" : "Close"}
+            size="M"
+            className="menu-icon-svg"
+          />
+        </button>
+      </div>
 
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-header" onClick={toggleSidebar}>
-          <Logo />
-        </div>
-
-        {/* Navigazione */}
         <nav className="sidebar-nav">
           <a onClick={() => handleScroll(`hero`)} role="button">
             <h4 className="title">HOME</h4>
           </a>
-
           {PageNav.map((page) => (
             <a
               key={page.id}

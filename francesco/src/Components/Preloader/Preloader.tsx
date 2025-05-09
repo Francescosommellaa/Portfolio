@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import "./Preloader.scss";
 
+// Hooks
+import { useSize } from "../../Hooks/useSize";
+
 const Preloader = () => {
   const [progress, setProgress] = useState(0);
+  const Size = useSize();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +30,7 @@ const Preloader = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="title-h5-L preloader__text">
+        <div className={`title-h5-${Size} preloader__text`}>
           Benvenuto nel <br />
           mio Portfolio
         </div>
