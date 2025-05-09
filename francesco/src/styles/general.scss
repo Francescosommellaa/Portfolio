@@ -13,7 +13,9 @@
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 100vh;
+  max-width: 100vw;
   scrollbar-width: none;
   -ms-overflow-style: none;
 
@@ -24,7 +26,8 @@
 
 body {
   font-family: $fontBody;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   background-color: $BgDark;
   height: 100vh;
   scrollbar-width: none;
