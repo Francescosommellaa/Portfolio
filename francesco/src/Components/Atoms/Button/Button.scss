@@ -25,6 +25,8 @@
   // Stile dell'icona
   .icon {
     display: flex;
+    align-items: center;
+    justify-content: center;
     path {
       stroke: $GrayScale-9;
     }

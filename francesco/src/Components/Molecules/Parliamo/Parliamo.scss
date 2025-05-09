@@ -2,3 +2,95 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
+
+.parliamo-section {
+  padding: 2rem;
+  background-color: $BgDark;
+  color: $GrayScale--1;
+  display: flex;
+  align-items: start;
+  width: 80%;
+  margin: 0 auto;
+
+  .title-h2-S,
+  .title-h2-M,
+  .title-h2-L {
+    font-weight: 700;
+  }
+
+  .parliamo-container {
+    display: flex;
+    width: 100%;
+    gap: 24rem;
+
+    .profile-picture {
+      .profile-img {
+        width: 480px;
+        height: 620px;
+        border-radius: $BorderRadius-5;
+        object-fit: cover;
+      }
+    }
+
+    .parliamo-form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 40%;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        .form-input,
+        .form-textarea {
+          width: 100%;
+          padding: 1rem 0.4rem;
+          margin-top: 0.4rem;
+          background: none;
+          border: none;
+          border-bottom: 1px solid $GrayScale-7;
+          color: $GrayScale--1;
+          outline: none;
+          transition: border-color 0.3s ease;
+
+          &::placeholder {
+            color: $GrayScale-6;
+          }
+
+          &:focus {
+            border-bottom-color: $GrayScale--1;
+          }
+
+          &.error {
+            border-bottom-color: red;
+          }
+        }
+
+        .form-textarea {
+          height: 100%;
+        }
+      }
+      Button {
+        width: fit-content;
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    .parliamo-container {
+      flex-direction: column;
+      gap: 1rem;
+
+      .profile-picture {
+        .profile-img {
+          width: 250px;
+        }
+      }
+
+      .parliamo-form {
+        max-width: 100%;
+      }
+    }
+  }
+}

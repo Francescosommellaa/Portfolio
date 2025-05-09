@@ -9,6 +9,7 @@ interface ButtonProps {
   text?: string;
   light?: boolean;
   withBorder?: boolean;
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
 }
 
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   iconName,
   light = false,
   withBorder = false,
+  type = "button",
   onClick = () => {},
 }) => {
   const iconRef = useRef<HTMLDivElement>(null);
@@ -49,6 +51,7 @@ const Button: React.FC<ButtonProps> = ({
   }, [iconName, size]);
   return (
     <button
+      type={type}
       className={`btn btn-${size} ${light ? "light" : ""} ${
         withBorder ? `border-${size}` : ""
       }`}
