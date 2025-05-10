@@ -3,12 +3,11 @@
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
 
-section {
+.footer {
   padding: $PaddingL;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: $Gap-5;
+  justify-content: space-between;
   width: 100%;
 
   ::selection {
@@ -16,7 +15,8 @@ section {
     color: $GrayScale--1;
   }
 
-  .text {
+  .title {
+    margin-top: 4rem;
     color: $GrayScale-10;
   }
 

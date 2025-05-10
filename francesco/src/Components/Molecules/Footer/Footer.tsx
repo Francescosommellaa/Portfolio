@@ -16,9 +16,9 @@ const Footer: React.FC = () => {
   const Size = useSize();
 
   return (
-    <section>
+    <section className="footer">
       {/* Titolo */}
-      <h1 className={`title-footerTitle-${Size} text`}>
+      <h1 className={`title title-footerTitle-${Size}`}>
         Lavoriamo <br /> Insieme
       </h1>
 
@@ -26,12 +26,12 @@ const Footer: React.FC = () => {
       <div className="contact-container">
         {/* E-mail */}
         <a
-          href="mailto:Info@francescosommella.it"
+          href="mailto:Info@francescosommella.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Button
-            text="Info@francescosommella.it"
+            text="Info@francescosommella.com"
             size={`${Size}`}
             light
             withBorder
