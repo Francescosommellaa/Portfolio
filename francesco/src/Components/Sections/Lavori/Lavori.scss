@@ -3,12 +3,12 @@
 @use "../../../styles/mixins" as *;
 
 .works-section {
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: $BgDark;
   color: $GrayScale--1;
+  overflow: hidden;
 
   .works-gallery {
     display: flex;

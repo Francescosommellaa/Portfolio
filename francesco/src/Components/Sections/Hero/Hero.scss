@@ -10,7 +10,6 @@ $heroImageSize: (
 );
 
 .hero-section {
-  position: relative;
   height: 100vh;
   background-color: $BgDark;
   display: flex;
@@ -18,9 +17,9 @@ $heroImageSize: (
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 
   .hero-header {
-    position: relative;
     z-index: 1;
 
     .text-subTitle-L,
@@ -43,63 +42,20 @@ $heroImageSize: (
       white-space: nowrap;
       overflow: hidden;
     }
-
-    @each $size, $value in $heroImageSize {
-      .hero-image-#{$size} {
-        width: $value;
-        height: auto;
-        position: absolute;
-        border-radius: $BorderRadius-3;
-        object-fit: cover;
-        z-index: 2;
-      }
-    }
-
-    // Nascondi immagini extra su mobile
-    .hide-on-mobile {
-      display: none;
-    }
-
-    // Posizioni immagini fisse
-    .img-0 {
-      top: 60%;
-      left: 10%;
-    }
-    .img-1 {
-      top: 25%;
-      right: 20%;
-    }
-    .img-2 {
-      bottom: 8%;
-      left: 35%;
-    }
-    .img-3 {
-      bottom: 10%;
-      right: 5%;
-    }
-    .img-4 {
-      top: 40%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
   .hero-icons {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-around;
     align-items: center;
+    padding: 0 2rem;
 
     @include respond-to(mobile) {
-      gap: $Gap-2;
-    }
-
-    @include respond-to(tablet) {
-      gap: $Gap-3;
-    }
-
-    @include respond-to(desktop) {
-      gap: $Gap-5;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
     }
   }
 

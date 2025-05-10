@@ -8,11 +8,13 @@ import ScrollNavigator from "../Components/Atoms/Interaction/Scroll/ScrollNaviga
 
 // Molecules
 import Navbar from "../Components/Molecules/Navbar/Navbar";
-import Hero from "../Components/Molecules/Hero/Hero";
-import Lavori from "../Components/Molecules/Lavori/Lavori";
-import Faq from "../Components/Molecules/Faq/Faq";
-import Parliamo from "../Components/Molecules/Parliamo/Parliamo";
 import Footer from "../Components/Molecules/Footer/Footer";
+
+// Sections
+import Hero from "../Components/Sections/Hero/Hero";
+import Lavori from "../Components/Sections/Lavori/Lavori";
+import Faq from "../Components/Sections/Faq/Faq";
+import Parliamo from "../Components/Sections/Parliamo/Parliamo";
 
 const Home: React.FC = () => {
   return (
@@ -20,23 +22,23 @@ const Home: React.FC = () => {
       <ScrollNavigator />
       <Navbar />
 
-      <section id="hero" className="snap">
+      <section id="hero">
         <Hero />
       </section>
 
-      <section id="lavori" className="snap">
+      <section id="lavori">
         <Lavori />
       </section>
 
-      <section id="faq" className="snap">
+      <section id="faq">
         <Faq />
       </section>
 
-      <section id="parliamo" className="snap">
+      <section id="parliamo">
         <Parliamo />
       </section>
 
-      <footer id="footer" className="snap">
+      <footer id="footer">
         <Footer />
       </footer>
     </>
