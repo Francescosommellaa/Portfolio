@@ -1,0 +1,96 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+
+.lavori {
+  padding: 4rem 0 2rem 0;
+
+  &__container {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__slides {
+    display: flex;
+    align-items: center;
+    gap: $Gap-0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+    padding-left: 50vw;
+    padding-right: 50vw;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__slide {
+    height: 28rem;
+    object-fit: cover;
+    border-radius: $BorderRadius-4;
+    transition: transform 0.3s ease-out, filter 0.3s ease;
+
+    &--active {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+
+    &--adjacent {
+      transform: scale(0.8);
+      filter: brightness(0.5);
+    }
+  }
+
+  &__dots {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    .lavori__dot {
+      width: 0.2rem;
+      height: 1.6rem;
+      background-color: $GrayScale-4;
+      margin: 0 0.6rem;
+      transition: all 0.3s ease;
+      border-radius: $BorderRadius-4;
+
+      &:hover {
+        background-color: $GrayScale-0;
+        height: 2rem;
+      }
+
+      &.active {
+        background-color: $BrandPrimary-6;
+        height: 3.2rem;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $Gap-0;
+
+    .title {
+      @include uppercase;
+    }
+
+    .services {
+      color: $GrayScale-6;
+    }
+
+    .year {
+      color: $GrayScale-6;
+    }
+  }
+}
