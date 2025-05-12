@@ -14,7 +14,7 @@ const InlineIcon: React.FC<InlineIconProps> = ({
   const iconRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const path = `/Icon/Name=${name}, Dimension=${size}.svg`;
+    const path = `assets/Icon/Name=${name}, Dimension=${size}.svg`;
 
     fetch(path)
       .then((res) =>

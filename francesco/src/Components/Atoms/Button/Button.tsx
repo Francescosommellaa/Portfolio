@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({
 
   useEffect(() => {
     if (iconName) {
-      const iconPath = `/Icon/Name=${iconName}, Dimension=${size}.svg`;
+      const iconPath = `assets/Icon/Name=${iconName}, Dimension=${size}.svg`;
 
       fetch(iconPath)
         .then((response) => {

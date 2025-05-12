@@ -14,23 +14,35 @@ const Works: React.FC = React.memo(() => {
 
   // Funzione per centrare l'elemento attivo
   useEffect(() => {
-    if (sliderRef.current) {
-      const activeSlide = sliderRef.current.children[
-        activeIndex
-      ] as HTMLElement;
-      const sliderWidth = sliderRef.current.clientWidth;
-      const slideWidth = activeSlide.clientWidth;
-
-      // Calcolo offset per il centraggio
-      const offset = activeSlide.offsetLeft - sliderWidth / 2 + slideWidth / 2;
-
-      // Garantire che lo scroll non vada oltre i limiti
-      sliderRef.current.scrollTo({
-        left: offset,
-        behavior: "smooth",
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const newIndex = parseInt(
+            entry.target.getAttribute("data-index") || "0",
+            10
+          );
+          setActiveIndex(newIndex);
+        }
       });
-    }
-  }, [activeIndex]);
+    };
+
+    const observerOptions = {
+      root: sliderRef.current,
+      rootMargin: "0px",
+      threshold: 0.6,
+    };
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
+    const slides = sliderRef.current?.querySelectorAll(".lavori__slide");
+    slides?.forEach((slide) => observer.observe(slide));
+
+    return () => {
+      slides?.forEach((slide) => observer.unobserve(slide));
+    };
+  }, []);
 
   return (
     <section className="lavori" id="lavori">
@@ -39,7 +51,8 @@ const Works: React.FC = React.memo(() => {
           {Projects.map((project, idx) => (
             <img
               key={idx}
-              src={`public/Project-img/${project.projectImg}`}
+              data-index={idx}
+              src={`public/assets/Project-img/${project.projectImg}`}
               alt={project.title}
               className={`lavori__slide ${
                 idx === activeIndex
