@@ -10,8 +10,26 @@ const Cursor: React.FC = () => {
   const [isInput, setIsInput] = useState(false);
   const [isText, setIsText] = useState(false);
   const [textHeight, setTextHeight] = useState(24);
+  const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
+    // Rileva se il dispositivo è touch
+    const checkTouchDevice = () => {
+      const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+      setIsTouch(isTouchDevice);
+    };
+
+    checkTouchDevice();
+    window.addEventListener("resize", checkTouchDevice);
+
+    return () => {
+      window.removeEventListener("resize", checkTouchDevice);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isTouch) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
@@ -68,7 +86,7 @@ const Cursor: React.FC = () => {
       window.removeEventListener("mouseleave", handleMouseLeave);
       observer.disconnect();
     };
-  }, []);
+  }, [isTouch]);
 
   useEffect(() => {
     setIsAbsorbed(false);
@@ -76,11 +94,13 @@ const Cursor: React.FC = () => {
     setIsText(false);
   }, []);
 
+  if (isTouch) return null;
+
   return (
     <div
       className={`custom-cursor ${isVisible ? "visible" : "hidden"} ${
         isAbsorbed ? "absorbed" : ""
-      }  ${isInput ? "input-cursor" : ""} ${isText ? "text-cursor" : ""}`}
+      } ${isInput ? "input-cursor" : ""} ${isText ? "text-cursor" : ""}`}
       style={{
         left: `${cursorPosition.x}px`,
         top: `${cursorPosition.y}px`,

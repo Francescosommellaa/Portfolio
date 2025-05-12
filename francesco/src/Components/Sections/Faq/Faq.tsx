@@ -20,12 +20,12 @@ const Faq: React.FC = () => {
 
   return (
     <section className="faq-section">
-      <h2 className={`title-h2-${Size}`}>FAQ</h2>
-      <div className="faq-list">
+      <h2 className={`title-sectionTitle-${Size}`}>FAQ</h2>
+      <div className="faq-section__list">
         {FaqList.map((faq, index) => (
-          <div key={index} className="faq-item">
+          <div key={index} className="faq-section__item">
             <button
-              className={`faq-question title-h5-${Size}`}
+              className={`faq-section__question title-h6-${Size}`}
               onClick={() => toggleFaq(index)}
             >
               {faq.question}
@@ -34,17 +34,21 @@ const Faq: React.FC = () => {
                   openIndex === index ? "Arrow-min-bottom" : "Arrow-min-top"
                 }
                 size="M"
-                className="faq-icon"
+                className="faq-section__icon"
               />
             </button>
             <div
-              className={`faq-answer ${openIndex === index ? "open" : ""}`}
+              className={`faq-section__answer ${
+                openIndex === index ? "faq-section__answer--open" : ""
+              }`}
               style={{
                 maxHeight: openIndex === index ? "100px" : "0px",
                 transition: "max-height 0.3s ease-in-out",
               }}
             >
-              <p className={`text-paragraphSmall-${Size}`}>{faq.answer}</p>
+              <p className={`faq-section__text text-paragraphSmall-${Size}`}>
+                {faq.answer}
+              </p>
             </div>
           </div>
         ))}
