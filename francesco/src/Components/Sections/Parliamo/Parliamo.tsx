@@ -20,7 +20,6 @@ const Parliamo: React.FC = () => {
     email: "",
     message: "",
   });
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submitted, setSubmitted] = useState(false);
 
   // Gestione degli input
@@ -43,7 +42,6 @@ const Parliamo: React.FC = () => {
     if (!formData.message.trim())
       newErrors.message = "Il messaggio è obbligatorio.";
 
-    setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
@@ -55,22 +53,19 @@ const Parliamo: React.FC = () => {
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 3000);
       setFormData({ name: "", phone: "", email: "", message: "" });
-      setErrors({});
     }
   };
 
   return (
     <section className="parliamo-section">
-      <h2 className={`title-h2-${Size}`}>PARLIAMO</h2>
+      <h2 className={`title-sectionTitle-${Size}`}>PARLIAMO</h2>
       <div className="parliamo-container">
         {/* Immagine del profilo */}
-        <div className="profile-picture">
-          <img
-            src="/Me/Me.png"
-            alt="Francesco Sommella"
-            className="profile-img"
-          />
-        </div>
+        <img
+          src="assets/Me/Me.png"
+          alt="Francesco Sommella"
+          className="profile-img"
+        />
 
         {/* Form */}
         <form className="parliamo-form" onSubmit={handleSubmit}>
@@ -83,9 +78,7 @@ const Parliamo: React.FC = () => {
                   placeholder={field.name}
                   value={formData[field.id as keyof typeof formData]}
                   onChange={handleChange}
-                  className={`form-input text-paragraphSmall-${Size} ${
-                    errors[field.id] ? "error" : ""
-                  }`}
+                  className={`form-input text-paragraphSmall-${Size}`}
                 />
               ) : (
                 <textarea
@@ -93,20 +86,15 @@ const Parliamo: React.FC = () => {
                   placeholder={field.name}
                   value={formData[field.id as keyof typeof formData]}
                   onChange={handleChange}
-                  className={`form-textarea text-paragraphSmall-${Size} ${
-                    errors[field.id] ? "error" : ""
-                  }`}
+                  className={`form-textarea text-paragraphSmall-${Size}`}
                   rows={4}
                 />
-              )}
-              {errors[field.id] && (
-                <p className="error-message">{errors[field.id]}</p>
               )}
             </div>
           ))}
           <Button
-            text={`${submitted ? "Inviato!" : "Invia Messaggio"}`}
-            size="M"
+            text={`${submitted ? "Inviato!" : "INVIA MESSAGGIO"}`}
+            size="S"
             iconName="Send"
             type="submit"
           />
