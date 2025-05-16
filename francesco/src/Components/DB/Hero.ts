@@ -1,5 +1,5 @@
 export const heroContent = {
-  role: "UX/UI Designer <br/> Front-end Developer",
+  role: "Code / Design / UX / UI",
   name: {
     first: "FRANCESCO",
     last: "SOMMELLA",

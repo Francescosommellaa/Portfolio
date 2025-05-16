@@ -10,178 +10,127 @@ $fontRules: (
     heroTitle: (
       L: (
         8rem,
-        800,
-        auto,
-      ),
-      M: (
-        6.375rem,
         700,
-        auto,
-      ),
-      S: (
-        3.25rem,
-        700,
-        auto,
-      ),
-    ),
-    sectionTitle: (
-      L: (
-        6rem,
-        700,
-        auto,
-      ),
-      M: (
-        5.25rem,
-        700,
-        auto,
-      ),
-      S: (
-        3.25rem,
-        700,
-        auto,
-      ),
-    ),
-    footerTitle: (
-      L: (
-        8rem,
-        700,
-        auto,
+        80%,
       ),
       M: (
         6rem,
         700,
-        auto,
+        80%,
       ),
       S: (
-        4.75rem,
+        3.25rem,
         700,
-        auto,
-      ),
-    ),
-    socialLink: (
-      L: (
-        1.5rem,
-        300,
-        auto,
-      ),
-      M: (
-        1rem,
-        300,
-        auto,
-      ),
-      S: (
-        0.75rem,
-        300,
-        auto,
+        80%,
       ),
     ),
     h1: (
       L: (
-        8rem,
-        700,
+        6rem,
+        600,
         auto,
       ),
       M: (
-        6rem,
-        700,
+        5rem,
+        600,
         auto,
       ),
       S: (
-        4.5rem,
-        700,
+        4rem,
+        600,
         auto,
       ),
     ),
     h2: (
       L: (
-        6rem,
-        300,
+        5.5rem,
+        600,
         auto,
       ),
       M: (
         4.5rem,
-        300,
+        600,
         auto,
       ),
       S: (
         3.5rem,
-        300,
+        600,
         auto,
       ),
     ),
     h3: (
       L: (
         4.5rem,
-        300,
+        600,
         auto,
       ),
       M: (
         3.5rem,
-        300,
+        600,
         auto,
       ),
       S: (
-        2.75rem,
-        300,
+        2.5rem,
+        600,
         auto,
       ),
     ),
     h4: (
       L: (
         3.5rem,
-        500,
+        600,
         auto,
       ),
       M: (
-        2.75rem,
-        500,
+        2.5rem,
+        600,
         auto,
       ),
       S: (
-        2.25rem,
-        500,
+        2rem,
+        600,
         auto,
       ),
     ),
     h5: (
       L: (
-        2.75rem,
-        500,
+        2.5rem,
+        600,
         auto,
       ),
       M: (
-        2.25rem,
-        500,
+        2rem,
+        600,
         auto,
       ),
       S: (
-        1.875rem,
-        500,
+        1.5rem,
+        600,
         auto,
       ),
     ),
     h6: (
       L: (
-        2rem,
-        500,
+        1.5rem,
+        600,
         auto,
       ),
       M: (
-        1.5rem,
-        500,
+        1.25rem,
+        600,
         auto,
       ),
       S: (
-        1.2rem,
-        500,
+        1rem,
+        600,
         auto,
       ),
     ),
   ),
   text: (
-    subTitle: (
+    paragraph: (
       L: (
-        1.275rem,
+        1.5rem,
         500,
         auto,
       ),
@@ -191,59 +140,25 @@ $fontRules: (
         auto,
       ),
       S: (
-        0.825rem,
+        1rem,
         500,
         auto,
       ),
     ),
-    paragraphBig: (
+    smallText: (
       L: (
-        1.2rem,
+        1.6rem,
         400,
         auto,
       ),
       M: (
-        1.125rem,
+        1.25rem,
         400,
         auto,
       ),
       S: (
         1rem,
         400,
-        auto,
-      ),
-    ),
-    paragraphSmall: (
-      L: (
-        1.125rem,
-        400,
-        auto,
-      ),
-      M: (
-        1rem,
-        400,
-        auto,
-      ),
-      S: (
-        0.875rem,
-        400,
-        auto,
-      ),
-    ),
-    placeholder: (
-      L: (
-        1rem,
-        500,
-        auto,
-      ),
-      M: (
-        0.875rem,
-        500,
-        auto,
-      ),
-      S: (
-        0.875rem,
-        500,
         auto,
       ),
     ),

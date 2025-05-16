@@ -11,60 +11,44 @@ $heroImageSize: (
 
 .hero-section {
   height: 100vh;
-  background-color: $BgDark;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: relative;
+  gap: $Gap-7;
 
   .hero-header {
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $Gap-5;
 
-    .text-subTitle-L,
-    .text-subTitle-M,
-    .text-subTitle-S {
-      color: $GrayScale-2;
+    .sommary {
+      @include uppercase;
+      color: $BrandPrimary-4;
       margin-bottom: 0.2rem;
     }
 
-    .title-heroTitle-L,
-    .title-heroTitle-M,
-    .title-heroTitle-S {
-      font-size: clamp(2rem, 12vw, 15rem);
+    .title {
       display: flex;
       flex-direction: column;
-      align-items: start;
+      align-items: center;
       justify-content: center;
-      width: 100%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
     }
   }
 
   .hero-icons {
     display: flex;
-    width: 100%;
     justify-content: space-around;
     align-items: center;
-    padding: 0 2rem;
+    gap: $Gap-6;
 
     @include respond-to(mobile) {
-      padding: 0;
-      flex-wrap: wrap;
+      gap: $Gap-4;
       justify-content: center;
       gap: 2rem;
-    }
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem;
-    img {
-      width: 1.5rem;
-      height: auto;
     }
   }
 }

@@ -16,12 +16,9 @@ const Hero: React.FC = () => {
   return (
     <section className="hero-section">
       <div className="hero-header">
-        <p
-          className={`text-subTitle-${Size}`}
-          dangerouslySetInnerHTML={{ __html: heroContent.role }}
-        />
+        <p className={`sommary title-h6-${Size}`}>{heroContent.role}</p>
 
-        <h1 className={`title-heroTitle-${Size}`}>
+        <h1 className={`title title-heroTitle-${Size}`}>
           <span className="name-first">{heroContent.name.first}</span>
           <span className="name-last">{heroContent.name.last}</span>
         </h1>
@@ -31,10 +28,6 @@ const Hero: React.FC = () => {
         {heroContent.icons.map((icon, idx) => (
           <InlineIcon key={idx} name={icon} size={`${Size}`} />
         ))}
-      </div>
-
-      <div className="hero-scroll">
-        <InlineIcon name="scroll" size="S" />
       </div>
     </section>
   );

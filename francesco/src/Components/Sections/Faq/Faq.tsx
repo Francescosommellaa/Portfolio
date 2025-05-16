@@ -20,7 +20,7 @@ const Faq: React.FC = () => {
 
   return (
     <section className="faq-section">
-      <h2 className={`title-sectionTitle-${Size}`}>FAQ</h2>
+      <h2 className={`title-h1-${Size}`}>FAQ</h2>
       <div className="faq-section__list">
         {FaqList.map((faq, index) => (
           <div key={index} className="faq-section__item">
