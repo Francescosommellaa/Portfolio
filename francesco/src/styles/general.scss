@@ -9,33 +9,11 @@
   cursor: none;
 }
 
-#root {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 100vh;
-  width: 100vw;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 body {
   font-family: $fontBody;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
   background-color: $BgDark;
   scrollbar-width: none;
-  overflow: hidden;
-
-  ::selection {
-    background-color: $BgLight;
-    color: $GrayScale-10;
-  }
 
   button {
     border: none;
@@ -44,7 +22,6 @@ body {
   a {
     text-decoration: none;
     color: $GrayScale-6;
-    margin: 0 0.8rem 0 0;
   }
 
   li {

@@ -20,7 +20,7 @@ const Projects: {
             description: "Un'applicazione Vue.js ispirata a WhatsApp per inviare messaggi.",
             descriptionTwo: "Un'applicazione Vue.js ispirata a WhatsApp per inviare messaggi.",
             projectCover: "VueBoolzapp",
-            projectImg: "Hero-1.jpg",
+            projectImg: "Amiuni.jpg",
         },
         {
             slug: "element-gaming",
@@ -32,7 +32,7 @@ const Projects: {
             description: "Una webapp per lo streaming di videogiochi.",
             descriptionTwo: "Un'applicazione Vue.js ispirata a WhatsApp per inviare messaggi.",
             projectCover: "VueBoolzapp",
-            projectImg: "Hero-2.jpg",
+            projectImg: "ElementGaming.jpg",
         },
         {
             slug: "morra-cinese",
@@ -44,7 +44,7 @@ const Projects: {
             description: "Porta l'iconica sfida della Morra Cinese a un livello completamente nuovo! Con un'estetica audace e futuristica ispirata allo stile energico di Rocket League.",
             descriptionTwo: "Un'applicazione Vue.js ispirata a WhatsApp per inviare messaggi.",
             projectCover: "MorraCinese",
-            projectImg: "Hero-3.jpg",
+            projectImg: "Portfolio.jpg",
         },
         {
             slug: "todo-list",
@@ -56,7 +56,7 @@ const Projects: {
             description: "Un'app di gestione delle attività sviluppata con Vue.js per organizzare e monitorare le attività quotidiane.",
             descriptionTwo: "Un'applicazione Vue.js ispirata a WhatsApp per inviare messaggi.",
             projectCover: "VueTodolist",
-            projectImg: "Hero-4.jpg",
+            projectImg: "Qdk.jpg",
         },
     ];
 

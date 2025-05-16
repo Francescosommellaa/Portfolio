@@ -3,7 +3,7 @@
 
 $BpDesktop: 1025px;
 $BpTablet: 1024px;
-$BpMobile: 767px;
+$BpMobile: 700px;
 
 // ====================
 // Background Colors
@@ -14,35 +14,18 @@ $BgDark: #0d0d0d;
 // ====================
 // BrandPrimary
 
-$BrandPrimary-0: #f4fafb;
-$BrandPrimary-1: #e9f5f7;
-$BrandPrimary-1-5: #deeff3;
-$BrandPrimary-2: #d3eaef;
-$BrandPrimary-3: #c8e5eb;
-$BrandPrimary-4: #bde0e7;
-$BrandPrimary-5: #b2dbe3;
-$BrandPrimary-6: #a8d5df;
-$BrandPrimary-7: #9dd0db;
-$BrandPrimary-8: #92cbd7;
-$BrandPrimary-8-5: #87c6d3;
-$BrandPrimary-9: #7cc0cf;
-$BrandPrimary-9-5: #71bbcb;
-$BrandPrimary-10: #66b6c7;
-
-// BrandSecondary
-
-$BrandSecondary-0: #e6f6f4;
-$BrandSecondary-1: #ccece9;
-$BrandSecondary-1-5: #b3e3dd;
-$BrandSecondary-2: #99d9d2;
-$BrandSecondary-3: #80d0c7;
-$BrandSecondary-4: #70b6ae;
-$BrandSecondary-5: #609c95;
-$BrandSecondary-6: #50827c;
-$BrandSecondary-7: #406864;
-$BrandSecondary-8: #304e4b;
-$BrandSecondary-9: #203432;
-$BrandSecondary-10: #1a2a28;
+$BrandPrimary-0: #e6f6f4;
+$BrandPrimary-1: #ccece9;
+$BrandPrimary-1-5: #b3e3dd;
+$BrandPrimary-2: #99d9d2;
+$BrandPrimary-3: #80d0c7;
+$BrandPrimary-4: #70b6ae;
+$BrandPrimary-5: #609c95;
+$BrandPrimary-6: #50827c;
+$BrandPrimary-7: #406864;
+$BrandPrimary-8: #304e4b;
+$BrandPrimary-9: #203432;
+$BrandPrimary-10: #1a2a28;
 
 // ====================
 // GrayScale
@@ -63,63 +46,51 @@ $GrayScale-9: #2e2e2e;
 $GrayScale-10: #1e1e1e;
 
 // ====================
-// BgCard
-
-$BgCardPurple: #83b4f7;
-$BgCardGreen: #81c995;
-$BgCardYellow: #ffd96a;
-$BgCardRed: #f28b82;
-
-// ====================
 // BorderRadius
 
-$BorderRadius-1: 0.125rem;
-$BorderRadius-2: 0.25rem;
-$BorderRadius-3: 0.5rem;
-$BorderRadius-4: 0.75rem;
-$BorderRadius-5: 1rem;
-$CircleRadius: 60rem;
+$BorderRadius-0: 0.25rem;
+$BorderRadius-1: 0.5rem;
+$BorderRadius-2: 0.75rem;
+$BorderRadius-3: 1rem;
+$BorderRadius-4: 1.25rem;
+$BorderRadius-5: 1.5rem;
 
 // ====================
 // Padding
-$PaddingL: 1rem 5rem;
-$PaddingS: 0.5rem 1.5rem;
+$PaddingL: 0 5rem;
+$PaddingM: 0 2.5rem;
+$PaddingS: 0 1.5rem;
 
 // ====================
 // Gap
 
-$Gap-0: 0.75rem; // 12px
-$Gap-1: 1.5rem; // 24px
-$Gap-2: 2.5rem; // 40px
-$Gap-3: 3.75rem; // 60px
-$Gap-4: 5rem; // 80px
-$Gap-5: 7.5rem; // 120px
-$Gap-6: 11.25; // 180px
-
-// ====================
-// Opacity
-
-$Opacity-80: 0.8;
-$Opacity-40: 0.4;
+$Gap-0: 0.25rem;
+$Gap-1: 0.5rem;
+$Gap-2: 1rem;
+$Gap-3: 1.5rem;
+$Gap-4: 2rem;
+$Gap-5: 2.5rem;
+$Gap-6: 3.75rem;
+$Gap-7: 5rem;
 
 // ====================
 // Buttons
 $btn-font-size: (
   S: 0.875rem,
-  M: 1.625rem,
-  L: 2.125rem,
+  M: 1.125rem,
+  L: 1.5rem,
 );
 
 $btn-border-weight: (
-  S: 0.075rem solid $GrayScale--1,
-  M: 0.1rem solid $GrayScale--1,
-  L: 0.125rem solid $GrayScale--1,
+  S: 0.1rem solid $GrayScale--1,
+  M: 0.125rem solid $GrayScale--1,
+  L: 0.15rem solid $GrayScale--1,
 );
 
 $btn-padding: (
-  S: 0.6rem 1.6rem,
-  M: 1rem 2rem,
-  L: 1.25rem 2.5rem,
+  S: 0.5rem 1rem,
+  M: 1rem 1.5rem,
+  L: 1.125rem 2rem,
 );
 
-$btn-font-weight: 500;
+$btn-font-weight: 700;
