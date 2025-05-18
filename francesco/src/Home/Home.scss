@@ -1,11 +1,21 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+@use "../styles/general" as *;
+
 section {
-  color: white;
-  scroll-snap-align: start;
+  padding: $PaddingL;
+  color: $GrayScale--1;
+  height: 100vh;
+
+  @include respond-to(mobile) {
+    padding: $PaddingS;
+  }
+
+  @include respond-to(tablet) {
+    padding: $PaddingM;
+  }
 }
 
 footer {
-  background-color: white;
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  background-color: $BgLight;
 }

@@ -4,21 +4,11 @@
 @use "../../../styles/typography" as *;
 
 .footer {
-  padding: $PaddingL;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-
-  ::selection {
-    background-color: $BgDark;
-    color: $GrayScale--1;
-  }
-
-  .title {
-    margin-top: 4rem;
-    color: $GrayScale-10;
-  }
+  color: $GrayScale-10;
 
   .contact-container {
     display: flex;
@@ -28,16 +18,15 @@
   .info-container {
     display: flex;
     justify-content: space-between;
-    align-items: last baseline;
 
     .social-container {
       display: flex;
       flex-direction: column;
-      gap: $Gap-0;
+      gap: $Gap-1;
 
       .social {
         display: flex;
-        gap: $Gap-1;
+        gap: $Gap-2;
         @include uppercase;
 
         a:hover {
@@ -52,8 +41,6 @@
   }
 
   @include respond-to(mobile) {
-    padding: $PaddingS;
-
     .contact-container {
       flex-wrap: wrap;
       align-items: start;

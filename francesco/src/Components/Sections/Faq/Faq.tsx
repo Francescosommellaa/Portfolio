@@ -3,12 +3,14 @@ import React, { useState } from "react";
 // SCSS
 import "./Faq.scss";
 
+// Atoms
+import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
+
 //DB
 import FaqList from "../../DB/FaqList";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
-import InlineIcon from "../../../Hooks/InlineIcon";
 
 const Faq: React.FC = () => {
   const Size = useSize();
@@ -30,11 +32,9 @@ const Faq: React.FC = () => {
             >
               {faq.question}
               <InlineIcon
-                name={
-                  openIndex === index ? "Arrow-min-bottom" : "Arrow-min-top"
-                }
+                folder="Icon"
+                name={openIndex === index ? "arrow-min-down" : "arrow-min-up"}
                 size="M"
-                className="faq-section__icon"
               />
             </button>
             <div
@@ -46,7 +46,7 @@ const Faq: React.FC = () => {
                 transition: "max-height 0.3s ease-in-out",
               }}
             >
-              <p className={`faq-section__text text-paragraphSmall-${Size}`}>
+              <p className={`faq-section__text text-smallText-${Size}`}>
                 {faq.answer}
               </p>
             </div>

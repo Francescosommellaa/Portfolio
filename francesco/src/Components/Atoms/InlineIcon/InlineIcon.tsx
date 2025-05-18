@@ -1,20 +1,22 @@
 import React, { useEffect, useRef } from "react";
 
 interface InlineIconProps {
+  folder: string;
   name: string;
-  size: "S" | "M" | "L";
+  size: "S" | "M" | "L" | "X";
   className?: string;
 }
 
 const InlineIcon: React.FC<InlineIconProps> = ({
+  folder,
   name,
   size,
-  className = "",
+  className,
 }) => {
   const iconRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const path = `assets/Icon/Name=${name}, Dimension=${size}.svg`;
+    const path = `assets/${folder}/Name=${name}, Dimension=${size}.svg`;
 
     fetch(path)
       .then((res) =>
@@ -24,7 +26,7 @@ const InlineIcon: React.FC<InlineIconProps> = ({
         if (iconRef.current) iconRef.current.innerHTML = svg;
       })
       .catch((err) => console.error(err));
-  }, [name, size]);
+  }, [className, folder, name, size]);
 
   return (
     <div

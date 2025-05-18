@@ -12,7 +12,7 @@
   align-items: center;
   gap: $Gap-0;
   font-weight: $btn-font-weight;
-  border-radius: $BorderRadius-3;
+  border-radius: $BorderRadius-1;
 
   // Gestione delle dimensioni
   @each $size in (S, M, L) {

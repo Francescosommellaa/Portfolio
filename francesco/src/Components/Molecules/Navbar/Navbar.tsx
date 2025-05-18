@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Events, scroller } from "react-scroll";
+import React, { useState, useEffect } from "react";
 
 // SCSS
 import "./Navbar.scss";
@@ -15,70 +14,59 @@ import Sidebar from "../../Molecules/Sidebar/Sidebar";
 import PageNav from "../../DB/PageNav";
 
 const Navbar: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>("");
+  const [activeSection, setActiveSection] = useState<string>("hero");
 
-  useEffect(() => {
-    const rootElement = document.getElementById("root");
-
-    const handleScroll = () => {
-      if (!rootElement) return;
-
-      const sections = document.querySelectorAll("section");
-      let currentSection = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const scrollTop = rootElement.scrollTop;
-
-        if (scrollTop >= sectionTop - sectionHeight / 2) {
-          currentSection = section.getAttribute("id") || "";
-        }
-      });
-
-      setActiveSection(currentSection);
-    };
-
-    rootElement?.addEventListener("scroll", handleScroll);
-
-    Events.scrollEvent.register("end", (to: string) => {
-      setActiveSection(to);
-    });
-
-    return () => {
-      rootElement?.removeEventListener("scroll", handleScroll);
-      Events.scrollEvent.remove("end");
-    };
-  }, []);
-
+  // Funzione per gestire lo scroll alla sezione
   const handleScroll = (section: string) => {
-    const scrollOptions = {
-      containerId: "root",
-      smooth: true,
-      duration: 500,
-      offset: -60,
-    };
-
-    if (location.pathname !== "/") {
-      setTimeout(() => scroller.scrollTo(section, scrollOptions), 100);
-    } else {
-      scroller.scrollTo(section, scrollOptions);
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveSection(section);
     }
   };
 
+  // Funzione per aggiornare la sezione attiva durante lo scroll
+  const handleScrollSpy = () => {
+    const sections = ["hero", ...PageNav.map((page) => page.section)];
+    const scrollPosition = window.scrollY;
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+
+        if (
+          scrollPosition >= offsetTop - offsetHeight * 0.5 &&
+          scrollPosition < offsetTop + offsetHeight * 0.5
+        ) {
+          setActiveSection(section);
+        }
+      }
+    });
+  };
+
+  // Aggiunge l'event listener allo scroll
+  useEffect(() => {
+    window.addEventListener("scroll", handleScrollSpy);
+    return () => {
+      window.removeEventListener("scroll", handleScrollSpy);
+    };
+  }, []);
+
   return (
     <nav className="navbar">
-      <Logo />
-
       <div className="nav-links-wrapper">
+        <Logo />
+
         <ul className="nav-links">
           {PageNav.map((page) => (
             <li key={page.id}>
               <a
-                className={`title text-paragraphSmall-S nav-link ${
-                  activeSection === `${page.section}` ? "active" : ""
+                className={`text-smallText-M nav-link ${
+                  activeSection === page.section ? "active" : ""
                 }`}
-                onClick={() => handleScroll(`${page.section}`)}
+                onClick={() => handleScroll(page.section)}
               >
                 {page.name}
               </a>
@@ -86,7 +74,7 @@ const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        <Button text="SCARICA CV" size="S" iconName="Download" />
+        <Button text="SCARICA CV" size="S" iconName="download" />
       </div>
 
       <Sidebar />

@@ -3,12 +3,6 @@
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
 
-$heroImageSize: (
-  L: 80px,
-  M: 60px,
-  S: 40px,
-);
-
 .hero-section {
   height: 100vh;
   display: flex;
@@ -16,6 +10,62 @@ $heroImageSize: (
   justify-content: center;
   align-items: center;
   gap: $Gap-7;
+  position: relative;
+
+  .bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0.05;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+
+    @include respond-to(mobile) {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    svg {
+      width: 72vw;
+      height: auto;
+      fill: $GrayScale-2;
+
+      @include respond-to(mobile) {
+        width: auto;
+        height: 60vw;
+      }
+    }
+  }
+
+  .social-icons {
+    position: absolute;
+    top: 50% translateY(-50%);
+    left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $Gap-3;
+
+    @include respond-to(mobile) {
+      display: none;
+    }
+
+    @include respond-to(tablet) {
+      left: 40px;
+    }
+
+    .inline-icon {
+      svg {
+        fill: $GrayScale-2;
+      }
+    }
+
+    & a :hover {
+      svg {
+        fill: $GrayScale--1;
+      }
+    }
+  }
 
   .hero-header {
     z-index: 1;
@@ -46,9 +96,8 @@ $heroImageSize: (
     gap: $Gap-6;
 
     @include respond-to(mobile) {
-      gap: $Gap-4;
+      gap: $Gap-2;
       justify-content: center;
-      gap: 2rem;
     }
   }
 }

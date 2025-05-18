@@ -9,7 +9,6 @@ const Cursor: React.FC = () => {
   const [isAbsorbed, setIsAbsorbed] = useState(false);
   const [isInput, setIsInput] = useState(false);
   const [isText, setIsText] = useState(false);
-  const [textHeight, setTextHeight] = useState(24);
   const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
@@ -43,19 +42,10 @@ const Cursor: React.FC = () => {
     const handleLinkLeave = () => setIsAbsorbed(false);
     const handleInputHover = () => setIsInput(true);
     const handleInputLeave = () => setIsInput(false);
-    const handleTextHover = (e: Event) => {
-      setIsText(true);
-      const element = e.target as HTMLElement;
-      const computedStyle = window.getComputedStyle(element);
-      const lineHeight = parseFloat(computedStyle.lineHeight);
-      setTextHeight(lineHeight);
-    };
-    const handleTextLeave = () => setIsText(false);
 
     const addEventListeners = () => {
       const interactiveElements = document.querySelectorAll("a, button");
       const inputElements = document.querySelectorAll("input, textarea");
-      const textElements = document.querySelectorAll("p, h5, h6");
 
       interactiveElements.forEach((element) => {
         element.addEventListener("mouseenter", handleLinkHover);
@@ -65,11 +55,6 @@ const Cursor: React.FC = () => {
       inputElements.forEach((element) => {
         element.addEventListener("mouseenter", handleInputHover);
         element.addEventListener("mouseleave", handleInputLeave);
-      });
-
-      textElements.forEach((element) => {
-        element.addEventListener("mouseenter", handleTextHover);
-        element.addEventListener("mouseleave", handleTextLeave);
       });
     };
 
@@ -104,7 +89,6 @@ const Cursor: React.FC = () => {
       style={{
         left: `${cursorPosition.x}px`,
         top: `${cursorPosition.y}px`,
-        height: isText ? `${textHeight}px` : undefined,
       }}
     />
   );

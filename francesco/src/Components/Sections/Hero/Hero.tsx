@@ -5,16 +5,24 @@ import "./Hero.scss";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
-import InlineIcon from "../../../Hooks/InlineIcon";
+import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
 
 //DB
 import { heroContent } from "../../DB/Hero";
+import SocialLinks from "../../DB/Social";
 
 const Hero: React.FC = () => {
   const Size = useSize();
 
   return (
     <section className="hero-section">
+      <InlineIcon
+        className="bg-icon"
+        folder="F-Icon"
+        name="f-icon-transparent"
+        size={`X`}
+      />
+
       <div className="hero-header">
         <p className={`sommary title-h6-${Size}`}>{heroContent.role}</p>
 
@@ -26,7 +34,20 @@ const Hero: React.FC = () => {
 
       <div className={`hero-icons`}>
         {heroContent.icons.map((icon, idx) => (
-          <InlineIcon key={idx} name={icon} size={`${Size}`} />
+          <InlineIcon key={idx} folder="Icon" name={icon} size={`${Size}`} />
+        ))}
+      </div>
+
+      <div className="social-icons">
+        {SocialLinks.map((social, idx) => (
+          <a
+            href={social.link}
+            key={idx}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InlineIcon folder="Icon" name={social.name} size={`${Size}`} />
+          </a>
         ))}
       </div>
     </section>

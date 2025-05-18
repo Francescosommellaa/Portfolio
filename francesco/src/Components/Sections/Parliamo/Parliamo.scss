@@ -1,12 +1,9 @@
 @use "../../../styles/general" as *;
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
-@use "../../../styles/typography" as *;
 
 .parliamo-section {
   padding: 2rem;
-  background-color: $BgDark;
-  color: $GrayScale--1;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -36,7 +33,6 @@
       @include respond-to(mobile) {
         width: 100%;
         height: 100px;
-        margin-bottom: 1rem;
       }
 
       @include respond-to(tablet) {
@@ -62,8 +58,6 @@
         .form-input,
         .form-textarea {
           width: 100%;
-          padding: 1rem 0.4rem;
-          margin-top: 0.4rem;
           background: none;
           border: none;
           border-bottom: 1px solid $GrayScale-7;

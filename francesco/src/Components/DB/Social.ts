@@ -4,12 +4,16 @@ const SocialLinks: { link: string, name: string }[] = [
         name: "linkedin",
     },
     {
-        link: "https://www.behance.net/fsommella",
-        name: "Behance",
+        link: "https://www.behance.net/francescosommellaa",
+        name: "behance",
     },
     {
         link: "https://github.com/Francescosommellaa",
-        name: "GitHub",
+        name: "github",
+    },
+    {
+        link: "https://github.com/Francescosommellaa",
+        name: "instagram",
     },
 
 ]

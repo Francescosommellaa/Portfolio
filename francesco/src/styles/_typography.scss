@@ -112,17 +112,17 @@ $fontRules: (
     h6: (
       L: (
         1.5rem,
-        600,
+        500,
         auto,
       ),
       M: (
         1.25rem,
-        600,
+        500,
         auto,
       ),
       S: (
         1rem,
-        600,
+        500,
         auto,
       ),
     ),
@@ -147,17 +147,17 @@ $fontRules: (
     ),
     smallText: (
       L: (
-        1.6rem,
-        400,
-        auto,
-      ),
-      M: (
         1.25rem,
         400,
         auto,
       ),
-      S: (
+      M: (
         1rem,
+        400,
+        auto,
+      ),
+      S: (
+        0.75rem,
         400,
         auto,
       ),

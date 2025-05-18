@@ -1,9 +1,12 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/general" as *;
+
 .preloader {
   position: fixed;
   inset: 0;
-  background-color: #0e0e0e;
-  color: white;
-  font-family: "Helvetica Neue", sans-serif;
+  background-color: $BgDark;
+  color: $GrayScale--1;
   z-index: 1000;
   overflow: hidden;
 
@@ -17,7 +20,9 @@
     position: absolute;
     top: 90vh;
     right: 2rem;
-    font-size: 1.8rem;
-    font-weight: 400;
+
+    @include respond-to(mobile) {
+      top: 96vh;
+    }
   }
 }

@@ -6,21 +6,20 @@
 .navbar {
   position: sticky;
   width: 100%;
-  height: auto;
   top: 0;
   left: 0;
   margin: 0 auto;
   z-index: 1000;
-  padding: $PaddingL;
 
-  background-color: $BgDark;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #0d0d0db2;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 
   .nav-links-wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 60px;
     gap: $Gap-2;
 
     .nav-links {
@@ -32,6 +31,8 @@
       .nav-link {
         position: relative;
         color: $GrayScale-4;
+        @include uppercase;
+        transition: color 0.3s ease;
 
         &:hover {
           color: $GrayScale--1;
@@ -40,22 +41,10 @@
         &.active {
           color: $GrayScale--1;
         }
-
-        &-page.active::after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 4px;
-          height: 4px;
-          background-color: $GrayScale--1;
-          border-radius: 50%;
-          transition: all 0.3s ease;
-        }
       }
     }
   }
+
   @include respond-to(mobile) {
     padding: $PaddingS;
 

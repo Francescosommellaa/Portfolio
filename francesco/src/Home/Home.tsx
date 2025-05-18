@@ -3,9 +3,6 @@ import React from "react";
 // SCSS
 import "./Home.scss";
 
-//interaction
-import ScrollNavigator from "../Components/Atoms/Interaction/Scroll/ScrollNavigator";
-
 // Molecules
 import Navbar from "../Components/Molecules/Navbar/Navbar";
 import Footer from "../Components/Molecules/Footer/Footer";
@@ -15,15 +12,19 @@ import Hero from "../Components/Sections/Hero/Hero";
 import Lavori from "../Components/Sections/Works/Works";
 import Faq from "../Components/Sections/Faq/Faq";
 import Parliamo from "../Components/Sections/Parliamo/Parliamo";
+import About from "../Components/Sections/About/About";
 
 const Home: React.FC = () => {
   return (
     <>
-      <ScrollNavigator />
       <Navbar />
 
       <section id="hero">
         <Hero />
+      </section>
+
+      <section id="about">
+        <About />
       </section>
 
       <section id="lavori">

@@ -12,12 +12,11 @@
   top: 0;
   left: 0;
   height: 100vh;
-  z-index: 900;
+  z-index: 2000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: $BgDark;
 
   .sidebar-header {
     position: fixed;
@@ -25,7 +24,9 @@
     left: 0;
     width: 100%;
     height: 60px;
-    background-color: $BgDark;
+    background-color: #0d0d0db2;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,11 +37,6 @@
       background: none;
       cursor: pointer;
       z-index: 1100;
-
-      .menu-icon-svg {
-        width: 30px;
-        height: 30px;
-      }
     }
   }
 
@@ -50,7 +46,9 @@
     left: 0;
     width: 100vw;
     height: calc(100vh - 60px);
-    background-color: #0d0d0df1;
+    background-color: #0d0d0db2;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     color: $GrayScale--1;
     transform: translateY(-100%);
     visibility: hidden;

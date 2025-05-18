@@ -3,8 +3,6 @@
 @use "../../../styles/typography" as *;
 
 .works-section {
-  padding: 4rem 0;
-
   &__container {
     height: 100%;
     width: 100%;
@@ -13,16 +11,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
-    @include respond-to(mobile) {
-      margin: 1rem 0;
-      padding: 1rem;
-    }
-
-    @include respond-to(tablet) {
-      margin: 1.5rem 0;
-      padding: 2rem;
-    }
   }
 
   &__slider {
@@ -61,14 +49,10 @@
 
     @include respond-to(mobile) {
       gap: $Gap-0;
-      padding-left: 10vw;
-      padding-right: 10vw;
     }
 
     @include respond-to(tablet) {
       gap: $Gap-1;
-      padding-left: 25vw;
-      padding-right: 25vw;
     }
   }
 

@@ -5,17 +5,17 @@ import "./Logo.scss";
 
 interface LogoProps {
   light?: boolean;
+  onClick?: () => void;
 }
 
-const Logo: React.FC<LogoProps> = ({ light = false }) => {
+const Logo: React.FC<LogoProps> = ({ light = false, onClick }) => {
   const handleClick = () => {
-    const container = document.getElementById("root");
-    if (!container) return;
-
-    container.scrollTo({
+    window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+
+    if (onClick) onClick();
   };
 
   return (

@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
   return (
     <section className="footer">
       {/* Titolo */}
-      <h1 className={`title title-footerTitle-${Size}`}>
+      <h1 className={`title title-heroTitle-${Size}`}>
         Lavoriamo <br /> Insieme
       </h1>
 
