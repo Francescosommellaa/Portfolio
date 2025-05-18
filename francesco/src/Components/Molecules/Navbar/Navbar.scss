@@ -4,13 +4,6 @@
 @use "../../../styles/typography" as *;
 
 .navbar {
-  position: sticky;
-  width: 100%;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-  z-index: 1000;
-
   background-color: #0d0d0db2;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
