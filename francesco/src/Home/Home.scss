@@ -3,9 +3,13 @@
 @use "../styles/general" as *;
 
 section {
-  padding: $PaddingL;
   color: $GrayScale--1;
   height: 100vh;
+}
+
+header,
+section {
+  padding: $PaddingL;
 
   @include respond-to(mobile) {
     padding: $PaddingS;

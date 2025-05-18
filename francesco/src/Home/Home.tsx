@@ -17,7 +17,9 @@ import About from "../Components/Sections/About/About";
 const Home: React.FC = () => {
   return (
     <>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
       <section id="hero">
         <Hero />

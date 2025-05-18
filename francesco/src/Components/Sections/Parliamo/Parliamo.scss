@@ -3,21 +3,17 @@
 @use "../../../styles/mixins" as *;
 
 .parliamo-section {
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: space-between;
-  width: 80%;
-  margin: 1rem auto;
-  padding: 4rem 0;
+  justify-content: space-arround;
+  gap: $Gap-7;
 
   .parliamo-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;
 
     @include respond-to(mobile) {
       flex-direction: column;
