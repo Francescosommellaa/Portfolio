@@ -9,6 +9,7 @@
   justify-content: space-around;
   width: 100%;
   color: $GrayScale-10;
+  padding: $PaddingL;
 
   .contact-container {
     display: flex;
@@ -41,6 +42,7 @@
   }
 
   @include respond-to(mobile) {
+    padding: $PaddingS;
     .contact-container {
       flex-wrap: wrap;
       align-items: start;
@@ -59,6 +61,7 @@
   }
 
   @include respond-to(tablet) {
+    padding: $PaddingM;
     .contact-container {
       flex-wrap: wrap;
       align-items: start;

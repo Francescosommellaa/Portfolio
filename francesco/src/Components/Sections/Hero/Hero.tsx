@@ -3,6 +3,9 @@ import React from "react";
 // SCSS
 import "./Hero.scss";
 
+// Atoms
+import Button from "../../Atoms/Button/Button";
+
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
 import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
@@ -30,6 +33,8 @@ const Hero: React.FC = () => {
           <span className="name-first">{heroContent.name.first}</span>
           <span className="name-last">{heroContent.name.last}</span>
         </h1>
+
+        <Button size="S" text="Bottone di prova" variant="secondary" />
       </div>
 
       <div className={`hero-icons`}>

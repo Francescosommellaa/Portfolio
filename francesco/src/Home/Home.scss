@@ -5,10 +5,8 @@
 section {
   color: $GrayScale--1;
   height: 100vh;
-}
-
-header,
-section {
+  max-width: 100vw;
+  overflow: hidden;
   padding: $PaddingL;
 
   @include respond-to(mobile) {

@@ -6,19 +6,18 @@
 
 .btn {
   font-family: $fontTitle;
-  background-color: $GrayScale--1;
-  color: $GrayScale-8;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: $Gap-0;
+  justify-content: center;
+  gap: $Gap-1;
   font-weight: $btn-font-weight;
-  border-radius: $BorderRadius-1;
+  border-radius: $BorderRadius-2;
+  @include uppercase;
 
   // Gestione delle dimensioni
   @each $size in (S, M, L) {
     &-#{$size} {
       @include btn-font(map.get($btn-font-size, $size));
-      padding: map.get($btn-padding, $size);
     }
   }
 
@@ -32,43 +31,72 @@
     }
   }
 
-  // Hover stato generale
-  &:hover {
-    background-color: $GrayScale-10;
-    color: $GrayScale-1;
-
-    path {
-      stroke: $GrayScale-1;
-    }
-  }
-
-  // Stile light
-  &.light {
-    color: $GrayScale-10;
-    border-color: $GrayScale-10;
-    stroke: $GrayScale-10;
-    border-radius: $BorderRadius-4;
-
-    path {
-      stroke: $GrayScale-10;
+  // Varianti
+  &-primary {
+    @each $size in (S, M, L, FULL) {
+      &.btn-#{$size} {
+        @include btn-padding("primary", $size);
+      }
     }
 
-    &:hover {
-      background-color: $BgDark;
+    &.light {
+      background-color: $GrayScale--1;
+      color: $GrayScale-10;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $GrayScale-9;
+        color: $GrayScale--1;
+      }
+    }
+    &.dark {
+      background-color: $GrayScale-10;
       color: $GrayScale--1;
+      transition: all 0.3s ease-in-out;
 
-      path {
-        stroke: $GrayScale--1;
+      &:hover {
+        background-color: $GrayScale-0;
+        color: $GrayScale-10;
       }
     }
   }
 
-  &.border {
-    @each $size in (S, M, L) {
-      &-#{$size} {
-        @include btn-border(map.get($btn-border-weight, $size));
-        border-color: $GrayScale-10;
+  &-secondary {
+    background-color: transparent;
+    border: 2px solid;
+    @each $size in (S, M, L, FULL) {
+      &.btn-#{$size} {
+        @include btn-padding("secondary", $size);
       }
+    }
+    &.light {
+      border-color: $GrayScale-10;
+      color: $GrayScale-10;
+      transition: all 0.8s ease;
+
+      &:hover {
+        background-color: $GrayScale--1;
+        color: $GrayScale-10;
+      }
+    }
+
+    &.dark {
+      border-color: $GrayScale-2;
+      color: $GrayScale-2;
+
+      &:hover {
+        background-color: $GrayScale--1;
+        color: $GrayScale-2;
+      }
+    }
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+
+    path {
+      stroke: currentColor;
     }
   }
 }

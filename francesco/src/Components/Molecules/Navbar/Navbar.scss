@@ -7,6 +7,12 @@
   background-color: #0d0d0db2;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  padding: $PaddingL;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 
   .nav-links-wrapper {
     display: flex;
@@ -47,6 +53,8 @@
   }
 
   @include respond-to(tablet) {
+    padding: $PaddingM;
+
     .nav-links-wrapper {
       gap: $Gap-1;
 

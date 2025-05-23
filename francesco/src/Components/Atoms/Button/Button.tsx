@@ -4,21 +4,21 @@ import React, { useEffect, useRef } from "react";
 import "./Button.scss";
 
 interface ButtonProps {
-  size: "S" | "M" | "L";
+  variant?: "primary" | "secondary";
+  size?: "S" | "M" | "L" | "FULL";
   iconName?: string;
   text?: string;
   light?: boolean;
-  withBorder?: boolean;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
+  variant,
   size,
   text,
   iconName,
   light = false,
-  withBorder = false,
   type = "button",
   onClick = () => {},
 }) => {
@@ -52,13 +52,17 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
-      className={`btn btn-${size} ${light ? "light" : ""} ${
-        withBorder ? `border-${size}` : ""
-      }`}
       onClick={onClick}
+      className={`
+        btn
+        btn-${variant} 
+        btn-${size || "M"}
+        ${light ? "light" : "dark"}
+        ${!text && iconName ? "only-icon" : ""}
+      `}
     >
       {text}
-      {size && iconName && (
+      {iconName && (
         <div
           ref={iconRef}
           className={`icon ${light ? "light" : ""}`}

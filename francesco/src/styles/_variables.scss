@@ -76,21 +76,18 @@ $Gap-7: 5rem;
 // ====================
 // Buttons
 $btn-font-size: (
-  S: 0.875rem,
+  S: 1rem,
   M: 1.125rem,
-  L: 1.5rem,
-);
-
-$btn-border-weight: (
-  S: 0.1rem solid $GrayScale--1,
-  M: 0.125rem solid $GrayScale--1,
-  L: 0.15rem solid $GrayScale--1,
+  L: 1.25rem,
 );
 
 $btn-padding: (
-  S: 0.5rem 1rem,
-  M: 1rem 1.5rem,
-  L: 1.125rem 2rem,
+  primary: 0.5rem 1rem,
+  secondary: (
+    S: 1rem 1.5rem,
+    M: 1.125rem 2rem,
+    L: 1.5rem 2.5rem,
+  ),
 );
 
-$btn-font-weight: 700;
+$btn-font-weight: 600;

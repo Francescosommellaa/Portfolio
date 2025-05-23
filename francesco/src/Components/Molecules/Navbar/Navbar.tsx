@@ -74,7 +74,13 @@ const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        <Button text="SCARICA CV" size="S" iconName="download" />
+        <Button
+          text="SCARICA CV"
+          size="S"
+          iconName="download"
+          variant="primary"
+          light={true}
+        />
       </div>
 
       <Sidebar />

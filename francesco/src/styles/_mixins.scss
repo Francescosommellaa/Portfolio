@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:map";
 
 // ====================
 // Mixin per Responsive
@@ -26,6 +27,10 @@
   font-size: $btn-font-size;
 }
 
-@mixin btn-border($btn-border-weight) {
-  border: $btn-border-weight;
+@mixin btn-padding($variant, $size) {
+  @if $variant == "primary" {
+    padding: map.get(variables.$btn-padding, primary);
+  } @else if $variant == "secondary" {
+    padding: map.get(map.get(variables.$btn-padding, secondary), $size);
+  }
 }

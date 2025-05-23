@@ -7,157 +7,134 @@ $fontBody: "Satoshi", sans-serif;
 
 $fontRules: (
   title: (
-    heroTitle: (
+    h1: (
       L: (
         8rem,
         700,
-        80%,
+        auto,
       ),
       M: (
         6rem,
         700,
-        80%,
+        auto,
       ),
       S: (
         3.25rem,
         700,
-        80%,
-      ),
-    ),
-    h1: (
-      L: (
-        6rem,
-        600,
-        auto,
-      ),
-      M: (
-        5rem,
-        600,
-        auto,
-      ),
-      S: (
-        4rem,
-        600,
         auto,
       ),
     ),
     h2: (
       L: (
-        5.5rem,
-        600,
-        auto,
+        B(6rem, 700, auto),
+        SB(6rem, 600, auto),
       ),
       M: (
-        4.5rem,
-        600,
-        auto,
+        B(5rem, 700, auto),
+        SB(5rem, 600, auto),
       ),
       S: (
-        3.5rem,
-        600,
-        auto,
+        B(3rem, 700, auto),
+        SB(3rem, 600, auto),
       ),
     ),
     h3: (
       L: (
-        4.5rem,
-        600,
-        auto,
+        B(1.75rem, 700, auto),
+        SB(1.75rem, 600, auto),
       ),
       M: (
-        3.5rem,
-        600,
-        auto,
+        B(1.375rem, 700, auto),
+        SB(1.375rem, 600, auto),
       ),
       S: (
-        2.5rem,
-        600,
-        auto,
+        B(1.125rem, 700, auto),
+        SB(1.125rem, 600, auto),
       ),
     ),
     h4: (
       L: (
-        3.5rem,
-        600,
-        auto,
+        B(1.5rem, 700, auto),
+        SB(1.5rem, 600, auto),
       ),
       M: (
-        2.5rem,
-        600,
-        auto,
+        B(1.25rem, 700, auto),
+        SB(1.25rem, 600, auto),
       ),
       S: (
-        2rem,
-        600,
-        auto,
+        B(1rem, 700, auto),
+        SB(1rem, 600, auto),
       ),
     ),
     h5: (
       L: (
-        2.5rem,
-        600,
+        1.25rem,
+        700,
         auto,
       ),
       M: (
-        2rem,
-        600,
+        1.125rem,
+        700,
         auto,
       ),
       S: (
-        1.5rem,
-        600,
+        0.875rem,
+        700,
         auto,
       ),
     ),
     h6: (
       L: (
-        1.5rem,
-        500,
+        1rem,
+        600,
         auto,
       ),
       M: (
-        1.25rem,
-        500,
-        auto,
-      ),
-      S: (
-        1rem,
-        500,
-        auto,
-      ),
-    ),
-  ),
-  text: (
-    paragraph: (
-      L: (
-        1.5rem,
-        500,
-        auto,
-      ),
-      M: (
-        1rem,
-        500,
-        auto,
-      ),
-      S: (
-        1rem,
-        500,
-        auto,
-      ),
-    ),
-    smallText: (
-      L: (
-        1.25rem,
-        400,
-        auto,
-      ),
-      M: (
-        1rem,
-        400,
+        0.875rem,
+        600,
         auto,
       ),
       S: (
         0.75rem,
+        600,
+        auto,
+      ),
+    ),
+  ),
+
+  paragraph: (
+    L: (
+      MD: (
+        1.5rem,
+        600,
+        auto,
+      ),
+      R: (
+        1.5rem,
+        400,
+        auto,
+      ),
+    ),
+    M: (
+      MD: (
+        1.125rem,
+        600,
+        auto,
+      ),
+      R: (
+        1.125rem,
+        400,
+        auto,
+      ),
+    ),
+    S: (
+      MD: (
+        1rem,
+        600,
+        auto,
+      ),
+      R: (
+        1rem,
         400,
         auto,
       ),
