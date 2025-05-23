@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
       <div className="hero-header">
         <p className={`sommary title-h6-${Size}`}>{heroContent.role}</p>
 
-        <h1 className={`title title-heroTitle-${Size}`}>
+        <h1 className={`title title-h1-${Size}`}>
           <span className="name-first">{heroContent.name.first}</span>
           <span className="name-last">{heroContent.name.last}</span>
         </h1>
