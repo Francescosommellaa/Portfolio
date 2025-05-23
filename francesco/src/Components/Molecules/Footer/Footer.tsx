@@ -33,8 +33,8 @@ const Footer: React.FC = () => {
           <Button
             text="Info@francescosommella.com"
             size={`${Size}`}
-            light
-            withBorder
+            variant="secondary"
+            light={true}
           />
         </a>
 
@@ -44,7 +44,12 @@ const Footer: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button text="3773711446" size={`${Size}`} light withBorder />
+          <Button
+            text="3773711446"
+            size={`${Size}`}
+            variant="secondary"
+            light={true}
+          />
         </a>
       </div>
 

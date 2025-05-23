@@ -19,4 +19,4 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_SITE_ID }}
           working-directory: ./francesco
-          vercel-args: '--prod'
+          vercel-args: "--prod"
