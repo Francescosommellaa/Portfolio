@@ -4,13 +4,9 @@
 @use "../../../styles/typography" as *;
 
 .hero-section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: $Gap-7;
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 
   .bg-icon {
     position: absolute;
@@ -20,16 +16,16 @@
     z-index: -1;
     transform: translate(-50%, -50%);
 
-    @include respond-to(mobile) {
-      transform: translate(-50%, -50%) rotate(-90deg);
-    }
-
     svg {
       width: 72vw;
       height: auto;
       fill: $GrayScale-2;
+    }
 
-      @include respond-to(mobile) {
+    @include respond-to(mobile) {
+      transform: translate(-50%, -50%) rotate(-90deg);
+
+      svg {
         width: auto;
         height: 60vw;
       }
@@ -56,6 +52,8 @@
 
     .inline-icon {
       svg {
+        height: 24px;
+        width: 24px;
         fill: $GrayScale-2;
       }
     }
@@ -93,11 +91,41 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: $Gap-6;
+    transition: all 0.3s ease;
 
     @include respond-to(mobile) {
       gap: $Gap-2;
       justify-content: center;
     }
+  }
+
+  .hero-img {
+    overflow: hidden;
+    width: fit-content;
+
+    img {
+      height: 100%;
+      width: auto;
+      transition: height 0.3s ease;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+      margin-left: 0;
+    }
+
+    @include respond-to(mobile) {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .hero-text-right {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 350px;
+    opacity: 0;
   }
 }

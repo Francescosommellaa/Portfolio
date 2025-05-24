@@ -26,44 +26,116 @@ $fontRules: (
     ),
     h2: (
       L: (
-        B(6rem, 700, auto),
-        SB(6rem, 600, auto),
+        B: (
+          6rem,
+          700,
+          auto,
+        ),
+        SB: (
+          6rem,
+          600,
+          auto,
+        ),
       ),
       M: (
-        B(5rem, 700, auto),
-        SB(5rem, 600, auto),
+        B: (
+          5rem,
+          700,
+          auto,
+        ),
+        SB: (
+          5rem,
+          600,
+          auto,
+        ),
       ),
       S: (
-        B(3rem, 700, auto),
-        SB(3rem, 600, auto),
+        B: (
+          3rem,
+          700,
+          auto,
+        ),
+        SB: (
+          3rem,
+          600,
+          auto,
+        ),
       ),
     ),
     h3: (
       L: (
-        B(1.75rem, 700, auto),
-        SB(1.75rem, 600, auto),
+        B: (
+          1.75rem,
+          700,
+          auto,
+        ),
+        SB: (
+          1.75rem,
+          600,
+          auto,
+        ),
       ),
       M: (
-        B(1.375rem, 700, auto),
-        SB(1.375rem, 600, auto),
+        B: (
+          1.375rem,
+          700,
+          auto,
+        ),
+        SB: (
+          1.375rem,
+          600,
+          auto,
+        ),
       ),
       S: (
-        B(1.125rem, 700, auto),
-        SB(1.125rem, 600, auto),
+        B: (
+          1.125rem,
+          700,
+          auto,
+        ),
+        SB: (
+          1.125rem,
+          600,
+          auto,
+        ),
       ),
     ),
     h4: (
       L: (
-        B(1.5rem, 700, auto),
-        SB(1.5rem, 600, auto),
+        B: (
+          1.5rem,
+          700,
+          auto,
+        ),
+        SB: (
+          1.5rem,
+          600,
+          auto,
+        ),
       ),
       M: (
-        B(1.25rem, 700, auto),
-        SB(1.25rem, 600, auto),
+        B: (
+          1.25rem,
+          700,
+          auto,
+        ),
+        SB: (
+          1.25rem,
+          600,
+          auto,
+        ),
       ),
       S: (
-        B(1rem, 700, auto),
-        SB(1rem, 600, auto),
+        B: (
+          1rem,
+          700,
+          auto,
+        ),
+        SB: (
+          1rem,
+          600,
+          auto,
+        ),
       ),
     ),
     h5: (
@@ -148,14 +220,22 @@ $fontRules: (
   text-transform: uppercase;
 }
 
-@each $category, $subCategories in $fontRules {
-  @each $subCategory, $sizes in $subCategories {
-    .#{$category}-#{$subCategory} {
-      @each $size, $values in $sizes {
-        &-#{$size} {
-          font-size: list.nth($values, 1);
-          font-weight: list.nth($values, 2);
-          @if list.length($values) >= 3 {
+@each $category, $elements in $fontRules {
+  @each $element, $sizes in $elements {
+    @each $size, $variants in $sizes {
+      // Se il valore è una lista, non ha sotto-livelli (es: h1, h5, h6)
+      @if type-of($variants) == "list" {
+        .#{$category}-#{$element}-#{$size} {
+          font-size: list.nth($variants, 1);
+          font-weight: list.nth($variants, 2);
+          line-height: list.nth($variants, 3);
+        }
+      } @else {
+        // Ha sotto-varianti come B, SB, R, MD (es: h2, h3, paragraph)
+        @each $variant, $values in $variants {
+          .#{$category}-#{$element}-#{$size}-#{$variant} {
+            font-size: list.nth($values, 1);
+            font-weight: list.nth($values, 2);
             line-height: list.nth($values, 3);
           }
         }

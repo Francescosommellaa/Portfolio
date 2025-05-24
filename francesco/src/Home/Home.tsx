@@ -12,23 +12,21 @@ import Hero from "../Components/Sections/Hero/Hero";
 import Lavori from "../Components/Sections/Works/Works";
 import Faq from "../Components/Sections/Faq/Faq";
 import Parliamo from "../Components/Sections/Parliamo/Parliamo";
-import About from "../Components/Sections/About/About";
+import Servizi from "../Components/Sections/Servizi/Servizi";
 
 const Home: React.FC = () => {
   return (
     <>
       <Navbar />
 
-      <section id="hero">
-        <Hero />
-      </section>
-
-      <section id="about">
-        <About />
-      </section>
+      <Hero />
 
       <section id="lavori">
         <Lavori />
+      </section>
+
+      <section id="servizi">
+        <Servizi />
       </section>
 
       <section id="faq">

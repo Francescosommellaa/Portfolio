@@ -1,13 +1,13 @@
 const PageNav: { id: number, name: string, section: string }[] = [
     {
         id: 1,
-        section: "about",
-        name: "About",
+        section: "lavori",
+        name: "Lavori",
     },
     {
         id: 2,
-        section: "lavori",
-        name: "Lavori",
+        section: "servizi",
+        name: "Servizi",
     },
     {
         id: 3,

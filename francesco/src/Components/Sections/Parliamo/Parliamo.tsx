@@ -58,7 +58,7 @@ const Parliamo: React.FC = () => {
 
   return (
     <section className="parliamo-section">
-      <h2 className={`title-h1-${Size}`}>PARLIAMO</h2>
+      <h2 className={`title-h2-${Size}-SB`}>PARLIAMO</h2>
       <div className="parliamo-container">
         {/* Immagine del profilo */}
         <img
