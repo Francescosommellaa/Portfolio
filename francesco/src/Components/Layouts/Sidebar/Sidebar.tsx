@@ -1,100 +1,75 @@
-import React, { useState, useEffect } from "react";
-import { scroller } from "react-scroll";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
-// SCSS
+//scss
 import "./Sidebar.scss";
 
-// Atoms
-import Logo from "../../Atoms/Logo/Logo";
+//hooks
+import { useSize } from "../../../Hooks/useSize";
 
-// DB
-import SocialLinks from "../../DB/Social";
-import PageNav from "../../DB/PageNav";
+//DB
+import NavLinks from "../../DB/NavLinks";
 
-// Hooks
-import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
+interface Props {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
-const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen((prev) => !prev);
-  };
-
-  const closeSidebar = () => {
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  };
+const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
+  const Size = useSize();
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const itemsRef = useRef<HTMLLIElement[]>([]);
 
   useEffect(() => {
+    const items = itemsRef.current;
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.out", duration: 0.3 },
+    });
+
     if (isOpen) {
-      document.body.classList.add("no-scroll");
+      gsap.set(items, { y: 30, opacity: 0 });
+      tl.to(sidebarRef.current, { x: 0, duration: 0.3 });
+      tl.to(items, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+      });
     } else {
-      document.body.classList.remove("no-scroll");
+      tl.to(items, {
+        y: 30,
+        opacity: 0,
+        stagger: 0.1,
+      });
+      tl.to(sidebarRef.current, { x: "-100%", duration: 0.3 }, "+=0.1");
     }
-    return () => document.body.classList.remove("no-scroll");
   }, [isOpen]);
 
-  const handleScroll = (section: string) => {
-    const scrollOptions = {
-      smooth: true,
-      duration: 500,
-      offset: -60,
-    };
-
-    if (location.pathname !== "/") {
-      setTimeout(() => scroller.scrollTo(section, scrollOptions), 100);
-    } else {
-      scroller.scrollTo(section, scrollOptions);
-    }
-    closeSidebar();
-  };
-
   return (
-    <nav className="sidebar-container" aria-label="Sidebar">
-      {/* Icona del menu e logo sempre visibili */}
-      <div className="sidebar-header">
-        <Logo onClick={closeSidebar} />
-        <button className="menu-icon" onClick={toggleSidebar}>
-          <InlineIcon
-            folder="Icon"
-            name={!isOpen ? "menu" : "close"}
-            size="M"
-          />
-        </button>
-      </div>
-
-      {/* Sidebar */}
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <nav className="sidebar-nav">
-          {PageNav.map((page) => (
-            <a
-              key={page.id}
-              onClick={() => handleScroll(`${page.section}`)}
-              role="button"
+    <aside ref={sidebarRef} className="sidebar">
+      <nav>
+        <ul className="sidebar__menu">
+          {NavLinks.map((link, index) => (
+            <li
+              key={link.name}
+              ref={(el) => (itemsRef.current[index] = el!)}
+              onClick={onClose}
             >
-              <h4 className="title">{page.name}</h4>
-            </a>
+              <span className="paragraph-X">{link.number}</span>
+              <a href={link.link}>
+                <h2 className={`nav-${Size}`}>
+                  <span className={`scriptN-${Size}`}>{link.script}</span>
+                  {link.name}
+                </h2>
+              </a>
+            </li>
           ))}
-        </nav>
+        </ul>
+      </nav>
 
-        {/* Links sociali */}
-        <footer className="sidebar-footer">
-          {SocialLinks.map((social, index) => (
-            <a
-              className="text-paragraph-small"
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-            >
-              {social.name}
-            </a>
-          ))}
-        </footer>
-      </div>
-    </nav>
+      <footer className="sidebar__footer">
+        Un Designer ordinario. Con amore da Napoli.
+      </footer>
+    </aside>
   );
 };
 

@@ -49,9 +49,11 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
   max-width: 120rem;
+  background-color: $BgLight;
 
   a {
     text-decoration: none;
+    color: inherit;
   }
 
   li {

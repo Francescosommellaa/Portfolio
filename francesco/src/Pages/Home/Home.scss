@@ -5,6 +5,20 @@
 section {
   padding: $PaddingL;
 
+  .top {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      letter-spacing: -0.03em;
+      span {
+        letter-spacing: -0.03em;
+      }
+    }
+  }
+
   @include respond-to(tablet) {
     padding: $PaddingM;
   }

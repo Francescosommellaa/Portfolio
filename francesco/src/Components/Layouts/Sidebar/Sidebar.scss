@@ -2,115 +2,62 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
 
-.no-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
-
-.sidebar-container {
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   height: 100vh;
-  z-index: 2000;
+  background-color: $GrayScale-9;
+  color: $GrayScale--1;
+  transform: translateX(-100%);
+  transition: none;
+  z-index: 800;
+  padding: $PaddingM;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-  .sidebar-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+  nav {
     width: 100%;
-    height: 60px;
-    background-color: #0d0d0db2;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.5rem;
-    z-index: 1100;
-
-    .menu-icon {
-      background: none;
-      cursor: pointer;
-      z-index: 1100;
-    }
-  }
-
-  .sidebar {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 60px);
-    background-color: #0d0d0db2;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    color: $GrayScale--1;
-    transform: translateY(-100%);
-    visibility: hidden;
-    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    height: 96%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: $Gap-2;
+  }
 
-    &.open {
-      transform: translateY(0);
-      visibility: visible;
-    }
+  &.open {
+    transform: translateX(0);
+  }
 
-    .sidebar-nav {
+  nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: $Gap-2;
+
+    li {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 2rem;
-
-      a {
-        color: $GrayScale--1;
-        font-size: 1.5rem;
-        text-align: center;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: $GrayScale-1;
-        }
-      }
-    }
-
-    .sidebar-footer {
-      position: absolute;
-      background: none;
-      bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-
-      a {
-        color: $GrayScale-4;
-        font-size: 1rem;
-        text-align: center;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: $GrayScale-1;
-        }
-      }
+      gap: $Gap-3;
     }
   }
-}
 
-@include respond-to(tablet) {
-  .sidebar-container {
-    display: none;
+  footer {
+    height: 4%;
+    margin-bottom: 24px;
   }
-}
 
-@include respond-to(desktop) {
-  .sidebar-container {
-    display: none;
+  @include respond-to(mobile) {
+    padding: $PaddingS;
+
+    nav ul {
+      gap: $Gap-2;
+    }
   }
 }

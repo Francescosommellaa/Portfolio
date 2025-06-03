@@ -4,6 +4,9 @@ import { Routes, Route } from "react-router-dom";
 // Hooks
 import { useAutoHideScrollbar } from "./Hooks/useAutoHideScrollbar";
 
+// Layout
+import AppLayout from "./Components/Layouts/AppLayout";
+
 // Pages
 import Home from "./Pages/Home/Home";
 import Lavori from "./Pages/Lavori/Lavori";
@@ -17,11 +20,13 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/Lavori" element={<Lavori />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Playground" element={<Playground />} />
-      <Route path="/Contatti" element={<Contatti />} />
+      <Route element={<AppLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/Lavori" element={<Lavori />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Playground" element={<Playground />} />
+        <Route path="/Contatti" element={<Contatti />} />
+      </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

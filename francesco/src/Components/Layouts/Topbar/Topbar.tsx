@@ -1,25 +1,36 @@
-import React from "react";
-
-// SCSS
+import React, { useEffect, useState } from "react";
 import "./Topbar.scss";
-
-// Molecules
-import Sidebar from "../Sidebar/Sidebar";
-
-// Atoms
 import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
-
-// Hooks
 import { useSize } from "../../../Hooks/useSize";
 
-const Topbar: React.FC = () => {
+interface Props {
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   const Size = useSize();
+  const isCompact = Size === "S" || Size === "M";
+  const [isDark, setIsDark] = useState(isSidebarOpen);
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      setIsDark(true);
+    } else {
+      const timeout = setTimeout(() => {
+        setIsDark(false);
+      }, 680);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isSidebarOpen]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <header className="topbar">
+    <header className={`topbar ${isDark ? "on-dark" : ""}`}>
       <div className="left" onClick={scrollToTop}>
         <InlineIcon folder="Logo" name="Logo" size={`${Size}`} />
         <div className="topbar__text">
@@ -31,16 +42,31 @@ const Topbar: React.FC = () => {
         </div>
       </div>
 
-      <a href="/" className="center">
+      <a href="/" className="center" onClick={scrollToTop}>
         <span className="logo">
           FRA<sup>©</sup>
         </span>
       </a>
 
-      <p className={`right topBar-${Size}`}>
-        Portfolio <br />
-        v. 1.0
-      </p>
+      <div className={`right topBar-${Size}`}>
+        {isCompact ? (
+          <div
+            className={`menu-icon ${isSidebarOpen ? "open" : ""}`}
+            onClick={toggleSidebar}
+          >
+            <InlineIcon
+              folder="Icons"
+              name={isSidebarOpen ? "Close" : "Menu"}
+              size={Size}
+            />
+          </div>
+        ) : (
+          <>
+            Portfolio <br />
+            v. 1.0
+          </>
+        )}
+      </div>
     </header>
   );
 };
