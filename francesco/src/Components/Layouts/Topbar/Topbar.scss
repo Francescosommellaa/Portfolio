@@ -1,0 +1,130 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(+40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.topbar {
+  width: 100%;
+  height: 80px;
+  padding: $PaddingL;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  color: $GrayScale-7;
+  background-color: transparent;
+
+  // ✅ Transizioni principali
+  transition: color 0.6s ease, background-color 0.6s ease;
+
+  // ✅ Leggera animazione on-load
+  animation: fadeIn 0.6s ease-out both;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: $Gap-1;
+    width: 33%;
+
+    .topbar__text {
+      transition: color 0.6s ease;
+      animation: fadeIn 0.6s ease-out both;
+    }
+  }
+
+  .center {
+    width: 33%;
+    text-align: center;
+    color: $BgDark;
+    animation: fadeIn 0.6s ease-out both;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+
+      sup {
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .right {
+    width: 33%;
+    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    .menu-icon {
+      transition: transform 0.4s ease;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.on-dark {
+    color: $GrayScale-3;
+
+    .inline-icon {
+      svg path {
+        transition: fill 0.6s ease;
+        fill: $GrayScale--1;
+      }
+    }
+
+    .logo {
+      transition: color 0.6s ease;
+      color: $GrayScale--1;
+    }
+  }
+
+  @include respond-to(tablet) {
+    padding: $PaddingM;
+
+    .right {
+      span,
+      br {
+        display: none;
+      }
+
+      .menu-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    padding: $PaddingS;
+
+    .left {
+      width: 60%;
+    }
+
+    .center {
+      width: 10%;
+    }
+
+    .right {
+      width: 10%;
+    }
+  }
+}

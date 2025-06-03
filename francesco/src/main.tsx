@@ -1,9 +1,19 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+// src/main.tsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+// Interaction
+import Cursor from "./Components/Atoms/Interaction/Cursor/Cursor";
+
+import "./styles/general.scss";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Cursor />
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );

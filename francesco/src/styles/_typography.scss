@@ -1,217 +1,253 @@
 @use "sass:list";
 
 //===============
-//variable
-$fontTitle: "Clash Display", sans-serif;
+// Font Variables
 $fontBody: "Satoshi", sans-serif;
+$fontScript: "Allura", cursive;
 
+//===============
+// Font Rules
 $fontRules: (
-  title: (
-    h1: (
+  // topBar
+  topBar:
+    (
       L: (
-        8rem,
-        700,
+        $fontBody,
+        1rem,
+        500,
+        1.25rem,
+      ),
+      M: (
+        $fontBody,
+        0.875rem,
+        500,
+        1rem,
+      ),
+      S: (
+        $fontBody,
+        0.625rem,
+        500,
+        0.875rem,
+      ),
+    ),
+
+  // Headings
+  h1:
+    (
+      L: (
+        $fontBody,
+        12rem,
+        500,
         88%,
       ),
       M: (
-        6rem,
-        700,
+        $fontBody,
+        7.5rem,
+        500,
         auto,
       ),
       S: (
-        3.25rem,
-        700,
+        $fontBody,
+        3.5rem,
+        500,
         auto,
       ),
     ),
-    h2: (
-      L: (
-        B: (
-          6rem,
-          700,
-          auto,
-        ),
-        SB: (
-          6rem,
-          600,
-          auto,
-        ),
-      ),
-      M: (
-        B: (
-          5rem,
-          700,
-          auto,
-        ),
-        SB: (
-          5rem,
-          600,
-          auto,
-        ),
-      ),
-      S: (
-        B: (
-          3rem,
-          700,
-          auto,
-        ),
-        SB: (
-          3rem,
-          600,
-          auto,
-        ),
-      ),
+  nav: (
+    L: (
+      $fontBody,
+      1.5rem,
+      500,
+      auto,
     ),
-    h3: (
-      L: (
-        B: (
-          1.75rem,
-          700,
-          auto,
-        ),
-        SB: (
-          1.75rem,
-          600,
-          auto,
-        ),
-      ),
-      M: (
-        B: (
-          1.375rem,
-          700,
-          auto,
-        ),
-        SB: (
-          1.375rem,
-          600,
-          auto,
-        ),
-      ),
-      S: (
-        B: (
-          1.125rem,
-          700,
-          auto,
-        ),
-        SB: (
-          1.125rem,
-          600,
-          auto,
-        ),
-      ),
+    M: (
+      $fontBody,
+      3.25rem,
+      500,
+      auto,
     ),
-    h4: (
-      L: (
-        B: (
-          1.5rem,
-          700,
-          auto,
-        ),
-        SB: (
-          1.5rem,
-          600,
-          auto,
-        ),
-      ),
-      M: (
-        B: (
-          1.25rem,
-          700,
-          auto,
-        ),
-        SB: (
-          1.25rem,
-          600,
-          auto,
-        ),
-      ),
-      S: (
-        B: (
-          1rem,
-          700,
-          auto,
-        ),
-        SB: (
-          1rem,
-          600,
-          auto,
-        ),
-      ),
+    S: (
+      $fontBody,
+      3rem,
+      500,
+      auto,
     ),
-    h5: (
-      L: (
-        1.25rem,
-        700,
-        auto,
-      ),
-      M: (
-        1.125rem,
-        700,
-        auto,
-      ),
-      S: (
-        0.875rem,
-        700,
-        auto,
-      ),
+  ),
+  subTitle: (
+    L: (
+      $fontBody,
+      1.5rem,
+      400,
+      1.625rem,
     ),
-    h6: (
-      L: (
-        1rem,
-        600,
-        auto,
-      ),
-      M: (
-        0.875rem,
-        600,
-        auto,
-      ),
-      S: (
-        0.75rem,
-        600,
-        auto,
-      ),
+    M: (
+      $fontBody,
+      1.5rem,
+      400,
+      1.625rem,
+    ),
+    S: (
+      $fontBody,
+      0.75rem,
+      400,
+      1.625rem,
     ),
   ),
 
+  // Paragraph
+  paragraphL:
+    (
+      L: (
+        $fontBody,
+        2.25rem,
+        500,
+        auto,
+      ),
+      M: (
+        $fontBody,
+        2rem,
+        500,
+        auto,
+      ),
+      S: (
+        $fontBody,
+        1.5rem,
+        500,
+        auto,
+      ),
+    ),
   paragraph: (
     L: (
-      MD: (
-        1.5rem,
-        600,
-        auto,
-      ),
-      R: (
-        1.5rem,
-        400,
-        auto,
-      ),
+      $fontBody,
+      1.5rem,
+      500,
+      1.75rem,
     ),
     M: (
-      MD: (
-        1.125rem,
-        600,
-        auto,
-      ),
-      R: (
-        1.125rem,
-        400,
-        auto,
-      ),
+      $fontBody,
+      1.5rem,
+      500,
+      1.75rem,
     ),
     S: (
-      MD: (
-        1rem,
-        600,
+      $fontBody,
+      1.25rem,
+      400,
+      1.625rem,
+    ),
+    X: (
+      $fontBody,
+      1rem,
+      500,
+      auto,
+    ),
+  ),
+
+  //Num
+  Num:
+    (
+      L: (
+        $fontBody,
+        2.25rem,
+        400,
         auto,
       ),
-      R: (
-        1rem,
+      M: (
+        $fontBody,
+        2rem,
+        400,
+        auto,
+      ),
+      S: (
+        $fontBody,
+        1.75rem,
         400,
         auto,
       ),
     ),
+
+  // Script
+  scriptNum:
+    (
+      L: (
+        $fontScript,
+        2.875rem,
+        400,
+        auto,
+      ),
+      M: (
+        $fontScript,
+        2.5rem,
+        400,
+        auto,
+      ),
+      S: (
+        $fontScript,
+        2.25rem,
+        400,
+        auto,
+      ),
+    ),
+  scriptT: (
+    L: (
+      $fontScript,
+      17.5rem,
+      400,
+      auto,
+    ),
+    M: (
+      $fontScript,
+      11.25rem,
+      400,
+      auto,
+    ),
+    S: (
+      $fontScript,
+      5.625rem,
+      400,
+      auto,
+    ),
   ),
+  scriptN: (
+    L: (
+      $fontScript,
+      2.5rem,
+      400,
+      auto,
+    ),
+    M: (
+      $fontScript,
+      6rem,
+      400,
+      auto,
+    ),
+    S: (
+      $fontScript,
+      5.75rem,
+      400,
+      auto,
+    ),
+  ),
+  scriptP: (
+    L: (
+      $fontScript,
+      2.25rem,
+      400,
+      auto,
+    ),
+    M: (
+      $fontScript,
+      2.25rem,
+      400,
+      auto,
+    ),
+    S: (
+      $fontScript,
+      1.875rem,
+      400,
+      auto,
+    ),
+  )
 );
 
 //===============
@@ -220,24 +256,27 @@ $fontRules: (
   text-transform: uppercase;
 }
 
-@each $category, $elements in $fontRules {
-  @each $element, $sizes in $elements {
-    @each $size, $variants in $sizes {
-      // Se il valore è una lista, non ha sotto-livelli (es: h1, h5, h6)
-      @if type-of($variants) == "list" {
-        .#{$category}-#{$element}-#{$size} {
-          font-size: list.nth($variants, 1);
-          font-weight: list.nth($variants, 2);
-          line-height: list.nth($variants, 3);
-        }
-      } @else {
-        // Ha sotto-varianti come B, SB, R, MD (es: h2, h3, paragraph)
-        @each $variant, $values in $variants {
-          .#{$category}-#{$element}-#{$size}-#{$variant} {
-            font-size: list.nth($values, 1);
-            font-weight: list.nth($values, 2);
-            line-height: list.nth($values, 3);
-          }
+//===============
+// Dynamic Font Classes Generator
+@each $type, $sizes in $fontRules {
+  @each $sizeKey, $value in $sizes {
+    // Livello base (es: h1-L)
+    @if type-of($value) == "list" {
+      .#{$type}-#{$sizeKey} {
+        font-family: list.nth($value, 1);
+        font-size: list.nth($value, 2);
+        font-weight: list.nth($value, 3);
+        line-height: list.nth($value, 4);
+      }
+
+      // Livello intermedio (es: h2-L-B)
+    } @else if type-of($value) == "map" {
+      @each $variantKey, $variantValue in $value {
+        .#{$type}-#{$sizeKey}-#{$variantKey} {
+          font-family: list.nth($variantValue, 1);
+          font-size: list.nth($variantValue, 2);
+          font-weight: list.nth($variantValue, 3);
+          line-height: list.nth($variantValue, 4);
         }
       }
     }
