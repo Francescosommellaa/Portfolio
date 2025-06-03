@@ -1,0 +1,116 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .sidebar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #0d0d0db2;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    z-index: 1100;
+
+    .menu-icon {
+      background: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    background-color: #0d0d0db2;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    color: $GrayScale--1;
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.open {
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      a {
+        color: $GrayScale--1;
+        font-size: 1.5rem;
+        text-align: center;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $GrayScale-1;
+        }
+      }
+    }
+
+    .sidebar-footer {
+      position: absolute;
+      background: none;
+      bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      a {
+        color: $GrayScale-4;
+        font-size: 1rem;
+        text-align: center;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $GrayScale-1;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(tablet) {
+  .sidebar-container {
+    display: none;
+  }
+}
+
+@include respond-to(desktop) {
+  .sidebar-container {
+    display: none;
+  }
+}

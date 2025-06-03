@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $fontBody;
   cursor: none;
 
   user-select: none;
@@ -15,48 +14,47 @@
   -ms-user-select: none;
 }
 
-html {
-  scrollbar-width: none;
-  scrollbar-color: transparent transparent;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    transition: all 0.4s ease-in-out;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    transition: all 0.4s ease-in-out;
-  }
-
-  &.scrolling {
-    scrollbar-width: thin;
-    scrollbar-color: $GrayScale-3 transparent;
-
-    &::-webkit-scrollbar {
-      width: 2px;
-      height: 2px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $GrayScale-3;
-    }
-  }
-}
-
 body {
   overflow-x: hidden;
+  font-family: $fontBody;
   margin: 0 auto;
-  max-width: 120rem;
-  background-color: $BgLight;
+  background-color: $BgDark;
+  scrollbar-width: none;
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  button {
+    border: none;
+  }
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: $GrayScale-6;
   }
 
   li {
     list-style: none;
+  }
+
+  // Title
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a {
+    width: fit-content;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $fontTitle;
   }
 }

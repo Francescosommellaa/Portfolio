@@ -1,0 +1,102 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+@use "sass:map";
+
+.btn {
+  font-family: $fontTitle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $Gap-1;
+  font-weight: $btn-font-weight;
+  border-radius: $BorderRadius-2;
+  @include uppercase;
+
+  // Gestione delle dimensioni
+  @each $size in (S, M, L) {
+    &-#{$size} {
+      @include btn-font(map.get($btn-font-size, $size));
+    }
+  }
+
+  // Stile dell'icona
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    path {
+      stroke: $GrayScale-9;
+    }
+  }
+
+  // Varianti
+  &-primary {
+    @each $size in (S, M, L, FULL) {
+      &.btn-#{$size} {
+        @include btn-padding("primary", $size);
+      }
+    }
+
+    &.light {
+      background-color: $GrayScale--1;
+      color: $GrayScale-10;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $GrayScale-9;
+        color: $GrayScale--1;
+      }
+    }
+    &.dark {
+      background-color: $GrayScale-10;
+      color: $GrayScale--1;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $GrayScale-0;
+        color: $GrayScale-10;
+      }
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    border: 2px solid;
+    @each $size in (S, M, L, FULL) {
+      &.btn-#{$size} {
+        @include btn-padding("secondary", $size);
+      }
+    }
+    &.light {
+      border-color: $GrayScale-10;
+      color: $GrayScale-10;
+      transition: all 0.8s ease;
+
+      &:hover {
+        background-color: $GrayScale--1;
+        color: $GrayScale-10;
+      }
+    }
+
+    &.dark {
+      border-color: $GrayScale-2;
+      color: $GrayScale-2;
+
+      &:hover {
+        background-color: $GrayScale--1;
+        color: $GrayScale-2;
+      }
+    }
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+
+    path {
+      stroke: currentColor;
+    }
+  }
+}

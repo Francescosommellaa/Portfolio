@@ -1,0 +1,23 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+
+.logo-text {
+  color: $GrayScale-1;
+  font-family: $fontBody;
+  font-weight: 600;
+  font-size: 0.88rem;
+
+  &:hover {
+    color: $GrayScale--1;
+  }
+
+  &.light {
+    color: $GrayScale-8;
+
+    &:hover {
+      color: $GrayScale-10;
+    }
+  }
+}

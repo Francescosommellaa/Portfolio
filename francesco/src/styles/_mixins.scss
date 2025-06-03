@@ -19,3 +19,18 @@
     }
   }
 }
+
+// ====================
+//Mixin per i pulsanti seccondari
+
+@mixin btn-font($btn-font-size) {
+  font-size: $btn-font-size;
+}
+
+@mixin btn-padding($variant, $size) {
+  @if $variant == "primary" {
+    padding: map.get(variables.$btn-padding, primary);
+  } @else if $variant == "secondary" {
+    padding: map.get(map.get(variables.$btn-padding, secondary), $size);
+  }
+}
