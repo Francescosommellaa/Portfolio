@@ -3,6 +3,11 @@
 @use "../../styles/general" as *;
 
 section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: $PaddingL;
 
   .top {
@@ -17,6 +22,27 @@ section {
         letter-spacing: -0.03em;
       }
     }
+  }
+
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .block-p {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: $Gap-6;
+      text-align: center;
+      max-width: 23.75rem;
+    }
+  }
+
+  .tagline {
+    padding-bottom: 1rem;
   }
 
   @include respond-to(tablet) {

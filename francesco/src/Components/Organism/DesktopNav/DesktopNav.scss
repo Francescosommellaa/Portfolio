@@ -1,0 +1,86 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.desktop-nav {
+  width: 100%;
+  height: 240px;
+  padding: $PaddingL;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__number {
+    color: $GrayScale-5;
+    transition: color 0.3s ease;
+  }
+
+  &[data-hovered="true"] {
+    .desktop-nav__number {
+      color: $GrayScale-3;
+      transition: color 0.3s ease;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    h2 {
+      color: $GrayScale-7;
+      transition: color 0.3s ease;
+    }
+
+    // Hover attivo su item stesso
+    &[data-active="true"] h2 {
+      color: $GrayScale-0;
+    }
+
+    // Tutti gli altri item quando uno è in hover
+    &[data-active="false"] h2 {
+      color: $GrayScale-3;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: $BgDark;
+    transform: translateY(-50%);
+    transition: height 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+
+    h1 {
+      color: $GrayScale-8;
+      transform: translateX(-50px);
+      opacity: 0;
+      transition: all 0.6s ease-out;
+    }
+
+    &.active {
+      height: 240px;
+
+      h1 {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+}
