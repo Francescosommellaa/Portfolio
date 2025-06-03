@@ -1,6 +1,9 @@
 // src/App.tsx
 import { Routes, Route } from "react-router-dom";
 
+// Hooks
+import { useAutoHideScrollbar } from "./Hooks/useAutoHideScrollbar";
+
 // Pages
 import Home from "./Pages/Home/Home";
 import Lavori from "./Pages/Lavori/Lavori";
@@ -10,6 +13,8 @@ import Contatti from "./Pages/Contatti/Contatti";
 import NotFound from "./Pages/NotFound/NotFound";
 
 const App = () => {
+  useAutoHideScrollbar();
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />

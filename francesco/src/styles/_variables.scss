@@ -57,6 +57,7 @@ $BorderRadius-5: 1.5rem;
 
 // ====================
 // Padding
+
 $PaddingL: 0 5rem;
 $PaddingM: 0 2.5rem;
 $PaddingS: 0 1.5rem;
@@ -72,22 +73,3 @@ $Gap-4: 2rem;
 $Gap-5: 2.5rem;
 $Gap-6: 3.75rem;
 $Gap-7: 5rem;
-
-// ====================
-// Buttons
-$btn-font-size: (
-  S: 1rem,
-  M: 1.125rem,
-  L: 1.25rem,
-);
-
-$btn-padding: (
-  primary: 0.5rem 1rem,
-  secondary: (
-    S: 1rem 1.5rem,
-    M: 1.125rem 2rem,
-    L: 1.5rem 2.5rem,
-  ),
-);
-
-$btn-font-weight: 600;

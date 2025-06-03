@@ -9,7 +9,11 @@ import { useSize } from "../../Hooks/useSize";
 const Lavori: React.FC = () => {
   const Size = useSize();
 
-  return <h2 className={`title-h2-${Size}-SB`}>Lavori</h2>;
+  return (
+    <section className="lavori">
+      <h2 className={`title-h2-${Size}`}>Lavori</h2>
+    </section>
+  );
 };
 
 export default Lavori;

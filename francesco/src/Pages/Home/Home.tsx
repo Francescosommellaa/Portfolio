@@ -6,10 +6,20 @@ import "./Home.scss";
 // Hooks
 import { useSize } from "../../Hooks/useSize";
 
+// layout
+import Topbar from "../../Components/Layouts/Topbar/Topbar";
+
 const Home: React.FC = () => {
   const Size = useSize();
 
-  return <h2 className={`title-h2-${Size}-SB`}>Home</h2>;
+  return (
+    <section>
+      <Topbar />
+      <h1 className={`h1-${Size}`}>
+        <span className={`scriptT-${Size}`}>Fra</span> Sommella
+      </h1>
+    </section>
+  );
 };
 
 export default Home;

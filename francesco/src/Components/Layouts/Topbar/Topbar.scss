@@ -1,0 +1,52 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+
+.topbar {
+  width: 100%;
+  height: 80px;
+  padding: $PaddingL;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+
+  @include respond-to(tablet) {
+    padding: $PaddingM;
+  }
+  @include respond-to(mobile) {
+    padding: $PaddingS;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: $Gap-1;
+    width: 33%;
+  }
+
+  .center {
+    width: 33%;
+    text-align: center;
+    color: $BgDark;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+
+      sup {
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .right {
+    width: 33%;
+    text-align: end;
+  }
+}
