@@ -1,37 +1,25 @@
-import { useState, useEffect } from "react";
+// src/App.tsx
+import { Routes, Route } from "react-router-dom";
 
-// Vercel
-import { Analytics } from "@vercel/analytics/react";
+// Pages
+import Home from "./Pages/Home/Home";
+import Lavori from "./Pages/Lavori/Lavori";
+import About from "./Pages/About/About";
+import Playground from "./Pages/Playground/Playground";
+import Contatti from "./Pages/Contatti/Contatti";
+import NotFound from "./Pages/NotFound/NotFound";
 
-// Atoms
-import Cursor from "./Components/Atoms/Interaction/Cursor/Cursor";
-
-// Preloader
-import Preloader from "./Components/Preloader/Preloader";
-
-// Page
-import Home from "./Home/Home";
-
-// SCSS
-import "./styles/general.scss";
-
-function App() {
-  const [showPreloader, setShowPreloader] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowPreloader(false);
-    }, 4800);
-
-    return () => clearTimeout(timeout);
-  }, []);
+const App = () => {
   return (
-    <>
-      <Analytics />
-      <Cursor />
-      {showPreloader ? <Preloader /> : <Home />}
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Lavori" element={<Lavori />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Playground" element={<Playground />} />
+      <Route path="/Contatti" element={<Contatti />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
-}
+};
 
 export default App;

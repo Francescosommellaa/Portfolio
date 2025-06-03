@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, forwardRef } from "react";
 
 interface InlineIconProps {
   folder: string;
@@ -7,34 +7,33 @@ interface InlineIconProps {
   className?: string;
 }
 
-const InlineIcon: React.FC<InlineIconProps> = ({
-  folder,
-  name,
-  size,
-  className,
-}) => {
-  const iconRef = useRef<HTMLDivElement>(null);
+const InlineIcon = forwardRef<HTMLDivElement, InlineIconProps>(
+  ({ folder, name, size, className }, forwardedRef) => {
+    const localRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const path = `assets/${folder}/Name=${name}, Dimension=${size}.svg`;
+    useEffect(() => {
+      const path = `assets/${folder}/Name=${name}, Dimension=${size}.svg`;
 
-    fetch(path)
-      .then((res) =>
-        res.ok ? res.text() : Promise.reject(`Icon not found: ${path}`)
-      )
-      .then((svg) => {
-        if (iconRef.current) iconRef.current.innerHTML = svg;
-      })
-      .catch((err) => console.error(err));
-  }, [className, folder, name, size]);
+      fetch(path)
+        .then((res) =>
+          res.ok ? res.text() : Promise.reject(`Icon not found: ${path}`)
+        )
+        .then((svg) => {
+          const target =
+            (forwardedRef as React.RefObject<HTMLDivElement>)?.current ||
+            localRef.current;
+          if (target) target.innerHTML = svg;
+        })
+        .catch((err) => console.error(err));
+    }, [className, folder, name, size, forwardedRef]);
 
-  return (
-    <div
-      ref={iconRef}
-      className={`inline-icon ${className}`}
-      aria-hidden="true"
-    />
-  );
-};
-
+    return (
+      <div
+        ref={forwardedRef || localRef}
+        className={`inline-icon ${className}`}
+        aria-hidden="true"
+      />
+    );
+  }
+);
 export default InlineIcon;
