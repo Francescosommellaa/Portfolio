@@ -55,7 +55,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
       <div className={`right topBar-${Size}`}>
         {isCompact ? (
           <div
-            className={`menu-icon ${isSidebarOpen ? "open" : ""}`}
+            className={`menu-icon ${isSidebarOpen ? "open" : "close"}`}
             onClick={toggleSidebar}
           >
             <InlineIcon

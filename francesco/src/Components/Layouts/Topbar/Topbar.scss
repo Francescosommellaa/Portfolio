@@ -65,16 +65,19 @@
 
   .right {
     width: 33%;
-    text-align: end;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 
     .menu-icon {
-      transition: transform 0.4s ease;
+      transition: transform 0.8s ease;
 
       &.open {
-        transform: rotate(180deg);
+        transform: rotate(90deg);
+      }
+
+      &.close {
+        transform: rotate(-180deg);
       }
     }
   }
