@@ -35,7 +35,7 @@ const Home: React.FC = () => {
 
         <InlineIcon folder="Illustrations" name="Illustration-1" size={Size} />
 
-        <div className="block-p">
+        <div className="block-p no-icon">
           <InlineIcon name="Star" size={Size} folder="Icons" />
           <p className={`paragraph-${Size}`}>
             Creo esperienze digitali essenziali, pensate per coinvolgere,

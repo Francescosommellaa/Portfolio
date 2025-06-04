@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 // Interaction
-import Cursor from "./Components/Atoms/Interaction/Cursor/Cursor";
+import Cursor from "./Components/Atoms/Cursor/Cursor";
 
 import "./styles/general.scss";
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Topbar.scss";
 import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
 import { useSize } from "../../../Hooks/useSize";
+import { Link } from "react-router-dom";
 
 interface Props {
   isSidebarOpen: boolean;
@@ -42,11 +43,11 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
         </div>
       </div>
 
-      <a href="/" className="center" onClick={scrollToTop}>
+      <Link to="/" className="center" onClick={scrollToTop}>
         <span className="logo">
           FRA<sup>©</sup>
         </span>
-      </a>
+      </Link>
 
       <div className={`right topBar-${Size}`}>
         {isCompact ? (

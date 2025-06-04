@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 
-//scss
+//SCSS
 import "./Sidebar.scss";
 
-//hooks
+//Hooks
 import { useSize } from "../../../Hooks/useSize";
 
 //DB
@@ -55,12 +56,12 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
               onClick={onClose}
             >
               <span className="paragraph-X">{link.number}</span>
-              <a href={link.link}>
+              <Link to={link.link}>
                 <h2 className={`nav-${Size}`}>
                   <span className={`scriptN-${Size}`}>{link.script}</span>
                   {link.name}
                 </h2>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

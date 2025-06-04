@@ -56,9 +56,13 @@ const Cursor: React.FC = () => {
         element.addEventListener("mouseenter", handleInputHover);
         element.addEventListener("mouseleave", handleInputLeave);
       });
+      return {
+        interactiveElements,
+        inputElements,
+      };
     };
 
-    addEventListeners();
+    const { interactiveElements, inputElements } = addEventListeners();
 
     const observer = new MutationObserver(addEventListeners);
     observer.observe(document.body, { childList: true, subtree: true });
@@ -69,6 +73,16 @@ const Cursor: React.FC = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
+
+      interactiveElements.forEach((element) => {
+        element.removeEventListener("mouseenter", handleLinkHover);
+        element.removeEventListener("mouseleave", handleLinkLeave);
+      });
+
+      inputElements.forEach((element) => {
+        element.removeEventListener("mouseenter", handleInputHover);
+        element.removeEventListener("mouseleave", handleInputLeave);
+      });
       observer.disconnect();
     };
   }, [isTouch]);

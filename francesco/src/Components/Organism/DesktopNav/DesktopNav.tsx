@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import "./DesktopNav.scss";
 import { useSize } from "../../../Hooks/useSize";
 import NavLinks from "../../DB/NavLinks";
+import { Link } from "react-router-dom";
 
 const DesktopNav: React.FC = () => {
   const Size = useSize();
@@ -60,12 +61,12 @@ const DesktopNav: React.FC = () => {
             }
           >
             <span className="desktop-nav__number">{link.number}</span>
-            <a href={link.link}>
+            <Link to={link.link}>
               <h2 className={`nav-${Size}`}>
                 <span className={`scriptN-${Size}`}>{link.script}</span>
                 {link.name}
               </h2>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
