@@ -15,7 +15,7 @@ const Home: React.FC = () => {
   const isDesktop = Size === "L";
 
   return (
-    <section>
+    <section className="home">
       <div className="title">
         <h1 className={`h1-${Size}`}>
           <span className={`scriptT-${Size}`}>Fra</span> Sommella
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
       {isDesktop && <DesktopNav />}
 
-      <div className="bottom">
+      <div className="home__bottom">
         <div className="block-p">
           <InlineIcon name="Star" size={Size} folder="Icons" />
           <p className={`paragraph-${Size}`}>
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="tagline">
+      <div className="home__tagline">
         <span className="paragraph-X">Un Designer ordinario.</span>
         <span className="paragraph-X"> Con amore da Napoli.</span>
       </div>

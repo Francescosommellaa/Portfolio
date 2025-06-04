@@ -2,7 +2,7 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/general" as *;
 
-section {
+.home {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ section {
     }
   }
 
-  .bottom {
+  &__bottom {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -28,34 +28,27 @@ section {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: $Gap-6;
+      gap: $Gap-5;
       text-align: center;
-      max-width: 23.75rem;
+      max-width: 24rem;
     }
   }
 
-  .tagline {
+  &__tagline {
     padding-bottom: 1rem;
   }
 
   @include respond-to(tablet) {
     padding: $PaddingM;
 
-    .bottom {
+    &__bottom {
       height: 60%;
-      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
 
       .block-p {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: $Gap-2;
-        text-align: center;
         max-width: 40rem;
       }
 
@@ -66,28 +59,22 @@ section {
       }
     }
 
-    .bottom > .inline-icon {
+    &__bottom > .inline-icon {
       order: 3;
     }
   }
   @include respond-to(mobile) {
     padding: $PaddingS;
 
-    .bottom {
+    &__bottom {
       height: 60%;
-      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
 
       .block-p {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: $Gap-3;
-        text-align: center;
       }
 
       .no-icon {
@@ -97,7 +84,7 @@ section {
       }
     }
 
-    .bottom > .inline-icon {
+    &__bottom > .inline-icon {
       order: 3;
     }
   }
