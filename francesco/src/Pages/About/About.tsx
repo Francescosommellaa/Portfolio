@@ -9,7 +9,15 @@ import { useSize } from "../../Hooks/useSize";
 const About: React.FC = () => {
   const Size = useSize();
 
-  return <h2 className={`title-h2-${Size}-SB`}>About</h2>;
+  return (
+    <section id="about">
+      <div className="title">
+        <h1 className={`h1-${Size}`}>
+          <span className={`scriptT-${Size}`}>A</span>bout
+        </h1>
+      </div>
+    </section>
+  );
 };
 
 export default About;

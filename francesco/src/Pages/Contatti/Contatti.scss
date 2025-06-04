@@ -2,85 +2,19 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.parliamo-section {
+#contatti {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: space-arround;
-  gap: $Gap-7;
+  justify-content: space-between;
+  align-items: center;
+  padding: $PaddingL;
 
-  .parliamo-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  @include respond-to(tablet) {
+    padding: $PaddingM;
+  }
 
-    @include respond-to(mobile) {
-      flex-direction: column;
-    }
-
-    .profile-img {
-      width: 40%;
-      height: auto;
-      border-radius: $BorderRadius-5;
-      display: block;
-      object-fit: cover;
-
-      @include respond-to(mobile) {
-        width: 100%;
-        height: 100px;
-      }
-
-      @include respond-to(tablet) {
-        height: 400px;
-      }
-    }
-
-    .parliamo-form {
-      display: flex;
-      flex-direction: column;
-      align-self: start;
-      gap: 2rem;
-      width: 50%;
-
-      @include respond-to(mobile) {
-        width: 10 0%;
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-
-        .form-input,
-        .form-textarea {
-          width: 100%;
-          background: none;
-          border: none;
-          border-bottom: 1px solid $GrayScale-7;
-          color: $GrayScale--1;
-          outline: none;
-          transition: border-color 0.3s ease;
-
-          &::placeholder {
-            color: $GrayScale-6;
-          }
-
-          &:focus {
-            border-bottom-color: $GrayScale--1;
-          }
-
-          &.error {
-            border-bottom-color: red;
-          }
-        }
-
-        .form-textarea {
-          height: 100%;
-        }
-      }
-      Button {
-        width: fit-content;
-      }
-    }
+  @include respond-to(mobile) {
+    padding: $PaddingS;
   }
 }

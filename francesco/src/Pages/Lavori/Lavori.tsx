@@ -10,8 +10,12 @@ const Lavori: React.FC = () => {
   const Size = useSize();
 
   return (
-    <section className="lavori">
-      <h2 className={`title-h2-${Size}`}>Lavori</h2>
+    <section id="lavori">
+      <div className="title">
+        <h1 className={`h1-${Size}`}>
+          <span className={`scriptT-${Size}`}>L</span>avori
+        </h1>
+      </div>
     </section>
   );
 };

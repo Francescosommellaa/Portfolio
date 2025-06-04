@@ -26,8 +26,8 @@ const App = () => {
         <Route path="/About" element={<About />} />
         <Route path="/Playground" element={<Playground />} />
         <Route path="/Contatti" element={<Contatti />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

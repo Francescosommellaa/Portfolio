@@ -16,7 +16,7 @@ const Home: React.FC = () => {
 
   return (
     <section>
-      <div className="top">
+      <div className="title">
         <h1 className={`h1-${Size}`}>
           <span className={`scriptT-${Size}`}>Fra</span> Sommella
         </h1>

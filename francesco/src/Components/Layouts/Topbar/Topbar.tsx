@@ -43,11 +43,14 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
         </div>
       </div>
 
-      <Link to="/" className="center" onClick={scrollToTop}>
-        <span className="logo">
-          FRA<sup>©</sup>
-        </span>
-      </Link>
+      <div className="center">
+        {" "}
+        <Link to="/" onClick={scrollToTop}>
+          <span className="logo">
+            FRA<sup>©</sup>
+          </span>
+        </Link>
+      </div>
 
       <div className={`right topBar-${Size}`}>
         {isCompact ? (

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 // SCSS
 import "./Cursor.scss";
@@ -10,9 +11,12 @@ const Cursor: React.FC = () => {
   const [isInput, setIsInput] = useState(false);
   const [isText, setIsText] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
+  const location = useLocation();
 
+  //-------------------
+  // funzione per rilevare dispositivi touch
+  //-------------------
   useEffect(() => {
-    // Rileva se il dispositivo è touch
     const checkTouchDevice = () => {
       const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
       setIsTouch(isTouchDevice);
@@ -26,6 +30,9 @@ const Cursor: React.FC = () => {
     };
   }, []);
 
+  //-------------------
+  // funzione per aggiornare posizione cursore e gestire visibilità
+  //-------------------
   useEffect(() => {
     if (isTouch) return;
 
@@ -38,60 +45,90 @@ const Cursor: React.FC = () => {
       setIsVisible(false);
     };
 
-    const handleLinkHover = () => setIsAbsorbed(true);
-    const handleLinkLeave = () => setIsAbsorbed(false);
-    const handleInputHover = () => setIsInput(true);
-    const handleInputLeave = () => setIsInput(false);
-
-    const addEventListeners = () => {
-      const interactiveElements = document.querySelectorAll("a, button");
-      const inputElements = document.querySelectorAll("input, textarea");
-
-      interactiveElements.forEach((element) => {
-        element.addEventListener("mouseenter", handleLinkHover);
-        element.addEventListener("mouseleave", handleLinkLeave);
-      });
-
-      inputElements.forEach((element) => {
-        element.addEventListener("mouseenter", handleInputHover);
-        element.addEventListener("mouseleave", handleInputLeave);
-      });
-      return {
-        interactiveElements,
-        inputElements,
-      };
-    };
-
-    const { interactiveElements, inputElements } = addEventListeners();
-
-    const observer = new MutationObserver(addEventListeners);
-    observer.observe(document.body, { childList: true, subtree: true });
-
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [isTouch]);
 
-      interactiveElements.forEach((element) => {
-        element.removeEventListener("mouseenter", handleLinkHover);
-        element.removeEventListener("mouseleave", handleLinkLeave);
+  //-------------------
+  // funzione per aggiungere eventi su link, button, input
+  //-------------------
+  useEffect(() => {
+    if (isTouch) return;
+
+    const handleLinkEnter = () => setIsAbsorbed(true);
+    const handleLinkLeave = () => setIsAbsorbed(false);
+    const handleClick = () => setTimeout(() => setIsAbsorbed(false), 200);
+
+    const handleInputEnter = () => setIsInput(true);
+    const handleInputLeave = () => setIsInput(false);
+
+    const addListeners = () => {
+      const interactiveElements = Array.from(
+        document.querySelectorAll("a, button")
+      );
+      const inputElements = Array.from(
+        document.querySelectorAll("input, textarea")
+      );
+
+      interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", handleLinkEnter);
+        el.addEventListener("mouseleave", handleLinkLeave);
+        el.addEventListener("click", handleClick);
       });
 
-      inputElements.forEach((element) => {
-        element.removeEventListener("mouseenter", handleInputHover);
-        element.removeEventListener("mouseleave", handleInputLeave);
+      inputElements.forEach((el) => {
+        el.addEventListener("mouseenter", handleInputEnter);
+        el.addEventListener("mouseleave", handleInputLeave);
       });
+
+      return { interactiveElements, inputElements };
+    };
+
+    // inizializza e osserva DOM dinamico
+    const { interactiveElements, inputElements } = addListeners();
+    const observer = new MutationObserver(() => {
+      addListeners();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // cleanup listeners
+    return () => {
+      interactiveElements.forEach((el) => {
+        el.removeEventListener("mouseenter", handleLinkEnter);
+        el.removeEventListener("mouseleave", handleLinkLeave);
+        el.removeEventListener("click", handleClick);
+      });
+
+      inputElements.forEach((el) => {
+        el.removeEventListener("mouseenter", handleInputEnter);
+        el.removeEventListener("mouseleave", handleInputLeave);
+      });
+
       observer.disconnect();
     };
   }, [isTouch]);
 
+  //-------------------
+  // reset iniziale stati cursore
+  //-------------------
   useEffect(() => {
     setIsAbsorbed(false);
     setIsInput(false);
     setIsText(false);
   }, []);
+
+  //-------------------
+  // reset cursore su cambio route
+  //-------------------
+  useEffect(() => {
+    setIsVisible(true);
+    setIsAbsorbed(false);
+  }, [location]);
 
   if (isTouch) return null;
 
