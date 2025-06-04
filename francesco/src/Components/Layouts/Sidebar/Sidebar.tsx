@@ -48,7 +48,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
   return (
     <aside ref={sidebarRef} className="sidebar">
       <nav>
-        <ul className="sidebar__menu">
+        <ul>
           {NavLinks.map((link, index) => (
             <li
               key={link.name}
