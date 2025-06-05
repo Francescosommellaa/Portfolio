@@ -76,13 +76,13 @@ $fontRules: (
   subTitle: (
     L: (
       $fontBody,
-      1.5rem,
+      1rem,
       400,
       auto,
     ),
     M: (
       $fontBody,
-      1.5rem,
+      1rem,
       400,
       auto,
     ),
@@ -95,53 +95,33 @@ $fontRules: (
   ),
 
   // Paragraph
-  paragraphL:
+  paragraph:
     (
       L: (
         $fontBody,
-        2.25rem,
+        1.25rem,
         500,
-        auto,
+        1.75rem,
       ),
       M: (
         $fontBody,
-        2rem,
+        1.12rem,
         500,
-        auto,
+        1.75rem,
       ),
       S: (
         $fontBody,
-        1.5rem,
+        1rem,
+        500,
+        1.25rem,
+      ),
+      X: (
+        $fontBody,
+        1rem,
         500,
         auto,
       ),
     ),
-  paragraph: (
-    L: (
-      $fontBody,
-      1.5rem,
-      500,
-      1.75rem,
-    ),
-    M: (
-      $fontBody,
-      1.5rem,
-      500,
-      1.75rem,
-    ),
-    S: (
-      $fontBody,
-      1rem,
-      500,
-      1.25rem,
-    ),
-    X: (
-      $fontBody,
-      1rem,
-      500,
-      auto,
-    ),
-  ),
 
   //Num
   Num:

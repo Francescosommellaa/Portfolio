@@ -1,11 +1,15 @@
-// src/main.tsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-import { TransitionProvider } from "./Providers/TransitionProvider/TransitionProvider";
 
+// Main
+import App from "./App";
+
+// Scss
 import "./styles/general.scss";
+
+// Providers
+import { TransitionProvider } from "./Providers/TransitionProvider/TransitionProvider";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

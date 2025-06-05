@@ -18,7 +18,7 @@
   width: 100%;
   max-width: $MaxWidth;
   height: 80px;
-  padding: $PaddingL;
+  padding: 0 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,7 +99,7 @@
   }
 
   @include respond-to(tablet) {
-    padding: $PaddingM;
+    padding: 0 2.5rem;
 
     .right {
       span,

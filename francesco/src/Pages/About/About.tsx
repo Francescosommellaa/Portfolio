@@ -1,6 +1,6 @@
 import React from "react";
 
-// SCSS
+// Scss
 import "./About.scss";
 
 // Hooks

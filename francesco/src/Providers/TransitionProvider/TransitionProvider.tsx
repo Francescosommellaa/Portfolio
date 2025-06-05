@@ -1,8 +1,15 @@
-// src/Providers/TransitionPage.tsx
+// src/Providers/TransitionProvider.tsx
 import React, { createContext, useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import gsap from "gsap";
+
+// Scss
 import "./TransitionProvider.scss";
+
+// Hooks
+import { useSize } from "../../Hooks/useSize";
+
+// Animation
+import { animateTransition } from "./AnimationTransitionProvider";
 
 type TransitionContextType = {
   navigateWithTransition: (path: string) => void;
@@ -22,6 +29,7 @@ export const useTransition = () => {
 export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const Size = useSize();
   const [target, setTarget] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -31,31 +39,20 @@ export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({
     const el = containerRef.current;
     if (!el) return;
 
-    gsap.set(el, { x: "100%", display: "flex" });
-    gsap.to(el, {
-      x: "0%",
-      duration: 0.8,
-      ease: "power2.inOut",
-      onComplete: () => {
-        navigate(path);
-        gsap.to(el, {
-          x: "-100%",
-          duration: 0.8,
-          ease: "power2.inOut",
-          onComplete: () => {
-            gsap.set(el, { display: "none", x: "100%" });
-          },
-        });
-      },
-    });
+    animateTransition(el, () => navigate(path));
   };
+
+  const cleaned = target.replace("/", "");
+  const firstLetter = cleaned.charAt(0).toUpperCase();
+  const rest = cleaned.slice(1);
 
   return (
     <TransitionContext.Provider value={{ navigateWithTransition }}>
       {children}
       <div className="transition" ref={containerRef}>
-        <h1 className="transition__text">
-          {target.replace("/", "").toUpperCase()}
+        <h1 className={`title h1-${Size}`}>
+          <span className={`title scriptT-${Size}`}>{firstLetter}</span>
+          {rest}
         </h1>
       </div>
     </TransitionContext.Provider>

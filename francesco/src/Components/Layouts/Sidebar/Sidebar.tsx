@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-//SCSS
+//Scss
 import "./Sidebar.scss";
 
 //Hooks

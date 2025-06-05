@@ -1,14 +1,14 @@
 import React from "react";
 
-// SCSS
+// Organisms
+import DesktopNav from "../../Components/Organism/DesktopNav/DesktopNav";
+import InlineIcon from "../../Components/Atoms/InlineIcon/InlineIcon";
+
+// Scss
 import "./Home.scss";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
-
-// Organisms
-import DesktopNav from "../../Components/Organism/DesktopNav/DesktopNav";
-import InlineIcon from "../../Components/Atoms/InlineIcon/InlineIcon";
 
 const Home: React.FC = () => {
   const Size = useSize();

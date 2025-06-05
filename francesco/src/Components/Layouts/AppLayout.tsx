@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
+//  Atoms
+import Cursor from "../Atoms/Cursor/Cursor";
+
 // Layout
 import Topbar from "./Topbar/Topbar";
 import Sidebar from "./Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
-
-// Cursor
-import Cursor from "../Atoms/Cursor/Cursor";
 
 const AppLayout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);

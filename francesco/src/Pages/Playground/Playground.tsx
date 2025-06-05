@@ -1,6 +1,6 @@
 import React from "react";
 
-// SCSS
+// Scss
 import "./Playground.scss";
 
 // Hooks
