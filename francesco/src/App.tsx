@@ -20,13 +20,13 @@ const App = () => {
   return (
     <Routes>
       <Route element={<AppLayout />}>
+        <Route path="/" element={<Navigate to="/Home" replace />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Lavori" element={<Lavori />} />
         <Route path="/About" element={<About />} />
         <Route path="/Playground" element={<Playground />} />
         <Route path="/Contatti" element={<Contatti />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Navigate to="/Home" replace />} />
       </Route>
     </Routes>
   );
