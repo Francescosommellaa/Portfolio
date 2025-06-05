@@ -42,10 +42,6 @@
     }
   }
 
-  &__tagline {
-    padding-bottom: 1rem;
-  }
-
   @include respond-to(tablet) {
     padding: $PaddingM;
     gap: $Gap-3;
