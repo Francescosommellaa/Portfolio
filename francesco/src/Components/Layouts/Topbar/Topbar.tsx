@@ -56,6 +56,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
         <a
           className="logo"
           onClick={() => {
+            if (isCompact && isSidebarOpen) toggleSidebar();
             navigateWithTransition("/Home");
           }}
         >
