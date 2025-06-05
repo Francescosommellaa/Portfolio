@@ -9,7 +9,6 @@ const Cursor: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isAbsorbed, setIsAbsorbed] = useState(false);
   const [isInput, setIsInput] = useState(false);
-  const [isText, setIsText] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
   const location = useLocation();
 
@@ -119,7 +118,6 @@ const Cursor: React.FC = () => {
   useEffect(() => {
     setIsAbsorbed(false);
     setIsInput(false);
-    setIsText(false);
   }, []);
 
   //-------------------
@@ -136,7 +134,7 @@ const Cursor: React.FC = () => {
     <div
       className={`custom-cursor ${isVisible ? "visible" : "hidden"} ${
         isAbsorbed ? "absorbed" : ""
-      } ${isInput ? "input-cursor" : ""} ${isText ? "text-cursor" : ""}`}
+      } ${isInput ? "input-cursor" : ""}`}
       style={{
         left: `${cursorPosition.x}px`,
         top: `${cursorPosition.y}px`,
