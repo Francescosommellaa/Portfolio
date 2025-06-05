@@ -2,13 +2,16 @@ import React, { useRef, useEffect, useState } from "react";
 import "./DesktopNav.scss";
 import { useSize } from "../../../Hooks/useSize";
 import NavLinks from "../../DB/NavLinks";
-import { Link } from "react-router-dom";
+
+// Providers
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
 
 const DesktopNav: React.FC = () => {
   const Size = useSize();
   const navRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLLIElement[]>([]);
   const [hovered, setHovered] = useState<string | null>(null);
+  const { navigateWithTransition } = useTransition();
 
   useEffect(() => {
     itemsRef.current.forEach((item) => {
@@ -59,14 +62,13 @@ const DesktopNav: React.FC = () => {
             data-active={
               hovered === link.name ? "true" : hovered ? "false" : "neutral"
             }
+            onClick={() => navigateWithTransition(link.link)}
           >
             <span className="desktop-nav__number">{link.number}</span>
-            <Link to={link.link}>
-              <h2 className={`nav-${Size}`}>
-                <span className={`scriptN-${Size}`}>{link.script}</span>
-                {link.name}
-              </h2>
-            </Link>
+            <h2 className={`nav-${Size}`}>
+              <span className={`scriptN-${Size}`}>{link.script}</span>
+              {link.name}
+            </h2>
           </li>
         ))}
       </ul>

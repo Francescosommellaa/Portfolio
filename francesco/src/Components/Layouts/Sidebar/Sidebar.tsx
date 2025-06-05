@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Link } from "react-router-dom";
 
 //SCSS
 import "./Sidebar.scss";
 
 //Hooks
 import { useSize } from "../../../Hooks/useSize";
+
+//Providers
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
 
 //DB
 import NavLinks from "../../DB/NavLinks";
@@ -20,6 +22,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
   const Size = useSize();
   const sidebarRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLLIElement[]>([]);
+  const { navigateWithTransition } = useTransition();
 
   useEffect(() => {
     const items = itemsRef.current;
@@ -53,15 +56,17 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
             <li
               key={link.name}
               ref={(el) => (itemsRef.current[index] = el!)}
-              onClick={onClose}
+              onClick={() => {
+                onClose();
+                navigateWithTransition(link.link);
+              }}
             >
               <span className="paragraph-X">{link.number}</span>
-              <Link to={link.link}>
-                <h2 className={`nav-${Size}`}>
-                  <span className={`scriptN-${Size}`}>{link.script}</span>
-                  {link.name}
-                </h2>
-              </Link>
+
+              <h2 className={`nav-${Size}`}>
+                <span className={`scriptN-${Size}`}>{link.script}</span>
+                {link.name}
+              </h2>
             </li>
           ))}
         </ul>

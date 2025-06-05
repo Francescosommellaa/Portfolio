@@ -20,17 +20,25 @@
   &__bottom {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: $Gap-3;
 
-    .block-p {
+    .bottom {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: $Gap-5;
-      text-align: center;
-      max-width: 24rem;
+
+      .block-p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $Gap-5;
+        text-align: center;
+        max-width: 24rem;
+      }
     }
   }
 
@@ -40,52 +48,69 @@
 
   @include respond-to(tablet) {
     padding: $PaddingM;
+    gap: $Gap-3;
 
     &__bottom {
-      height: 60%;
+      height: 80%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
 
-      .block-p {
-        gap: $Gap-2;
-        max-width: 40rem;
-      }
+      .bottom {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
 
-      .no-icon {
-        .inline-icon {
-          display: none;
+        .block-p {
+          gap: $Gap-2;
+          max-width: 40rem;
+        }
+
+        .no-icon {
+          .inline-icon {
+            display: none;
+          }
         }
       }
-    }
-
-    &__bottom > .inline-icon {
-      order: 3;
+      .bottom > .inline-icon {
+        order: 3;
+      }
     }
   }
   @include respond-to(mobile) {
     padding: $PaddingS;
+    gap: $Gap-2;
 
     &__bottom {
-      height: 60%;
+      height: 72%;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
 
-      .block-p {
-        gap: $Gap-2;
-      }
+      .bottom {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
 
-      .no-icon {
-        .inline-icon {
-          display: none;
+        .block-p {
+          gap: $Gap-2;
+        }
+
+        .no-icon {
+          .inline-icon {
+            display: none;
+          }
         }
       }
-    }
-
-    &__bottom > .inline-icon {
-      order: 3;
+      .bottom > .inline-icon {
+        order: 3;
+      }
     }
   }
 }

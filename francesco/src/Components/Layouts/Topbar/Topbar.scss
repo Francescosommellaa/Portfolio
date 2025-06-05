@@ -16,6 +16,7 @@
 
 .topbar {
   width: 100%;
+  max-width: $MaxWidth;
   height: 80px;
   padding: $PaddingL;
   display: flex;
@@ -23,7 +24,6 @@
   align-items: center;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 900;
   color: $GrayScale-7;
   background-color: transparent;

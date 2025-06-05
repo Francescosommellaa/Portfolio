@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
+
+//SCSS
 import "./Topbar.scss";
+
+//Atoms
 import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
+
+//Hooks
 import { useSize } from "../../../Hooks/useSize";
-import { Link } from "react-router-dom";
+
+//Providers
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
 
 interface Props {
   isSidebarOpen: boolean;
@@ -13,6 +21,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   const Size = useSize();
   const isCompact = Size === "S" || Size === "M";
   const [isDark, setIsDark] = useState(isSidebarOpen);
+  const { navigateWithTransition } = useTransition();
 
   useEffect(() => {
     if (isSidebarOpen) {
@@ -38,18 +47,20 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
           <p className={`topBar-${Size}`}>
             Aperto a
             <br />
-            collaborazioni e offerte di lavoro
+            collaborazioni e offerte
           </p>
         </div>
       </div>
 
       <div className="center">
-        {" "}
-        <Link to="/" onClick={scrollToTop}>
-          <span className="logo">
-            FRA<sup>©</sup>
-          </span>
-        </Link>
+        <a
+          className="logo"
+          onClick={() => {
+            navigateWithTransition("/Home");
+          }}
+        >
+          FRA<sup>©</sup>
+        </a>
       </div>
 
       <div className={`right topBar-${Size}`}>

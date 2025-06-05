@@ -3,9 +3,12 @@
 @use "../../../styles/mixins" as *;
 
 .desktop-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
   width: 100%;
   height: 240px;
-  padding: $PaddingL;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +26,7 @@
   }
 
   &__menu {
+    padding: $PaddingL;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,8 +59,7 @@
 
   &__overlay {
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 54%;
     width: 100%;
     height: 0;
     background: $BgDark;

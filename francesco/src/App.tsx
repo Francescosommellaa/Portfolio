@@ -1,5 +1,5 @@
 // src/App.tsx
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // Hooks
 import { useAutoHideScrollbar } from "./Hooks/useAutoHideScrollbar";
@@ -21,12 +21,13 @@ const App = () => {
   return (
     <Routes>
       <Route element={<AppLayout />}>
-        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/Lavori" element={<Lavori />} />
         <Route path="/About" element={<About />} />
         <Route path="/Playground" element={<Playground />} />
         <Route path="/Contatti" element={<Contatti />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Navigate to="/Home" replace />} />
       </Route>
     </Routes>
   );

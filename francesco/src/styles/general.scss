@@ -48,7 +48,7 @@ html {
 body {
   overflow: hidden;
   margin: 0 auto;
-  max-width: 120rem;
+  max-width: $MaxWidth;
   background-color: $BgLight;
 
   a {
