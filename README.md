@@ -40,9 +40,12 @@ Ogni componente è **riutilizzabile**, progettato per essere facilmente esteso i
 Vuoi lavorare insieme o semplicemente fare due chiacchiere?
 
 - 🌐 [francescosommella.com](https://www.francescosommella.com)
-- 📧 Email: hello@francescosommella.com
-- 📸 [Instagram](https://www.instagram.com/francescosommellaa)
-- 💼 [LinkedIn](https://www.linkedin.com/in/francescosommellaa)
+📩 **Email**: hello@francescosommellaa.com  
+📸 **Instagram**: [@francescosommellaa](https://instagram.com/francescosommellaa)  
+💼 **LinkedIn**: [Francesco Sommella](https://linkedin.com/in/francescosommellaa)  
+🎨 **Behance**: [Francesco Sommella](https://www.behance.net/francescosommellaa)  
+🏀 **Dribbble**: [Francesco Sommella](https://dribbble.com/francescosommellaa)  
+📌 **Pinterest**: [Francesco Sommella](https://it.pinterest.com/francescosommellaa/)  
 
 ---
 
