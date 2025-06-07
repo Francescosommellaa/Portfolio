@@ -11,7 +11,7 @@ import "./Contatti.scss";
 import { useSize } from "../../Hooks/useSize";
 
 // DB
-import { contattiData } from "../../Components/DB/Contact";
+import { contattiData } from "../../Components/Data/Contact";
 
 const Contatti: React.FC = () => {
   const Size = useSize();

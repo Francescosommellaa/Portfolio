@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./DesktopNav.scss";
 import { useSize } from "../../../Hooks/useSize";
-import NavLinks from "../../DB/NavLinks";
+import NavLinks from "../../Data/NavLinks";
 
 // Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";

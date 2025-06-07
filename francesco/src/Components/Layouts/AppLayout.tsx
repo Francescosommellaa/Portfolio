@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Cursor from "../Atoms/Cursor/Cursor";
 
 // Layout
-import Topbar from "./Topbar/Topbar";
-import Sidebar from "./Sidebar/Sidebar";
+import Topbar from "../Organisms/Topbar/Topbar";
+import Sidebar from "../Organisms/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const AppLayout: React.FC = () => {

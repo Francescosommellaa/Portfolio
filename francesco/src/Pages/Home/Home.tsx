@@ -1,7 +1,7 @@
 import React from "react";
 
 // Organisms
-import DesktopNav from "../../Components/Organism/DesktopNav/DesktopNav";
+import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
 import InlineIcon from "../../Components/Atoms/InlineIcon/InlineIcon";
 
 // Scss

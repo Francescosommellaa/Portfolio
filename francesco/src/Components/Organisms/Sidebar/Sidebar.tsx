@@ -11,7 +11,7 @@ import { useSize } from "../../../Hooks/useSize";
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
 
 //DB
-import NavLinks from "../../DB/NavLinks";
+import NavLinks from "../../Data/NavLinks";
 
 interface Props {
   isOpen: boolean;

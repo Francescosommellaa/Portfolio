@@ -12,7 +12,7 @@ import Lavori from "./Pages/Lavori/Lavori";
 import About from "./Pages/About/About";
 import Playground from "./Pages/Playground/Playground";
 import Contatti from "./Pages/Contatti/Contatti";
-import NotFound from "./Pages/NotFound/NotFound";
+import NotFound from "./Pages/404/404";
 
 const App = () => {
   useAutoHideScrollbar();

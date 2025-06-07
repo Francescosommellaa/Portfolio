@@ -1,7 +1,7 @@
 import React from "react";
 
 // Scss
-import "./NotFound.scss";
+import "./404.scss";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
