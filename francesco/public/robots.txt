@@ -1,0 +1,9 @@
+# robots.txt per francescosommella.com
+User-agent: *
+Allow: /
+
+# Blocca la pagina 404
+Disallow: /404
+
+# Sitemap XML per Google
+Sitemap: https://www.francescosommella.com/sitemap.xml
