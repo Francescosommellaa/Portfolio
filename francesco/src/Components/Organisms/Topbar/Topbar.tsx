@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-//Atoms
+// Atoms
 import InlineIcon from "../../Atoms/InlineComponents/InlineIcon";
 
-//Scss
+// SCSS
 import "./Topbar.scss";
 
-//Hooks
+// Hooks
 import { useSize } from "../../../Hooks/useSize";
+import { useDarkSectionObserver } from "../../../Hooks/useDarkSectionObserver";
 
-//Providers
+// Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
 
 interface Props {
@@ -20,20 +21,18 @@ interface Props {
 const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   const Size = useSize();
   const isCompact = Size === "S" || Size === "M";
-  const [isDark, setIsDark] = useState(isSidebarOpen);
+  const [isDark, setIsDark] = useState(false);
   const { navigateWithTransition } = useTransition();
 
+  // Sidebar override
   useEffect(() => {
     if (isSidebarOpen) {
       setIsDark(true);
-    } else {
-      const timeout = setTimeout(() => {
-        setIsDark(false);
-      }, 680);
-
-      return () => clearTimeout(timeout);
     }
   }, [isSidebarOpen]);
+
+  // Attiva rilevamento sezioni scure
+  useDarkSectionObserver(setIsDark);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -42,7 +41,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <header className={`topbar ${isDark ? "on-dark" : ""}`}>
       <div className="left" onClick={scrollToTop}>
-        <InlineIcon folder="Logo" name="Logo" size={`${Size}`} />
+        <InlineIcon folder="Logo" name="Logo" size={Size} />
         <div className="topbar__text">
           <p className={`topBar-${Size}`}>
             Aperto a

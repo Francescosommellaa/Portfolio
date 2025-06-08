@@ -17,7 +17,7 @@ const AboutFooter: React.FC = () => {
 
   return (
     <section className="footer">
-      <InlineIcon folder="Illustrations" name="Illustration-2" size={Size} />
+      <InlineIcon folder="Illustrations" name="Illustration-4" size={Size} />
       <div className="footer__CTA">
         <span className={`subTitle-${Size}`}>Non siate timidi.</span>
         <a

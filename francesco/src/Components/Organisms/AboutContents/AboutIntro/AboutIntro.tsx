@@ -16,7 +16,7 @@ const AboutIntro: React.FC = () => {
   const Size = useSize();
 
   return (
-    <section className={`about-intro about-intro--${Size}`}>
+    <section className={`about-intro about-intro--${Size}`} data-theme="dark">
       <div className="about-intro__container">
         <div className="about-intro__container__top">
           <p className={`paragraph-${Size}`}>{AboutContent.intro.paragraph}</p>

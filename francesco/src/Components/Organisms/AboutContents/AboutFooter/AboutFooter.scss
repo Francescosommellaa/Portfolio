@@ -3,12 +3,15 @@
 @use "../../../../styles/typography" as *;
 
 .footer {
-  height: 100vh;
+  height: 90vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: $Gap-4;
+  background-color: $GrayScale-9;
+  color: $GrayScale--1;
 
   &__CTA {
     text-align: center;
@@ -17,5 +20,9 @@
     align-items: center;
     justify-content: center;
     gap: $Gap-3;
+
+    a:hover {
+      color: $GrayScale-1;
+    }
   }
 }
