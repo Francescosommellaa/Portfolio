@@ -3,21 +3,33 @@ import React from "react";
 // Scss
 import "./AboutFooter.scss";
 
-// Data
-import AboutContent from "../../../Data/About";
-
 // Atoms
 import InlineIcon from "../../../Atoms/InlineComponents/InlineIcon";
-
 // Hooks
 import { useSize } from "../../../../Hooks/useSize";
 
+//Providers
+import { useTransition } from "../../../../Providers/TransitionProvider/TransitionProvider";
+
 const AboutFooter: React.FC = () => {
   const Size = useSize();
+  const { navigateWithTransition } = useTransition();
 
   return (
-    <section className="intro">
-      <p className={`paragraph-${Size}`}>{AboutContent.intro.paragraph}</p>
+    <section className="footer">
+      <InlineIcon folder="Illustrations" name="Illustration-2" size={Size} />
+      <div className="footer__CTA">
+        <span className={`subTitle-${Size}`}>Non siate timidi.</span>
+        <a
+          onClick={() => {
+            navigateWithTransition("/Contatti");
+          }}
+        >
+          <h2 className={`h1-${Size}`}>
+            <span className={`scriptT-${Size}`}>P</span>arliamo
+          </h2>
+        </a>
+      </div>
     </section>
   );
 };
