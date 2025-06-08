@@ -13,7 +13,7 @@
     align-items: flex-start;
     justify-content: end;
     gap: $Gap-2;
-    margin-bottom: 64px;
+    margin-bottom: 6rem;
 
     p {
       width: 32%;
@@ -23,14 +23,14 @@
   &__philosophy {
     display: flex;
     flex-direction: column;
-    gap: 64px;
-    margin-bottom: 120px;
+    gap: $Gap-7;
+    margin-bottom: 6rem;
 
     .about-main__step {
       max-width: 600px;
 
       .about-main__title {
-        margin-bottom: 12px;
+        margin-bottom: 1rem;
       }
     }
   }
@@ -41,6 +41,7 @@
     align-items: flex-start;
     justify-content: flex-end;
     gap: $Gap-2;
+    margin-bottom: 6rem;
 
     &-subtitle {
       max-width: 32%;
@@ -49,11 +50,22 @@
 
   // TABLET
   @include respond-to("tablet") {
-    padding: $PaddingL;
+    padding: $PaddingM;
   }
 
   // MOBILE
   @include respond-to("mobile") {
     padding: $PaddingS;
+
+    &__skills {
+      p {
+        width: 80%;
+      }
+    }
+    &__clients {
+      &-subtitle {
+        max-width: 60%;
+      }
+    }
   }
 }
