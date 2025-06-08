@@ -1,6 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./DesktopNav.scss";
+
+// Hooks
 import { useSize } from "../../../Hooks/useSize";
+
+// Data
 import NavLinks from "../../Data/NavLinks";
 
 // Providers

@@ -5,7 +5,7 @@ import "./404.scss";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
-import InlineIcon from "../../Components/Atoms/InlineIcon/InlineIcon";
+import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
 
 const NotFound: React.FC = () => {
   const Size = useSize();

@@ -2,7 +2,7 @@
 import React from "react";
 
 // Atoms
-import InlineIcon from "../../Components/Atoms/InlineIcon/InlineIcon";
+import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
 
 // Scss
 import "./Contatti.scss";

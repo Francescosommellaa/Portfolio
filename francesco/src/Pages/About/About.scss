@@ -2,14 +2,10 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/typography" as *;
 
-#about {
-  padding: $PaddingL;
-
-  @include respond-to(tablet) {
-    padding: $PaddingM;
-  }
-
-  @include respond-to(mobile) {
-    padding: $PaddingS;
-  }
+.aboutPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $Gap-6;
 }

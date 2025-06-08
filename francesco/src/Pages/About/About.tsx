@@ -1,23 +1,19 @@
 import React from "react";
-
-// Scss
 import "./About.scss";
 
-// Hooks
-import { useSize } from "../../Hooks/useSize";
+// Organisms
+import AboutIntro from "../../Components/Organisms/AboutContents/AboutIntro/AboutIntro";
+import AboutMain from "../../Components/Organisms/AboutContents/AboutMain/AboutMain";
+import AboutFooter from "../../Components/Organisms/AboutContents/AboutFooter/AboutFooter";
 
-const About: React.FC = () => {
-  const Size = useSize();
-
+const AboutPage: React.FC = () => {
   return (
-    <section id="about">
-      <div className="title">
-        <h1 className={`h1-${Size}`}>
-          <span className={`scriptT-${Size}`}>A</span>bout
-        </h1>
-      </div>
-    </section>
+    <main className="aboutPage">
+      <AboutIntro />
+      <AboutMain />
+      <AboutFooter />
+    </main>
   );
 };
 
-export default About;
+export default AboutPage;

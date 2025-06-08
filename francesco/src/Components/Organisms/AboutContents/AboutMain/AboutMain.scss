@@ -1,0 +1,59 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+@use "../../../../styles/typography" as *;
+
+.about-main {
+  width: 100%;
+  padding: $PaddingL;
+  background-color: white;
+
+  &__skills {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: end;
+    gap: $Gap-2;
+    margin-bottom: 64px;
+
+    p {
+      width: 32%;
+    }
+  }
+
+  &__philosophy {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 120px;
+
+    .about-main__step {
+      max-width: 600px;
+
+      .about-main__title {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__clients {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: $Gap-2;
+
+    &-subtitle {
+      max-width: 32%;
+    }
+  }
+
+  // TABLET
+  @include respond-to("tablet") {
+    padding: $PaddingL;
+  }
+
+  // MOBILE
+  @include respond-to("mobile") {
+    padding: $PaddingS;
+  }
+}

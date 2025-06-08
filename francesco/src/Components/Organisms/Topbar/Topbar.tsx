@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 //Atoms
-import InlineIcon from "../../Atoms/InlineIcon/InlineIcon";
+import InlineIcon from "../../Atoms/InlineComponents/InlineIcon";
 
 //Scss
 import "./Topbar.scss";
