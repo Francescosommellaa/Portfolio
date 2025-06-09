@@ -9,7 +9,7 @@ import InlineImage from "../../../Atoms/InlineComponents/InlineImage";
 // Hooks
 import { useSize } from "../../../../Hooks/useSize";
 
-// Dati
+// Data
 import AboutContent from "../../../Data/About";
 
 const AboutIntro: React.FC = () => {

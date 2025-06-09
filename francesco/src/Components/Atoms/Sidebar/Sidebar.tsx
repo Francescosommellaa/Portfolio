@@ -10,7 +10,7 @@ import { useSize } from "../../../Hooks/useSize";
 //Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
 
-//DB
+//Data
 import NavLinks from "../../Data/NavLinks";
 
 interface Props {
@@ -64,7 +64,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
               <span className="paragraph-X">{link.number}</span>
 
               <h2 className={`nav-${Size}`}>
-                <span className={`scriptN-${Size}`}>{link.script}</span>
+                <span className={`nav-script-${Size}`}>{link.script}</span>
                 {link.name}
               </h2>
             </li>

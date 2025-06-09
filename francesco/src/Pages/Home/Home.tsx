@@ -1,11 +1,11 @@
 import React from "react";
 
-// Organisms
-import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
-import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
-
 // Scss
 import "./Home.scss";
+
+// Atoms
+import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
+import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     <section className="home">
       <div className="title">
         <h1 className={`h1-${Size}`}>
-          <span className={`scriptT-${Size}`}>Fra</span> Sommella
+          <span className={`h1-script-${Size}`}>Fra</span> Sommella
         </h1>
       </div>
 
@@ -29,8 +29,8 @@ const Home: React.FC = () => {
           <div className="block-p">
             <InlineIcon name="Star" size={Size} folder="Icons" />
             <p className={`paragraph-${Size}`}>
-              Creo esperienze digitali essenziali, pensate per coinvolgere,
-              convertire e restare impresse nella mente di chi le vive.
+              Sono Francesco Sommella, ho 23 anni, vivo a Napoli e lavoro come
+              designer e front-end developer indipendente.
             </p>
           </div>
 
@@ -43,8 +43,8 @@ const Home: React.FC = () => {
           <div className="block-p no-icon">
             <InlineIcon name="Star" size={Size} folder="Icons" />
             <p className={`paragraph-${Size}`}>
-              Creo esperienze digitali essenziali, pensate per coinvolgere,
-              convertire e restare impresse nella mente di chi le vive.
+              Progetto esperienze digitali chiare, coinvolgenti e memorabili —
+              pensate per lasciare il segno e generare valore.
             </p>
           </div>
         </div>

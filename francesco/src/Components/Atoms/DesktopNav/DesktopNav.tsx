@@ -46,7 +46,7 @@ const DesktopNav: React.FC = () => {
         <h1 className={`h1-${Size}`}>
           {hovered && (
             <>
-              <span className={`scriptT-${Size}`}>
+              <span className={`h1-script-${Size}`}>
                 {NavLinks.find((l) => l.name === hovered)?.script}
               </span>
               {hovered}
@@ -70,7 +70,7 @@ const DesktopNav: React.FC = () => {
           >
             <span className="desktop-nav__number">{link.number}</span>
             <h2 className={`nav-${Size}`}>
-              <span className={`scriptN-${Size}`}>{link.script}</span>
+              <span className={`nav-script-${Size}`}>{link.script}</span>
               {link.name}
             </h2>
           </li>

@@ -3,9 +3,11 @@ import React from "react";
 // Scss
 import "./404.scss";
 
+// Atoms
+import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
+
 // Hooks
 import { useSize } from "../../Hooks/useSize";
-import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
 
 const NotFound: React.FC = () => {
   const Size = useSize();

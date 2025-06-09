@@ -3,14 +3,14 @@ import React from "react";
 // Scss
 import "./AboutMain.scss";
 
-// Data
-import AboutContent from "../../../Data/About";
-
 // Atoms
 import InlineIcon from "../../../Atoms/InlineComponents/InlineIcon";
 
 // Hooks
 import { useSize } from "../../../../Hooks/useSize";
+
+// Data
+import AboutContent from "../../../Data/About";
 
 const AboutMain: React.FC = () => {
   const Size = useSize();

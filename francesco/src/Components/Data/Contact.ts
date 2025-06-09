@@ -19,6 +19,7 @@ export const contattiData: ContactSection[] = [
   {
     title: "PORTFOLIO",
     items: [
+      { label: "GitHub", url: "https://github.com/Francescosommellaa" },
       { label: "Pinterest", url: "https://it.pinterest.com/francescosommellaa/" },
       { label: "Dribbble", url: "https://dribbble.com/francescosommellaa" },
       { label: "Behance", url: "https://www.behance.net/francescosommellaa" },
@@ -27,7 +28,7 @@ export const contattiData: ContactSection[] = [
   {
     title: "EMAIL",
     items: [
-      { label: "hello@francescosommella.com", url: "mailto:info@francescosommella.com" },
+      { label: "hello@francescosommella.com", url: "mailto:hello@francescosommella.com" },
     ],
   },
 ];

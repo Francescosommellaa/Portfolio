@@ -5,6 +5,7 @@ import "./AboutFooter.scss";
 
 // Atoms
 import InlineIcon from "../../../Atoms/InlineComponents/InlineIcon";
+
 // Hooks
 import { useSize } from "../../../../Hooks/useSize";
 

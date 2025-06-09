@@ -33,7 +33,7 @@ export function useDarkSectionObserver(setIsDark: (v: boolean) => void) {
     sections.forEach((s) => observer.observe(s));
 
     // 🔥 Fallback al cambio rotta
-    const timeout = setTimeout(checkVisibility, 100); // Delay minimo per DOM ready
+    const timeout = setTimeout(checkVisibility, 100);
 
     return () => {
       observer.disconnect();

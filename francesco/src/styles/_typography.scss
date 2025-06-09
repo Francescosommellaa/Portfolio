@@ -8,6 +8,8 @@ $fontScript: "Allura", cursive;
 //===============
 // Font Rules
 $fontRules: (
+  // Caption
+  caption-X: ($fontBody, 2.375rem, 400, 2rem),
   // topBar
   topBar:
     (
@@ -31,7 +33,7 @@ $fontRules: (
       ),
     ),
 
-  // Headings
+  // H1
   h1:
     (
       L: (
@@ -53,44 +55,110 @@ $fontRules: (
         80%,
       ),
     ),
-  nav: (
+  h1-script: (
     L: (
-      $fontBody,
-      1.5rem,
-      500,
+      $fontScript,
+      17.5rem,
+      400,
       auto,
     ),
     M: (
-      $fontBody,
-      3.25rem,
-      500,
+      $fontScript,
+      11.25rem,
+      400,
       auto,
     ),
     S: (
-      $fontBody,
-      3rem,
-      500,
+      $fontScript,
+      5.625rem,
+      400,
       auto,
     ),
   ),
-  subTitle: (
+
+  // Nav
+  nav:
+    (
+      L: (
+        $fontBody,
+        1.5rem,
+        500,
+        auto,
+      ),
+      M: (
+        $fontBody,
+        3.25rem,
+        500,
+        auto,
+      ),
+      S: (
+        $fontBody,
+        3rem,
+        500,
+        auto,
+      ),
+    ),
+  nav-script: (
+    L: (
+      $fontScript,
+      2.5rem,
+      400,
+      auto,
+    ),
+    M: (
+      $fontScript,
+      6rem,
+      400,
+      auto,
+    ),
+    S: (
+      $fontScript,
+      5.75rem,
+      400,
+      auto,
+    ),
+  ),
+
+  // Subtitle
+  sub-title:
+    (
+      L: (
+        $fontBody,
+        1rem,
+        500,
+        2.5rem,
+      ),
+      M: (
+        $fontBody,
+        1rem,
+        500,
+        2rem,
+      ),
+      S: (
+        $fontBody,
+        0.75rem,
+        500,
+        1.75rem,
+      ),
+    ),
+  sub-title-regular: (
     L: (
       $fontBody,
       1rem,
       400,
-      auto,
+      2.5rem,
     ),
     M: (
       $fontBody,
       1rem,
       400,
-      auto,
+      2rem,
     ),
     S: (
       $fontBody,
       0.75rem,
       400,
-      auto,
+      1.75rem,
     ),
   ),
 
@@ -99,32 +167,32 @@ $fontRules: (
     (
       L: (
         $fontBody,
-        1.25rem,
+        1.5rem,
         500,
         1.75rem,
       ),
       M: (
         $fontBody,
-        1.12rem,
+        1.5rem,
         500,
         1.75rem,
       ),
       S: (
         $fontBody,
-        1rem,
+        1.2rem,
         500,
-        1.25rem,
+        1.5rem,
       ),
       X: (
         $fontBody,
         1rem,
         500,
-        auto,
+        1rem,
       ),
     ),
 
   //Num
-  Num:
+  num:
     (
       L: (
         $fontBody,
@@ -145,87 +213,137 @@ $fontRules: (
         auto,
       ),
     ),
-
-  // Script
-  scriptNum:
-    (
-      L: (
-        $fontScript,
-        2.875rem,
-        400,
-        auto,
-      ),
-      M: (
-        $fontScript,
-        2.5rem,
-        400,
-        auto,
-      ),
-      S: (
-        $fontScript,
-        2.25rem,
-        400,
-        auto,
-      ),
-    ),
-  scriptT: (
+  num-script: (
     L: (
       $fontScript,
-      17.5rem,
+      2.875rem,
       400,
       auto,
     ),
     M: (
-      $fontScript,
-      11.25rem,
-      400,
-      auto,
-    ),
-    S: (
-      $fontScript,
-      5.625rem,
-      400,
-      auto,
-    ),
-  ),
-  scriptN: (
-    L: (
       $fontScript,
       2.5rem,
       400,
       auto,
     ),
-    M: (
-      $fontScript,
-      6rem,
-      400,
-      auto,
-    ),
     S: (
       $fontScript,
-      5.75rem,
+      2.25rem,
       400,
       auto,
     ),
   ),
-  scriptP: (
+
+  // H6
+  h6:
+    (
+      L: (
+        $fontBody,
+        1rem,
+        400,
+        auto,
+      ),
+      M: (
+        $fontBody,
+        1rem,
+        400,
+        auto,
+      ),
+      S: (
+        $fontBody,
+        0.75rem,
+        400,
+        auto,
+      ),
+    ),
+
+  // Social
+  social:
+    (
+      L: (
+        $fontBody,
+        1.5rem,
+        400,
+        auto,
+      ),
+      M: (
+        $fontBody,
+        1.5rem,
+        400,
+        auto,
+      ),
+      S: (
+        $fontBody,
+        1rem,
+        400,
+        auto,
+      ),
+    ),
+
+  // About
+  intro-about:
+    (
+      L: (
+        $fontBody,
+        1.65rem,
+        400,
+        1.875rem,
+      ),
+      M: (
+        $fontBody,
+        1.65rem,
+        400,
+        1.875rem,
+      ),
+      S: (
+        $fontBody,
+        1.25rem,
+        400,
+        1.625rem,
+      ),
+    ),
+
+  subtitle-about: (
     L: (
-      $fontScript,
-      2.375rem,
-      400,
+      $fontBody,
       2rem,
+      500,
+      2.375rem,
     ),
     M: (
-      $fontScript,
-      2.25rem,
-      400,
-      1.75rem,
+      $fontBody,
+      1.5rem,
+      500,
+      1.875rem,
     ),
     S: (
-      $fontScript,
+      $fontBody,
+      1.5rem,
+      500,
       1.875rem,
+    ),
+  ),
+
+  philosophy-title-X: ($fontScript, 2.75rem, 400, 3.25rem),
+  philosophy-paragraph-X: ($fontBody, 1.5rem, 400, 1.75rem),
+  client-about: (
+    L: (
+      $fontBody,
+      3.75rem,
       400,
-      1.25rem,
+      auto,
+    ),
+    M: (
+      $fontBody,
+      3.125rem,
+      400,
+      auto,
+    ),
+    S: (
+      $fontBody,
+      2.5rem,
+      400,
+      auto,
     ),
   )
 );

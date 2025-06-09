@@ -3,7 +3,7 @@
 @use "../../styles/mixins" as *;
 
 .contatti {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +14,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
-    gap: $Gap-2;
 
     .text {
       display: flex;

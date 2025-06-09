@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-// Atoms
-import InlineIcon from "../../Atoms/InlineComponents/InlineIcon";
-
 // SCSS
 import "./Topbar.scss";
+
+// Atoms
+import InlineIcon from "../InlineComponents/InlineIcon";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
