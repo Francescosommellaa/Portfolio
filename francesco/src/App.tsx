@@ -1,8 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-// Hooks
-import { useAutoHideScrollbar } from "./Hooks/useAutoHideScrollbar";
-
 // Layout
 import AppLayout from "./Components/Layouts/AppLayout";
 
@@ -15,8 +12,6 @@ import Contatti from "./Pages/Contatti/Contatti";
 import NotFound from "./Pages/404/404";
 
 const App = () => {
-  useAutoHideScrollbar();
-
   return (
     <Routes>
       <Route element={<AppLayout />}>

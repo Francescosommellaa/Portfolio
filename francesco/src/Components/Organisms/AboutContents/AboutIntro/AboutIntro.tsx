@@ -16,10 +16,12 @@ const AboutIntro: React.FC = () => {
   const Size = useSize();
 
   return (
-    <section className={`about-intro about-intro--${Size}`} data-theme="dark">
+    <section className={`about-intro`} data-theme="dark">
       <div className="about-intro__container">
         <div className="about-intro__container__top">
-          <p className={`paragraph-${Size}`}>{AboutContent.intro.paragraph}</p>
+          <p className={`intro-about-${Size}`}>
+            {AboutContent.intro.paragraph}
+          </p>
         </div>
 
         <div className="about-intro__container__image">
@@ -27,7 +29,7 @@ const AboutIntro: React.FC = () => {
         </div>
 
         <div className="about-intro__container__bottom">
-          <span className={`paragraph-${Size}`}>
+          <span className={`intro-about-${Size}`}>
             Mi appassiona creare idee, elementi visivi in movimento e tipografia
             in progetti memorabili.
           </span>

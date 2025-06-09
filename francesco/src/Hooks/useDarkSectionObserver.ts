@@ -26,7 +26,7 @@ export function useDarkSectionObserver(setIsDark: (v: boolean) => void) {
         const visibleDark = entries.some((entry) => entry.isIntersecting);
         setIsDark(visibleDark);
       },
-      { threshold: 0.5 }
+      { threshold: 0 }
     );
 
     const sections = document.querySelectorAll("[data-theme='dark'], .dark-section");

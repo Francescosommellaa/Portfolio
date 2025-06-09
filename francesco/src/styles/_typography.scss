@@ -357,24 +357,33 @@ $fontRules: (
 //===============
 // Dynamic Font Classes Generator
 @each $type, $sizes in $fontRules {
-  @each $sizeKey, $value in $sizes {
-    // Livello base (es: h1-L)
-    @if type-of($value) == "list" {
-      .#{$type}-#{$sizeKey} {
-        font-family: list.nth($value, 1);
-        font-size: list.nth($value, 2);
-        font-weight: list.nth($value, 3);
-        line-height: list.nth($value, 4);
-      }
-
-      // Livello intermedio (es: h2-L-B)
-    } @else if type-of($value) == "map" {
-      @each $variantKey, $variantValue in $value {
-        .#{$type}-#{$sizeKey}-#{$variantKey} {
-          font-family: list.nth($variantValue, 1);
-          font-size: list.nth($variantValue, 2);
-          font-weight: list.nth($variantValue, 3);
-          line-height: list.nth($variantValue, 4);
+  @if type-of($sizes) == "list" {
+    // Caso flat: esempio philosophy-title-X
+    .#{$type} {
+      font-family: list.nth($sizes, 1);
+      font-size: list.nth($sizes, 2);
+      font-weight: list.nth($sizes, 3);
+      line-height: list.nth($sizes, 4);
+    }
+  } @else if type-of($sizes) == "map" {
+    // Caso normale: esempio h1 o topBar
+    @each $sizeKey, $value in $sizes {
+      @if type-of($value) == "list" {
+        .#{$type}-#{$sizeKey} {
+          font-family: list.nth($value, 1);
+          font-size: list.nth($value, 2);
+          font-weight: list.nth($value, 3);
+          line-height: list.nth($value, 4);
+        }
+      } @else if type-of($value) == "map" {
+        // Caso avanzato (non presente al momento ma previsto)
+        @each $variantKey, $variantValue in $value {
+          .#{$type}-#{$sizeKey}-#{$variantKey} {
+            font-family: list.nth($variantValue, 1);
+            font-size: list.nth($variantValue, 2);
+            font-weight: list.nth($variantValue, 3);
+            line-height: list.nth($variantValue, 4);
+          }
         }
       }
     }

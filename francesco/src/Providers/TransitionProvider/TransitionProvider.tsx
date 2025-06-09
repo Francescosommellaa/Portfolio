@@ -51,7 +51,7 @@ export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({
       {children}
       <div className="transition" ref={containerRef}>
         <h1 className={`title h1-${Size}`}>
-          <span className={`title scriptT-${Size}`}>{firstLetter}</span>
+          <span className={`title h1-script-${Size}`}>{firstLetter}</span>
           {rest}
         </h1>
       </div>
