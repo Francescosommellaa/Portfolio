@@ -9,7 +9,7 @@ $fontScript: "Allura", cursive;
 // Font Rules
 $fontRules: (
   // Caption
-  caption-X: ($fontBody, 2.375rem, 400, 2rem),
+  caption-X: ($fontBody, 0.75rem, 400, auto),
   // topBar
   topBar:
     (
@@ -285,9 +285,9 @@ $fontRules: (
     (
       L: (
         $fontBody,
-        1.65rem,
+        2rem,
         400,
-        1.875rem,
+        2.25rem,
       ),
       M: (
         $fontBody,
@@ -324,8 +324,6 @@ $fontRules: (
     ),
   ),
 
-  philosophy-title-X: ($fontScript, 2.75rem, 400, 3.25rem),
-  philosophy-paragraph-X: ($fontBody, 1.5rem, 400, 1.75rem),
   client-about: (
     L: (
       $fontBody,
@@ -345,7 +343,31 @@ $fontRules: (
       400,
       auto,
     ),
-  )
+  ),
+
+  caption-about: (
+    L: (
+      $fontBody,
+      2rem,
+      500,
+      auto,
+    ),
+    M: (
+      $fontBody,
+      1.5rem,
+      500,
+      auto,
+    ),
+    S: (
+      $fontBody,
+      1rem,
+      500,
+      auto,
+    ),
+  ),
+
+  philosophy-title-X: ($fontScript, 2.75rem, 400, 3.25rem),
+  philosophy-paragraph-X: ($fontBody, 1.5rem, 400, 1.75rem)
 );
 
 //===============

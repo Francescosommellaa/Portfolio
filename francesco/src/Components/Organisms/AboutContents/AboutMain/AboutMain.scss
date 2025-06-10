@@ -6,6 +6,9 @@
   width: 100%;
   padding: $PaddingL;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: $Gap-8;
 
   &__skills {
     display: flex;
@@ -15,21 +18,21 @@
     gap: $Gap-2;
     margin-bottom: 6rem;
 
-    p {
-      width: 32%;
+    span {
+      width: 40%;
     }
   }
 
   &__philosophy {
     display: flex;
     flex-direction: column;
-    gap: $Gap-7;
+    gap: $Gap-8;
     margin-bottom: 6rem;
 
     .about-main__step {
       max-width: 600px;
 
-      .about-main__title {
+      h3 {
         margin-bottom: 1rem;
       }
     }
@@ -41,9 +44,8 @@
     align-items: flex-start;
     justify-content: flex-end;
     gap: $Gap-2;
-    margin-bottom: 6rem;
 
-    &-subtitle {
+    span {
       max-width: 32%;
     }
   }
@@ -58,12 +60,12 @@
     padding: $PaddingS;
 
     &__skills {
-      p {
+      span {
         width: 80%;
       }
     }
     &__clients {
-      &-subtitle {
+      span {
         max-width: 60%;
       }
     }

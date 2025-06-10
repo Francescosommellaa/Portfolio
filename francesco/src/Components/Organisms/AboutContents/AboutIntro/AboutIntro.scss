@@ -19,24 +19,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-center;
+
+    &__bottom,
+    &__top {
+      color: $GrayScale--1;
+      margin: -2rem 0;
+    }
 
     &__top {
       align-self: flex-start;
-      color: white;
-      max-width: 396px;
+      max-width: 40%;
     }
-
     &__image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      align-self: center;
     }
 
     &__bottom {
       align-self: flex-end;
-      color: white;
-      max-width: 396px;
+      max-width: 32%;
     }
   }
 
@@ -47,10 +47,11 @@
     padding-bottom: 6rem;
 
     &__container {
-      gap: $Gap-4;
       &__top,
       &__bottom {
-        max-width: 360px;
+        z-index: 200;
+        margin: -2rem 0;
+        max-width: 420px;
       }
     }
   }

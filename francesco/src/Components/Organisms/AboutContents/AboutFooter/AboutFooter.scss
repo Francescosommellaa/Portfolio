@@ -3,7 +3,7 @@
 @use "../../../../styles/typography" as *;
 
 .about-footer {
-  height: 90vh;
+  height: 88vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,9 +19,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: $Gap-3;
+    gap: $Gap-4;
 
-    a:hover {
+    > span {
+      color: $GrayScale-7;
+    }
+
+    &:hover a {
       color: $GrayScale-1;
     }
   }

@@ -20,9 +20,9 @@ const AboutMain: React.FC = () => {
       {/* Skills subtitle */}
       <div className="about-main__skills">
         <InlineIcon folder="Icons" size="X" name="Ellipse" />
-        <p className={`subtitle-about-${Size}`}>
+        <span className={`subtitle-about-${Size}`}>
           {AboutContent.skillsSubtitle}
-        </p>
+        </span>
       </div>
 
       {/* Design Philosophy */}
@@ -38,9 +38,9 @@ const AboutMain: React.FC = () => {
       {/* Clienti */}
       <div className="about-main__clients">
         <InlineIcon folder="Icons" size="X" name="Ellipse" />
-        <p className={`subtitle-about-${Size}`}>
+        <span className={`subtitle-about-${Size}`}>
           {AboutContent.clientsSubtitle}
-        </p>
+        </span>
       </div>
       <ul className="about-main__client-list">
         {AboutContent.clients.map((client) => (

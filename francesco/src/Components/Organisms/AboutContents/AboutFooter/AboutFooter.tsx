@@ -19,8 +19,8 @@ const AboutFooter: React.FC = () => {
   return (
     <section className="about-footer">
       <InlineIcon folder="Illustrations" name="Illustration-4" size={Size} />
-      <div className="footer__CTA">
-        <span className={`subtitle-about-${Size}`}>Non siate timidi.</span>
+      <div className="about-footer__CTA">
+        <span className={`caption-about-${Size}`}>Non siate timidi.</span>
         <a
           onClick={() => {
             navigateWithTransition("/Contatti");
