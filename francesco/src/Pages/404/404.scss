@@ -3,7 +3,7 @@
 @use "../../styles/typography" as *;
 
 #not-found {
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   padding: $PaddingL;
   display: flex;
