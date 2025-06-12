@@ -1,43 +1,51 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 export function useDarkSectionObserver(setIsDark: (v: boolean) => void) {
   const location = useLocation();
 
-  useEffect(() => {
-    const checkVisibility = () => {
-      const sections = document.querySelectorAll("[data-theme='dark'], .dark-section");
+  const checkVisibility = useCallback(() => {
+    const sections = document.querySelectorAll("[data-theme='dark']");
+    let isVisible = false;
 
-      let isVisible = false;
+    for (const section of sections) {
+      const rect = section.getBoundingClientRect();
 
-      for (const section of sections) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          isVisible = true;
-          break;
-        }
+      // Consideriamo visibile solo se almeno metà visibile
+      const threshold = rect.height * 0.5;
+
+      if (
+        rect.top < window.innerHeight - threshold &&
+        rect.bottom > threshold
+      ) {
+        isVisible = true;
+        break;
       }
+    }
 
-      setIsDark(isVisible);
-    };
+    setIsDark(isVisible);
+  }, [setIsDark]);
 
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleDark = entries.some((entry) => entry.isIntersecting);
         setIsDark(visibleDark);
       },
-      { threshold: 0 }
+      { threshold: 0.5 } // ← qui ora richiediamo che almeno metà elemento sia visibile
     );
 
-    const sections = document.querySelectorAll("[data-theme='dark'], .dark-section");
+    const sections = document.querySelectorAll("[data-theme='dark']");
     sections.forEach((s) => observer.observe(s));
 
-    // 🔥 Fallback al cambio rotta
+    // Fallback per sicurezza su cambio rotta
     const timeout = setTimeout(checkVisibility, 100);
 
     return () => {
       observer.disconnect();
       clearTimeout(timeout);
     };
-  }, [location.pathname, setIsDark]);
+  }, [location.pathname, checkVisibility]);
+
+  return { checkVisibility };
 }

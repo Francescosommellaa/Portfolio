@@ -69,10 +69,12 @@ const DesktopNav: React.FC = () => {
             onClick={() => navigateWithTransition(link.link)}
           >
             <span className="desktop-nav__number">{link.number}</span>
-            <h2 className={`nav-${Size}`}>
-              <span className={`nav-script-${Size}`}>{link.script}</span>
-              {link.name}
-            </h2>
+            <a>
+              <h2 className={`nav-${Size}`}>
+                <span className={`nav-script-${Size}`}>{link.script}</span>
+                {link.name}
+              </h2>
+            </a>
           </li>
         ))}
       </ul>

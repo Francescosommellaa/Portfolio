@@ -18,12 +18,13 @@
     }
   }
 
-  &__bottom {
+  &__main {
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $Gap-3;
+    gap: $Gap-8;
 
     .bottom {
       width: 100%;
@@ -45,23 +46,19 @@
 
   @include respond-to(tablet) {
     padding: $PaddingM;
-    gap: $Gap-3;
+    gap: $Gap-7;
 
-    &__bottom {
-      height: 80%;
-      display: flex;
+    &__main {
+      height: 100%;
       flex-direction: column;
 
       .bottom {
         height: 100%;
-        width: 100%;
-        display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
 
         .block-p {
-          gap: $Gap-2;
+          gap: $Gap-5;
           max-width: 40rem;
         }
 
@@ -78,25 +75,19 @@
   }
   @include respond-to(mobile) {
     padding: $PaddingS;
-    gap: $Gap-2;
+    gap: $Gap-6;
 
-    &__bottom {
-      height: 72%;
-      display: flex;
+    &__main {
+      height: 100%;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
 
       .bottom {
         height: 100%;
-        width: 100%;
-        display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
 
         .block-p {
-          gap: $Gap-2;
+          gap: $Gap-4;
         }
 
         .no-icon {

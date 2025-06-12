@@ -2,8 +2,28 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/typography" as *;
 
-#lavori {
+.lavori {
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: $PaddingL;
+
+  &__head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > span {
+      max-width: 24%;
+      text-align: center;
+      margin-top: 120px;
+      vertical-align: middle;
+    }
+  }
 
   @include respond-to(tablet) {
     padding: $PaddingM;

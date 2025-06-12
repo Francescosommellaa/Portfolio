@@ -5,10 +5,10 @@ export const animateTransition = (
   onNavigate: () => void
 ) => {
   // Inizio transizione: da destra verso il centro
-  gsap.set(el, { x: "100%", display: "flex" });
+  gsap.set(el, { y: "100%", display: "flex" });
 
   gsap.to(el, {
-    x: "0%",
+    y: "0%",
     duration: 1,
     ease: "power2.inOut",
     onComplete: () => {
@@ -16,11 +16,11 @@ export const animateTransition = (
 
       // Uscita transizione: da centro verso sinistra
       gsap.to(el, {
-        x: "-100%",
+        y: "-100%",
         duration: 0.8,
         ease: "power2.inOut",
         onComplete: () => {
-          gsap.set(el, { display: "none", x: "100%" });
+          gsap.set(el, { display: "none", y: "100%" });
         },
       });
     },

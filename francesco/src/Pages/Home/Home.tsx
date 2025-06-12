@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
       {isDesktop && <DesktopNav />}
 
-      <div className="home__bottom">
+      <div className="home__main">
         <div className="bottom">
           <div className="block-p">
             <InlineIcon name="Star" size={Size} folder="Icons" />

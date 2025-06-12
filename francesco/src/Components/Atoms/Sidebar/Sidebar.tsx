@@ -1,55 +1,39 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-
-//Scss
+import React, { useRef } from "react";
 import "./Sidebar.scss";
 
-//Hooks
+// Hooks
 import { useSize } from "../../../Hooks/useSize";
 
-//Providers
+// Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
 
-//Data
+// Data
 import NavLinks from "../../Data/NavLinks";
+
+// Animation
+import { useAnimateSidebar } from "./AnimationSidebar";
 
 interface Props {
   isOpen: boolean;
   onClose: () => void;
+  onCloseComplete?: () => void;
 }
 
-const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
+const Sidebar: React.FC<Props> = ({ isOpen, onClose, onCloseComplete }) => {
   const Size = useSize();
   const sidebarRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLLIElement[]>([]);
   const { navigateWithTransition } = useTransition();
 
-  useEffect(() => {
-    const items = itemsRef.current;
-    const tl = gsap.timeline({
-      defaults: { ease: "power3.out", duration: 0.3 },
-    });
-
-    if (isOpen) {
-      gsap.set(items, { y: 30, opacity: 0 });
-      tl.to(sidebarRef.current, { x: 0, duration: 0.3 });
-      tl.to(items, {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-      });
-    } else {
-      tl.to(items, {
-        y: 30,
-        opacity: 0,
-        stagger: 0.1,
-      });
-      tl.to(sidebarRef.current, { x: "-100%", duration: 0.3 }, "+=0.1");
-    }
-  }, [isOpen]);
+  useAnimateSidebar({
+    isOpen,
+    sidebarRef,
+    itemsRef,
+    onCloseComplete,
+  });
 
   return (
-    <aside ref={sidebarRef} className="sidebar">
+    <aside ref={sidebarRef} className="sidebar" data-theme="dark">
       <nav>
         <ul>
           {NavLinks.map((link, index) => (

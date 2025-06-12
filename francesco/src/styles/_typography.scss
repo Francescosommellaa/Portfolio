@@ -124,43 +124,23 @@ $fontRules: (
     (
       L: (
         $fontBody,
-        1rem,
+        1.5rem,
         500,
-        2.5rem,
+        1.875rem,
       ),
       M: (
         $fontBody,
-        1rem,
+        1.5rem,
         500,
-        2rem,
+        1.875rem,
       ),
       S: (
         $fontBody,
-        0.75rem,
+        1.25rem,
         500,
-        1.75rem,
+        1.65rem,
       ),
     ),
-  sub-title-regular: (
-    L: (
-      $fontBody,
-      1rem,
-      400,
-      2.5rem,
-    ),
-    M: (
-      $fontBody,
-      1rem,
-      400,
-      2rem,
-    ),
-    S: (
-      $fontBody,
-      0.75rem,
-      400,
-      1.75rem,
-    ),
-  ),
 
   // Paragraph
   paragraph:

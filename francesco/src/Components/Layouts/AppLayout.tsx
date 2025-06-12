@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
-//  Atoms
+// Atoms
 import Cursor from "../Atoms/Cursor/Cursor";
 
 // Layout
@@ -9,16 +9,20 @@ import Topbar from "../Atoms/Topbar/Topbar";
 import Sidebar from "../Atoms/Sidebar/Sidebar";
 
 const AppLayout: React.FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
 
   return (
     <div className="layout">
       <Cursor />
-      <Topbar
-        isSidebarOpen={sidebarOpen}
-        toggleSidebar={() => setSidebarOpen((prev) => !prev)}
-      />
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+
+      <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
+
+      <Topbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
       <main>
         <Outlet />
       </main>

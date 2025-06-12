@@ -9,14 +9,16 @@
   flex-direction: column;
   justify-content: space-between;
   padding: $PaddingL;
-  gap: $Gap-4;
+  gap: $Gap-6;
 
   &__main-content {
+    height: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
 
     .text {
+      height: 80%;
       display: flex;
       flex-direction: column;
       gap: $Gap-4;
@@ -45,31 +47,17 @@
 
     &__main-content {
       flex-direction: column;
-      align-items: center;
-      gap: $Gap-4;
+      justify-content: space-between;
 
       .text {
         width: 100%;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
 
         .text-content {
-          align-items: flex-start;
-          justify-content: space-between;
-
           ul {
             width: auto;
             text-align: end;
-
-            li {
-              a {
-                color: $GrayScale-7;
-
-                &:hover {
-                  color: $GrayScale-10;
-                }
-              }
-            }
           }
         }
       }
@@ -80,33 +68,18 @@
     padding: $PaddingS;
 
     &__main-content {
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: $Gap-4;
+      justify-content: space-between;
 
       .text {
         width: 100%;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
 
         .text-content {
-          align-items: flex-start;
-          justify-content: space-between;
-
           ul {
             width: auto;
             text-align: end;
-
-            li {
-              a {
-                color: $GrayScale-7;
-
-                &:hover {
-                  color: $GrayScale-10;
-                }
-              }
-            }
           }
         }
       }

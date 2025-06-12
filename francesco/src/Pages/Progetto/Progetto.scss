@@ -1,0 +1,15 @@
+@use "../../styles/general" as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.progetto {
+  padding: $PaddingL;
+
+  @include respond-to(tablet) {
+    padding: $PaddingM;
+  }
+
+  @include respond-to(mobile) {
+    padding: $PaddingS;
+  }
+}

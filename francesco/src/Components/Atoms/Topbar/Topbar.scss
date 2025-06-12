@@ -3,17 +3,6 @@
 @use "../../../styles/mixins" as *;
 @use "../../../styles/typography" as *;
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(+40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .topbar {
   width: 100%;
   max-width: $MaxWidth;
@@ -27,29 +16,17 @@
   z-index: 900;
   background-color: transparent;
 
-  // ✅ Transizioni principali
-  transition: color 0.6s ease, background-color 0.6s ease;
-
-  // ✅ Leggera animazione on-load
-  animation: fadeIn 0.6s ease-out both;
-
   .left {
     display: flex;
     align-items: center;
     gap: $Gap-1;
     width: 33%;
-
-    .topbar__text {
-      transition: color 0.6s ease;
-      animation: fadeIn 0.6s ease-out both;
-    }
   }
 
   .center {
     width: 33%;
     text-align: center;
     color: $BgDark;
-    animation: fadeIn 0.6s ease-out both;
 
     .logo {
       font-size: 1.5rem;
@@ -94,7 +71,7 @@
     .logo,
     .topbar__text,
     .menu-icon {
-      filter: invert(1); // auto-contrasto su elementi visivi
+      filter: invert(1);
     }
   }
 

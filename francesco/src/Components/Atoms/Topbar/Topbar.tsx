@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // SCSS
 import "./Topbar.scss";
@@ -23,13 +23,6 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   const isCompact = Size === "S" || Size === "M";
   const [isDark, setIsDark] = useState(false);
   const { navigateWithTransition } = useTransition();
-
-  // Sidebar override
-  useEffect(() => {
-    if (isSidebarOpen) {
-      setIsDark(true);
-    }
-  }, [isSidebarOpen]);
 
   // Attiva rilevamento sezioni scure
   useDarkSectionObserver(setIsDark);

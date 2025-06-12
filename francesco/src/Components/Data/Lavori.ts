@@ -1,0 +1,35 @@
+export interface LavoriItem {
+  label: string;
+  url: string;
+
+}
+
+export interface LavoriSection {
+  title: string;
+  items: LavoriItem[];
+}
+
+export const contattiData: LavoriSection[] = [
+  {
+    title: "SOCIAL",
+    items: [
+      { label: "Linkedin", url: "https://www.linkedin.com/in/francescosommellaa/" },
+      { label: "Instagram", url: "https://www.instagram.com/francescosommellaa/" },
+    ],
+  },
+  {
+    title: "PORTFOLIO",
+    items: [
+      { label: "GitHub", url: "https://github.com/Francescosommellaa" },
+      { label: "Pinterest", url: "https://it.pinterest.com/francescosommellaa/" },
+      { label: "Dribbble", url: "https://dribbble.com/francescosommellaa" },
+      { label: "Behance", url: "https://www.behance.net/francescosommellaa" },
+    ],
+  },
+  {
+    title: "EMAIL",
+    items: [
+      { label: "hello@francescosommella.com", url: "mailto:hello@francescosommella.com" },
+    ],
+  },
+];
