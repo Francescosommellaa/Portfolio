@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
 interface AnimateSidebarProps {
@@ -14,8 +14,18 @@ export function useAnimateSidebar({
   itemsRef,
   onCloseComplete,
 }: AnimateSidebarProps) {
+  const hasMounted = useRef(false);
+
   useEffect(() => {
     if (!sidebarRef.current) return;
+
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      // Impostiamo lo stato "a riposo"
+      gsap.set(sidebarRef.current, { y: "-100%" });
+      gsap.set(itemsRef.current, { y: 30, opacity: 0 });
+      return;
+    }
 
     // Usiamo requestAnimationFrame per attendere il mount completo
     requestAnimationFrame(() => {
