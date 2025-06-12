@@ -16,7 +16,6 @@
     align-items: flex-start;
     justify-content: end;
     gap: $Gap-2;
-    margin-bottom: 6rem;
 
     span {
       width: 40%;
@@ -27,7 +26,6 @@
     display: flex;
     flex-direction: column;
     gap: $Gap-8;
-    margin-bottom: 6rem;
 
     .about-main__step {
       max-width: 600px;
@@ -53,11 +51,30 @@
   // TABLET
   @include respond-to("tablet") {
     padding: $PaddingM;
+
+    &__philosophy {
+      gap: $Gap-7;
+    }
+
+    &__skills {
+      span {
+        width: 40%;
+      }
+    }
+    &__clients {
+      span {
+        max-width: 40%;
+      }
+    }
   }
 
   // MOBILE
   @include respond-to("mobile") {
     padding: $PaddingS;
+
+    &__philosophy {
+      gap: $Gap-7;
+    }
 
     &__skills {
       span {
@@ -66,7 +83,7 @@
     }
     &__clients {
       span {
-        max-width: 60%;
+        max-width: 80%;
       }
     }
   }

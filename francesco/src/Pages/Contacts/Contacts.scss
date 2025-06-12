@@ -47,12 +47,12 @@
 
     &__main-content {
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-end;
+      gap: $Gap-4;
 
       .text {
+        height: fit-content;
         width: 100%;
-        flex-direction: column;
-        justify-content: center;
 
         .text-content {
           ul {
@@ -69,12 +69,12 @@
 
     &__main-content {
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-end;
+      gap: $Gap-4;
 
       .text {
+        height: fit-content;
         width: 100%;
-        flex-direction: column;
-        justify-content: center;
 
         .text-content {
           ul {

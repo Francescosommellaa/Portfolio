@@ -7,9 +7,6 @@
   height: 96dvh;
   background-color: $GrayScale-9;
   padding: $PaddingL;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-
   display: flex;
   justify-content: center;
 
@@ -43,8 +40,6 @@
   // TABLET
   @include respond-to("tablet") {
     padding: $PaddingM;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
 
     &__container {
       &__top,
@@ -59,21 +54,21 @@
   // MOBILE
   @include respond-to("mobile") {
     padding: $PaddingS;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
 
     &__container {
       flex-direction: column;
       max-height: 100%;
       align-items: center;
-      justify-content: center;
-      gap: $Gap-3;
+
+      &__image {
+        margin: 4rem 0;
+      }
 
       &__top,
       &__bottom {
         text-align: center;
         align-self: center;
-        max-width: 80%;
+        max-width: 90%;
       }
     }
   }

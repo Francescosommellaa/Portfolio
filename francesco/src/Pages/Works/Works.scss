@@ -12,10 +12,11 @@
   padding: $PaddingL;
 
   &__head {
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 80px;
 
     > span {
       max-width: 24%;

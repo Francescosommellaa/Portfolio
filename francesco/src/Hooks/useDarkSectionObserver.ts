@@ -12,7 +12,7 @@ export function useDarkSectionObserver(setIsDark: (v: boolean) => void) {
       const rect = section.getBoundingClientRect();
 
       // Consideriamo visibile solo se almeno metà visibile
-      const threshold = rect.height * 0.5;
+      const threshold = rect.height * 0.3;
 
       if (
         rect.top < window.innerHeight - threshold &&
@@ -32,7 +32,7 @@ export function useDarkSectionObserver(setIsDark: (v: boolean) => void) {
         const visibleDark = entries.some((entry) => entry.isIntersecting);
         setIsDark(visibleDark);
       },
-      { threshold: 0.5 } // ← qui ora richiediamo che almeno metà elemento sia visibile
+      { threshold: 0.05 }
     );
 
     const sections = document.querySelectorAll("[data-theme='dark']");

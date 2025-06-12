@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "dragscroll": "^0.0.8",
     "gsap": "^3.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

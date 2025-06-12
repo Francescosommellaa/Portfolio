@@ -1,7 +1,7 @@
 import React from "react";
 
 // Scss
-import "./Contatti.scss";
+import "./Contacts.scss";
 
 // Atoms
 import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
@@ -12,7 +12,7 @@ import { useSize } from "../../Hooks/useSize";
 // Data
 import { contattiData } from "../../Components/Data/Contact";
 
-const Contatti: React.FC = () => {
+const Contacts: React.FC = () => {
   const Size = useSize();
 
   return (
@@ -52,4 +52,4 @@ const Contatti: React.FC = () => {
   );
 };
 
-export default Contatti;
+export default Contacts;

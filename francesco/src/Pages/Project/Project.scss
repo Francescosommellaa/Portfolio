@@ -3,7 +3,19 @@
 @use "../../styles/mixins" as *;
 
 .progetto {
-  padding: $PaddingL;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  gap: $Gap-8;
+
+  .base {
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   @include respond-to(tablet) {
     padding: $PaddingM;
