@@ -46,19 +46,20 @@
 
   @include respond-to(tablet) {
     padding: $PaddingM;
-    gap: $Gap-7;
+    gap: $Gap-5;
 
     &__main {
       height: 100%;
       flex-direction: column;
+      justify-content: space-around;
+      gap: $Gap-4;
 
       .bottom {
         height: 100%;
         flex-direction: column;
-        justify-content: space-around;
 
         .block-p {
-          gap: $Gap-5;
+          gap: $Gap-4;
           max-width: 40rem;
         }
 
@@ -75,16 +76,22 @@
   }
   @include respond-to(mobile) {
     padding: $PaddingS;
-    gap: $Gap-6;
+    gap: $Gap-3;
 
     &__main {
       height: 100%;
       flex-direction: column;
+      gap: $Gap-2;
 
       .bottom {
         height: 100%;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
+        gap: $Gap-3;
+
+        > .inline-icon {
+          margin-top: 1rem;
+        }
 
         .block-p {
           gap: $Gap-4;

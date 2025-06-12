@@ -49,7 +49,7 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="home__tagline">
+        <div>
           <span className="paragraph-X">Un Designer ordinario.</span>
           <span className="paragraph-X"> Con amore da Napoli.</span>
         </div>
