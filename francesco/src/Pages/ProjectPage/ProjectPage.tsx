@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { projectsData } from "../../Components/Data/ProjectsData";
 
 // Scss
-import "./Project.scss";
+import "./ProjectPage.scss";
 
 // Atoms
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";

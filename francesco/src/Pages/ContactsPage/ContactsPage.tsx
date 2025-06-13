@@ -1,7 +1,7 @@
 import React from "react";
 
 // Scss
-import "./Contacts.scss";
+import "./ContactsPage.scss";
 
 // Atoms
 import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";

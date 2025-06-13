@@ -4,12 +4,12 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "./Components/Layouts/AppLayout";
 
 // Pages
-import Home from "./Pages/Home/Home";
-import Lavori from "./Pages/Works/Works";
-import Progetto from "./Pages/Project/Project";
-import About from "./Pages/About/About";
-import Playground from "./Pages/Playground/Playground";
-import Contatti from "./Pages/Contacts/Contacts";
+import Home from "./Pages/HomePage/HomePage";
+import Lavori from "./Pages/WorksPage/WorksPage";
+import Progetto from "./Pages/ProjectPage/ProjectPage";
+import About from "./Pages/AboutPage/AboutPage";
+import Playground from "./Pages/PlaygroundPage/PlaygroundPage";
+import Contatti from "./Pages/ContactsPage/ContactsPage";
 import NotFound from "./Pages/404/404";
 
 const App = () => {

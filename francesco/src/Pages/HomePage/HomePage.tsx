@@ -1,7 +1,7 @@
 import React from "react";
 
 // Scss
-import "./Home.scss";
+import "./HomePage.scss";
 
 // Atoms
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";

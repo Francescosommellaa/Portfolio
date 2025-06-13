@@ -1,7 +1,7 @@
 import React from "react";
 
 // Scss
-import "./Playground.scss";
+import "./PlaygroundPage.scss";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";

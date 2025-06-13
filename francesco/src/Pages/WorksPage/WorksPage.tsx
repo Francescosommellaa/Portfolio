@@ -1,7 +1,7 @@
 import React from "react";
 
 // SCSS
-import "./Works.scss";
+import "./WorksPage.scss";
 
 // Atoms
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
