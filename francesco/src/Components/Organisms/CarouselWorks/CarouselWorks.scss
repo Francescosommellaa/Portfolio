@@ -29,4 +29,33 @@
       gap: $Gap-3;
     }
   }
+
+  @include respond-to(tablet) {
+    flex-direction: column;
+
+    .year-block {
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .projects {
+        align-items: flex-end;
+        flex-direction: column;
+        gap: $Gap-3;
+      }
+    }
+  }
+  @include respond-to(mobile) {
+    flex-direction: column;
+
+    .year-block {
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .projects {
+        align-items: flex-end;
+        flex-direction: column;
+        gap: $Gap-3;
+      }
+    }
+  }
 }

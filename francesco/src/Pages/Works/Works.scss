@@ -28,9 +28,49 @@
 
   @include respond-to(tablet) {
     padding: $PaddingM;
+    height: 100%;
+    gap: $Gap-5;
+
+    .icon-arrow {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+    }
+
+    &__head {
+      flex-direction: column;
+      gap: $Gap-2;
+
+      > span {
+        max-width: 100%;
+        order: 1;
+        align-self: start;
+        text-align: left;
+      }
+    }
   }
 
   @include respond-to(mobile) {
     padding: $PaddingS;
+    height: 100%;
+    gap: $Gap-5;
+
+    .icon-arrow {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+    }
+
+    &__head {
+      flex-direction: column;
+      gap: $Gap-2;
+
+      > span {
+        max-width: 100%;
+        order: 1;
+        align-self: start;
+        text-align: left;
+      }
+    }
   }
 }

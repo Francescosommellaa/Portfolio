@@ -11,6 +11,7 @@ import CarouselWorks from "../../Components/Organisms/CarouselWorks/CarouselWork
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
+import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
 
 const Works: React.FC = () => {
   const Size = useSize();
@@ -30,13 +31,22 @@ const Works: React.FC = () => {
           </h1>
         </div>
 
-        <span className={`sub-title-${Size}`}>
-          SCORRI VERSO DESTRA <br /> PER VEDERLI TUTTI
-        </span>
+        {isDesktop && (
+          <span className={`sub-title-${Size}`}>
+            TIENI PREUTO E SCORRI VERSO DESTRA PER VEDERLI TUTTI
+          </span>
+        )}
       </div>
 
       {/* NAV */}
       {isDesktop && <DesktopNav />}
+
+      {/* ARROW */}
+      {!isDesktop && (
+        <div className="icon-arrow">
+          <InlineIcon folder="Icons" name="Down-Arrow" size={Size} />
+        </div>
+      )}
 
       {/* CAROSELLO LAVORI */}
       <CarouselWorks />
