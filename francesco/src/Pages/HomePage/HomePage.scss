@@ -62,12 +62,6 @@
           gap: $Gap-4;
           max-width: 40rem;
         }
-
-        .no-icon {
-          .inline-icon {
-            display: none;
-          }
-        }
       }
       .bottom > .inline-icon {
         order: 3;
@@ -95,12 +89,6 @@
 
         .block-p {
           gap: $Gap-4;
-        }
-
-        .no-icon {
-          .inline-icon {
-            display: none;
-          }
         }
       }
       .bottom > .inline-icon {

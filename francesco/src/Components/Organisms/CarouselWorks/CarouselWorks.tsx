@@ -11,7 +11,7 @@ import { useSize } from "../../../Hooks/useSize";
 import { useHorizontalScroll } from "../../../Hooks/useHorizontalScroll";
 
 // Providers
-import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
 // Data
 import { projectsData } from "../../Data/ProjectsData";

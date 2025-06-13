@@ -40,8 +40,8 @@ const Home: React.FC = () => {
             size={Size}
           />
 
-          <div className="block-p no-icon">
-            <InlineIcon name="Star" size={Size} folder="Icons" />
+          <div className="block-p">
+            {isDesktop && <InlineIcon name="Star" size={Size} folder="Icons" />}
             <p className={`paragraph-${Size}`}>
               Progetto esperienze digitali chiare, coinvolgenti e memorabili —
               pensate per lasciare il segno e generare valore.

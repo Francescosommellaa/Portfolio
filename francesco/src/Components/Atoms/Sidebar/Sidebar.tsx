@@ -5,7 +5,7 @@ import "./Sidebar.scss";
 import { useSize } from "../../../Hooks/useSize";
 
 // Providers
-import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
 // Data
 import NavLinks from "../../Data/NavLinks";

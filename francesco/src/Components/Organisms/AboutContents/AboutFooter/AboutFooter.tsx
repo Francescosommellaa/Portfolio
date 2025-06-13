@@ -10,7 +10,7 @@ import InlineIcon from "../../../Atoms/InlineComponents/InlineIcon";
 import { useSize } from "../../../../Hooks/useSize";
 
 //Providers
-import { useTransition } from "../../../../Providers/TransitionProvider/TransitionProvider";
+import { useTransition } from "../../../../Providers/TransitionProvider/TransitionContext";
 
 const AboutFooter: React.FC = () => {
   const Size = useSize();

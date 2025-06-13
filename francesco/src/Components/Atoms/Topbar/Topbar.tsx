@@ -11,7 +11,7 @@ import { useSize } from "../../../Hooks/useSize";
 import { useDarkSectionObserver } from "../../../Hooks/useDarkSectionObserver";
 
 // Providers
-import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
 interface Props {
   isSidebarOpen: boolean;

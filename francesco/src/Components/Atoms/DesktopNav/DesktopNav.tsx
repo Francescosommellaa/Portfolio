@@ -8,7 +8,7 @@ import { useSize } from "../../../Hooks/useSize";
 import NavLinks from "../../Data/NavLinks";
 
 // Providers
-import { useTransition } from "../../../Providers/TransitionProvider/TransitionProvider";
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
 const DesktopNav: React.FC = () => {
   const Size = useSize();

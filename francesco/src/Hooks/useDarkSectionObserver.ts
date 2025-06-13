@@ -45,7 +45,7 @@ export function useDarkSectionObserver(setIsDark: (v: boolean) => void) {
       observer.disconnect();
       clearTimeout(timeout);
     };
-  }, [location.pathname, checkVisibility]);
+  }, [location.pathname, checkVisibility, setIsDark]);
 
   return { checkVisibility };
 }

@@ -1,5 +1,4 @@
-// src/Providers/TransitionProvider.tsx
-import React, { createContext, useContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Scss
@@ -11,24 +10,14 @@ import { useSize } from "../../Hooks/useSize";
 // Animation
 import { animateTransition } from "./AnimationTransitionProvider";
 
-type TransitionContextType = {
-  navigateWithTransition: (path: string) => void;
-};
+// Context
+import { TransitionContext } from "./TransitionContext";
 
-const TransitionContext = createContext<TransitionContextType | undefined>(
-  undefined
-);
+interface Props {
+  children: React.ReactNode;
+}
 
-export const useTransition = () => {
-  const context = useContext(TransitionContext);
-  if (!context)
-    throw new Error("useTransition must be used within a TransitionProvider");
-  return context;
-};
-
-export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const TransitionProvider: React.FC<Props> = ({ children }) => {
   const Size = useSize();
   const [target, setTarget] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
