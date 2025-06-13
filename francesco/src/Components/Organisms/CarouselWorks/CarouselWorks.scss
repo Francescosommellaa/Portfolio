@@ -32,6 +32,8 @@
 
   @include respond-to(tablet) {
     flex-direction: column;
+    width: 100dvw;
+    overflow-x: hidden;
 
     .year-block {
       justify-content: space-between;
@@ -46,6 +48,8 @@
   }
   @include respond-to(mobile) {
     flex-direction: column;
+    width: 100dvw;
+    overflow-x: hidden;
 
     .year-block {
       justify-content: space-between;
