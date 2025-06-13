@@ -10,79 +10,86 @@ export const useHorizontalScroll = (setHasMoved?: (val: boolean) => void) => {
     let isDown = false;
     let startX = 0;
     let scrollLeft = 0;
-    let lastMove = 0;
+    let lastPosition = 0;
+    let lastTime = 0;
+    let velocity = 0;
 
-    const handleDown = (e: MouseEvent | TouchEvent) => {
-      if (!(e.target instanceof Node) || !el.contains(e.target)) return;
-
+    const handleMouseDown = (e: MouseEvent) => {
       isDown = true;
       setHasMoved?.(false);
       el.classList.add("active");
       document.body.style.userSelect = "none";
 
-      const clientX = "touches" in e ? e.touches[0].clientX : e.pageX;
-      startX = clientX;
+      startX = e.pageX;
       scrollLeft = el.scrollLeft;
+      lastPosition = e.pageX;
+      lastTime = performance.now();
+      velocity = 0;
     };
 
-    const handleMove = (e: MouseEvent | TouchEvent) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (!isDown) return;
 
-      const clientX = "touches" in e ? e.touches[0].clientX : e.pageX;
-      const walk = clientX - startX;
+      const walk = e.pageX - startX;
 
       if (Math.abs(walk) > 1) {
-        setHasMoved?.(true); // ✅ appena superiamo 1px
+        setHasMoved?.(true);
       }
+
+      const now = performance.now();
+      const deltaPos = e.pageX - lastPosition;
+      const deltaTime = now - lastTime;
+
+      velocity = deltaTime > 0 ? deltaPos / deltaTime : 0;
+
+      lastPosition = e.pageX;
+      lastTime = now;
 
       e.preventDefault();
       el.scrollLeft = scrollLeft - walk * 1.2;
-      lastMove = walk * 1.2;
     };
 
-    const handleUp = () => {
+    const endDrag = () => {
+      if (!isDown) return;
+
       isDown = false;
       el.classList.remove("active");
       document.body.style.userSelect = "auto";
 
-      if (Math.abs(lastMove) > 10) {
-        let velocity = lastMove * 0.3;
-        const inertia = () => {
-          if (Math.abs(velocity) < 0.5) return;
+      let inertiaVelocity = velocity * 16;
+      const friction = 0.90;
 
-          const newScroll = el.scrollLeft - velocity;
+      const inertia = () => {
+        if (Math.abs(inertiaVelocity) < 0.1) return;
 
-          if (newScroll <= 0) {
-            el.scrollLeft = 0;
-            return;
-          }
-          if (newScroll >= el.scrollWidth - el.clientWidth) {
-            el.scrollLeft = el.scrollWidth - el.clientWidth;
-            return;
-          }
+        el.scrollLeft -= inertiaVelocity;
+        inertiaVelocity *= friction;
 
-          el.scrollLeft = newScroll;
-          velocity *= 0.93;
-          requestAnimationFrame(inertia);
-        };
-        inertia();
-      }
+        if (el.scrollLeft <= 0) {
+          el.scrollLeft = 0;
+          return;
+        }
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+          el.scrollLeft = el.scrollWidth - el.clientWidth;
+          return;
+        }
+
+        requestAnimationFrame(inertia);
+      };
+      inertia();
     };
 
-    window.addEventListener("mousedown", handleDown);
-    window.addEventListener("mousemove", handleMove);
-    window.addEventListener("mouseup", handleUp);
-    window.addEventListener("touchstart", handleDown, { passive: false });
-    window.addEventListener("touchmove", handleMove, { passive: false });
-    window.addEventListener("touchend", handleUp);
+    el.addEventListener("mousedown", handleMouseDown);
+    el.addEventListener("mousemove", handleMouseMove);
+    el.addEventListener("mouseleave", endDrag);
+
+    window.addEventListener("mouseup", endDrag);
 
     return () => {
-      window.removeEventListener("mousedown", handleDown);
-      window.removeEventListener("mousemove", handleMove);
-      window.removeEventListener("mouseup", handleUp);
-      window.removeEventListener("touchstart", handleDown);
-      window.removeEventListener("touchmove", handleMove);
-      window.removeEventListener("touchend", handleUp);
+      el.removeEventListener("mousedown", handleMouseDown);
+      el.removeEventListener("mousemove", handleMouseMove);
+      el.removeEventListener("mouseleave", endDrag);
+      window.removeEventListener("mouseup", endDrag);
     };
   }, [setHasMoved]);
 
