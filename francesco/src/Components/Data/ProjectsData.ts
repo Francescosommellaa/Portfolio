@@ -4,9 +4,10 @@ export interface Project {
   name: string;
   img: string;
   link: string;
+  website: string;
+  siteName: string;
   client: string;
   year: number;
-  role: string;
   category: string;
   brandShortDescription: string;
   bigHorizontalImg: string;
@@ -25,10 +26,11 @@ export const projectsData: ProjectsByYear[] = [
         name: "miuni",
         img: "Amiuni",
         link: "/Lavori/Amiuni",
+        website: "https://www.amiuni.it",
+        siteName: "Amiuni.it",
         client: "Amiuni",
         year: 2025,
-        role: "Web Design",
-        category: "Branding",
+        category: "Fashion",
         brandShortDescription: "Amiuni è un progetto di branding moderno.",
         bigHorizontalImg: "/images/amiuni-big.jpg"
       },
@@ -37,10 +39,11 @@ export const projectsData: ProjectsByYear[] = [
         name: "DK",
         img: "QDK",
         link: "/Lavori/QDK",
+        website: "https://www.qudikappa.it",
+        siteName: "qudikappa.it",
         client: "QDK",
         year: 2025,
-        role: "UI/UX Design",
-        category: "Corporate",
+        category: "Fashion",
         brandShortDescription: "QDK rappresenta un approccio corporate elegante.",
         bigHorizontalImg: "/images/qdk-big.jpg"
       }
@@ -54,10 +57,11 @@ export const projectsData: ProjectsByYear[] = [
         name: "ra olio",
         img: "Frafolio",
         link: "/Lavori/Fra-folio",
+        website: "https://www.francescosommella.com",
+        siteName: "francescosommella.com",
         client: "Francesco Sommella",
         year: 2024,
-        role: "Full-stack Dev",
-        category: "Portfolio",
+        category: "Tech",
         brandShortDescription: "Portfolio personale di Fra.",
         bigHorizontalImg: "/images/portfolio-fra-big.jpg"
       },
@@ -67,9 +71,10 @@ export const projectsData: ProjectsByYear[] = [
         name: "roject rma",
         img: "Project Orma",
         link: "/Lavori/Project-orma",
+        website: "https://www.projectorma.it",
+        siteName: "projectorma.it",
         client: "Orma",
         year: 2024,
-        role: "Art Direction",
         category: "Fashion",
         brandShortDescription: "Progetto Orma per il mondo fashion.",
         bigHorizontalImg: "/images/orma-big.jpg"
@@ -79,10 +84,11 @@ export const projectsData: ProjectsByYear[] = [
         name: "inear",
         img: "Linear",
         link: "/Lavori/Linear",
+        website: "https://www.Linear.it",
+        siteName: "Linear.it",
         client: "Linear",
         year: 2024,
-        role: "Design System",
-        category: "Tech",
+        category: "Food",
         brandShortDescription: "Sistema di design per Linear.",
         bigHorizontalImg: "/images/linear-big.jpg"
       }
@@ -96,10 +102,11 @@ export const projectsData: ProjectsByYear[] = [
         name: "ilas",
         img: "Filas",
         link: "/Lavori/Filas",
+        website: "https://www.Filas.it",
+        siteName: "Filas.it",
         client: "Filas",
         year: 2023,
-        role: "Branding",
-        category: "Startup",
+        category: "Finance",
         brandShortDescription: "Identità visiva per Filas.",
         bigHorizontalImg: "/images/filas-big.jpg"
       },
@@ -108,9 +115,10 @@ export const projectsData: ProjectsByYear[] = [
         name: "liok",
         img: "Oliok",
         link: "/Lavori/Oliok",
+        website: "https://www.oliok.it",
+        siteName: "oliok.it",
         client: "Oliok",
         year: 2023,
-        role: "Product Design",
         category: "Food",
         brandShortDescription: "Design di prodotto per Oliok.",
         bigHorizontalImg: "/images/oliok-big.jpg"
@@ -126,10 +134,11 @@ export const projectsData: ProjectsByYear[] = [
         name: "lement aming",
         img: "Element Gaming",
         link: "/Lavori/Element Gaming",
+        website: "https://element-gaming.eu",
+        siteName: "element-gaming.eu",
         client: "Element Gaming",
         year: 2022,
-        role: "UI Design",
-        category: "Gaming",
+        category: "Entertainment",
         brandShortDescription: "Design UI per Element Gaming.",
         bigHorizontalImg: "/images/element-gaming-big.jpg"
       },
@@ -138,9 +147,10 @@ export const projectsData: ProjectsByYear[] = [
         name: "ensae",
         img: "Mensae",
         link: "/Lavori/Mensae",
+        website: "https://mensae.eu",
+        siteName: "mensae.eu",
         client: "Mensae",
         year: 2022,
-        role: "UX Design",
         category: "Education",
         brandShortDescription: "Esperienza utente per Mensae.",
         bigHorizontalImg: "/images/mensae-big.jpg"
@@ -150,10 +160,11 @@ export const projectsData: ProjectsByYear[] = [
         name: "oplo",
         img: "Poplo",
         link: "/Lavori/Poplo",
+        website: "https://poplo.eu",
+        siteName: "poplo.eu",
         client: "Poplo",
         year: 2022,
-        role: "Visual Identity",
-        category: "Community",
+        category: "Entertainment",
         brandShortDescription: "Identità visiva per Poplo.",
         bigHorizontalImg: "/images/poplo-big.jpg"
       },
@@ -162,9 +173,10 @@ export const projectsData: ProjectsByYear[] = [
         name: "ikl",
         img: "Oikl",
         link: "/Lavori/Oikl",
+        website: "https://oikl.eu",
+        siteName: "oikl.eu",
         client: "Oikl",
         year: 2022,
-        role: "Web Development",
         category: "Finance",
         brandShortDescription: "Sviluppo web per Oikl.",
         bigHorizontalImg: "/images/oikl-big.jpg"

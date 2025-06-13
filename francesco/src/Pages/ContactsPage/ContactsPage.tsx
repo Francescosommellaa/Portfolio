@@ -5,6 +5,7 @@ import "./ContactsPage.scss";
 
 // Atoms
 import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
+import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
@@ -14,6 +15,7 @@ import { contattiData } from "../../Components/Data/Contact";
 
 const Contacts: React.FC = () => {
   const Size = useSize();
+  const isDesktop = Size === "L";
 
   return (
     <section className="contatti">
@@ -22,6 +24,8 @@ const Contacts: React.FC = () => {
           <span className={`h1-script-${Size}`}>C</span>ontatti
         </h1>
       </div>
+
+      {isDesktop && <DesktopNav />}
 
       <div className="contatti__main-content">
         <InlineIcon folder="Illustrations" name="Illustration-2" size={Size} />

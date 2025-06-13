@@ -3,25 +3,84 @@
 @use "../../styles/mixins" as *;
 
 .progetto {
-  height: 100dvh;
-  overflow: hidden;
+  padding: $PaddingL;
+  max-width: 100dvw;
   display: flex;
-  gap: $Gap-8;
+  flex-direction: column;
+  align-items: center;
 
   .base {
     height: 100dvh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    .main-info-container {
+      height: 40%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: start;
+      gap: $Gap-2;
+
+      &__element {
+        width: 16%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > span {
+          width: 1rem;
+          color: $GrayScale-8;
+        }
+
+        > a {
+          color: $GrayScale-7;
+          margin: 2rem 0;
+
+          &:hover {
+            color: $GrayScale-10;
+          }
+        }
+      }
+    }
   }
 
   @include respond-to(tablet) {
     padding: $PaddingM;
+
+    .base {
+      .main-info-container {
+        height: 40%;
+        gap: $Gap-2;
+
+        &__element {
+          > a {
+            margin: 1.2rem 0;
+          }
+        }
+      }
+    }
   }
 
   @include respond-to(mobile) {
     padding: $PaddingS;
+
+    .base {
+      .main-info-container {
+        height: 50%;
+        gap: $Gap-2;
+
+        &__element {
+          width: 40%;
+          > a {
+            margin: 1.2rem 0;
+          }
+        }
+      }
+    }
   }
 }

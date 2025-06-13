@@ -170,7 +170,26 @@ $fontRules: (
         1rem,
       ),
     ),
-
+  paragraph-small: (
+    L: (
+      $fontBody,
+      1rem,
+      400,
+      1.5rem,
+    ),
+    M: (
+      $fontBody,
+      1rem,
+      400,
+      1.5rem,
+    ),
+    S: (
+      $fontBody,
+      0.8rem,
+      400,
+      1.25rem,
+    ),
+  ),
   //Num
   num:
     (

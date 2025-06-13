@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { projectsData } from "../../Components/Data/ProjectsData";
-
-// Scss
-import "./ProjectPage.scss";
 
 // Atoms
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
 
+// Organisms
+import ProjectContents from "../../Components/Organisms/ProjectContents/ProjectContents";
+
 // Hooks
 import { useSize } from "../../Hooks/useSize";
+import { useModal } from "../../Hooks/useModal";
+import IframeModal from "../../Components/Atoms/IframeModal/IframeModal";
 
-const Playground: React.FC = () => {
+// Scss
+import "./ProjectPage.scss";
+
+const ProjectPage: React.FC = () => {
   const Size = useSize();
   const isDesktop = Size === "L";
   const { projectId } = useParams<{ projectId: string }>();
 
-  // Cerchiamo il progetto tramite link
+  const [iframeUrl, setIframeUrl] = useState("");
+  const { isOpen, open, close } = useModal();
+
+  const openIframe = (url: string) => {
+    setIframeUrl(url);
+    open();
+  };
+
   const project = projectsData
     .flatMap((year) => year.projects)
     .find((p) => p.link.split("/").pop() === projectId);
@@ -35,12 +47,46 @@ const Playground: React.FC = () => {
           </h1>
         </div>
 
-        {/* NAV */}
         {isDesktop && <DesktopNav />}
+
+        <div className="main-info-container">
+          {[
+            { label: "Cliente:", value: project.client },
+            { label: "Anno:", value: project.year },
+            { label: "Categoria:", value: project.category },
+            {
+              value: project.website,
+              isLink: true,
+            },
+          ].map(({ label, value, isLink }) => (
+            <div key={label} className="main-info-container__element">
+              {label && <h5 className={`h5-${Size}`}>{label}</h5>}
+              {isLink ? (
+                <a
+                  className={`sub-title-${Size}`}
+                  onClick={() => openIframe(value)}
+                >
+                  Visita Sito
+                </a>
+              ) : (
+                <span className={`paragraph-small-${Size}`}>{value}</span>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-      <div>other bloch</div>
+
+      <ProjectContents />
+
+      <IframeModal
+        url={iframeUrl}
+        isOpen={isOpen}
+        onClose={() => {
+          close();
+        }}
+      />
     </section>
   );
 };
 
-export default Playground;
+export default ProjectPage;
