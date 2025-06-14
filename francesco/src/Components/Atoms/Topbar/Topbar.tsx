@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./Topbar.scss";
 
 // Atoms
-import InlineIcon from "../InlineComponents/InlineIcon";
+import InlineIcon from "../InlineItems/InlineIcon";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";

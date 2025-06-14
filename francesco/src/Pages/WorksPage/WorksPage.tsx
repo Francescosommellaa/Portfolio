@@ -11,7 +11,7 @@ import CarouselWorks from "../../Components/Organisms/CarouselWorks/CarouselWork
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
-import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
+import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 
 const Works: React.FC = () => {
   const Size = useSize();

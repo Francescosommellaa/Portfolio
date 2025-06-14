@@ -5,7 +5,7 @@ import "./HomePage.scss";
 
 // Atoms
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
-import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
+import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";

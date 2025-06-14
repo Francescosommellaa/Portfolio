@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 // Atoms
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
 import ProjectController from "../../Components/Atoms/ProjectController/ProjectController";
+import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
+import Link from "../../Components/Atoms/Link/Link";
 
 // Organisms
 import ProjectContents from "../../Components/Organisms/ProjectContents/ProjectContents";
@@ -24,7 +26,6 @@ const ProjectPage: React.FC = () => {
   const isDesktop = Size === "L";
   const { projectId } = useParams<{ projectId: string }>();
 
-  // ✅ Recuperiamo il progetto dallo slug
   const project = findProjectBySlug(projectId ?? "");
 
   const [iframeUrl, setIframeUrl] = useState("");
@@ -34,11 +35,9 @@ const ProjectPage: React.FC = () => {
     setIframeUrl(url);
     open();
   };
-
   if (!project) {
     return <div>Progetto non trovato</div>;
   }
-
   return (
     <section className="progetto">
       <div className="base">
@@ -52,29 +51,29 @@ const ProjectPage: React.FC = () => {
         {isDesktop && <DesktopNav />}
 
         <div className="main-info-container">
-          {[
-            { label: "Cliente:", value: project.client },
-            { label: "Anno:", value: project.year },
-            { label: "Categoria:", value: project.category },
-            {
-              value: project.website,
-              isLink: true,
-            },
-          ].map(({ label, value, isLink }) => (
-            <div key={label} className="main-info-container__element">
-              {label && <h5 className={`h5-${Size}`}>{label}</h5>}
-              {isLink ? (
-                <a
-                  className={`sub-title-${Size}`}
-                  onClick={() => openIframe(value)}
-                >
-                  Visita Sito
-                </a>
-              ) : (
+          <div className="main-info-container__text-element">
+            {[
+              { label: "Cliente:", value: project.client },
+              { label: "Anno:", value: project.year },
+              { label: "Categoria:", value: project.category },
+            ].map(({ label, value }) => (
+              <div key={label} className="text">
+                {label && <h5 className={`h5-${Size}`}>{label}</h5>}
                 <span className={`paragraph-small-${Size}`}>{value}</span>
-              )}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+          <div className="main-info-container__link-element">
+            <Link
+              label="Visita Sito"
+              size={Size}
+              onClick={() => openIframe(project.link)}
+            />
+          </div>
+
+          <div className="main-info-container__icon-element">
+            <InlineIcon folder="Icons" size={Size} name="Down-Arrow" />
+          </div>
         </div>
       </div>
 

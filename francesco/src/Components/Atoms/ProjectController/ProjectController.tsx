@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 // Atoms
-import InlineIcon from "../InlineComponents/InlineIcon";
+import InlineIcon from "../InlineItems/InlineIcon";
 
 // Scss
 import "./ProjectController.scss";

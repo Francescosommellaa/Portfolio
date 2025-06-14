@@ -4,7 +4,7 @@ import React from "react";
 import "./AboutFooter.scss";
 
 // Atoms
-import InlineIcon from "../../../Atoms/InlineComponents/InlineIcon";
+import InlineIcon from "../../../Atoms/InlineItems/InlineIcon";
 
 // Hooks
 import { useSize } from "../../../../Hooks/useSize";

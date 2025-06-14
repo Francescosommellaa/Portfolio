@@ -4,7 +4,7 @@ import React from "react";
 import "./ContactsPage.scss";
 
 // Atoms
-import InlineIcon from "../../Components/Atoms/InlineComponents/InlineIcon";
+import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
 
 // Hooks

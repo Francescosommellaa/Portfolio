@@ -4,7 +4,7 @@ import React from "react";
 import "./AboutIntro.scss";
 
 // Atoms
-import InlineImage from "../../../Atoms/InlineComponents/InlineImage";
+import InlineImage from "../../../Atoms/InlineItems/InlineImage";
 
 // Hooks
 import { useSize } from "../../../../Hooks/useSize";

@@ -1,8 +1,8 @@
 import React from "react";
 
 // Atoms
-import InlineIcon from "../../Atoms/InlineComponents/InlineIcon";
-import InlineImage from "../../Atoms/InlineComponents/InlineImage";
+import InlineIcon from "../../Atoms/InlineItems/InlineIcon";
+import InlineImage from "../../Atoms/InlineItems/InlineImage";
 
 // SCSS
 import "./ProjectContents.scss";

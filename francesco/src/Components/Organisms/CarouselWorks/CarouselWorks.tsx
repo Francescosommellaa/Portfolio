@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./CarouselWorks.scss";
 
 // Atoms
-import InlineImage from "../../Atoms/InlineComponents/InlineImage";
+import InlineImage from "../../Atoms/InlineItems/InlineImage";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";

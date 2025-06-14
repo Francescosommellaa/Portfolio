@@ -1,0 +1,41 @@
+@use "../../../styles/general" as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.link-element {
+  text-align: center;
+  position: relative;
+
+  .link-wrapper {
+    display: inline-block;
+    position: relative;
+
+    a {
+      color: $GrayScale-7;
+      margin: 2rem 0;
+      z-index: 2;
+
+      &:hover {
+        color: $GrayScale-10;
+      }
+    }
+
+    .underline {
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background-color: $GrayScale-10;
+      z-index: 1;
+    }
+
+    .icon {
+      position: absolute;
+      top: 60%;
+      right: -2rem;
+      transform: translateY(-50%) scale(2);
+      opacity: 0;
+    }
+  }
+}

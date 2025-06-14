@@ -17,35 +17,43 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 2rem;
 
     .main-info-container {
       height: 40%;
       width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: end;
-      align-items: start;
-      gap: $Gap-2;
+      align-items: end;
 
-      &__element {
-        width: 16%;
+      &__text-element {
+        width: 20%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: $Gap-2;
 
-        > span {
-          width: 1rem;
-          color: $GrayScale-8;
-        }
+        > .text {
+          width: 60%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
 
-        > a {
-          color: $GrayScale-7;
-          margin: 2rem 0;
-
-          &:hover {
-            color: $GrayScale-10;
+          > span {
+            width: 1rem;
+            color: $GrayScale-8;
           }
         }
+      }
+
+      &__link-element {
+        width: 60%;
+        text-align: center;
+        position: relative;
+      }
+
+      &__icon-element {
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
       }
     }
   }
