@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 // Atoms
@@ -15,8 +15,6 @@ import "./ProjectPage.scss";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
-import { useModal } from "../../Hooks/useModal";
-import IframeModal from "../../Components/Atoms/IframeModal/IframeModal";
 
 // Utils
 import { findProjectBySlug } from "../../Utils/projectUtils";
@@ -28,13 +26,6 @@ const ProjectPage: React.FC = () => {
 
   const project = findProjectBySlug(projectId ?? "");
 
-  const [iframeUrl, setIframeUrl] = useState("");
-  const { isOpen, open, close } = useModal();
-
-  const openIframe = (url: string) => {
-    setIframeUrl(url);
-    open();
-  };
   if (!project) {
     return <div>Progetto non trovato</div>;
   }
@@ -66,8 +57,9 @@ const ProjectPage: React.FC = () => {
           <div className="main-info-container__link-element">
             <Link
               label="Visita Sito"
+              link={project.website}
               size={Size}
-              onClick={() => openIframe(project.link)}
+              openInIframe={true}
             />
           </div>
 
@@ -79,14 +71,6 @@ const ProjectPage: React.FC = () => {
 
       <ProjectContents />
       <ProjectController />
-
-      <IframeModal
-        url={iframeUrl}
-        isOpen={isOpen}
-        onClose={() => {
-          close();
-        }}
-      />
     </section>
   );
 };

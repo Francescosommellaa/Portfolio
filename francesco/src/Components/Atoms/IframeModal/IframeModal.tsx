@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Framer Motion
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,6 +21,20 @@ const IframeModal: React.FC<IframeModalProps> = ({ url, isOpen, onClose }) => {
     e.stopPropagation();
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  if (!url) return null;
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -39,12 +53,19 @@ const IframeModal: React.FC<IframeModalProps> = ({ url, isOpen, onClose }) => {
           <motion.div
             className="iframe-wrapper"
             onClick={handleContentClick}
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
           >
-            <iframe src={url} title="External Site" />
+            <iframe
+              src={url}
+              title="External Site"
+              sandbox="allow-scripts allow-same-origin allow-forms"
+              allow="fullscreen; encrypted-media"
+              referrerPolicy="no-referrer"
+              loading="lazy"
+            />
           </motion.div>
         </motion.div>
       )}
