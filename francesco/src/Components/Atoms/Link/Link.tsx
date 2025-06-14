@@ -54,18 +54,18 @@ const Link: React.FC<LinkProps> = ({
   return (
     <>
       <div
-        className="link-element"
+        className="link"
         ref={linkRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="link-wrapper" onClick={handleClick}>
-          <div className={`sub-title-${size}`}>{label}</div>
+        <a className="link-wrapper" onClick={handleClick}>
+          <div className={`link-${size}`}>{label}</div>
           <div className="underline" />
           <div className="icon" ref={iconRef}>
-            <InlineIcon folder="Icons" name="Top-Right-Arrow" size="X" />
+            <InlineIcon folder="Icons" name="TopRightArrow" size="X" />
           </div>
-        </div>
+        </a>
       </div>
 
       {openInIframe && (

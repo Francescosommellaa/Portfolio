@@ -10,7 +10,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: $PaddingL;
 
   h1 {
     letter-spacing: -0.03em;
@@ -46,7 +45,6 @@
   }
 
   @include respond-to(tablet) {
-    padding: $PaddingM;
     gap: $Gap-5;
 
     &__main {
@@ -70,7 +68,6 @@
     }
   }
   @include respond-to(mobile) {
-    padding: $PaddingS;
     gap: $Gap-3;
 
     &__main {

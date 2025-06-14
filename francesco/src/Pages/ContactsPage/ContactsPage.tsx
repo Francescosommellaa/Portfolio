@@ -6,6 +6,7 @@ import "./ContactsPage.scss";
 // Atoms
 import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
+import Link from "../../Components/Atoms/Link/Link";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
@@ -13,12 +14,15 @@ import { useSize } from "../../Hooks/useSize";
 // Data
 import { contattiData } from "../../Components/Data/Contact";
 
+//Layout
+import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";
+
 const Contacts: React.FC = () => {
   const Size = useSize();
   const isDesktop = Size === "L";
 
   return (
-    <section className="contatti">
+    <PageWrapper className="contatti">
       <div className="title">
         <h1 className={`h1-${Size}`}>
           <span className={`h1-script-${Size}`}>C</span>ontatti
@@ -37,14 +41,7 @@ const Contacts: React.FC = () => {
               <ul>
                 {section.items.map((item, idx) => (
                   <li key={idx}>
-                    <a
-                      className={`social-${Size}`}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.label}
-                    </a>
+                    <Link label={item.label} link={item.url} size={Size} />
                   </li>
                 ))}
               </ul>
@@ -52,7 +49,7 @@ const Contacts: React.FC = () => {
           ))}
         </div>
       </div>
-    </section>
+    </PageWrapper>
   );
 };
 

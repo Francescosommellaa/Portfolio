@@ -3,6 +3,7 @@
 @use "../../../../styles/typography" as *;
 
 .about-footer {
+  padding: $PaddingL;
   height: 88dvh;
   width: 100%;
   display: flex;
@@ -28,5 +29,12 @@
     &:hover a {
       color: $GrayScale-1;
     }
+  }
+
+  @include respond-to("tablet") {
+    padding: $PaddingM;
+  }
+  @include respond-to("mobile") {
+    padding: $PaddingS;
   }
 }

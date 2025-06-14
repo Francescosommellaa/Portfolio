@@ -6,13 +6,16 @@ import AboutIntro from "../../Components/Organisms/AboutContents/AboutIntro/Abou
 import AboutMain from "../../Components/Organisms/AboutContents/AboutMain/AboutMain";
 import AboutFooter from "../../Components/Organisms/AboutContents/AboutFooter/AboutFooter";
 
+// Layout
+import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";
+
 const AboutPage: React.FC = () => {
   return (
-    <main className="aboutPage">
+    <PageWrapper className="aboutPage" fullWidth>
       <AboutIntro />
       <AboutMain />
       <AboutFooter />
-    </main>
+    </PageWrapper>
   );
 };
 

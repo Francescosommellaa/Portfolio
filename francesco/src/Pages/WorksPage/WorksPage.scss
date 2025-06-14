@@ -10,7 +10,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: $PaddingL;
 
   &__head {
     display: flex;
@@ -28,7 +27,6 @@
   }
 
   @include respond-to(tablet) {
-    padding: $PaddingM;
     height: 100%;
     gap: $Gap-5;
 
@@ -52,7 +50,6 @@
   }
 
   @include respond-to(mobile) {
-    padding: $PaddingS;
     height: 100%;
     gap: $Gap-7;
 

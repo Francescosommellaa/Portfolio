@@ -42,6 +42,9 @@
   @include respond-to(mobile) {
     nav {
       padding: $PaddingS;
+      > ul {
+        gap: $Gap-1;
+      }
     }
   }
 }

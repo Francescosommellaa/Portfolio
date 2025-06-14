@@ -2,7 +2,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-#playground {
+.playground {
   padding: $PaddingL;
 
   @include respond-to(tablet) {

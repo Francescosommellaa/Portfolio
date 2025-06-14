@@ -19,6 +19,9 @@ import { useSize } from "../../Hooks/useSize";
 // Utils
 import { findProjectBySlug } from "../../Utils/projectUtils";
 
+// Layout
+import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";
+
 const ProjectPage: React.FC = () => {
   const Size = useSize();
   const isDesktop = Size === "L";
@@ -30,7 +33,7 @@ const ProjectPage: React.FC = () => {
     return <div>Progetto non trovato</div>;
   }
   return (
-    <section className="progetto">
+    <PageWrapper className="progetto">
       <div className="base">
         <div className="title">
           <h1 className={`h1-${Size}`}>
@@ -64,14 +67,14 @@ const ProjectPage: React.FC = () => {
           </div>
 
           <div className="main-info-container__icon-element">
-            <InlineIcon folder="Icons" size={Size} name="Down-Arrow" />
+            <InlineIcon folder="Icons" size={Size} name="DownArrow" />
           </div>
         </div>
       </div>
 
       <ProjectContents />
       <ProjectController />
-    </section>
+    </PageWrapper>
   );
 };
 

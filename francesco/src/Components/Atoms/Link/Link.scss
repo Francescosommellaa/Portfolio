@@ -2,39 +2,34 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
 
-.link-element {
+.link {
   text-align: center;
   position: relative;
+  width: fit-content;
 
   .link-wrapper {
     display: inline-block;
     position: relative;
+    color: $GrayScale-7;
 
-    a {
-      color: $GrayScale-7;
-      margin: 2rem 0;
-      z-index: 2;
-
-      &:hover {
-        color: $GrayScale-10;
-      }
+    &:hover {
+      color: $GrayScale-10;
     }
 
     .underline {
       position: absolute;
-      bottom: -0.5rem;
+      bottom: -0.2rem;
       left: 0;
-      height: 2px;
+      height: 1.6px;
       width: 0;
       background-color: $GrayScale-10;
-      z-index: 1;
     }
 
     .icon {
       position: absolute;
-      top: 60%;
+      top: 28%;
       right: -2rem;
-      transform: translateY(-50%) scale(2);
+      transform: translateY(-50%) scale(4);
       opacity: 0;
     }
   }

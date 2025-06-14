@@ -1,0 +1,18 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/typography" as *;
+
+.page-wrapper {
+  padding: $PaddingL;
+
+  @include respond-to("tablet") {
+    padding: $PaddingM;
+  }
+  @include respond-to("mobile") {
+    padding: $PaddingS;
+  }
+
+  &.full-width-section {
+    padding: 0;
+  }
+}

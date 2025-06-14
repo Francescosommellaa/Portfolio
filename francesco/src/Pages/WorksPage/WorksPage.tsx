@@ -13,12 +13,15 @@ import CarouselWorks from "../../Components/Organisms/CarouselWorks/CarouselWork
 import { useSize } from "../../Hooks/useSize";
 import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 
+// Layout
+import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";
+
 const Works: React.FC = () => {
   const Size = useSize();
   const isDesktop = Size === "L";
 
   return (
-    <section className="lavori">
+    <PageWrapper className="lavori">
       {/* HEAD */}
       <div className="lavori__head">
         <span className={`sub-title-${Size}`}>
@@ -50,7 +53,7 @@ const Works: React.FC = () => {
 
       {/* CAROSELLO LAVORI */}
       <CarouselWorks />
-    </section>
+    </PageWrapper>
   );
 };
 

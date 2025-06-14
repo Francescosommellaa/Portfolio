@@ -3,7 +3,6 @@
 @use "../../styles/mixins" as *;
 
 .progetto {
-  padding: $PaddingL;
   max-width: 100dvw;
   display: flex;
   flex-direction: column;
@@ -46,8 +45,8 @@
 
       &__link-element {
         width: 60%;
-        text-align: center;
-        position: relative;
+        display: flex;
+        justify-content: center;
       }
 
       &__icon-element {
@@ -59,7 +58,6 @@
   }
 
   @include respond-to(tablet) {
-    padding: $PaddingM;
     gap: $Gap-5;
 
     .base {
@@ -77,7 +75,6 @@
   }
 
   @include respond-to(mobile) {
-    padding: $PaddingS;
     gap: $Gap-5;
 
     .base {

@@ -18,24 +18,42 @@
 html {
   overflow: auto;
   scroll-behavior: smooth;
-}
 
-body {
-  margin: 0 auto;
-  max-width: $MaxWidth;
-  background-color: $BgLight;
+  body {
+    margin: 0 auto;
+    max-width: $MaxWidth;
+    background-color: $BgLight;
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  li {
-    list-style: none;
-  }
+    li {
+      list-style: none;
+    }
 
-  .title {
-    margin-top: 120px;
-    text-align: center;
+    .title {
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    .full-width-section {
+      margin-left: -$PaddingL;
+      margin-right: -$PaddingL;
+      width: calc(100% + 2 * #{$PaddingL});
+
+      @include respond-to(tablet) {
+        margin-left: -$PaddingM;
+        margin-right: -$PaddingM;
+        width: calc(100% + 2 * #{$PaddingM});
+      }
+
+      @include respond-to(mobile) {
+        margin-left: -$PaddingS;
+        margin-right: -$PaddingS;
+        width: calc(100% + 2 * #{$PaddingS});
+      }
+    }
   }
 }

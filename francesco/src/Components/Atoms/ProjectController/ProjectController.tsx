@@ -8,7 +8,7 @@ import InlineIcon from "../InlineItems/InlineIcon";
 import "./ProjectController.scss";
 
 // Hooks
-import { useScrollDirection } from "../../../Hooks/useScrollDirection";
+import { useSmartScrollVisibility } from "../../../Hooks/useScrollDirection";
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
 // Data
@@ -16,7 +16,10 @@ import { projectsData, Project } from "../../Data/ProjectsData";
 
 const ProjectController: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
-  const isVisible = useScrollDirection();
+  const isVisible = useSmartScrollVisibility({
+    hideOnTop: true,
+    initiallyVisible: false,
+  });
   const { navigateWithTransition } = useTransition();
 
   // Flat list con tipizzazione Project[]
@@ -50,14 +53,14 @@ const ProjectController: React.FC = () => {
             navigateWithTransition(`/Lavori/${getProjectSlug(previousProject)}`)
           }
         >
-          <InlineIcon folder="Icons" name="Left-arrow" size="X" />
+          <InlineIcon folder="Icons" name="LeftArrow" size="X" />
         </button>
       )}
       <button
         className="project-controller__button center"
         onClick={() => navigateWithTransition("/Lavori")}
       >
-        <InlineIcon folder="Icons" name="Close-project" size="X" />
+        <InlineIcon folder="Icons" name="CloseProject" size="X" />
       </button>
       {nextProject && (
         <button
@@ -66,7 +69,7 @@ const ProjectController: React.FC = () => {
             navigateWithTransition(`/Lavori/${getProjectSlug(nextProject)}`)
           }
         >
-          <InlineIcon folder="Icons" name="Right-arrow" size="X" />
+          <InlineIcon folder="Icons" name="RightArrow" size="X" />
         </button>
       )}
     </div>

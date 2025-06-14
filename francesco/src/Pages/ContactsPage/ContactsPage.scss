@@ -11,10 +11,10 @@
   justify-content: space-between;
 
   &__main-content {
-    height: 40%;
     display: flex;
     align-items: start;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-bottom: 2rem;
 
     .text {
       height: 80%;
@@ -28,13 +28,17 @@
         justify-content: space-between;
         width: 100%;
         color: $GrayScale-3;
+        gap: $Gap-6;
 
         ul {
-          color: $GrayScale-7;
-          width: 60%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          gap: $Gap-1;
 
-          li :hover {
-            color: $GrayScale-10;
+          .link-element {
+            text-align: end;
           }
         }
       }
@@ -42,45 +46,34 @@
   }
 
   @include respond-to(tablet) {
-    padding: $PaddingM;
+    padding-bottom: 2rem;
 
     &__main-content {
       flex-direction: column;
+      align-items: center;
       justify-content: flex-end;
       gap: $Gap-4;
 
       .text {
         height: fit-content;
         width: 100%;
-
-        .text-content {
-          ul {
-            width: auto;
-            text-align: end;
-          }
-        }
       }
     }
   }
 
   @include respond-to(mobile) {
-    padding: $PaddingS;
+    padding-bottom: 2rem;
 
     &__main-content {
+      width: 100%;
       flex-direction: column;
+      align-items: center;
       justify-content: flex-end;
       gap: $Gap-4;
 
       .text {
         height: fit-content;
         width: 100%;
-
-        .text-content {
-          ul {
-            width: auto;
-            text-align: end;
-          }
-        }
       }
     }
   }

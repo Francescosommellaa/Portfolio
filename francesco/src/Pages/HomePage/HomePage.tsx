@@ -10,12 +10,15 @@ import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 // Hooks
 import { useSize } from "../../Hooks/useSize";
 
+//Layout
+import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";
+
 const Home: React.FC = () => {
   const Size = useSize();
   const isDesktop = Size === "L";
 
   return (
-    <section className="home">
+    <PageWrapper className="home">
       <div className="title">
         <h1 className={`h1-${Size}`}>
           <span className={`h1-script-${Size}`}>Fra</span> Sommella
@@ -54,7 +57,7 @@ const Home: React.FC = () => {
           <span className="paragraph-X"> Con amore da Napoli.</span>
         </div>
       </div>
-    </section>
+    </PageWrapper>
   );
 };
 

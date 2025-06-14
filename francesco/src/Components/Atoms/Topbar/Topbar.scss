@@ -4,10 +4,10 @@
 @use "../../../styles/typography" as *;
 
 .topbar {
+  padding: $PaddingL;
   width: 100%;
   max-width: $MaxWidth;
   height: 80px;
-  padding: 0 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,8 +78,7 @@
   }
 
   @include respond-to(tablet) {
-    padding: 0 2.5rem;
-
+    padding: $PaddingM;
     .right {
       span,
       br {
@@ -95,8 +94,7 @@
   }
 
   @include respond-to(mobile) {
-    padding: 0 0.9rem;
-
+    padding: $PaddingS;
     .left {
       width: 60%;
     }

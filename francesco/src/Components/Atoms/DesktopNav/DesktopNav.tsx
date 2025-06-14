@@ -3,6 +3,7 @@ import "./DesktopNav.scss";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
+import { useSmartScrollVisibility } from "../../../Hooks/useScrollDirection";
 
 // Data
 import NavLinks from "../../Data/NavLinks";
@@ -16,6 +17,7 @@ const DesktopNav: React.FC = () => {
   const itemsRef = useRef<HTMLLIElement[]>([]);
   const [hovered, setHovered] = useState<string | null>(null);
   const { navigateWithTransition } = useTransition();
+  const isVisible = useSmartScrollVisibility({ hideOnTop: false });
 
   useEffect(() => {
     itemsRef.current.forEach((item) => {
@@ -38,7 +40,7 @@ const DesktopNav: React.FC = () => {
   return (
     <nav
       ref={navRef}
-      className="desktop-nav"
+      className={`desktop-nav ${isVisible ? "visible" : "hidden"}`}
       data-hovered={hovered ? "true" : "false"}
     >
       {/* Overlay globale */}
