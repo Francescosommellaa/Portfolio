@@ -8,8 +8,13 @@ import Cursor from "../Atoms/Cursor/Cursor";
 import Topbar from "../Atoms/Topbar/Topbar";
 import Sidebar from "../Atoms/Sidebar/Sidebar";
 
+//Hooks
+import { useLockBodyScroll } from "../../Hooks/useLockBodyScroll";
+
 const AppLayout: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useLockBodyScroll(isSidebarOpen);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
