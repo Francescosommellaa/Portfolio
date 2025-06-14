@@ -1,30 +1,30 @@
 import React from "react";
 
-// Scss
+// Atoms
+import InlineIcon from "../../Atoms/InlineComponents/InlineIcon";
+import InlineImage from "../../Atoms/InlineComponents/InlineImage";
+
+// SCSS
 import "./ProjectContents.scss";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
 
-// Data
-import { projectsData } from "../../Data/ProjectsData";
-
 const ProjectContents: React.FC = () => {
   const Size = useSize();
+
   return (
-    <div>
-      {projectsData.map((yearBlock) => (
-        <div className="year-title">
-          <h2 className={`num-${Size}`}>
-            <span className={`num-script-${Size}`}>20</span>
-            {yearBlock.year}
-          </h2>
-          <span className="caption-X">
-            {yearBlock.projects.length} PROGETTI
-          </span>
-        </div>
-      ))}
-      ;
+    <div className="project-contents">
+      <div className="project-contents__skills">
+        <InlineIcon folder="Icons" size="X" name="Ellipse" />
+        <span className={`subtitle-about-${Size}`}>
+          best brand di abigliamento in italia
+        </span>
+      </div>
+
+      <div className="project-contents__image-wrapper">
+        <InlineImage folder="Lavori" name="Amiuni-big" size="L" />
+      </div>
     </div>
   );
 };

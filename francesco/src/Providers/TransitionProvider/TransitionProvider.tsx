@@ -28,7 +28,10 @@ export const TransitionProvider: React.FC<Props> = ({ children }) => {
     const el = containerRef.current;
     if (!el) return;
 
-    animateTransition(el, () => navigate(path));
+    animateTransition(el, () => {
+      window.scrollTo(0, 0);
+      navigate(path);
+    });
   };
 
   const cleanedPath = target.startsWith("/") ? target.slice(1) : target;

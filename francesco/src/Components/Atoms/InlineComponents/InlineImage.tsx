@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import usePublicAsset from "../../../Hooks/usePublicAsset"; // <-- importa il tuo hook
 
 interface InlineImageProps {
   folder: string;
@@ -10,7 +11,9 @@ interface InlineImageProps {
 
 const InlineImage = forwardRef<HTMLImageElement, InlineImageProps>(
   ({ folder, name, size, className = "", alt = "" }, ref) => {
-    const path = `assets/${folder}/Name=${name}, Dimension=${size}.png`;
+    const path = usePublicAsset(folder, `Name=${name}, Dimension=${size}.png`);
+
+    if (!path) return null; // fallback di sicurezza
 
     return (
       <img

@@ -1,25 +1,31 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { projectsData } from "../../Components/Data/ProjectsData";
 
 // Atoms
 import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
+import ProjectController from "../../Components/Atoms/ProjectController/ProjectController";
 
 // Organisms
 import ProjectContents from "../../Components/Organisms/ProjectContents/ProjectContents";
+
+// Scss
+import "./ProjectPage.scss";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
 import { useModal } from "../../Hooks/useModal";
 import IframeModal from "../../Components/Atoms/IframeModal/IframeModal";
 
-// Scss
-import "./ProjectPage.scss";
+// Utils
+import { findProjectBySlug } from "../../Utils/projectUtils";
 
 const ProjectPage: React.FC = () => {
   const Size = useSize();
   const isDesktop = Size === "L";
   const { projectId } = useParams<{ projectId: string }>();
+
+  // ✅ Recuperiamo il progetto dallo slug
+  const project = findProjectBySlug(projectId ?? "");
 
   const [iframeUrl, setIframeUrl] = useState("");
   const { isOpen, open, close } = useModal();
@@ -28,10 +34,6 @@ const ProjectPage: React.FC = () => {
     setIframeUrl(url);
     open();
   };
-
-  const project = projectsData
-    .flatMap((year) => year.projects)
-    .find((p) => p.link.split("/").pop() === projectId);
 
   if (!project) {
     return <div>Progetto non trovato</div>;
@@ -77,6 +79,7 @@ const ProjectPage: React.FC = () => {
       </div>
 
       <ProjectContents />
+      <ProjectController />
 
       <IframeModal
         url={iframeUrl}

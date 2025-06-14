@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, forwardRef } from "react";
+import usePublicAsset from "../../../Hooks/usePublicAsset";
 
 interface InlineIconProps {
   folder: string;
@@ -10,9 +11,10 @@ interface InlineIconProps {
 const InlineIcon = forwardRef<HTMLDivElement, InlineIconProps>(
   ({ folder, name, size, className }, forwardedRef) => {
     const localRef = useRef<HTMLDivElement>(null);
+    const path = usePublicAsset(folder, `Name=${name}, Dimension=${size}.svg`);
 
     useEffect(() => {
-      const path = `assets/${folder}/Name=${name}, Dimension=${size}.svg`;
+      if (!path) return;
 
       fetch(path)
         .then((res) =>
@@ -25,15 +27,16 @@ const InlineIcon = forwardRef<HTMLDivElement, InlineIconProps>(
           if (target) target.innerHTML = svg;
         })
         .catch((err) => console.error(err));
-    }, [className, folder, name, size, forwardedRef]);
+    }, [path, forwardedRef]);
 
     return (
       <div
         ref={forwardedRef || localRef}
-        className={`inline-icon ${className}`}
+        className={`inline-icon ${className || ""}`}
         aria-hidden="true"
       />
     );
   }
 );
+
 export default InlineIcon;
