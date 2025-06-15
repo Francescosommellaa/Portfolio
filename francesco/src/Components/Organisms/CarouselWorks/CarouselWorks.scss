@@ -31,6 +31,7 @@
   }
 
   @include respond-to(tablet) {
+    padding: $PaddingM;
     flex-direction: column;
     width: 100dvw;
     overflow-x: hidden;
@@ -47,6 +48,7 @@
     }
   }
   @include respond-to(mobile) {
+    padding: $PaddingS;
     flex-direction: column;
     width: 100dvw;
     overflow-x: hidden;

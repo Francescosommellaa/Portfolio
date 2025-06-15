@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // SCSS
 import "./Topbar.scss";
@@ -8,7 +8,7 @@ import InlineIcon from "../InlineItems/InlineIcon";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
-import { useDarkSectionObserver } from "../../../Hooks/useDarkSectionObserver";
+import { useDarkMode } from "../../../Hooks/useDarkMode";
 
 // Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
@@ -21,11 +21,10 @@ interface Props {
 const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   const Size = useSize();
   const isCompact = Size === "S" || Size === "M";
-  const [isDark, setIsDark] = useState(false);
   const { navigateWithTransition } = useTransition();
+  const { isDarkSectionVisible } = useDarkMode();
 
-  // Attiva rilevamento sezioni scure
-  useDarkSectionObserver(setIsDark);
+  const isDark = isSidebarOpen || isDarkSectionVisible;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

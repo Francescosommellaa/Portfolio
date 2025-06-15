@@ -14,9 +14,22 @@
   position: fixed;
   top: 0;
   z-index: 900;
-  background: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.4s ease;
+  background-color: transparent;
+
+  // Light highlight
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%) scale(1.5);
+    pointer-events: none;
+  }
 
   .left {
     display: flex;
@@ -26,6 +39,8 @@
   }
 
   .center {
+    isolation: isolate;
+    z-index: 1;
     width: 33%;
     text-align: center;
     color: $BgDark;

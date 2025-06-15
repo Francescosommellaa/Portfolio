@@ -20,12 +20,14 @@
     &__bottom,
     &__top {
       color: $GrayScale--1;
-      margin: -2rem 0;
+      margin: -4rem 0;
+      z-index: 2;
+      mix-blend-mode: difference;
+      max-width: 32%;
     }
 
     &__top {
       align-self: flex-start;
-      max-width: 40%;
     }
     &__image {
       align-self: center;
@@ -33,7 +35,6 @@
 
     &__bottom {
       align-self: flex-end;
-      max-width: 32%;
     }
   }
 
@@ -44,9 +45,15 @@
     &__container {
       &__top,
       &__bottom {
-        z-index: 200;
-        margin: -2rem 0;
-        max-width: 420px;
+        margin: -3rem 0;
+      }
+
+      &__top {
+        max-width: 48%;
+      }
+
+      &__bottom {
+        max-width: 40%;
       }
     }
   }
@@ -59,10 +66,7 @@
       flex-direction: column;
       max-height: 100%;
       align-items: center;
-
-      &__image {
-        margin: 4rem 0;
-      }
+      gap: $Gap-7;
 
       &__top,
       &__bottom {

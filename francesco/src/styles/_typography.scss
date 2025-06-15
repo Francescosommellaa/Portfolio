@@ -124,19 +124,19 @@ $fontRules: (
     (
       L: (
         $fontBody,
-        1.5rem,
+        1rem,
         500,
-        1.875rem,
+        1.1rem,
       ),
       M: (
         $fontBody,
-        1.5rem,
+        1.3rem,
         500,
         1.875rem,
       ),
       S: (
         $fontBody,
-        1.25rem,
+        1.2rem,
         500,
         1.65rem,
       ),
@@ -153,7 +153,7 @@ $fontRules: (
       ),
       M: (
         $fontBody,
-        1.5rem,
+        1.3rem,
         500,
         1.75rem,
       ),
@@ -223,13 +223,13 @@ $fontRules: (
       $fontScript,
       2.5rem,
       400,
-      auto,
+      2rem,
     ),
     S: (
       $fontScript,
       2.25rem,
       400,
-      auto,
+      1.75rem,
     ),
   ),
 
@@ -284,21 +284,21 @@ $fontRules: (
     (
       L: (
         $fontBody,
-        2rem,
+        1.75rem,
         400,
-        2.25rem,
+        2.2rem,
       ),
       M: (
         $fontBody,
-        1.65rem,
+        1.5rem,
         400,
         1.875rem,
       ),
       S: (
         $fontBody,
-        1.25rem,
+        1.2rem,
         400,
-        1.625rem,
+        1.4rem,
       ),
     ),
 
@@ -307,7 +307,7 @@ $fontRules: (
       $fontBody,
       2rem,
       500,
-      2.375rem,
+      2.3rem,
     ),
     M: (
       $fontBody,
@@ -365,8 +365,8 @@ $fontRules: (
     ),
   ),
 
-  philosophy-title-X: ($fontScript, 2.75rem, 400, 3.25rem),
-  philosophy-paragraph-X: ($fontBody, 1.5rem, 400, 1.75rem)
+  philosophy-title-X: ($fontScript, 2.75rem, 400, auto),
+  philosophy-paragraph-X: ($fontBody, 1.4rem, 400, 1.7rem)
 );
 
 //===============

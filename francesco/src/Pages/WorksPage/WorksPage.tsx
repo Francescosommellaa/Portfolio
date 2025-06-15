@@ -47,7 +47,7 @@ const Works: React.FC = () => {
       {/* ARROW */}
       {!isDesktop && (
         <div className="icon-arrow">
-          <InlineIcon folder="Icons" name="Down-Arrow" size={Size} />
+          <InlineIcon folder="Icons" name="DownArrow" size={Size} />
         </div>
       )}
 
