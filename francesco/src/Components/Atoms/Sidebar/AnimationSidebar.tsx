@@ -27,7 +27,6 @@ export function useAnimateSidebar({
       return;
     }
 
-    // Usiamo requestAnimationFrame per attendere il mount completo
     requestAnimationFrame(() => {
       const items = itemsRef.current;
 

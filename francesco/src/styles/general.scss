@@ -18,6 +18,25 @@
 html {
   overflow: auto;
   scroll-behavior: smooth;
+  overscroll-behavior: contain;
+
+  scrollbar-color: $GrayScale-9 #00000000;
+  scrollbar-width: thin;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #00000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00000000;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00000000;
+  }
 
   body {
     margin: 0 auto;

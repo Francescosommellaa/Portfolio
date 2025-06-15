@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 // Atoms
 import InlineIcon from "../InlineItems/InlineIcon";
+import GlassButton from "../GlassButton/GlassButton";
 
 // Scss
 import "./ProjectController.scss";
@@ -11,30 +12,22 @@ import "./ProjectController.scss";
 import { useSmartScrollVisibility } from "../../../Hooks/useScrollDirection";
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
-// Data
-import { projectsData, Project } from "../../Data/ProjectsData";
+// Utils
+import { getAllProjects, getProjectSlug } from "../../../Utils/projectUtils";
 
 const ProjectController: React.FC = () => {
-  const { projectId } = useParams<{ projectId: string }>();
+  const { navigateWithTransition } = useTransition();
   const isVisible = useSmartScrollVisibility({
     hideOnTop: true,
     initiallyVisible: false,
   });
-  const { navigateWithTransition } = useTransition();
 
-  // Flat list con tipizzazione Project[]
-  const allProjects: Project[] = projectsData.flatMap((year) => year.projects);
-
-  // Helper per estrarre lo slug finale
-  const getProjectSlug = (project: Project): string => {
-    return project.link.split("/").pop() ?? "";
-  };
-
-  // Troviamo l'indice corrente
+  // Previous and next projects
+  const { projectId } = useParams<{ projectId: string }>();
+  const allProjects = getAllProjects();
   const currentIndex = allProjects.findIndex(
     (p) => getProjectSlug(p) === projectId
   );
-
   const previousProject =
     currentIndex > 0 ? allProjects[currentIndex - 1] : null;
   const nextProject =
@@ -47,30 +40,35 @@ const ProjectController: React.FC = () => {
   return (
     <div className="project-controller">
       {previousProject && (
-        <button
-          className="project-controller__button left"
-          onClick={() =>
-            navigateWithTransition(`/Lavori/${getProjectSlug(previousProject)}`)
-          }
-        >
-          <InlineIcon folder="Icons" name="LeftArrow" size="X" />
-        </button>
+        <div className="project-controller__button">
+          <GlassButton
+            onClick={() =>
+              navigateWithTransition(
+                `/Lavori/${getProjectSlug(previousProject)}`
+              )
+            }
+          >
+            <InlineIcon folder="Icons" name="LeftArrow" size="X" />
+          </GlassButton>
+        </div>
       )}
-      <button
-        className="project-controller__button center"
-        onClick={() => navigateWithTransition("/Lavori")}
-      >
-        <InlineIcon folder="Icons" name="CloseProject" size="X" />
-      </button>
+
+      <div className="project-controller__button">
+        <GlassButton onClick={() => navigateWithTransition("/Lavori")}>
+          <InlineIcon folder="Icons" name="CloseProject" size="X" />
+        </GlassButton>
+      </div>
+
       {nextProject && (
-        <button
-          className="project-controller__button right"
-          onClick={() =>
-            navigateWithTransition(`/Lavori/${getProjectSlug(nextProject)}`)
-          }
-        >
-          <InlineIcon folder="Icons" name="RightArrow" size="X" />
-        </button>
+        <div className="project-controller__button">
+          <GlassButton
+            onClick={() =>
+              navigateWithTransition(`/Lavori/${getProjectSlug(nextProject)}`)
+            }
+          >
+            <InlineIcon folder="Icons" name="RightArrow" size="X" />
+          </GlassButton>
+        </div>
       )}
     </div>
   );
