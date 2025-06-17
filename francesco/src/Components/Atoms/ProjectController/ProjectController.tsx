@@ -15,24 +15,44 @@ import { useTransition } from "../../../Providers/TransitionProvider/TransitionC
 // Utils
 import { getAllProjects, getProjectSlug } from "../../../Utils/projectUtils";
 
-const ProjectController: React.FC = () => {
+// Modifica: ora accetta il contesto
+interface ProjectControllerProps {
+  context: "Lavori" | "Playground";
+}
+
+const ProjectController: React.FC<ProjectControllerProps> = ({ context }) => {
   const { navigateWithTransition } = useTransition();
   const isVisible = useSmartScrollVisibility({
     hideOnTop: true,
     initiallyVisible: false,
   });
 
-  // Previous and next projects
   const { projectId } = useParams<{ projectId: string }>();
+
   const allProjects = getAllProjects();
-  const currentIndex = allProjects.findIndex(
-    (p) => getProjectSlug(p) === projectId
+
+  // Qui filtriamo i progetti in base al contesto
+  const filteredProjects = allProjects.filter((p) => {
+    if (context === "Lavori") return p.client !== "";
+    if (context === "Playground") return p.client === "";
+    return true;
+  });
+
+  const filteredProjectsWithSlug = filteredProjects.map((p) => ({
+    ...p,
+    slug: getProjectSlug(p),
+  }));
+
+  const currentIndex = filteredProjectsWithSlug.findIndex(
+    (p) => p.slug === projectId
   );
+
   const previousProject =
-    currentIndex > 0 ? allProjects[currentIndex - 1] : null;
+    currentIndex > 0 ? filteredProjectsWithSlug[currentIndex - 1] : null;
+
   const nextProject =
-    currentIndex < allProjects.length - 1
-      ? allProjects[currentIndex + 1]
+    currentIndex < filteredProjectsWithSlug.length - 1
+      ? filteredProjectsWithSlug[currentIndex + 1]
       : null;
 
   if (!isVisible) return null;
@@ -43,9 +63,7 @@ const ProjectController: React.FC = () => {
         <div className="project-controller__button">
           <GlassButton
             onClick={() =>
-              navigateWithTransition(
-                `/Lavori/${getProjectSlug(previousProject)}`
-              )
+              navigateWithTransition(`/Lavori/${previousProject.slug}`)
             }
           >
             <InlineIcon folder="Icons" name="LeftArrow" size="X" />
@@ -54,7 +72,13 @@ const ProjectController: React.FC = () => {
       )}
 
       <div className="project-controller__button">
-        <GlassButton onClick={() => navigateWithTransition("/Lavori")}>
+        <GlassButton
+          onClick={() =>
+            navigateWithTransition(
+              context === "Lavori" ? "/Lavori" : "/Playground"
+            )
+          }
+        >
           <InlineIcon folder="Icons" name="CloseProject" size="X" />
         </GlassButton>
       </div>
@@ -63,7 +87,7 @@ const ProjectController: React.FC = () => {
         <div className="project-controller__button">
           <GlassButton
             onClick={() =>
-              navigateWithTransition(`/Lavori/${getProjectSlug(nextProject)}`)
+              navigateWithTransition(`/Lavori/${nextProject.slug}`)
             }
           >
             <InlineIcon folder="Icons" name="RightArrow" size="X" />

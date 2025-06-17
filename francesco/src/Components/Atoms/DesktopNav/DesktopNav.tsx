@@ -11,13 +11,17 @@ import NavLinks from "../../Data/NavLinks";
 // Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
-const DesktopNav: React.FC = () => {
+interface DesktopNavProps {
+  hideOnTop?: boolean;
+}
+
+const DesktopNav: React.FC<DesktopNavProps> = ({ hideOnTop = false }) => {
   const Size = useSize();
   const navRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLLIElement[]>([]);
   const [hovered, setHovered] = useState<string | null>(null);
   const { navigateWithTransition } = useTransition();
-  const isVisible = useSmartScrollVisibility({ hideOnTop: false });
+  const isVisible = useSmartScrollVisibility({ hideOnTop });
 
   useEffect(() => {
     itemsRef.current.forEach((item) => {

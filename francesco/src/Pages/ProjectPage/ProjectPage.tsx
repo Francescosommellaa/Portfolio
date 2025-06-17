@@ -75,7 +75,9 @@ const ProjectPage: React.FC = () => {
       </div>
 
       <ProjectContents />
-      <ProjectController />
+      <ProjectController
+        context={project.client === "" ? "Playground" : "Lavori"}
+      />
     </PageWrapper>
   );
 };

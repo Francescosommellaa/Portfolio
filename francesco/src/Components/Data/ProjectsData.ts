@@ -40,11 +40,24 @@ export const projectsData: ProjectsByYear[] = [
         img: "QDK",
         link: "/Lavori/QDK",
         website: "https://www.qudikappa.it",
-        siteName: "qudikappa.it",
+        siteName: "Qudikappa.it",
         client: "QDK",
         year: 2025,
         category: "Fashion",
         brandShortDescription: "QDK rappresenta un approccio corporate elegante.",
+        bigHorizontalImg: "/images/qdk-big.jpg"
+      },
+      {
+        firstLetter: "O",
+        name: "rigin",
+        img: "QDK",
+        link: "/Lavori/Origin",
+        website: "https://www.Origin.it",
+        siteName: "Origin.it",
+        client: "",
+        year: 2025,
+        category: "Fashion",
+        brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
         bigHorizontalImg: "/images/qdk-big.jpg"
       }
     ]
@@ -91,6 +104,32 @@ export const projectsData: ProjectsByYear[] = [
         category: "Food",
         brandShortDescription: "Sistema di design per Linear.",
         bigHorizontalImg: "/images/linear-big.jpg"
+      },
+      {
+        firstLetter: "A",
+        name: "lisone",
+        img: "Frafolio",
+        link: "/Lavori/Alisone",
+        website: "https://www.Alisone.it",
+        siteName: "Alisone.it",
+        client: "",
+        year: 2024,
+        category: "Fashion",
+        brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
+        bigHorizontalImg: "/images/qdk-big.jpg"
+      },
+      {
+        firstLetter: "A",
+        name: "lliok",
+        img: "Frafolio",
+        link: "/Lavori/Alllllisone",
+        website: "https://www.Alisone.it",
+        siteName: "Alisone.it",
+        client: "",
+        year: 2024,
+        category: "Fashion",
+        brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
+        bigHorizontalImg: "/images/qdk-big.jpg"
       }
     ]
   },
@@ -122,6 +161,19 @@ export const projectsData: ProjectsByYear[] = [
         category: "Food",
         brandShortDescription: "Design di prodotto per Oliok.",
         bigHorizontalImg: "/images/oliok-big.jpg"
+      },
+      {
+        firstLetter: "A",
+        name: "lok",
+        img: "Frafolio",
+        link: "/Lavori/Alisone",
+        website: "https://www.Alisone.it",
+        siteName: "Alisone.it",
+        client: "",
+        year: 2024,
+        category: "Fashion",
+        brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
+        bigHorizontalImg: "/images/qdk-big.jpg"
       }
     ]
   },
@@ -180,6 +232,20 @@ export const projectsData: ProjectsByYear[] = [
         category: "Finance",
         brandShortDescription: "Sviluppo web per Oikl.",
         bigHorizontalImg: "/images/oikl-big.jpg"
+      }
+      ,
+      {
+        firstLetter: "A",
+        name: "lok",
+        img: "Frafolio",
+        link: "/Lavori/Alisone",
+        website: "https://www.Alisone.it",
+        siteName: "Alisone.it",
+        client: "",
+        year: 2022,
+        category: "Fashion",
+        brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
+        bigHorizontalImg: "/images/qdk-big.jpg"
       }
     ]
   }

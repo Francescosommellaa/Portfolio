@@ -13,9 +13,16 @@ export const useSmartScrollVisibility = ({
   hideOnBottom = false,
   topThreshold = 50,
   bottomThreshold = 100,
-  initiallyVisible = true,
 }: ScrollVisibilityOptions = {}) => {
-  const [isVisible, setIsVisible] = useState(initiallyVisible);
+
+  // ✅ Calcolo iniziale intelligente:
+  const getInitialVisibility = () => {
+    const scrolledToTop = window.scrollY <= topThreshold;
+    if (hideOnTop && scrolledToTop) return false;
+    return true;
+  };
+
+  const [isVisible, setIsVisible] = useState(getInitialVisibility);
 
   useEffect(() => {
     let lastScroll = window.scrollY;
@@ -48,7 +55,7 @@ export const useSmartScrollVisibility = ({
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hideOnTop, hideOnBottom, topThreshold, bottomThreshold, initiallyVisible]);
+  }, [hideOnTop, hideOnBottom, topThreshold, bottomThreshold]);
 
   return isVisible;
 };
