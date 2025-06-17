@@ -46,24 +46,26 @@ const ProjectPage: React.FC = () => {
 
         <div className="main-info-container">
           <div className="main-info-container__text-element">
-            {[
-              { label: "Cliente:", value: project.client },
-              { label: "Anno:", value: project.year },
-              { label: "Categoria:", value: project.category },
-            ].map(({ label, value }) => (
-              <div key={label} className="text">
-                {label && <h5 className={`h5-${Size}`}>{label}</h5>}
-                <span className={`paragraph-small-${Size}`}>{value}</span>
-              </div>
-            ))}
-          </div>
-          <div className="main-info-container__link-element">
-            <Link
-              label="Visita Sito"
-              link={project.website}
-              size={Size}
-              openInIframe={true}
-            />
+            <div className="info">
+              {[
+                { label: "Cliente:", value: project.client },
+                { label: "Anno:", value: project.year },
+                { label: "Categoria:", value: project.category },
+              ].map(({ label, value }) => (
+                <div key={label} className="text">
+                  {label && <h5 className={`h5-${Size}`}>{label}</h5>}
+                  <span className={`paragraph-small-${Size}`}>{value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="link">
+              <Link
+                label="Visita Sito"
+                link={project.website}
+                size={Size}
+                openInIframe={true}
+              />
+            </div>
           </div>
 
           <div className="main-info-container__icon-element">

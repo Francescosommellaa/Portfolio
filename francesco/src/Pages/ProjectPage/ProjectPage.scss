@@ -23,30 +23,42 @@
       width: 100%;
       display: flex;
       align-items: end;
+      justify-content: space-between;
+      position: relative;
 
       &__text-element {
-        width: 20%;
+        width: 80%;
         display: flex;
-        flex-direction: column;
-        gap: $Gap-2;
+        align-items: flex-end;
+        justify-content: space-between;
 
-        > .text {
-          width: 60%;
+        .info {
           display: flex;
-          align-items: center;
-          justify-content: space-between;
+          flex-direction: column;
+          gap: $Gap-2;
+          width: 16%;
 
-          > span {
-            width: 1rem;
-            color: $GrayScale-8;
+          > .text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            > span {
+              width: 1rem;
+              color: $GrayScale-8;
+            }
           }
         }
-      }
 
-      &__link-element {
-        width: 60%;
-        display: flex;
-        justify-content: center;
+        .link {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: max-content;
+          display: flex;
+          justify-content: center;
+        }
       }
 
       &__icon-element {
@@ -59,19 +71,6 @@
 
   @include respond-to(tablet) {
     gap: $Gap-5;
-
-    .base {
-      .main-info-container {
-        height: 40%;
-        gap: $Gap-2;
-
-        &__element {
-          > a {
-            margin: 1.2rem 0;
-          }
-        }
-      }
-    }
   }
 
   @include respond-to(mobile) {
@@ -79,14 +78,23 @@
 
     .base {
       .main-info-container {
-        height: 50%;
-        gap: $Gap-2;
+        gap: $Gap-6;
 
-        &__element {
-          width: 40%;
-          > a {
-            margin: 1.2rem 0;
+        &__text-element {
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: $Gap-4;
+
+          .info {
+            width: 50%;
           }
+        }
+
+        .link {
+          position: relative;
+          width: 100%;
+          justify-content: start;
         }
       }
     }
