@@ -1,6 +1,6 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixins" as *;
-@use "../../../styles/typography" as *;
+@use "@styles/variables" as *;
+@use "@styles/mixins" as *;
+@use "@styles/typography" as *;
 
 .page-wrapper {
   padding: $PaddingL;

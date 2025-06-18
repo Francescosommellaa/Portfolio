@@ -14,7 +14,7 @@ import { useHorizontalScroll } from "../../../Hooks/useHorizontalScroll";
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
 // Data
-import { projectsData } from "../../Data/ProjectsData";
+import { projectsData } from "../../../Data/ProjectsData";
 
 const Works: React.FC = () => {
   const Size = useSize();
@@ -50,7 +50,7 @@ const Works: React.FC = () => {
                 draggable={false}
               >
                 <div className="project-img">
-                  <InlineImage folder="Lavori" name={project.img} size={Size} />
+                  <InlineImage folder="Lavori" name={project.img} size="X" />
                 </div>
               </a>
             ))}

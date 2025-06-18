@@ -8,7 +8,7 @@ import { useSize } from "../../../Hooks/useSize";
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
 
 // Data
-import NavLinks from "../../Data/NavLinks";
+import NavLinks from "../../../Data/NavLinks";
 
 // Animation
 import { useAnimateSidebar } from "./AnimationSidebar";

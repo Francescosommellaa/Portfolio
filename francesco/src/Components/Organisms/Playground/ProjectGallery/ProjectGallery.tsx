@@ -1,38 +1,38 @@
 import React from "react";
 
 // Atoms
-import InlineImage from "../../Atoms/InlineItems/InlineImage";
+import InlineImage from "../../../Atoms/InlineItems/InlineImage";
 
 // Scss
-import "./PlaygroundContents.scss";
+import "./ProjectGallery.scss";
 
 // Utils
-import { getPlaygroundProjects } from "../../../Utils/projectUtils";
+import { getPlaygroundProjects } from "../../../../Utils/projectUtils";
 
 // Providers
-import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
+import { useTransition } from "../../../../Providers/TransitionProvider/TransitionContext";
 
 // Animations
 import { usePlaygroundAnimations } from "./AnimationPlaygroundContents";
 
-const PlaygroundContents: React.FC = () => {
+const ProjectGallery: React.FC = () => {
   const { navigateWithTransition } = useTransition();
   const playgroundProjects = getPlaygroundProjects();
   const containerRef = usePlaygroundAnimations();
 
   return (
-    <div className="playground-container" ref={containerRef}>
+    <div className="project-gallery" ref={containerRef}>
       {playgroundProjects.map((project, index) => (
         <a
           key={index}
-          className="playground-item"
+          className="project-gallery__items"
           onClick={() => navigateWithTransition(project.link)}
         >
-          <InlineImage folder="Lavori" name={project.img} size="L" />
+          <InlineImage folder="Lavori" name={project.img} size="X" />
         </a>
       ))}
     </div>
   );
 };
 
-export default PlaygroundContents;
+export default ProjectGallery;

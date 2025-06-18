@@ -6,7 +6,7 @@ import { useSize } from "../../../Hooks/useSize";
 import { useSmartScrollVisibility } from "../../../Hooks/useScrollDirection";
 
 // Data
-import NavLinks from "../../Data/NavLinks";
+import NavLinks from "../../../Data/NavLinks";
 
 // Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";

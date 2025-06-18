@@ -1,12 +1,12 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixins" as *;
-@use "../../../styles/typography" as *;
+@use "@styles/variables" as *;
+@use "@styles/mixins" as *;
+@use "@styles/typography" as *;
 
-.playground-container {
+.project-gallery {
   column-count: 4;
   gap: $Gap-2;
 
-  .playground-item {
+  &__items {
     display: block;
     break-inside: avoid;
     margin-bottom: $Gap-2;
@@ -28,7 +28,7 @@
     column-count: 2;
     gap: $Gap-1;
 
-    .playground-item {
+    &__items {
       margin-bottom: $Gap-1;
     }
   }

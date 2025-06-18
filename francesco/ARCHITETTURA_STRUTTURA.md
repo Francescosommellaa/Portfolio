@@ -33,8 +33,11 @@ src/
 │   └── Organisms/           # Blocchi riutilizzabili complessi (es. Topbar, Sidebar)
 │
 ├── hooks/                   # Custom Hooks (prefisso: use)
-│   ├── useAutoHideScrollbar.ts
+│   ├── useDarkMode.ts
+│   ├── useHorizontalScroll.ts
+│   ├── useLockBodyScroll.ts
 │   ├── usePublicAsset.ts
+│   ├── useScrollDirection.ts
 │   └── useSize.ts
 │
 ├── pages/                   # Pagine associate alle rotte

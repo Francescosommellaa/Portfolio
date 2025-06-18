@@ -10,7 +10,7 @@ import InlineIcon from "../../../Atoms/InlineItems/InlineIcon";
 import { useSize } from "../../../../Hooks/useSize";
 
 // Data
-import AboutContent from "../../../Data/About";
+import AboutContent from "../../../../Data/About";
 
 const AboutMain: React.FC = () => {
   const Size = useSize();

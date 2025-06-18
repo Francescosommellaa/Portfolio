@@ -4,7 +4,7 @@ import React from "react";
 import "./Topbar.scss";
 
 // Atoms
-import InlineIcon from "../InlineItems/InlineIcon";
+import InlineIcon from "../../Atoms/InlineItems/InlineIcon";
 
 // Hooks
 import { useSize } from "../../../Hooks/useSize";

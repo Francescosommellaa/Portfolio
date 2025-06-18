@@ -4,7 +4,7 @@ import React from "react";
 import "./HomePage.scss";
 
 // Atoms
-import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
+import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
 import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 
 // Hooks

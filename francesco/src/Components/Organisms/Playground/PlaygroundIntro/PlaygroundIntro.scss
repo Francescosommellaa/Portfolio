@@ -1,0 +1,38 @@
+@use "@styles/variables" as *;
+@use "@styles/mixins" as *;
+@use "@styles/typography" as *;
+
+.intro-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $Gap-8;
+
+  &__text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $Gap-7;
+    text-align: center;
+  }
+
+  @include respond-to(tablet) {
+    gap: $Gap-8;
+
+    &__text {
+      width: 80%;
+    }
+  }
+
+  @include respond-to(mobile) {
+    gap: $Gap-8;
+
+    &__text {
+      width: 100%;
+    }
+  }
+}

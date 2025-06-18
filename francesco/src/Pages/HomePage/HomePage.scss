@@ -1,6 +1,6 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
-@use "../../styles/general" as *;
+@use "@styles/variables" as *;
+@use "@styles/mixins" as *;
+@use "@styles/typography" as *;
 
 .home {
   height: 100dvh;

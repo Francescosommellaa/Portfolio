@@ -1,8 +1,5 @@
 import React from "react";
 
-// Atoms
-import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
-
 // Scss
 import "./AboutPage.scss";
 
@@ -10,9 +7,10 @@ import "./AboutPage.scss";
 import { useSize } from "../../Hooks/useSize";
 
 // Organisms
-import AboutHero from "../../Components/Organisms/AboutContents/AboutHero/AboutHero";
-import AboutMain from "../../Components/Organisms/AboutContents/AboutMain/AboutMain";
-import AboutFooter from "../../Components/Organisms/AboutContents/AboutFooter/AboutFooter";
+import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
+import AboutHero from "../../Components/Organisms/About/AboutHero/AboutHero";
+import AboutMain from "../../Components/Organisms/About/AboutMain/AboutMain";
+import AboutFooter from "../../Components/Organisms/About/AboutFooter/AboutFooter";
 
 // Layout
 import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";

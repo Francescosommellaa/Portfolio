@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 // Atoms
-import InlineIcon from "../InlineItems/InlineIcon";
-import GlassButton from "../GlassButton/GlassButton";
+import InlineIcon from "../../Atoms/InlineItems/InlineIcon";
+import GlassButton from "../../Atoms/GlassButton/GlassButton";
 
 // Scss
 import "./ProjectController.scss";

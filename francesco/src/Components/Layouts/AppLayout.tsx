@@ -6,8 +6,8 @@ import { Outlet } from "react-router-dom";
 import Cursor from "../Atoms/Cursor/Cursor";
 
 // Layout
-import Topbar from "../Atoms/Topbar/Topbar";
-import Sidebar from "../Atoms/Sidebar/Sidebar";
+import Topbar from "../Organisms/Topbar/Topbar";
+import Sidebar from "../Organisms/Sidebar/Sidebar";
 
 //Hooks
 import { useLockBodyScroll } from "../../Hooks/useLockBodyScroll";

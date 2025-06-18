@@ -1,6 +1,6 @@
-@use "../../styles/general" as *;
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+@use "@styles/variables" as *;
+@use "@styles/mixins" as *;
+@use "@styles/typography" as *;
 
 .playground {
   padding: $PaddingL;
@@ -10,36 +10,17 @@
   align-items: center;
   gap: $Gap-9;
 
-  .text {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: $Gap-8;
-    text-align: center;
-  }
-
   .content {
-    height: 100%;
     width: 100%;
   }
 
   @include respond-to(tablet) {
     padding: $PaddingM;
     gap: $Gap-8;
-
-    .text {
-      width: 80%;
-    }
   }
 
   @include respond-to(mobile) {
     padding: $PaddingS;
     gap: $Gap-8;
-
-    .text {
-      width: 100%;
-    }
   }
 }

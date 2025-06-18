@@ -1,4 +1,4 @@
-import { projectsData, Project } from "../Components/Data/ProjectsData";
+import { projectsData, Project } from "../Data/ProjectsData";
 
 // Estraggo tutti i progetti flat
 export const getAllProjects = (): Project[] => {

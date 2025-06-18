@@ -5,14 +5,16 @@ import "./ContactsPage.scss";
 
 // Atoms
 import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
-import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
 import Link from "../../Components/Atoms/Link/Link";
+
+// Organisms
+import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
 
 // Data
-import { contattiData } from "../../Components/Data/Contact";
+import { contattiData } from "../../Data/Contact";
 
 //Layout
 import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";

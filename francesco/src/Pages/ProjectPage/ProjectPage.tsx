@@ -2,12 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 // Atoms
-import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
-import ProjectController from "../../Components/Atoms/ProjectController/ProjectController";
 import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
 import Link from "../../Components/Atoms/Link/Link";
 
 // Organisms
+import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
+import ProjectController from "../../Components/Organisms/ProjectController/ProjectController";
 import ProjectContents from "../../Components/Organisms/ProjectContents/ProjectContents";
 
 // Scss

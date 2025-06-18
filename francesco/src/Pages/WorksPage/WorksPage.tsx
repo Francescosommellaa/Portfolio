@@ -4,7 +4,7 @@ import React from "react";
 import "./WorksPage.scss";
 
 // Atoms
-import DesktopNav from "../../Components/Atoms/DesktopNav/DesktopNav";
+import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
 
 // Organisms
 import CarouselWorks from "../../Components/Organisms/CarouselWorks/CarouselWorks";
