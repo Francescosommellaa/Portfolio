@@ -4,15 +4,15 @@
 
 .glass-button {
   position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px) saturate(1.8) contrast(1.2);
-  -webkit-backdrop-filter: blur(8px) saturate(1.8) contrast(1.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-    0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px) saturate(1.8) contrast(1.2);
+  -webkit-backdrop-filter: blur(2px) saturate(1.8) contrast(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    2px 4px 8px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: all 0.3s ease;
   pointer-events: auto;
@@ -26,7 +26,7 @@
     width: 180%;
     height: 180%;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
+    border-radius: 4rem;
     background: radial-gradient(
       circle at center,
       rgba(255, 255, 255, 0.2) 0%,
@@ -53,8 +53,12 @@
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
-      0 12px 35px rgba(0, 0, 0, 0.2);
+    width: 8rem;
+    background: transparent;
+
+    &::before,
+    &::after {
+      opacity: 0;
+    }
   }
 }
