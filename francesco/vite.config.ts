@@ -11,7 +11,7 @@ export default defineConfig({
   base: "/",
   resolve: {
     alias: {
-      '@styles': resolve(__dirname, 'src/styles'), // ✅ ora funziona ovunque
+      '@styles': resolve(__dirname, 'src/styles'),
     },
   },
   css: {
