@@ -7,6 +7,7 @@ import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";
 import "./PlaygroundPage.scss";
 
 // Organisms
+import PlaygroundIntro from "../../Components/Organisms/Playground/PlaygroundIntro/PlaygroundIntro";
 import PlaygroundContents from "../../Components/Organisms/Playground/ProjectGallery/ProjectGallery";
 
 // Hooks
@@ -14,7 +15,6 @@ import { useSize } from "../../Hooks/useSize";
 
 // Layout
 import PageWrapper from "../../Components/Layouts/PageWrapper/PageWrapper";
-import PlaygroundIntro from "../../Components/Organisms/Playground/PlaygroundIntro/PlaygroundIntro";
 
 const Playground: React.FC = () => {
   const Size = useSize();
