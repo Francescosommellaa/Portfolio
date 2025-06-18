@@ -4,11 +4,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface UsePlaygroundAnimationOptions {
+interface useAnimatioProjectGalleryOptions {
   selector?: string;
 }
 
-export const usePlaygroundAnimations = ({ selector = ".playground-item" }: UsePlaygroundAnimationOptions = {}) => {
+export const useAnimatioProjectGallery = ({ selector = ".project-gallery__items" }: useAnimatioProjectGalleryOptions = {}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -19,13 +19,13 @@ export const usePlaygroundAnimations = ({ selector = ".playground-item" }: UsePl
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
-            start: "top 80%",
+            start: "top 96%",
             end: "bottom 40%",
             toggleActions: "play reverse play reverse",
             onEnter: () => item.classList.add("is-visible"),
             onLeaveBack: () => item.classList.remove("is-visible"),
             onLeave: () => {
-              if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 99) return;
+              if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 80) return;
               item.classList.remove("is-visible");
             },
           },
