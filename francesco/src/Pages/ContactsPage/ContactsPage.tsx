@@ -5,7 +5,7 @@ import "./ContactsPage.scss";
 
 // Atoms
 import InlineIcon from "../../Components/Atoms/InlineItems/InlineIcon";
-import Link from "../../Components/Atoms/Link/Link";
+import Link from "../../Components/Molecules/Link/Link";
 
 // Organisms
 import DesktopNav from "../../Components/Organisms/DesktopNav/DesktopNav";

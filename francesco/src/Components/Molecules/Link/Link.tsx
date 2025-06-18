@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 
 // Atoms
-import InlineIcon from "../InlineItems/InlineIcon";
-import IframeModal from "../IframeModal/IframeModal";
+import InlineIcon from "../../Atoms/InlineItems/InlineIcon";
+import IframeModal from "../../Atoms/IframeModal/IframeModal";
 
 // Scss
 import "./Link.scss";
