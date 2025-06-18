@@ -56,23 +56,5 @@ html {
       margin-top: 120px;
       text-align: center;
     }
-
-    .full-width-section {
-      margin-left: -$PaddingL;
-      margin-right: -$PaddingL;
-      width: calc(100% + 2 * #{$PaddingL});
-
-      @include respond-to(tablet) {
-        margin-left: -$PaddingM;
-        margin-right: -$PaddingM;
-        width: calc(100% + 2 * #{$PaddingM});
-      }
-
-      @include respond-to(mobile) {
-        margin-left: -$PaddingS;
-        margin-right: -$PaddingS;
-        width: calc(100% + 2 * #{$PaddingS});
-      }
-    }
   }
 }

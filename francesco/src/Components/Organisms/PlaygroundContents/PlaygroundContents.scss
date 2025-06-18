@@ -3,32 +3,33 @@
 @use "../../../styles/typography" as *;
 
 .playground-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 24px;
-  padding: $PaddingL;
-}
+  column-count: 4;
+  gap: $Gap-2;
 
-.playground-item {
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.03);
-  }
-
-  img {
-    width: 100%;
-    height: auto;
+  .playground-item {
     display: block;
-    object-fit: cover;
+    break-inside: avoid;
+    margin-bottom: $Gap-2;
+    transition: all 0.3s ease-out;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
   }
 
-  .playground-title {
-    padding: 12px;
-    background: $GrayScale-9;
+  @include respond-to(tablet) {
+    column-count: 3;
+    gap: $Gap-2;
+  }
+  @include respond-to(mobile) {
+    column-count: 2;
+    gap: $Gap-1;
+
+    .playground-item {
+      margin-bottom: $Gap-1;
+    }
   }
 }

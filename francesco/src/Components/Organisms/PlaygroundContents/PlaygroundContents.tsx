@@ -1,28 +1,35 @@
 import React from "react";
-// import { useSize } from "../../../Hooks/useSize";
-import { getPlaygroundProjects } from "../../../Utils/projectUtils";
-import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
+
+// Atoms
 import InlineImage from "../../Atoms/InlineItems/InlineImage";
 
-// SCSS
+// Scss
 import "./PlaygroundContents.scss";
 
-const PlaygroundContents: React.FC = () => {
-  // const Size = useSize();
-  const { navigateWithTransition } = useTransition();
+// Utils
+import { getPlaygroundProjects } from "../../../Utils/projectUtils";
 
+// Providers
+import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
+
+// Animations
+import { usePlaygroundAnimations } from "./AnimationPlaygroundContents";
+
+const PlaygroundContents: React.FC = () => {
+  const { navigateWithTransition } = useTransition();
   const playgroundProjects = getPlaygroundProjects();
+  const containerRef = usePlaygroundAnimations();
 
   return (
-    <div className="playground-container">
+    <div className="playground-container" ref={containerRef}>
       {playgroundProjects.map((project, index) => (
-        <div
+        <a
           key={index}
           className="playground-item"
           onClick={() => navigateWithTransition(project.link)}
         >
           <InlineImage folder="Lavori" name={project.img} size="L" />
-        </div>
+        </a>
       ))}
     </div>
   );

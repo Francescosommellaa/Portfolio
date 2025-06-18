@@ -74,7 +74,10 @@ const ProjectPage: React.FC = () => {
         </div>
       </div>
 
-      <ProjectContents />
+      <ProjectContents
+        brandShortDescription={project.brandShortDescription}
+        bigHorizontalImg={project.bigHorizontalImg}
+      />
       <ProjectController
         context={project.client === "" ? "Playground" : "Lavori"}
       />

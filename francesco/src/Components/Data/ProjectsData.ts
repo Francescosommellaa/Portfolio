@@ -32,7 +32,7 @@ export const projectsData: ProjectsByYear[] = [
         year: 2025,
         category: "Fashion",
         brandShortDescription: "Amiuni è un progetto di branding moderno.",
-        bigHorizontalImg: "/images/amiuni-big.jpg"
+        bigHorizontalImg: "Amiuni-big"
       },
       {
         firstLetter: "Q",
@@ -45,7 +45,7 @@ export const projectsData: ProjectsByYear[] = [
         year: 2025,
         category: "Fashion",
         brandShortDescription: "QDK rappresenta un approccio corporate elegante.",
-        bigHorizontalImg: "/images/qdk-big.jpg"
+        bigHorizontalImg: "Amiuni-big"
       },
       {
         firstLetter: "O",
@@ -58,7 +58,7 @@ export const projectsData: ProjectsByYear[] = [
         year: 2025,
         category: "Fashion",
         brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
-        bigHorizontalImg: "/images/qdk-big.jpg"
+        bigHorizontalImg: "Amiuni-big"
       }
     ]
   },
@@ -121,7 +121,7 @@ export const projectsData: ProjectsByYear[] = [
       {
         firstLetter: "A",
         name: "lliok",
-        img: "Frafolio",
+        img: "Amiuni",
         link: "/Lavori/Alliok",
         website: "https://www.Alliok.it",
         siteName: "Alliok.it",
@@ -129,7 +129,7 @@ export const projectsData: ProjectsByYear[] = [
         year: 2024,
         category: "Fashion",
         brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
-        bigHorizontalImg: "/images/qdk-big.jpg"
+        bigHorizontalImg: "/images/amiuni-big.jpg"
       }
     ]
   },
@@ -169,6 +169,19 @@ export const projectsData: ProjectsByYear[] = [
         link: "/Lavori/Porok",
         website: "https://www.Porok.it",
         siteName: "Porok.it",
+        client: "",
+        year: 2024,
+        category: "Fashion",
+        brandShortDescription: "Origin rappresenta un approccio corporate elegante.",
+        bigHorizontalImg: "/images/qdk-big.jpg"
+      },
+      {
+        firstLetter: "K",
+        name: "polok",
+        img: "QDK",
+        link: "/Lavori/Kpolok",
+        website: "https://www.Kpolok.it",
+        siteName: "Kpolok.it",
         client: "",
         year: 2024,
         category: "Fashion",
@@ -237,7 +250,7 @@ export const projectsData: ProjectsByYear[] = [
       {
         firstLetter: "M",
         name: "lok",
-        img: "Frafolio",
+        img: "Amiuni",
         link: "/Lavori/Mlok",
         website: "https://www.Mlok.it",
         siteName: "Mlok.it",

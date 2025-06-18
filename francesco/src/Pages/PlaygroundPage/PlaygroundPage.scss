@@ -27,9 +27,19 @@
 
   @include respond-to(tablet) {
     padding: $PaddingM;
+    gap: $Gap-8;
+
+    .text {
+      width: 80%;
+    }
   }
 
   @include respond-to(mobile) {
     padding: $PaddingS;
+    gap: $Gap-8;
+
+    .text {
+      width: 100%;
+    }
   }
 }

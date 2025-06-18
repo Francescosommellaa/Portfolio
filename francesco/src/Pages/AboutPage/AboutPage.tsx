@@ -10,7 +10,7 @@ import "./AboutPage.scss";
 import { useSize } from "../../Hooks/useSize";
 
 // Organisms
-import AboutIntro from "../../Components/Organisms/AboutContents/AboutIntro/AboutIntro";
+import AboutHero from "../../Components/Organisms/AboutContents/AboutHero/AboutHero";
 import AboutMain from "../../Components/Organisms/AboutContents/AboutMain/AboutMain";
 import AboutFooter from "../../Components/Organisms/AboutContents/AboutFooter/AboutFooter";
 
@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
   return (
     <PageWrapper className="aboutPage" fullWidth>
       {isDesktop && <DesktopNav hideOnTop={true} />}
-      <AboutIntro />
+      <AboutHero />
       <AboutMain />
       <AboutFooter />
     </PageWrapper>

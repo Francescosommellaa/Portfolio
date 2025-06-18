@@ -10,7 +10,15 @@ import "./ProjectContents.scss";
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
 
-const ProjectContents: React.FC = () => {
+interface ProjectContentsProps {
+  brandShortDescription: string;
+  bigHorizontalImg: string;
+}
+
+const ProjectContents: React.FC<ProjectContentsProps> = ({
+  brandShortDescription,
+  bigHorizontalImg,
+}) => {
   const Size = useSize();
 
   return (
@@ -18,12 +26,12 @@ const ProjectContents: React.FC = () => {
       <div className="project-contents__skills">
         <InlineIcon folder="Icons" size="X" name="Ellipse" />
         <span className={`subtitle-about-${Size}`}>
-          best brand di abigliamento in italia
+          {brandShortDescription}
         </span>
       </div>
 
       <div className="project-contents__image-wrapper">
-        <InlineImage folder="Lavori" name="Amiuni-big" size="L" />
+        <InlineImage folder="Lavori" name={bigHorizontalImg} size="L" />
       </div>
     </div>
   );

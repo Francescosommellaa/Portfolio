@@ -1,7 +1,7 @@
 import React from "react";
 
 // Scss
-import "./AboutIntro.scss";
+import "./AboutHero.scss";
 
 // Atoms
 import InlineImage from "../../../Atoms/InlineItems/InlineImage";
@@ -12,7 +12,7 @@ import { useSize } from "../../../../Hooks/useSize";
 // Data
 import AboutContent from "../../../Data/About";
 
-const AboutIntro: React.FC = () => {
+const AboutHero: React.FC = () => {
   const Size = useSize();
 
   return (
@@ -39,4 +39,4 @@ const AboutIntro: React.FC = () => {
   );
 };
 
-export default AboutIntro;
+export default AboutHero;

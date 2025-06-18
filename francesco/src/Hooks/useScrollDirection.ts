@@ -15,7 +15,6 @@ export const useSmartScrollVisibility = ({
   bottomThreshold = 100,
 }: ScrollVisibilityOptions = {}) => {
 
-  // ✅ Calcolo iniziale intelligente:
   const getInitialVisibility = () => {
     const scrolledToTop = window.scrollY <= topThreshold;
     if (hideOnTop && scrolledToTop) return false;
