@@ -10,9 +10,10 @@
     display: block;
     break-inside: avoid;
     margin-bottom: $Gap-2;
-    transform: scale(0.6) translateY(32px);
+    opacity: 0;
+    transform: scale(0.6) translateY(40px);
     filter: blur(4px);
-    transition: all 0.3s ease-out;
+    transition: all 0.4s ease-out;
 
     &.is-visible {
       opacity: 1;

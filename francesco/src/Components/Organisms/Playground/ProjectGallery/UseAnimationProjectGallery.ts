@@ -16,7 +16,7 @@ export const useAnimatioProjectGallery = ({ selector = ".project-gallery__items"
       const items = gsap.utils.toArray(selector) as HTMLElement[];
 
       items.forEach((item) => {
-        const tl = gsap.timeline({
+        gsap.timeline({
           scrollTrigger: {
             trigger: item,
             start: "top 96%",
@@ -24,14 +24,18 @@ export const useAnimatioProjectGallery = ({ selector = ".project-gallery__items"
             toggleActions: "play reverse play reverse",
             onEnter: () => item.classList.add("is-visible"),
             onLeaveBack: () => item.classList.remove("is-visible"),
+
             onLeave: () => {
-              if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 80) return;
+              const buffer = 80;
+              const isAtBottom =
+                window.innerHeight + window.scrollY >= document.body.scrollHeight - buffer;
+
+              if (isAtBottom) return;
+
               item.classList.remove("is-visible");
             },
           },
-        });
-
-        tl.fromTo(item, {
+        }).fromTo(item, {
           opacity: 0,
           scale: 0.6,
           y: 30,
