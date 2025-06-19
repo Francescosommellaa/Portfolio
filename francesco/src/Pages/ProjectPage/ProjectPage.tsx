@@ -78,9 +78,7 @@ const ProjectPage: React.FC = () => {
         brandShortDescription={project.brandShortDescription}
         bigHorizontalImg={project.bigHorizontalImg}
       />
-      <ProjectController
-        context={project.client === "" ? "Playground" : "Lavori"}
-      />
+      <ProjectController />
     </PageWrapper>
   );
 };
