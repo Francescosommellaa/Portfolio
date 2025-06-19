@@ -22,8 +22,8 @@ export const useAnimationProjectGallery = ({
       items.forEach((item) => {
         const trigger = ScrollTrigger.create({
           trigger: item,
-          start: "top 85%",
-          end: "bottom 24%",
+          start: "top 80%",
+          end: "bottom 20%",
           toggleActions: "play none none reverse",
           onEnter: () => {
             gsap.fromTo(
