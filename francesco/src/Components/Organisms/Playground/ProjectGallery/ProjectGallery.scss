@@ -11,8 +11,8 @@
     break-inside: avoid;
     margin-bottom: $Gap-2;
     opacity: 0;
-    transform: scale(0.9) translateY(40px);
-    filter: blur(6px);
+    transform: scale(0.4) translateY(40px);
+    filter: blur(8px);
     transition: all 0.4s ease-out;
 
     &.is-visible {

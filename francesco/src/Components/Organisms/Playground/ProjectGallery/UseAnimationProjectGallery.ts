@@ -31,30 +31,25 @@ export const useAnimatioProjectGallery = ({
             onLeave: () => {
               const scrollY = window.scrollY;
               const maxScroll = ScrollTrigger.maxScroll(window);
-              const isAtBottom = scrollY >= maxScroll - 2; // Tolleranza fine pagina
+              const isAtBottom = scrollY >= maxScroll - 2;
 
               if (isAtBottom) return;
               item.classList.remove("is-visible");
             },
           },
-        }).fromTo(
-          item,
-          {
-            opacity: 0,
-            scale: 0.9,
-            y: 40,
-            filter: "blur(6px)",
-          },
-          {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            filter: "blur(0px)",
-            duration: 0.5,
-            ease: "power3.out",
-            overwrite: "auto",
-          }
-        );
+        }).fromTo(item, {
+          opacity: 0,
+          scale: 0.4,
+          y: 40,
+          filter: "blur(4px)",
+        }, {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 0.6,
+          ease: "power2.inOut",
+        });
       });
     }, containerRef);
 
