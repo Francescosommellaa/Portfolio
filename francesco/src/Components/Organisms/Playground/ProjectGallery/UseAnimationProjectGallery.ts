@@ -56,7 +56,6 @@ export const useAnimationProjectGallery = ({
               duration: 0.4,
               ease: "power2.in",
               overwrite: "auto",
-              visibility: "hidden",
             });
           },
         });
@@ -64,7 +63,6 @@ export const useAnimationProjectGallery = ({
         triggers.push(trigger);
       });
 
-      // ScrollTrigger.refresh() ritardato per evitare race condition
       setTimeout(() => {
         ScrollTrigger.refresh();
       }, 100);
