@@ -3,6 +3,9 @@ import React from "react";
 // Scss
 import "./PageWrapper.scss";
 
+// Hooks
+import useScrollToTopOnRouteChange from "../../../Hooks/useScrollToTop";
+
 interface PageWrapperProps {
   className?: string;
   children: React.ReactNode;
@@ -14,6 +17,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
   children,
   fullWidth = false,
 }) => {
+  useScrollToTopOnRouteChange();
   return (
     <div
       className={`page-wrapper ${
