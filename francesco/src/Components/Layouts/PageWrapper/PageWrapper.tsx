@@ -1,5 +1,10 @@
 import React from "react";
+
+// Scss
 import "./PageWrapper.scss";
+
+// Hooks
+import { useScrollReset } from "../../../Hooks/useScrollReset";
 
 interface PageWrapperProps {
   className?: string;
@@ -12,6 +17,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
   children,
   fullWidth = false,
 }) => {
+  useScrollReset();
   return (
     <div
       className={`page-wrapper ${

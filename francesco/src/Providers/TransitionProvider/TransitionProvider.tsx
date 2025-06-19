@@ -33,9 +33,12 @@ export const TransitionProvider: React.FC<Props> = ({ children }) => {
 
     animateTransition(el, () => {
       navigate(path);
-      setTimeout(() => {
-        scrollToTopUniversal();
-      }, 0);
+
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          scrollToTopUniversal();
+        }, 0);
+      });
     });
   };
 

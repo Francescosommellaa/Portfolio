@@ -1,19 +1,31 @@
-// src/Utils/scrollToTopUniversal.ts
 export const scrollToTopUniversal = () => {
-  const allScrollableElements = Array.from(document.querySelectorAll("*")) as HTMLElement[];
+  // Scrolla il window
+  window.scrollTo({ top: 0, behavior: "auto" });
 
-  // Trova tutti gli elementi che hanno scrollTop > 0
-  const scrolledElements = allScrollableElements.filter(
-    (el) => el.scrollTop > 0 && el.scrollHeight > el.clientHeight
+  // Scrolla il documento (fallback per Safari, Firefox, ecc.)
+  const root = document.scrollingElement || document.documentElement;
+  root.scrollTo({ top: 0, behavior: "auto" });
+
+  // Scrolla anche il body (fallback legacy)
+  document.body.scrollTo({ top: 0, behavior: "auto" });
+
+  // Scrolla eventuali container scrollabili
+  const scrollables = Array.from(document.querySelectorAll<HTMLElement>("*")).filter(
+    (el) => {
+      const overflowY = window.getComputedStyle(el).overflowY;
+      return (
+        (overflowY === "scroll" || overflowY === "auto") &&
+        el.scrollHeight > el.clientHeight
+      );
+    }
   );
 
-  // Scrolla ogni elemento rilevante verso l'alto
-  scrolledElements.forEach((el) => {
+  scrollables.forEach((el) => {
     el.scrollTo({ top: 0, behavior: "auto" });
   });
 
-  // Esegui anche sul window/document come fallback
-  const root = document.scrollingElement || document.documentElement;
-  root.scrollTo({ top: 0, behavior: "auto" });
-  window.scrollTo({ top: 0, behavior: "auto" });
+  // Forza un altro scroll dopo 1 frame per sicurezza
+  requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  });
 };
