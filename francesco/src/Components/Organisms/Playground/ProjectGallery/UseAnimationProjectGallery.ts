@@ -23,16 +23,17 @@ export const useAnimationProjectGallery = ({
         const trigger = ScrollTrigger.create({
           trigger: item,
           start: "top 85%",
-          end: "bottom 40%",
+          end: "bottom 32%",
           toggleActions: "play reverse play reverse",
           onEnter: () => {
             gsap.fromTo(
               item,
               {
-                scale: 0.9,
+                scale: 0.99,
                 opacity: 0,
                 y: 40,
                 filter: "blur(8px)",
+                visibility: "hidden",
               },
               {
                 scale: 1,
@@ -41,6 +42,7 @@ export const useAnimationProjectGallery = ({
                 filter: "blur(0px)",
                 duration: 0.4,
                 ease: "power2.out",
+                visibility: "visible",
                 overwrite: "auto",
               }
             );
