@@ -10,7 +10,7 @@ import playgroundProjects from "../../../../Data/PlaygroundData";
 import "./ProjectGallery.scss";
 
 // Animation
-import { useAnimationProjectGallery } from "./useAnimationProjectGallery";
+import { useAnimationProjectGallery } from "./UseAnimationProjectGallery";
 
 const ProjectGallery: React.FC = () => {
   const containerRef = useAnimationProjectGallery();
