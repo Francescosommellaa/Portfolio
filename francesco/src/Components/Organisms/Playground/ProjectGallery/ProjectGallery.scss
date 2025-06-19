@@ -5,52 +5,58 @@
   column-count: 4;
   gap: $Gap-2;
 
-  &__item {
+  &__container {
     break-inside: avoid;
-    margin-bottom: $Gap-2;
     position: relative;
-  }
 
-  .image-wrapper {
-    background-color: $GrayScale--1;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-
-    img {
-      display: block;
-      will-change: clip-path, transform;
-      position: relative;
+    .image-wrapper {
+      background-color: $GrayScale--1;
       width: 100%;
-      z-index: 1;
-      object-fit: cover;
+      height: auto;
+      overflow: hidden;
+
+      img {
+        display: block;
+        will-change: clip-path, transform;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        object-fit: cover;
+      }
     }
-  }
 
-  &__text {
-    margin-top: 0.5rem;
-    color: $GrayScale-4;
+    .info {
+      margin: 1.2rem 0 4rem;
+      color: $GrayScale-10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-    .year {
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-
-    .category {
-      font-style: italic;
+      .text {
+        text-align: end;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+      }
     }
   }
 
   @include respond-to(tablet) {
     column-count: 3;
+
+    .info {
+      margin: 1rem 0 2rem;
+      align-items: flex-start;
+    }
   }
 
   @include respond-to(mobile) {
     column-count: 2;
     gap: $Gap-1;
 
-    &__item {
-      margin-bottom: $Gap-1;
+    .info {
+      margin: 1rem 0 1.5rem;
+      align-items: flex-start;
     }
   }
 }

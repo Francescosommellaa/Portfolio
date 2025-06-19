@@ -12,19 +12,28 @@ import "./ProjectGallery.scss";
 // Animation
 import { useAnimationProjectGallery } from "./UseAnimationProjectGallery";
 
+// Hooks
+import { useSize } from "../../../../Hooks/useSize";
+
 const ProjectGallery: React.FC = () => {
   const containerRef = useAnimationProjectGallery();
+  const Size = useSize();
 
   return (
     <div className="project-gallery" ref={containerRef}>
       {playgroundProjects.map((project, index) => (
-        <div key={index} className="project-gallery__item">
+        <div key={index} className="project-gallery__container">
           <div className="image-wrapper">
             <InlineImage folder="Lavori" name={project.img} size="X" />
           </div>
-          <div className="project-gallery__text">
-            <p className="year">({project.year})</p>
-            <p className="category">{project.category}</p>
+          <div className="info">
+            <span className={`subtitle-about-${Size}`}>(20{project.year})</span>
+            <div className="text">
+              <span className={`paragraph-small-${Size}`}>
+                {project.category}
+              </span>
+              <span className={`paragraph-small-${Size}`}>{project.name}</span>
+            </div>
           </div>
         </div>
       ))}

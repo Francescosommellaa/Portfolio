@@ -16,7 +16,7 @@ export const useAnimationProjectGallery = () => {
         image,
         {
           clipPath: "inset(0 0 100% 0)",
-          scale: 1.05,
+          scale: 1.1,
           transformOrigin: "center center",
         },
         {
@@ -26,8 +26,7 @@ export const useAnimationProjectGallery = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: image,
-            start: "top 80%",
-            end: "top 10%",
+            start: "top 72%",
             toggleActions: "play none none none",
             once: true,
           },

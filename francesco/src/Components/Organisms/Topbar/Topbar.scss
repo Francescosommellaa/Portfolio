@@ -79,7 +79,7 @@
 
     .inline-icon {
       svg path {
-        transition: fill 0.6s ease;
+        transition: fill 0.6s ease-out;
         fill: $GrayScale--1;
       }
     }
