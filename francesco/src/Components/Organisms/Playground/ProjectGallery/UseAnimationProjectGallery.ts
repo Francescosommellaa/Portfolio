@@ -30,7 +30,7 @@ export const useAnimationProjectGallery = ({
               item,
               {
                 opacity: 0,
-                scale: 0.4,
+                scale: 0.8,
                 y: 40,
                 filter: "blur(8px)",
               },
