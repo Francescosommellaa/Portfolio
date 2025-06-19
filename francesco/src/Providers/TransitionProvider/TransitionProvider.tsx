@@ -31,10 +31,13 @@ export const TransitionProvider: React.FC<Props> = ({ children }) => {
     animateTransition(el, () => {
       navigate(path);
       setTimeout(() => {
-        const scrollRoot =
-          document.scrollingElement || document.documentElement;
-        scrollRoot.scrollTo({ top: 0, behavior: "auto" });
-        window.scrollTo({ top: 0, behavior: "auto" });
+        const scrollContainer = document.querySelector(".page-wrapper");
+
+        if (scrollContainer) {
+          scrollContainer.scrollTo({ top: 0, behavior: "auto" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }
       }, 0);
     });
   };
