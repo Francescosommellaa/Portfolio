@@ -12,12 +12,7 @@ import Playground from "./Pages/PlaygroundPage/PlaygroundPage";
 import Contatti from "./Pages/ContactsPage/ContactsPage";
 import NotFound from "./Pages/404/404";
 
-// Hooks
-import { useScrollToTopOnNavigation } from "./Hooks/useScrollToTopOnNavigation";
-
 const App = () => {
-  useScrollToTopOnNavigation();
-
   return (
     <Routes>
       <Route element={<AppLayout />}>
