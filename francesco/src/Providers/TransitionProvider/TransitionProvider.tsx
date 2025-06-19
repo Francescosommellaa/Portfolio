@@ -29,11 +29,17 @@ export const TransitionProvider: React.FC<Props> = ({ children }) => {
     if (!el) return;
 
     animateTransition(el, () => {
-      window.scrollTo(0, 0);
       navigate(path);
+      setTimeout(() => {
+        const scrollRoot =
+          document.scrollingElement || document.documentElement;
+        scrollRoot.scrollTo({ top: 0, behavior: "auto" });
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }, 0);
     });
   };
 
+  // Titolo animazione transizione
   const cleanedPath = target.startsWith("/") ? target.slice(1) : target;
   const parts = cleanedPath.split("/");
 
