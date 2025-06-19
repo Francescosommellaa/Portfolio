@@ -8,7 +8,9 @@ interface useAnimatioProjectGalleryOptions {
   selector?: string;
 }
 
-export const useAnimatioProjectGallery = ({ selector = ".project-gallery__items" }: useAnimatioProjectGalleryOptions = {}) => {
+export const useAnimatioProjectGallery = ({
+  selector = ".project-gallery__items",
+}: useAnimatioProjectGalleryOptions = {}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -19,35 +21,40 @@ export const useAnimatioProjectGallery = ({ selector = ".project-gallery__items"
         gsap.timeline({
           scrollTrigger: {
             trigger: item,
-            start: "top 96%",
+            start: "top 95%",
             end: "bottom 40%",
             toggleActions: "play reverse play reverse",
+
             onEnter: () => item.classList.add("is-visible"),
             onLeaveBack: () => item.classList.remove("is-visible"),
 
             onLeave: () => {
-              const buffer = 80;
-              const isAtBottom =
-                window.innerHeight + window.scrollY >= document.body.scrollHeight - buffer;
+              const scrollY = window.scrollY;
+              const maxScroll = ScrollTrigger.maxScroll(window);
+              const isAtBottom = scrollY >= maxScroll - 2; // Tolleranza fine pagina
 
               if (isAtBottom) return;
-
               item.classList.remove("is-visible");
             },
           },
-        }).fromTo(item, {
-          opacity: 0,
-          scale: 0.6,
-          y: 30,
-          filter: "blur(4px)",
-        }, {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.6,
-          ease: "power2.inOut",
-        });
+        }).fromTo(
+          item,
+          {
+            opacity: 0,
+            scale: 0.9,
+            y: 40,
+            filter: "blur(6px)",
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.5,
+            ease: "power3.out",
+            overwrite: "auto",
+          }
+        );
       });
     }, containerRef);
 

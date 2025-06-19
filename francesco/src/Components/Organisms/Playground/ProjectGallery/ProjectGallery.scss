@@ -11,8 +11,8 @@
     break-inside: avoid;
     margin-bottom: $Gap-2;
     opacity: 0;
-    transform: scale(0.6) translateY(40px);
-    filter: blur(4px);
+    transform: scale(0.9) translateY(40px);
+    filter: blur(6px);
     transition: all 0.4s ease-out;
 
     &.is-visible {
@@ -20,6 +20,7 @@
       transform: scale(1) translateY(0);
       filter: blur(0);
     }
+
     img {
       width: 100%;
       height: auto;
@@ -30,8 +31,8 @@
 
   @include respond-to(tablet) {
     column-count: 3;
-    gap: $Gap-2;
   }
+
   @include respond-to(mobile) {
     column-count: 2;
     gap: $Gap-1;
