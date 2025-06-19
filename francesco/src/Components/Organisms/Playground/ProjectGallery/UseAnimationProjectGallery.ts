@@ -18,38 +18,52 @@ export const useAnimatioProjectGallery = ({
       const items = gsap.utils.toArray(selector) as HTMLElement[];
 
       items.forEach((item) => {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: item,
-            start: "top 95%",
-            end: "bottom 40%",
-            toggleActions: "play reverse play reverse",
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 95%",
+          end: "bottom 24%",
 
-            onEnter: () => item.classList.add("is-visible"),
-            onLeaveBack: () => item.classList.remove("is-visible"),
-
-            onLeave: () => {
-              const scrollY = window.scrollY;
-              const maxScroll = ScrollTrigger.maxScroll(window);
-              const isAtBottom = scrollY >= maxScroll - 2;
-
-              if (isAtBottom) return;
-              item.classList.remove("is-visible");
-            },
+          onEnter: () => {
+            item.classList.add("is-visible");
+            gsap.fromTo(
+              item,
+              {
+                opacity: 0,
+                scale: 0.4,
+                y: 40,
+                filter: "blur(4px)",
+              },
+              {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                filter: "blur(0px)",
+                duration: 0.6,
+                ease: "power2.out",
+                overwrite: "auto",
+              }
+            );
           },
-        }).fromTo(item, {
-          opacity: 0,
-          scale: 0.4,
-          y: 40,
-          filter: "blur(4px)",
-        }, {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.6,
-          ease: "power2.inOut",
-          overwrite: "auto",
+
+          onLeaveBack: () => {
+            item.classList.remove("is-visible");
+            gsap.to(item, {
+              opacity: 0,
+              scale: 0.4,
+              y: 40,
+              filter: "blur(4px)",
+              duration: 0.4,
+              ease: "power2.in",
+              overwrite: "auto",
+            });
+          },
+
+          onLeave: () => {
+            const scrollY = window.scrollY;
+            const maxScroll = ScrollTrigger.maxScroll(window);
+            const isAtBottom = scrollY >= maxScroll - 2;
+            if (isAtBottom) return;
+          },
         });
       });
 
