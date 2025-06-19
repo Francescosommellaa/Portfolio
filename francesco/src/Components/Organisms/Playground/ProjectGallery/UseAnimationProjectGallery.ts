@@ -22,25 +22,25 @@ export const useAnimationProjectGallery = ({
       items.forEach((item) => {
         const trigger = ScrollTrigger.create({
           trigger: item,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play reverse play reverse",
           onEnter: () => {
             gsap.fromTo(
               item,
               {
+                scale: 0.9,
                 opacity: 0,
-                scale: 0.8,
                 y: 40,
                 filter: "blur(8px)",
               },
               {
-                opacity: 1,
                 scale: 1,
+                opacity: 1,
                 y: 0,
                 filter: "blur(0px)",
-                duration: 0.6,
-                ease: "power3.out",
+                duration: 0.4,
+                ease: "power2.out",
                 overwrite: "auto",
               }
             );
