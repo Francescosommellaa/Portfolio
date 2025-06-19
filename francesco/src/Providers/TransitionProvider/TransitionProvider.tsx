@@ -13,6 +13,9 @@ import { animateTransition } from "./AnimationTransitionProvider";
 // Context
 import { TransitionContext } from "./TransitionContext";
 
+// Utils
+import { scrollToTopUniversal } from "../../Utils/scrollToTopUniversal";
+
 interface Props {
   children: React.ReactNode;
 }
@@ -31,13 +34,7 @@ export const TransitionProvider: React.FC<Props> = ({ children }) => {
     animateTransition(el, () => {
       navigate(path);
       setTimeout(() => {
-        const scrollContainer = document.querySelector(".page-wrapper");
-
-        if (scrollContainer) {
-          scrollContainer.scrollTo({ top: 0, behavior: "auto" });
-        } else {
-          window.scrollTo({ top: 0, behavior: "auto" });
-        }
+        scrollToTopUniversal();
       }, 0);
     });
   };
