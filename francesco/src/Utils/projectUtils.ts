@@ -14,9 +14,3 @@ export const getProjectSlug = (project: Project): string => {
 export const findProjectBySlug = (slug: string): Project | undefined => {
   return getAllProjects().find((project) => getProjectSlug(project) === slug);
 };
-
-// Recupero i progetti che hanno cient=""
-export const getPlaygroundProjects = (): Project[] => {
-  const allProjects: Project[] = projectsData.flatMap((yearBlock) => yearBlock.projects);
-  return allProjects.filter((project) => project.client === "");
-};

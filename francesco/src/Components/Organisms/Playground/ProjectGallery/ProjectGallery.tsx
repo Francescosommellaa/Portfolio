@@ -3,33 +3,30 @@ import React from "react";
 // Atoms
 import InlineImage from "../../../Atoms/InlineItems/InlineImage";
 
-// Scss
+// Data
+import playgroundProjects from "../../../../Data/PlaygroundData";
+
+// Style
 import "./ProjectGallery.scss";
 
-// Utils
-import { getPlaygroundProjects } from "../../../../Utils/projectUtils";
-
-// Providers
-import { useTransition } from "../../../../Providers/TransitionProvider/TransitionContext";
-
-// Animations
-import { useAnimationProjectGallery } from "./UseAnimationProjectGallery";
+// Animation
+import { useAnimationProjectGallery } from "./useAnimationProjectGallery";
 
 const ProjectGallery: React.FC = () => {
-  const { navigateWithTransition } = useTransition();
-  const playgroundProjects = getPlaygroundProjects();
   const containerRef = useAnimationProjectGallery();
 
   return (
     <div className="project-gallery" ref={containerRef}>
       {playgroundProjects.map((project, index) => (
-        <a
-          key={index}
-          className="project-gallery__items"
-          onClick={() => navigateWithTransition(project.link)}
-        >
-          <InlineImage folder="Lavori" name={project.img} size="X" />
-        </a>
+        <div key={index} className="project-gallery__item">
+          <div className="image-wrapper">
+            <InlineImage folder="Lavori" name={project.img} size="X" />
+          </div>
+          <div className="project-gallery__text">
+            <p className="year">({project.year})</p>
+            <p className="category">{project.category}</p>
+          </div>
+        </div>
       ))}
     </div>
   );

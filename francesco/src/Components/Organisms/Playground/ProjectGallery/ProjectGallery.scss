@@ -1,25 +1,43 @@
 @use "@styles/variables" as *;
 @use "@styles/mixins" as *;
-@use "@styles/typography" as *;
 
 .project-gallery {
   column-count: 4;
   gap: $Gap-2;
 
-  &__items {
-    display: block;
+  &__item {
     break-inside: avoid;
     margin-bottom: $Gap-2;
-    visibility: hidden;
-    opacity: 1;
-    filter: blur(8px);
-    transition: all 0.4s ease-out;
+    position: relative;
+  }
+
+  .image-wrapper {
+    background-color: $GrayScale--1;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 
     img {
-      width: 100%;
-      height: auto;
       display: block;
+      will-change: clip-path, transform;
+      position: relative;
+      width: 100%;
+      z-index: 1;
       object-fit: cover;
+    }
+  }
+
+  &__text {
+    margin-top: 0.5rem;
+    color: $GrayScale-4;
+
+    .year {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .category {
+      font-style: italic;
     }
   }
 
@@ -31,7 +49,7 @@
     column-count: 2;
     gap: $Gap-1;
 
-    &__items {
+    &__item {
       margin-bottom: $Gap-1;
     }
   }

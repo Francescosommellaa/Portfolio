@@ -4,76 +4,41 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface useAnimationProjectGalleryOptions {
-  selector?: string;
-}
-
-export const useAnimationProjectGallery = ({
-  selector = ".project-gallery__items",
-}: useAnimationProjectGalleryOptions = {}) => {
+export const useAnimationProjectGallery = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray<HTMLElement>(selector);
+    const images = containerRef.current?.querySelectorAll<HTMLImageElement>(".image-wrapper img");
+    if (!images) return;
 
-      const triggers: ScrollTrigger[] = [];
-
-      items.forEach((item) => {
-        const trigger = ScrollTrigger.create({
-          trigger: item,
-          start: "top 85%",
-          end: "bottom 32%",
-          toggleActions: "play reverse play reverse",
-          onEnter: () => {
-            gsap.fromTo(
-              item,
-              {
-                scale: 0.9,
-                opacity: 0,
-                y: 40,
-                filter: "blur(8px)",
-                visibility: "hidden",
-              },
-              {
-                scale: 1,
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px)",
-                duration: 0.4,
-                ease: "power2.out",
-                visibility: "visible",
-                overwrite: "auto",
-              }
-            );
+    images.forEach((image) => {
+      gsap.fromTo(
+        image,
+        {
+          clipPath: "inset(0 0 100% 0)",
+          scale: 1.05,
+          transformOrigin: "center center",
+        },
+        {
+          clipPath: "inset(0 0 0% 0)",
+          scale: 1,
+          duration: 2.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: image,
+            start: "top 80%",
+            end: "top 10%",
+            toggleActions: "play none none none",
+            once: true,
           },
-          onLeaveBack: () => {
-            gsap.to(item, {
-              opacity: 0,
-              scale: 0.9,
-              y: 40,
-              filter: "blur(8px)",
-              duration: 0.4,
-              ease: "power2.in",
-              overwrite: "auto",
-            });
-          },
-        });
+        }
+      );
+    });
 
-        triggers.push(trigger);
-      });
-
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 100);
-
-      return () => {
-        triggers.forEach((t) => t.kill());
-      };
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, [selector]);
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return containerRef;
 };
