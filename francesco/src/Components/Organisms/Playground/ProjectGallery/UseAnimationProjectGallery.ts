@@ -23,7 +23,7 @@ export const useAnimationProjectGallery = ({
         const trigger = ScrollTrigger.create({
           trigger: item,
           start: "top 85%",
-          end: "bottom 15%",
+          end: "bottom 40%",
           toggleActions: "play reverse play reverse",
           onEnter: () => {
             gsap.fromTo(
