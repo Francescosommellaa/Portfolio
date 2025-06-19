@@ -13,7 +13,7 @@ import { getPlaygroundProjects } from "../../../../Utils/projectUtils";
 import { useTransition } from "../../../../Providers/TransitionProvider/TransitionContext";
 
 // Animations
-import { useAnimationProjectGallery } from "./useAnimationProjectGallery";
+import { useAnimationProjectGallery } from "./UseAnimationProjectGallery";
 
 const ProjectGallery: React.FC = () => {
   const { navigateWithTransition } = useTransition();
