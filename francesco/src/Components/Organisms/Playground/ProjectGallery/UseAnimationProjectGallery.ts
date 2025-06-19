@@ -29,7 +29,7 @@ export const useAnimationProjectGallery = ({
             gsap.fromTo(
               item,
               {
-                scale: 0.6,
+                scale: 0.9,
                 opacity: 0,
                 y: 40,
                 filter: "blur(8px)",
@@ -48,15 +48,12 @@ export const useAnimationProjectGallery = ({
             );
           },
           onLeaveBack: () => {
-            const itemTop = item.getBoundingClientRect().top;
-            const delay = itemTop / window.innerHeight * 0.3;
             gsap.to(item, {
               opacity: 0,
-              scale: 0.6,
+              scale: 0.9,
               y: 40,
               filter: "blur(8px)",
               duration: 0.4,
-              delay: delay,
               ease: "power2.in",
               overwrite: "auto",
               visibility: "hidden",
