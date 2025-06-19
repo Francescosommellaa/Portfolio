@@ -48,6 +48,12 @@ html {
       color: inherit;
     }
 
+    button {
+      all: unset;
+      pointer-events: auto;
+      color: inherit;
+    }
+
     li {
       list-style: none;
     }

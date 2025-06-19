@@ -4,34 +4,35 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface useAnimatioProjectGalleryOptions {
+interface useAnimationProjectGalleryOptions {
   selector?: string;
 }
 
-export const useAnimatioProjectGallery = ({
+export const useAnimationProjectGallery = ({
   selector = ".project-gallery__items",
-}: useAnimatioProjectGalleryOptions = {}) => {
+}: useAnimationProjectGalleryOptions = {}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray(selector) as HTMLElement[];
+      const items = gsap.utils.toArray<HTMLElement>(selector);
+
+      const triggers: ScrollTrigger[] = [];
 
       items.forEach((item) => {
-        ScrollTrigger.create({
+        const trigger = ScrollTrigger.create({
           trigger: item,
-          start: "top 95%",
-          end: "bottom 20%",
-
+          start: "top 85%",
+          end: "bottom 24%",
+          toggleActions: "play none none reverse",
           onEnter: () => {
-            item.classList.add("is-visible");
             gsap.fromTo(
               item,
               {
                 opacity: 0,
                 scale: 0.4,
                 y: 40,
-                filter: "blur(4px)",
+                filter: "blur(8px)",
               },
               {
                 opacity: 1,
@@ -39,28 +40,35 @@ export const useAnimatioProjectGallery = ({
                 y: 0,
                 filter: "blur(0px)",
                 duration: 0.6,
-                ease: "power2.out",
+                ease: "power3.out",
                 overwrite: "auto",
               }
             );
           },
-
           onLeaveBack: () => {
-            item.classList.remove("is-visible");
             gsap.to(item, {
               opacity: 0,
-              scale: 0.4,
-              y: 40,
-              filter: "blur(4px)",
+              scale: 0.8,
+              y: 50,
+              filter: "blur(8px)",
               duration: 0.3,
               ease: "power2.in",
               overwrite: "auto",
             });
           },
         });
+
+        triggers.push(trigger);
       });
 
-      ScrollTrigger.refresh();
+      // ScrollTrigger.refresh() ritardato per evitare race condition
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
+
+      return () => {
+        triggers.forEach((t) => t.kill());
+      };
     }, containerRef);
 
     return () => ctx.revert();

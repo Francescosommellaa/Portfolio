@@ -13,12 +13,12 @@ import { getPlaygroundProjects } from "../../../../Utils/projectUtils";
 import { useTransition } from "../../../../Providers/TransitionProvider/TransitionContext";
 
 // Animations
-import { useAnimatioProjectGallery } from "./UseAnimationProjectGallery";
+import { useAnimationProjectGallery } from "./useAnimationProjectGallery";
 
 const ProjectGallery: React.FC = () => {
   const { navigateWithTransition } = useTransition();
   const playgroundProjects = getPlaygroundProjects();
-  const containerRef = useAnimatioProjectGallery();
+  const containerRef = useAnimationProjectGallery();
 
   return (
     <div className="project-gallery" ref={containerRef}>
