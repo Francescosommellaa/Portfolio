@@ -13,9 +13,6 @@ import { animateTransition } from "./AnimationTransitionProvider";
 // Context
 import { TransitionContext } from "./TransitionContext";
 
-// Utils
-import { scrollToTopUniversal } from "../../Utils/scrollToTopUniversal";
-
 interface Props {
   children: React.ReactNode;
 }
@@ -33,12 +30,6 @@ export const TransitionProvider: React.FC<Props> = ({ children }) => {
 
     animateTransition(el, () => {
       navigate(path);
-
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          scrollToTopUniversal();
-        }, 0);
-      });
     });
   };
 

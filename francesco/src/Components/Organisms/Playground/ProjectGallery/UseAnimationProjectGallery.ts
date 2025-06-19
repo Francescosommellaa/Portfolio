@@ -21,7 +21,7 @@ export const useAnimatioProjectGallery = ({
         ScrollTrigger.create({
           trigger: item,
           start: "top 95%",
-          end: "bottom 24%",
+          end: "bottom 20%",
 
           onEnter: () => {
             item.classList.add("is-visible");
@@ -52,17 +52,10 @@ export const useAnimatioProjectGallery = ({
               scale: 0.4,
               y: 40,
               filter: "blur(4px)",
-              duration: 0.4,
+              duration: 0.3,
               ease: "power2.in",
               overwrite: "auto",
             });
-          },
-
-          onLeave: () => {
-            const scrollY = window.scrollY;
-            const maxScroll = ScrollTrigger.maxScroll(window);
-            const isAtBottom = scrollY >= maxScroll - 2;
-            if (isAtBottom) return;
           },
         });
       });
