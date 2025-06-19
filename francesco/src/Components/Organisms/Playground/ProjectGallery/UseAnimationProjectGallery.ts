@@ -49,8 +49,11 @@ export const useAnimatioProjectGallery = ({
           filter: "blur(0px)",
           duration: 0.6,
           ease: "power2.inOut",
+          overwrite: "auto",
         });
       });
+
+      ScrollTrigger.refresh();
     }, containerRef);
 
     return () => ctx.revert();
