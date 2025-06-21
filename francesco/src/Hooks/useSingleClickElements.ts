@@ -2,37 +2,44 @@ import { useEffect } from "react";
 
 export const useSingleClickElements = ({
   selector = "a, button, [data-clickable]",
-  timeoutMs = 2000,
+  timeoutMs = 1500,
 }: {
   selector?: string;
   timeoutMs?: number;
 } = {}) => {
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
+    const clickedElements = new WeakSet<Element>();
+
+    const handleClick = (e: Event) => {
       let target = e.target as HTMLElement | null;
 
-      // Sali nella gerarchia DOM fino a trovare un elemento cliccabile
+      // Cerca l'elemento cliccabile nel DOM
       while (target && !target.matches(selector)) {
         target = target.parentElement;
       }
 
       if (!target || !target.matches(selector)) return;
 
-      if (target.dataset.clicked === "true") {
+      if (clickedElements.has(target)) {
         e.preventDefault();
         e.stopImmediatePropagation();
         return;
       }
 
-      target.dataset.clicked = "true";
+      clickedElements.add(target);
 
-      // Riabilita dopo X ms (opzionale)
       setTimeout(() => {
-        target!.dataset.clicked = "false";
+        clickedElements.delete(target!);
       }, timeoutMs);
     };
 
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    // Aggiungiamo sia click che touchstart per mobile responsiveness
+    document.addEventListener("click", handleClick, true);
+    document.addEventListener("touchstart", handleClick, true);
+
+    return () => {
+      document.removeEventListener("click", handleClick, true);
+      document.removeEventListener("touchstart", handleClick, true);
+    };
   }, [selector, timeoutMs]);
 };

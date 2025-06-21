@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 // SCSS
 import "./Topbar.scss";
@@ -30,6 +30,19 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Debounce per evitare click multipli
+  const isThrottling = useRef(false);
+  const safeToggleSidebar = () => {
+    if (isThrottling.current) return;
+    isThrottling.current = true;
+
+    toggleSidebar();
+
+    setTimeout(() => {
+      isThrottling.current = false;
+    }, 600); // stesso tempo della tua animazione sidebar
+  };
+
   return (
     <header className={`topbar ${isDark ? "on-dark" : ""}`}>
       <div className="left" onClick={scrollToTop}>
@@ -59,7 +72,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
         {isCompact ? (
           <div
             className={`menu-icon ${isSidebarOpen ? "open" : "close"}`}
-            onClick={toggleSidebar}
+            onClick={safeToggleSidebar}
           >
             <InlineIcon
               folder="Icons"

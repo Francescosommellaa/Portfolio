@@ -5,7 +5,6 @@ import "./PageWrapper.scss";
 
 // Hooks
 import useScrollToTopOnRouteChange from "../../../Hooks/useScrollToTop";
-import { useSingleClickElements } from "../../../Hooks/useSingleClickElements";
 
 interface PageWrapperProps {
   className?: string;
@@ -19,7 +18,6 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
   fullWidth = false,
 }) => {
   useScrollToTopOnRouteChange();
-  useSingleClickElements();
 
   return (
     <div
