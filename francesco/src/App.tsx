@@ -12,7 +12,14 @@ import Playground from "./Pages/PlaygroundPage/PlaygroundPage";
 import Contatti from "./Pages/ContactsPage/ContactsPage";
 import NotFound from "./Pages/404/404";
 
+// Hooks
+import { useSingleClickElements } from "./Hooks/useSingleClickElements";
+import { useScrollToTop } from "./Hooks/useScrollToTop";
+
 const App = () => {
+  useSingleClickElements();
+  useScrollToTop();
+
   return (
     <Routes>
       <Route element={<AppLayout />}>
