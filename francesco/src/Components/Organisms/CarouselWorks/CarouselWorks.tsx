@@ -9,6 +9,7 @@ import InlineImage from "../../Atoms/InlineItems/InlineImage";
 // Hooks
 import { useSize } from "../../../Hooks/useSize";
 import { useHorizontalScroll } from "../../../Hooks/useHorizontalScroll";
+import { useCombinedRefs } from "../../../Hooks/useCombinedRefs";
 
 // Providers
 import { useTransition } from "../../../Providers/TransitionProvider/TransitionContext";
@@ -16,14 +17,19 @@ import { useTransition } from "../../../Providers/TransitionProvider/TransitionC
 // Data
 import { projectsData } from "../../../Data/ProjectsData";
 
+// Animations
+import { useAnimationCarouselWorks } from "./UseAnimationCarouselWorks";
+
 const Works: React.FC = () => {
   const Size = useSize();
   const [hasMoved, setHasMoved] = useState(false);
   const scrollRef = useHorizontalScroll(setHasMoved);
+  const containerRef = useAnimationCarouselWorks();
+  const mergedRef = useCombinedRefs(scrollRef, containerRef);
   const { navigateWithTransition } = useTransition();
 
   return (
-    <div className="project-container" ref={scrollRef}>
+    <div className="project-container" ref={mergedRef}>
       {projectsData.map((yearBlock) => (
         <div key={yearBlock.year} className="year-block">
           <div className="year-title">

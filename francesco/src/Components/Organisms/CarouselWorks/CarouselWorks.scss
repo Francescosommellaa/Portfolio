@@ -27,6 +27,18 @@
       display: flex;
       align-items: flex-start;
       gap: $Gap-3;
+
+      .project-img {
+        width: 100%;
+        background-color: $GrayScale--1;
+
+        .inline-image {
+          will-change: clip-path, transform;
+          height: auto;
+          display: block;
+          object-fit: contain;
+        }
+      }
     }
   }
 
