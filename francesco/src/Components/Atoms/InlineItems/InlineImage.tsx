@@ -7,13 +7,17 @@ interface InlineImageProps {
   size: "S" | "M" | "L" | "X";
   alt?: string;
   className?: string;
+  type: "png" | "jpg";
 }
 
 const InlineImage = forwardRef<HTMLImageElement, InlineImageProps>(
-  ({ folder, name, size, className = "", alt = "" }, ref) => {
-    const path = usePublicAsset(folder, `Name=${name}, Dimension=${size}.png`);
+  ({ folder, name, size, className = "", alt = "", type }, ref) => {
+    const path = usePublicAsset(
+      folder,
+      `Name=${name}, Dimension=${size}.${type}`
+    );
 
-    if (!path) return null; // fallback di sicurezza
+    if (!path) return null;
 
     return (
       <img

@@ -58,7 +58,12 @@ const Works: React.FC = () => {
                 draggable={false}
               >
                 <div className="project-img">
-                  <InlineImage folder="Lavori" name={project.img} size="X" />
+                  <InlineImage
+                    folder="Lavori"
+                    name={project.img}
+                    size="X"
+                    type="png"
+                  />
                 </div>
               </div>
             ))}

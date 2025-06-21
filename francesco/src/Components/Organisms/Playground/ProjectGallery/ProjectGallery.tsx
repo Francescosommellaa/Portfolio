@@ -24,7 +24,12 @@ const ProjectGallery: React.FC = () => {
       {playgroundProjects.map((project, index) => (
         <div key={index} className="project-gallery__container">
           <div className="image-wrapper">
-            <InlineImage folder="Lavori" name={project.img} size="X" />
+            <InlineImage
+              folder="Lavori"
+              name={project.img}
+              size="X"
+              type="png"
+            />
           </div>
           <div className="info">
             <span className={`subtitle-about-${Size}`}>(20{project.year})</span>

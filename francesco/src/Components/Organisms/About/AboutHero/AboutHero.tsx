@@ -25,7 +25,7 @@ const AboutHero: React.FC = () => {
         </div>
 
         <div className="about-intro__container__image">
-          <InlineImage folder="Me" name="About" size={Size} />
+          <InlineImage folder="Me" name="About" size={Size} type="png" />
         </div>
 
         <div className="about-intro__container__bottom">
