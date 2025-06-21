@@ -43,7 +43,7 @@ const Works: React.FC = () => {
           </div>
           <div className="projects">
             {yearBlock.projects.map((project) => (
-              <a
+              <div
                 key={project.name}
                 className="project"
                 onClick={(e) => {
@@ -58,7 +58,7 @@ const Works: React.FC = () => {
                 <div className="project-img">
                   <InlineImage folder="Lavori" name={project.img} size="X" />
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>

@@ -57,15 +57,15 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
       </div>
 
       <div className="center">
-        <a
+        <div
           className="logo"
           onClick={() => {
             if (isCompact && isSidebarOpen) toggleSidebar();
-            navigateWithTransition("/Home");
+            navigateWithTransition("/");
           }}
         >
           FRA<sup>©</sup>
-        </a>
+        </div>
       </div>
 
       <div className={`right topBar-${Size}`}>
