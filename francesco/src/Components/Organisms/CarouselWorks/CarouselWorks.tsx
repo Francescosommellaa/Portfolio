@@ -44,6 +44,7 @@ const Works: React.FC = () => {
           <div className="projects">
             {yearBlock.projects.map((project) => (
               <div
+                data-clickable
                 key={project.name}
                 className="project"
                 onClick={(e) => {

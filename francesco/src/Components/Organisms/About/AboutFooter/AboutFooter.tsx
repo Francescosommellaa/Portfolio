@@ -21,7 +21,8 @@ const AboutFooter: React.FC = () => {
       <InlineIcon folder="Illustrations" name="Illustration-4" size={Size} />
       <div className="about-footer__CTA">
         <span className={`caption-about-${Size}`}>Non siate timidi.</span>
-        <a
+        <div
+          data-clickable
           onClick={() => {
             navigateWithTransition("/Contatti");
           }}
@@ -29,7 +30,7 @@ const AboutFooter: React.FC = () => {
           <h2 className={`h1-${Size}`}>
             <span className={`h1-script-${Size}`}>P</span>arliamo
           </h2>
-        </a>
+        </div>
       </div>
     </section>
   );

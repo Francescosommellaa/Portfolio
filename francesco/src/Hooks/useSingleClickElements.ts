@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 export const useSingleClickElements = ({
-  selector = "a, button, [data-clickable]",
+  selector = "a, button, [data-clickable], [role='button']",
   timeoutMs = 1500,
 }: {
   selector?: string;
@@ -13,7 +13,6 @@ export const useSingleClickElements = ({
     const handleClick = (e: Event) => {
       let target = e.target as HTMLElement | null;
 
-      // Cerca l'elemento cliccabile nel DOM
       while (target && !target.matches(selector)) {
         target = target.parentElement;
       }
@@ -21,8 +20,15 @@ export const useSingleClickElements = ({
       if (!target || !target.matches(selector)) return;
 
       if (clickedElements.has(target)) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
+        // Evitiamo solo doppio invio su anchor e submit
+        const tag = target.tagName.toLowerCase();
+        const isAnchor = tag === "a" && !!(target as HTMLAnchorElement).href;
+        const isSubmitButton = tag === "button" && (target as HTMLButtonElement).type === "submit";
+
+        if (isAnchor || isSubmitButton) {
+          e.preventDefault(); // blocca solo se può causare navigazione o submit multipli
+        }
+
         return;
       }
 
@@ -33,13 +39,9 @@ export const useSingleClickElements = ({
       }, timeoutMs);
     };
 
-    // Aggiungiamo sia click che touchstart per mobile responsiveness
     document.addEventListener("click", handleClick, true);
-    document.addEventListener("touchstart", handleClick, true);
-
     return () => {
       document.removeEventListener("click", handleClick, true);
-      document.removeEventListener("touchstart", handleClick, true);
     };
   }, [selector, timeoutMs]);
 };

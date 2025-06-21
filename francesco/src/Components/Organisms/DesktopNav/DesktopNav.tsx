@@ -64,6 +64,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ hideOnTop = false }) => {
       <ul className="desktop-nav__menu">
         {NavLinks.map((link, index) => (
           <li
+            data-clickable
             key={link.name}
             ref={(el) => (itemsRef.current[index] = el!)}
             className="desktop-nav__item"

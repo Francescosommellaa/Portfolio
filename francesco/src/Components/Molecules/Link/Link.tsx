@@ -59,13 +59,13 @@ const Link: React.FC<LinkProps> = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <a className="link-wrapper" onClick={handleClick}>
-          <div className={`link-${size}`}>{label}</div>
+        <div data-clickable className="link-wrapper" onClick={handleClick}>
+          <span className={`link-${size}`}>{label}</span>
           <div className="underline" />
           <div className="icon" ref={iconRef}>
             <InlineIcon folder="Icons" name="TopRightArrow" size="X" />
           </div>
-        </a>
+        </div>
       </div>
 
       {openInIframe && (

@@ -45,7 +45,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
 
   return (
     <header className={`topbar ${isDark ? "on-dark" : ""}`}>
-      <div className="left" onClick={scrollToTop}>
+      <div data-clickable className="left" onClick={scrollToTop}>
         <InlineIcon folder="Logo" name="Logo" size={Size} />
         <div className="topbar__text">
           <p className={`topBar-${Size}`}>
@@ -58,6 +58,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
 
       <div className="center">
         <div
+          data-clickable
           className="logo"
           onClick={() => {
             if (isCompact && isSidebarOpen) toggleSidebar();
@@ -71,6 +72,7 @@ const Topbar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
       <div className={`right topBar-${Size}`}>
         {isCompact ? (
           <div
+            data-clickable
             className={`menu-icon ${isSidebarOpen ? "open" : "close"}`}
             onClick={safeToggleSidebar}
           >
