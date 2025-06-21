@@ -12,11 +12,7 @@ import Playground from "./Pages/PlaygroundPage/PlaygroundPage";
 import Contatti from "./Pages/ContactsPage/ContactsPage";
 import NotFound from "./Pages/404/404";
 
-// Hooks
-import { useSingleClickElements } from "./Hooks/useSingleClickElements";
-
 const App = () => {
-  useSingleClickElements();
   return (
     <Routes>
       <Route element={<AppLayout />}>
