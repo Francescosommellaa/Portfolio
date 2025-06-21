@@ -69,7 +69,7 @@ export const projectsData: ProjectsByYear[] = [
         firstLetter: "P",
         secondLetter: "O",
         name: "roject rma",
-        img: "Project Orma",
+        img: "Amiuni",
         link: "/Lavori/Project-orma",
         website: "https://www.projectorma.it",
         siteName: "projectorma.it",
@@ -100,7 +100,7 @@ export const projectsData: ProjectsByYear[] = [
       {
         firstLetter: "F",
         name: "ilas",
-        img: "Filas",
+        img: "Frafolio",
         link: "/Lavori/Filas",
         website: "https://www.Filas.it",
         siteName: "Filas.it",
@@ -113,7 +113,7 @@ export const projectsData: ProjectsByYear[] = [
       {
         firstLetter: "O",
         name: "liok",
-        img: "Oliok",
+        img: "Amiuni",
         link: "/Lavori/Oliok",
         website: "https://www.oliok.it",
         siteName: "oliok.it",
@@ -132,7 +132,7 @@ export const projectsData: ProjectsByYear[] = [
         firstLetter: "E",
         secondLetter: "G",
         name: "lement aming",
-        img: "Element Gaming",
+        img: "Amiuni",
         link: "/Lavori/Element Gaming",
         website: "https://element-gaming.eu",
         siteName: "element-gaming.eu",
@@ -145,7 +145,7 @@ export const projectsData: ProjectsByYear[] = [
       {
         firstLetter: "M",
         name: "ensae",
-        img: "Mensae",
+        img: "Frafolio",
         link: "/Lavori/Mensae",
         website: "https://mensae.eu",
         siteName: "mensae.eu",
@@ -158,7 +158,7 @@ export const projectsData: ProjectsByYear[] = [
       {
         firstLetter: "P",
         name: "oplo",
-        img: "Poplo",
+        img: "Amiuni",
         link: "/Lavori/Poplo",
         website: "https://poplo.eu",
         siteName: "poplo.eu",
