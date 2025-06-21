@@ -25,11 +25,15 @@ export const TransitionProvider: React.FC<Props> = ({ children }) => {
 
   const navigateWithTransition = (path: string) => {
     setTarget(path);
+
     const el = containerRef.current;
     if (!el) return;
 
     animateTransition(el, () => {
       navigate(path);
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      });
     });
   };
 

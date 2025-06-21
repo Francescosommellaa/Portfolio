@@ -38,7 +38,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose, onCloseComplete }) => {
         <ul>
           {NavLinks.map((link, index) => (
             <li
-              role="button"
+              data-clickable
               key={link.name}
               ref={(el) => (itemsRef.current[index] = el!)}
               onClick={() => {

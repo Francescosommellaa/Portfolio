@@ -1,9 +1,13 @@
 import { useRef, useEffect } from "react";
 
+const isTouchDevice = () => window.matchMedia("(pointer: coarse)").matches;
+
 export const useHorizontalScroll = (setHasMoved?: (val: boolean) => void) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isTouchDevice()) return;
+
     const el = ref.current;
     if (!el) return;
 
