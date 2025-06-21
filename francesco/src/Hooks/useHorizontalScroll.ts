@@ -1,12 +1,12 @@
 import { useRef, useEffect } from "react";
 
-const isTouchDevice = () => window.matchMedia("(pointer: coarse)").matches;
 
-export const useHorizontalScroll = (setHasMoved?: (val: boolean) => void) => {
+export const useHorizontalScroll = (setHasMoved?: (val: boolean) => void, forceDisable?: boolean) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isTouchDevice()) return;
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouch || forceDisable) return;
 
     const el = ref.current;
     if (!el) return;
@@ -78,7 +78,7 @@ export const useHorizontalScroll = (setHasMoved?: (val: boolean) => void) => {
       window.removeEventListener("mouseup", onMouseUp);
       el.removeEventListener("mouseleave", onMouseUp);
     };
-  }, [setHasMoved]);
+  }, [setHasMoved, forceDisable]);
 
   return ref;
 };

@@ -32,6 +32,7 @@
   @include respond-to(tablet) {
     height: 100%;
     gap: $Gap-8;
+    overflow: auto;
 
     .icon-arrow {
       width: 100%;
@@ -55,6 +56,7 @@
   @include respond-to(mobile) {
     height: 100%;
     gap: $Gap-8;
+    overflow: auto;
 
     .icon-arrow {
       width: 100%;

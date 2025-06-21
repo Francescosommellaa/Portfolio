@@ -22,8 +22,9 @@ import { useAnimationCarouselWorks } from "./UseAnimationCarouselWorks";
 
 const Works: React.FC = () => {
   const Size = useSize();
+  const isTouchDevice = Size === "S" || Size === "M";
   const [hasMoved, setHasMoved] = useState(false);
-  const scrollRef = useHorizontalScroll(setHasMoved);
+  const scrollRef = useHorizontalScroll(setHasMoved, isTouchDevice);
   const containerRef = useAnimationCarouselWorks();
   const mergedRef = useCombinedRefs(scrollRef, containerRef);
   const { navigateWithTransition } = useTransition();
