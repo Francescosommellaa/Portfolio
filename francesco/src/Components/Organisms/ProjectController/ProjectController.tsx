@@ -47,7 +47,9 @@ const ProjectController: React.FC = () => {
       {previousProject && (
         <div className="project-controller__button">
           <GlassButton
-            onClick={() => navigateWithTransition(`/${previousProject.slug}`)}
+            onClick={() =>
+              navigateWithTransition(`Lavori/${previousProject.slug}`)
+            }
           >
             <InlineIcon folder="Icons" name="LeftArrow" size="X" />
           </GlassButton>
@@ -55,7 +57,7 @@ const ProjectController: React.FC = () => {
       )}
 
       <div className="project-controller__button">
-        <GlassButton onClick={() => navigateWithTransition("/")}>
+        <GlassButton onClick={() => navigateWithTransition("/Lavori")}>
           <InlineIcon folder="Icons" name="CloseProject" size="X" />
         </GlassButton>
       </div>
@@ -63,7 +65,9 @@ const ProjectController: React.FC = () => {
       {nextProject && (
         <div className="project-controller__button">
           <GlassButton
-            onClick={() => navigateWithTransition(`/${nextProject.slug}`)}
+            onClick={() =>
+              navigateWithTransition(`/Lavori/${nextProject.slug}`)
+            }
           >
             <InlineIcon folder="Icons" name="RightArrow" size="X" />
           </GlassButton>

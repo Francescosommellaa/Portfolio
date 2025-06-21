@@ -1,7 +1,6 @@
-import React, { forwardRef, useEffect } from "react";
-
-// Scss
+import React, { forwardRef } from "react";
 import "./GlassButton.scss";
+import { useAnimationGlassButton } from "./useAnimationGlassButton";
 
 interface GlassButtonProps {
   onClick?: () => void;
@@ -10,15 +9,12 @@ interface GlassButtonProps {
 }
 
 const GlassButton = forwardRef<HTMLButtonElement, GlassButtonProps>(
-  ({ onClick, className = "", children = true }, ref) => {
-    useEffect(() => {
-      const element = (ref as React.RefObject<HTMLButtonElement>)?.current;
-      if (!element) return;
-    }, [ref]);
+  ({ onClick, className = "", children }, ref) => {
+    const animatedRef = useAnimationGlassButton(ref);
 
     return (
       <button
-        ref={ref}
+        ref={animatedRef}
         className={`glass-button ${className}`}
         onClick={onClick}
       >
