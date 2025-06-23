@@ -53,7 +53,7 @@ const Works: React.FC = () => {
                     e.preventDefault();
                     return;
                   }
-                  navigateWithTransition(project.link);
+                  navigateWithTransition(project.slug);
                 }}
                 draggable={false}
               >
@@ -62,7 +62,7 @@ const Works: React.FC = () => {
                     folder="Lavori/Project/Cover"
                     name={project.img}
                     size="X"
-                    type="png"
+                    type="jpg"
                   />
                 </div>
               </div>

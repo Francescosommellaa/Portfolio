@@ -20,15 +20,8 @@ export const useSingleClickElements = ({
       if (!target || !target.matches(selector)) return;
 
       if (clickedElements.has(target)) {
-        // Evitiamo solo doppio invio su anchor e submit
-        const tag = target.tagName.toLowerCase();
-        const isAnchor = tag === "a" && !!(target as HTMLAnchorElement).href;
-        const isSubmitButton = tag === "button" && (target as HTMLButtonElement).type === "submit";
-
-        if (isAnchor || isSubmitButton) {
-          e.preventDefault(); // blocca solo se può causare navigazione o submit multipli
-        }
-
+        e.stopImmediatePropagation();
+        e.preventDefault();
         return;
       }
 

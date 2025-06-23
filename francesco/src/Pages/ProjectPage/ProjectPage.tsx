@@ -15,6 +15,7 @@ import "./ProjectPage.scss";
 
 // Hooks
 import { useSize } from "../../Hooks/useSize";
+import { formatTitle } from "../../Utils/formatTitle";
 
 // Utils
 import { findProjectBySlug } from "../../Utils/projectUtils";
@@ -32,15 +33,12 @@ const ProjectPage: React.FC = () => {
   if (!project) {
     return <div>Progetto non trovato</div>;
   }
+
+  const formattedTitle = formatTitle(project.name, Size);
   return (
     <PageWrapper className="progetto">
       <div className="base">
-        <div className="title">
-          <h1 className={`h1-${Size}`}>
-            <span className={`h1-script-${Size}`}>{project.firstLetter}</span>
-            {project.name}
-          </h1>
-        </div>
+        {formattedTitle}
 
         {isDesktop && <DesktopNav />}
 

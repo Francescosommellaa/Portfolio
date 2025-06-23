@@ -36,7 +36,7 @@
           display: flex;
           flex-direction: column;
           gap: $Gap-2;
-          width: 16%;
+          width: 24%;
 
           > .text {
             display: flex;
@@ -44,7 +44,8 @@
             justify-content: space-between;
 
             > span {
-              width: 1rem;
+              text-align: end;
+              width: max-content;
               color: $GrayScale-8;
             }
           }

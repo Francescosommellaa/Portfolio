@@ -7,7 +7,7 @@ export const getAllProjects = (): Project[] => {
 
 // Estraggo lo slug da un singolo progetto
 export const getProjectSlug = (project: Project): string => {
-  return project.link.split("/").pop() ?? "";
+  return project.slug.split("/").pop() ?? "";
 };
 
 // Recupero un progetto dato uno slug

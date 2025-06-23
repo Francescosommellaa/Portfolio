@@ -1,9 +1,8 @@
 export interface Project {
-  firstLetter: string;
-  secondLetter?: string;
   name: string;
+  lastName?: string;
   img: string;
-  link: string;
+  slug: string;
   website: string;
   siteName: string;
   client: string;
@@ -22,10 +21,9 @@ export const projectsData: ProjectsByYear[] = [
     year: 25,
     projects: [
       {
-        firstLetter: "F",
-        name: "ra olio",
+        name: "Fra Folio",
         img: "FraFolio",
-        link: "/Lavori/FraFolio",
+        slug: "/Lavori/Fra-Folio",
         website: "https://www.francescosommella.com",
         siteName: "francescosommella.com",
         client: "Francesco Sommella",
@@ -35,10 +33,9 @@ export const projectsData: ProjectsByYear[] = [
         bigHorizontalImg: "FraFolio"
       },
       {
-        firstLetter: "A",
-        name: "miuni",
+        name: "Amiuni",
         img: "Amiuni",
-        link: "/Lavori/Amiuni",
+        slug: "/Lavori/Amiuni",
         website: "https://www.amiuni.it",
         siteName: "Amiuni.it",
         client: "Amiuni",
@@ -48,10 +45,9 @@ export const projectsData: ProjectsByYear[] = [
         bigHorizontalImg: "Amiuni"
       },
       {
-        firstLetter: "Q",
-        name: "DK",
+        name: "QDK",
         img: "QDK",
-        link: "/Lavori/QDK",
+        slug: "/Lavori/QDK",
         website: "https://www.qudikappa.it",
         siteName: "Qudikappa.it",
         client: "QDK",
@@ -66,11 +62,9 @@ export const projectsData: ProjectsByYear[] = [
     year: 24,
     projects: [
       {
-        firstLetter: "P",
-        secondLetter: "O",
-        name: "roject rma",
+        name: "Project Orma",
         img: "Amiuni",
-        link: "/Lavori/Project-orma",
+        slug: "/Lavori/Project-Orma",
         website: "https://www.projectorma.it",
         siteName: "projectorma.it",
         client: "Orma",
@@ -80,10 +74,9 @@ export const projectsData: ProjectsByYear[] = [
         bigHorizontalImg: "Amiuni"
       },
       {
-        firstLetter: "L",
-        name: "inear",
+        name: "Linear",
         img: "Linear",
-        link: "/Lavori/Linear",
+        slug: "/Lavori/Linear",
         website: "https://www.Linear.it",
         siteName: "Linear.it",
         client: "Linear",
@@ -98,10 +91,9 @@ export const projectsData: ProjectsByYear[] = [
     year: 23,
     projects: [
       {
-        firstLetter: "F",
-        name: "ilas",
+        name: "Filas",
         img: "Frafolio",
-        link: "/Lavori/Filas",
+        slug: "/Lavori/Filas",
         website: "https://www.Filas.it",
         siteName: "Filas.it",
         client: "Filas",
@@ -111,10 +103,9 @@ export const projectsData: ProjectsByYear[] = [
         bigHorizontalImg: "Amiuni"
       },
       {
-        firstLetter: "O",
-        name: "liok",
+        name: "Oliok",
         img: "Amiuni",
-        link: "/Lavori/Oliok",
+        slug: "/Lavori/Oliok",
         website: "https://www.oliok.it",
         siteName: "oliok.it",
         client: "Oliok",
@@ -129,11 +120,9 @@ export const projectsData: ProjectsByYear[] = [
     year: 22,
     projects: [
       {
-        firstLetter: "E",
-        secondLetter: "G",
-        name: "lement aming",
+        name: "Element Gaming",
         img: "ElementGaming",
-        link: "/Lavori/Element Gaming",
+        slug: "/Lavori/Element-Gaming",
         website: "https://element-gaming.eu",
         siteName: "element-gaming.eu",
         client: "Element Gaming",
