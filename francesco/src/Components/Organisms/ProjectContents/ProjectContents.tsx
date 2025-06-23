@@ -32,7 +32,7 @@ const ProjectContents: React.FC<ProjectContentsProps> = ({
 
       <div className="project-contents__image-wrapper">
         <InlineImage
-          folder="Lavori"
+          folder="Lavori/Project/BigImg"
           name={bigHorizontalImg}
           size="X"
           type="jpg"

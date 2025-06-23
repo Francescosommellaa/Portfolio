@@ -25,10 +25,10 @@ const ProjectGallery: React.FC = () => {
         <div key={index} className="project-gallery__container">
           <div className="image-wrapper">
             <InlineImage
-              folder="Lavori"
+              folder="Lavori/PlayGround"
               name={project.img}
               size="X"
-              type="png"
+              type="jpg"
             />
           </div>
           <div className="info">

@@ -7,100 +7,125 @@ export interface PlaygroundProjects {
 
 export const playgroundData: PlaygroundProjects[] = [
   {
-    img: "Amiuni",
+    img: "Monodrama Kit",
     year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    category: "Editorial",
+    name: "Monodrama Kit"
   },
   {
-    img: "Frafolio",
+    img: "VHS Series",
     year: 25,
-    category: "Illustrazione",
-    name: "ver 1 amiuni"
+    category: "Packaging",
+    name: "VHS Series"
   },
   {
-    img: "QDK",
+    img: "Thig Studio",
     year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    category: "Branding",
+    name: "Thig Studio"
   },
   {
-    img: "Amiuni",
-    year: 25,
-    category: "Illustrazione",
-    name: "ver 1 amiuni"
+    img: "Broken Arrow",
+    year: 24,
+    category: "Branding",
+    name: "Broken Arrow"
   },
   {
-    img: "QDK",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Nekst Visual",
+    year: 24,
+    category: "Branding",
+    name: "Nekst Visual"
   },
   {
-    img: "Amiuni",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Aevoe Guide",
+    year: 24,
+    category: "Branding",
+    name: "Aevoe Guide"
   },
   {
-    img: "QDK",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Teamway Site",
+    year: 24,
+    category: "Web Design",
+    name: "Teamway Site"
   },
   {
-    img: "Frafolio",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Grey Portfolio",
+    year: 23,
+    category: "Web Design",
+    name: "Grey Portfolio"
   },
   {
-    img: "QDK",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "MakeReign Grid",
+    year: 23,
+    category: "Posters",
+    name: "MakeReign Grid"
   },
   {
-    img: "Amiuni",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Future Stack",
+    year: 23,
+    category: "Web Design",
+    name: "Future Stack"
   },
   {
-    img: "QDK",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Showcasy Form",
+    year: 23,
+    category: "Web Design",
+    name: "Showcasy Form"
   },
   {
-    img: "Frafolio",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Dominic Site",
+    year: 23,
+    category: "Web Design",
+    name: "Dominic Site"
   },
   {
-    img: "QDK",
-    year: 25,
-    category: "Illustrazione",
-    name: "versione di anteprima 1 amiuni"
+    img: "Welcome Guide",
+    year: 23,
+    category: "Editorial",
+    name: "Welcome Guide"
   },
   {
-    img: "Amiuni",
-    year: 25,
-    category: "Illustrazione",
-    name: "ver 1 amiuni"
+    img: "Juliana Portf.",
+    year: 22,
+    category: "Web Design",
+    name: "Juliana Portf."
   },
   {
-    img: "QDK",
-    year: 25,
-    category: "Illustrazione",
-    name: "ver 1 amiuni"
+    img: "Studio Clients",
+    year: 22,
+    category: "Web Design",
+    name: "Studio Clients"
   },
   {
-    img: "Frafolio",
-    year: 25,
-    category: "Illustrazione",
-    name: "ver 1 amiuni"
+    img: "Brutal Poster",
+    year: 22,
+    category: "Poster",
+    name: "Brutal Poster"
+  },
+  {
+    img: "Danelec Guide",
+    year: 22,
+    category: "Branding",
+    name: "Danelec Guide"
+  },
+  {
+    img: "Markus Posters",
+    year: 22,
+    category: "Poster",
+    name: "Markus Posters"
+  },
+  {
+    img: "Sotica Cards",
+    year: 22,
+    category: "Branding",
+    name: "Sotica Cards"
+  },
+  {
+    img: "Auralen Grid",
+    year: 22,
+    category: "Branding",
+    name: "Auralen Grid"
   }
-]
+];
+
 export default playgroundData;

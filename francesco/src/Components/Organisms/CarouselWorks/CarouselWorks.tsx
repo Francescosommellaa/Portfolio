@@ -59,7 +59,7 @@ const Works: React.FC = () => {
               >
                 <div className="project-img">
                   <InlineImage
-                    folder="Lavori"
+                    folder="Lavori/Project/Cover"
                     name={project.img}
                     size="X"
                     type="png"

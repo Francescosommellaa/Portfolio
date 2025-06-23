@@ -24,15 +24,15 @@ export const projectsData: ProjectsByYear[] = [
       {
         firstLetter: "F",
         name: "ra olio",
-        img: "Frafolio",
-        link: "/Lavori/Fra-folio",
+        img: "FraFolio",
+        link: "/Lavori/FraFolio",
         website: "https://www.francescosommella.com",
         siteName: "francescosommella.com",
         client: "Francesco Sommella",
         year: 2024,
         category: "Tech",
-        brandShortDescription: "Portfolio personale di Fra.",
-        bigHorizontalImg: "/images/portfolio-fra-big.jpg"
+        brandShortDescription: "Il portfolio dinamico e minimale di Francesco Sommella, tra design e sviluppo.",
+        bigHorizontalImg: "FraFolio"
       },
       {
         firstLetter: "A",
@@ -44,8 +44,8 @@ export const projectsData: ProjectsByYear[] = [
         client: "Amiuni",
         year: 2025,
         category: "Fashion",
-        brandShortDescription: "Amiuni è un progetto di branding moderno.",
-        bigHorizontalImg: "Amiuni-big"
+        brandShortDescription: "Identità moderna e sito e-commerce su misura per il brand Amiuni.",
+        bigHorizontalImg: "Amiuni"
       },
       {
         firstLetter: "Q",
@@ -57,8 +57,8 @@ export const projectsData: ProjectsByYear[] = [
         client: "QDK",
         year: 2025,
         category: "Fashion",
-        brandShortDescription: "QDK rappresenta un approccio corporate elegante.",
-        bigHorizontalImg: "Amiuni-big"
+        brandShortDescription: "Corporate identity e web design elegante per il brand QDK.",
+        bigHorizontalImg: "QDK"
       }
     ]
   },
@@ -76,8 +76,8 @@ export const projectsData: ProjectsByYear[] = [
         client: "Orma",
         year: 2024,
         category: "Fashion",
-        brandShortDescription: "Progetto Orma per il mondo fashion.",
-        bigHorizontalImg: "/images/orma-big.jpg"
+        brandShortDescription: "Rebranding e piattaforma digitale per il marchio Orma.",
+        bigHorizontalImg: "Amiuni"
       },
       {
         firstLetter: "L",
@@ -89,8 +89,8 @@ export const projectsData: ProjectsByYear[] = [
         client: "Linear",
         year: 2024,
         category: "Food",
-        brandShortDescription: "Sistema di design per Linear.",
-        bigHorizontalImg: "/images/linear-big.jpg"
+        brandShortDescription: "Sistema di design e sito per Linear.",
+        bigHorizontalImg: "Amiuni"
       }
     ]
   },
@@ -108,7 +108,7 @@ export const projectsData: ProjectsByYear[] = [
         year: 2023,
         category: "Finance",
         brandShortDescription: "Identità visiva per Filas.",
-        bigHorizontalImg: "/images/filas-big.jpg"
+        bigHorizontalImg: "Amiuni"
       },
       {
         firstLetter: "O",
@@ -121,7 +121,7 @@ export const projectsData: ProjectsByYear[] = [
         year: 2023,
         category: "Food",
         brandShortDescription: "Design di prodotto per Oliok.",
-        bigHorizontalImg: "/images/oliok-big.jpg"
+        bigHorizontalImg: "Amiuni"
       }
     ]
   },
@@ -132,15 +132,15 @@ export const projectsData: ProjectsByYear[] = [
         firstLetter: "E",
         secondLetter: "G",
         name: "lement aming",
-        img: "Amiuni",
+        img: "ElementGaming",
         link: "/Lavori/Element Gaming",
         website: "https://element-gaming.eu",
         siteName: "element-gaming.eu",
         client: "Element Gaming",
         year: 2022,
         category: "Entertainment",
-        brandShortDescription: "Design UI per Element Gaming.",
-        bigHorizontalImg: "/images/element-gaming-big.jpg"
+        brandShortDescription: "Esperienza visiva immersiva per il portale ufficiale di Element Gaming.",
+        bigHorizontalImg: "ElementGaming"
       },
     ]
   }
