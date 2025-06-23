@@ -71,12 +71,16 @@
 
   @include respond-to(tablet) {
     gap: $Gap-8;
+    .base {
+      height: 64dvh;
+    }
   }
 
   @include respond-to(mobile) {
     gap: $Gap-7;
 
     .base {
+      height: 60dvh;
       .main-info-container {
         gap: $Gap-6;
 

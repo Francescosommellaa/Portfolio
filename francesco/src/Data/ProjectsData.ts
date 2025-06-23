@@ -22,6 +22,19 @@ export const projectsData: ProjectsByYear[] = [
     year: 25,
     projects: [
       {
+        firstLetter: "F",
+        name: "ra olio",
+        img: "Frafolio",
+        link: "/Lavori/Fra-folio",
+        website: "https://www.francescosommella.com",
+        siteName: "francescosommella.com",
+        client: "Francesco Sommella",
+        year: 2024,
+        category: "Tech",
+        brandShortDescription: "Portfolio personale di Fra.",
+        bigHorizontalImg: "/images/portfolio-fra-big.jpg"
+      },
+      {
         firstLetter: "A",
         name: "miuni",
         img: "Amiuni",
@@ -52,19 +65,6 @@ export const projectsData: ProjectsByYear[] = [
   {
     year: 24,
     projects: [
-      {
-        firstLetter: "F",
-        name: "ra olio",
-        img: "Frafolio",
-        link: "/Lavori/Fra-folio",
-        website: "https://www.francescosommella.com",
-        siteName: "francescosommella.com",
-        client: "Francesco Sommella",
-        year: 2024,
-        category: "Tech",
-        brandShortDescription: "Portfolio personale di Fra.",
-        bigHorizontalImg: "/images/portfolio-fra-big.jpg"
-      },
       {
         firstLetter: "P",
         secondLetter: "O",
@@ -142,45 +142,6 @@ export const projectsData: ProjectsByYear[] = [
         brandShortDescription: "Design UI per Element Gaming.",
         bigHorizontalImg: "/images/element-gaming-big.jpg"
       },
-      {
-        firstLetter: "M",
-        name: "ensae",
-        img: "Frafolio",
-        link: "/Lavori/Mensae",
-        website: "https://mensae.eu",
-        siteName: "mensae.eu",
-        client: "Mensae",
-        year: 2022,
-        category: "Education",
-        brandShortDescription: "Esperienza utente per Mensae.",
-        bigHorizontalImg: "/images/mensae-big.jpg"
-      },
-      {
-        firstLetter: "P",
-        name: "oplo",
-        img: "Amiuni",
-        link: "/Lavori/Poplo",
-        website: "https://poplo.eu",
-        siteName: "poplo.eu",
-        client: "Poplo",
-        year: 2022,
-        category: "Entertainment",
-        brandShortDescription: "Identità visiva per Poplo.",
-        bigHorizontalImg: "/images/poplo-big.jpg"
-      },
-      {
-        firstLetter: "O",
-        name: "ikl",
-        img: "Oikl",
-        link: "/Lavori/Oikl",
-        website: "https://oikl.eu",
-        siteName: "oikl.eu",
-        client: "Oikl",
-        year: 2022,
-        category: "Finance",
-        brandShortDescription: "Sviluppo web per Oikl.",
-        bigHorizontalImg: "/images/oikl-big.jpg"
-      }
     ]
   }
 ];
