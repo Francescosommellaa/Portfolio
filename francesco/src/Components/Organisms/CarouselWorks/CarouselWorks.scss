@@ -8,15 +8,8 @@
   gap: $Gap-8;
 
   // Scroll
-  overflow-x: hidden;
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: auto;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: hidden;
+  overscroll-behavior: contain;
 
   .year-block {
     width: 100%;

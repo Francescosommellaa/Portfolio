@@ -12,11 +12,15 @@ import { useSize } from "../../../../Hooks/useSize";
 // Data
 import AboutContent from "../../../../Data/About";
 
+// Animation
+import { useAnimationAboutMain } from "./AnimationAboutMain";
+
 const AboutMain: React.FC = () => {
   const Size = useSize();
+  const { containerRef } = useAnimationAboutMain();
 
   return (
-    <section className={`about-main`}>
+    <section className={`about-main`} ref={containerRef}>
       {/* Skills subtitle */}
       <div className="about-main__skills">
         <InlineIcon folder="Icons" size="X" name="Ellipse" />
@@ -28,7 +32,7 @@ const AboutMain: React.FC = () => {
       {/* Design Philosophy */}
       <div className="about-main__philosophy">
         {AboutContent.designPhilosophy.map((step) => (
-          <div key={step.title} className="about-main__step">
+          <div key={step.title} className="step">
             <h3 className={`philosophy-title-X`}>{step.title}</h3>
             <p className={`philosophy-paragraph-X`}>{step.description}</p>
           </div>
@@ -42,6 +46,7 @@ const AboutMain: React.FC = () => {
           {AboutContent.clientsSubtitle}
         </span>
       </div>
+
       <ul className="about-main__client-list">
         {AboutContent.clients.map((client) => (
           <li className={`client-about-${Size}`} key={client}>

@@ -11,6 +11,7 @@
   gap: $Gap-8;
 
   &__skills {
+    overflow: hidden;
     display: flex;
     width: 100%;
     align-items: flex-start;
@@ -27,7 +28,8 @@
     flex-direction: column;
     gap: $Gap-8;
 
-    .about-main__step {
+    .step {
+      overflow: hidden;
       max-width: 600px;
 
       h3 {
@@ -37,6 +39,7 @@
   }
 
   &__clients {
+    overflow: hidden;
     display: flex;
     width: 100%;
     align-items: flex-start;
@@ -45,6 +48,15 @@
 
     span {
       max-width: 32%;
+    }
+  }
+
+  &__client-list li {
+    color: $GrayScale-3;
+    transition: color 0.4s ease;
+
+    &.client--dark {
+      color: $GrayScale-10;
     }
   }
 
